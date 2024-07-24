@@ -1,0 +1,830 @@
+[
+    {
+     "Maõ CTieát": "_1561",
+     "Teân danh muïc chi tieát": "Giaù mua haøng hoùa"
+    },
+    {
+     "Maõ CTieát": "BANH__0001",
+     "Teân danh muïc chi tieát": "Baùnh Mì Döa löôùi Bieån Ngoïc Bích"
+    },
+    {
+     "Maõ CTieát": "BANH__0002",
+     "Teân danh muïc chi tieát": "Baùnh Danish Döa Löôùi Size Nhoû"
+    },
+    {
+     "Maõ CTieát": "BANH__0003",
+     "Teân danh muïc chi tieát": "Baùnh Biscotti Bí Haït Ñaäu"
+    },
+    {
+     "Maõ CTieát": "BANH__0004",
+     "Teân danh muïc chi tieát": "Baùnh Croissant Kem Döa Löôùi"
+    },
+    {
+     "Maõ CTieát": "BANH__0005",
+     "Teân danh muïc chi tieát": "Baùnh Mì Bí Haït Ñaäu"
+    },
+    {
+     "Maõ CTieát": "BANH__0006",
+     "Teân danh muïc chi tieát": "Baùnh Tart Bí Haït Ñaäu"
+    },
+    {
+     "Maõ CTieát": "BANH__0007",
+     "Teân danh muïc chi tieát": "Baùnh Danish Döa Löôùi size Lôùn"
+    },
+    {
+     "Maõ CTieát": "BANH__0008",
+     "Teân danh muïc chi tieát": "Baùnh Mì Töôi"
+    },
+    {
+     "Maõ CTieát": "BANH__0009",
+     "Teân danh muïc chi tieát": "Hoäp Baùnh Biscotti Bí Haït Ñaäu 40g"
+    },
+    {
+     "Maõ CTieát": "BANHTT_C01",
+     "Teân danh muïc chi tieát": "Combo Cao Caáp Long Vuõ Hoàng Nguyeät"
+    },
+    {
+     "Maõ CTieát": "BANHTT_C02",
+     "Teân danh muïc chi tieát": "Combo Cao Caáp Long Vuõ Chaâu Nguyeät"
+    },
+    {
+     "Maõ CTieát": "BANHTT_C03",
+     "Teân danh muïc chi tieát": "Combo VIP Long Vuõ Giaùng Nguyeät"
+    },
+    {
+     "Maõ CTieát": "BANHTT_C04",
+     "Teân danh muïc chi tieát": "Combo VIP Long Vuõ Chu Nguyeät"
+    },
+    {
+     "Maõ CTieát": "BANHTT_C05",
+     "Teân danh muïc chi tieát": "Combo VIP Long Vuõ Ñan Nguyeät"
+    },
+    {
+     "Maõ CTieát": "BANHTT_C06",
+     "Teân danh muïc chi tieát": "Combo VIP Long Vuõ Xích Nguyeät"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L01",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Nguõ Haït Chay"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L02",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Nguõ Haït Möùt Hoa Quaû"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L03",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Queá Hoa"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L04",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Hoa Hoàng Mô Cam"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L05",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Bí Haït Ñaäu Phoâ Mai"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L06",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Döa Löôùi"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L07",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Döøa Caø Pheâ"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L08",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Olong Kyû Töû - Taùo Ñoû"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L09",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Meø Ñen Pistachios"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L10",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Jambong - Xaù Xíu"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L11",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Thaäp Caåm Macadamia"
+    },
+    {
+     "Maõ CTieát": "BANHTT_L12",
+     "Teân danh muïc chi tieát": "Baùnh Trung Thu Meø Ñen Haït OÙc Choù Ñoû"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0001",
+     "Teân danh muïc chi tieát": "Hoäp Quaø Cao Caáp DNG 2 Traùi"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0002",
+     "Teân danh muïc chi tieát": "Thuøng Carton 2 Traùi"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0003",
+     "Teân danh muïc chi tieát": "Gioû Quaø Nhoû"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0004",
+     "Teân danh muïc chi tieát": "Gioû Quaø Lôùn"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0005",
+     "Teân danh muïc chi tieát": "Tuùi Giaáy DNG"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0006",
+     "Teân danh muïc chi tieát": "Tuùi Vaûi (Hoäp Baùnh Trung Thu)"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0007",
+     "Teân danh muïc chi tieát": "Tuùi Ñöïng Hoäp Quaø Cao Caáp DNG 2 Traùi"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0008",
+     "Teân danh muïc chi tieát": "Gioû goã"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0009",
+     "Teân danh muïc chi tieát": "Gioû yeân ngöïa - size trung"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0010",
+     "Teân danh muïc chi tieát": "Gioû yeân ngöïa - size lôùn"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0011",
+     "Teân danh muïc chi tieát": "Gioû yeân ngöïa - size nhoû"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0012",
+     "Teân danh muïc chi tieát": "Tuùi Giaáy DannyGreen nhoû (18x25x10)"
+    },
+    {
+     "Maõ CTieát": "BAOBI_0013",
+     "Teân danh muïc chi tieát": "Hoäp quaø tre nöùa"
+    },
+    {
+     "Maõ CTieát": "BUN___0001",
+     "Teân danh muïc chi tieát": "Buùn Gaïo Löùc Tím 500g"
+    },
+    {
+     "Maõ CTieát": "BUN___0002",
+     "Teân danh muïc chi tieát": "Buùn Gaïo Ngheä 500g"
+    },
+    {
+     "Maõ CTieát": "BUN___0003",
+     "Teân danh muïc chi tieát": "Buùn Gaïo Toûi Ñen 500g"
+    },
+    {
+     "Maõ CTieát": "BUN___0004",
+     "Teân danh muïc chi tieát": "Buùn Gaïo Traéng 500g"
+    },
+    {
+     "Maõ CTieát": "BUN___0005",
+     "Teân danh muïc chi tieát": "Buùn Gaïo Boà Ngoùt 500g"
+    },
+    {
+     "Maõ CTieát": "buN___0006",
+     "Teân danh muïc chi tieát": "Buùn Gaïo Gaác 500g"
+    },
+    {
+     "Maõ CTieát": "COMBO_NHA1",
+     "Teân danh muïc chi tieát": "Combo Nhaø (Chöông trình KM ngaøy gia ñình)"
+    },
+    {
+     "Maõ CTieát": "DLE___0001",
+     "Teân danh muïc chi tieát": "Döa Leâ Höõu Cô Baïch Kim"
+    },
+    {
+     "Maõ CTieát": "DLE___0002",
+     "Teân danh muïc chi tieát": "Döa Leâ Höõu Cô Hoàng Kim"
+    },
+    {
+     "Maõ CTieát": "DLE___0003",
+     "Teân danh muïc chi tieát": "Döa leâ Höõu Cô Bieån Thanh Ngaân (Sea SilverBlue)"
+    },
+    {
+     "Maõ CTieát": "DLE___CB01",
+     "Teân danh muïc chi tieát": "Döa Leâ Höõu Cô Hoàng Kim - CB"
+    },
+    {
+     "Maõ CTieát": "DLE___CB02",
+     "Teân danh muïc chi tieát": "Döa leâ Höõu Cô Bieån Thanh Ngaân (Sea SilverBlue) - CB"
+    },
+    {
+     "Maõ CTieát": "DLE___CB03",
+     "Teân danh muïc chi tieát": "Döa Leâ Höõu Cô Baïch Kim - CB"
+    },
+    {
+     "Maõ CTieát": "DLUOI_0001",
+     "Teân danh muïc chi tieát": "Döa löôùi Höõu Cô Bieån Haèng Nga (SeaMoon)"
+    },
+    {
+     "Maõ CTieát": "DLUOI_0002",
+     "Teân danh muïc chi tieát": "Döa löôùi Höõu Cô Bieån Ngoïc Bích (SeaEmerald)"
+    },
+    {
+     "Maõ CTieát": "DLUOI_0003",
+     "Teân danh muïc chi tieát": "Döa löôùi Höõu Cô Bieån Kim Sa (SeaArnica)"
+    },
+    {
+     "Maõ CTieát": "DLUOI_0004",
+     "Teân danh muïc chi tieát": "Döa löôùi Höõu Cô Bieån Kim Ngaân (Sea SilverGold)"
+    },
+    {
+     "Maõ CTieát": "DLUOI_0005",
+     "Teân danh muïc chi tieát": "Döa löôùi Höõu Cô Ngoïc Bích David (Emerald David)"
+    },
+    {
+     "Maõ CTieát": "DLUOI_CB01",
+     "Teân danh muïc chi tieát": "Döa löôùi Höõu Cô Bieån Haèng Nga (SeaMoon) - CB"
+    },
+    {
+     "Maõ CTieát": "DLUOI_CB02",
+     "Teân danh muïc chi tieát": "Döa löôùi Höõu Cô Bieån Ngoïc Bích (SeaEmerald) - CB"
+    },
+    {
+     "Maõ CTieát": "DLUOI_CB03",
+     "Teân danh muïc chi tieát": "Döa Löôùi Höõu Cô Bieån Kim Ngaân (Sea SilverGold) - CB"
+    },
+    {
+     "Maõ CTieát": "DLUOI_CB04",
+     "Teân danh muïc chi tieát": "Döa löôùi Höõu Cô Bieån Kim Sa (SeaArnica) - CB"
+    },
+    {
+     "Maõ CTieát": "DLUOI_CB05",
+     "Teân danh muïc chi tieát": "Döa löôùi Höõu Cô Ngoïc Bích David (Emerald David) - CB"
+    },
+    {
+     "Maõ CTieát": "GAO___0001",
+     "Teân danh muïc chi tieát": "Gaïo Laøi Cam Boát DNG 1Kg"
+    },
+    {
+     "Maõ CTieát": "GAO___0002",
+     "Teân danh muïc chi tieát": "Tuùi Gaïo Laøi Cam Boát DNG 2kg"
+    },
+    {
+     "Maõ CTieát": "GAO___0003",
+     "Teân danh muïc chi tieát": "Tuùi Gaïo Laøi Cam Boát DNG 3kg"
+    },
+    {
+     "Maõ CTieát": "GAO___0004",
+     "Teân danh muïc chi tieát": "Gaïo löùt tím than höõu cô"
+    },
+    {
+     "Maõ CTieát": "GAO___0005",
+     "Teân danh muïc chi tieát": "Gaïo löùt tím than"
+    },
+    {
+     "Maõ CTieát": "GAO___0006",
+     "Teân danh muïc chi tieát": "Tuùi Gaïo Laøi Cam Boát 5kg"
+    },
+    {
+     "Maõ CTieát": "GAO___0007",
+     "Teân danh muïc chi tieát": "Tuùi Neáp Gaø Con 1Kg"
+    },
+    {
+     "Maõ CTieát": "NUOC__0001",
+     "Teân danh muïc chi tieát": "Thuøng 24 lon nöôùc Döa Löôùi Höõu Cô - Haït Chia 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0002",
+     "Teân danh muïc chi tieát": "Thuøng 24 lon nöôùc Döa Löôùi Höõu Cô - Kyû Töû 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0003",
+     "Teân danh muïc chi tieát": "Loác 6 lon nöôùc Döa Löôùi Höõu Cô - Haït Chia 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0004",
+     "Teân danh muïc chi tieát": "Loác 6 lon nöôùc Döa Löôùi Höõu Cô - Kyû Töû 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0005",
+     "Teân danh muïc chi tieát": "Lon nöôùc Döa Löôùi Höõu Cô - Haït Chia 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0006",
+     "Teân danh muïc chi tieát": "Lon nöôùc Döa Löôùi Höõu Cô - Kyû Töû 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0007",
+     "Teân danh muïc chi tieát": "Thuøng 24 lon nöôùc Döa Löôùi Coù Gaz - Nguyeân Baûn"
+    },
+    {
+     "Maõ CTieát": "NUOC__0008",
+     "Teân danh muïc chi tieát": "Loác 6 lon nöôùc Döa Löôùi Coù Gaz - Nguyeân Baûn 330ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0009",
+     "Teân danh muïc chi tieát": "Lon nöôùc Döa Löôùi Coù Gaz - Nguyeân Baûn 330ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0010",
+     "Teân danh muïc chi tieát": "Thuøng 24 chai nöôùc ion kieàm Spring Water 480ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0011",
+     "Teân danh muïc chi tieát": "Chai nöôùc ion kieàm Spring Water 480ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0012",
+     "Teân danh muïc chi tieát": "Thuøng 24 chai nöôùc ion kieàm Spring Water 280ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0013",
+     "Teân danh muïc chi tieát": "Chai nöôùc ion kieàm Spring Water 280ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0016",
+     "Teân danh muïc chi tieát": "Thuøng 24 Lon Nöôùc Coù Gaz Höông Vò OÅi Hoàng 330ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0017",
+     "Teân danh muïc chi tieát": "Thuøng 24 Lon Nöôùc EÙp Döùa 250ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0018",
+     "Teân danh muïc chi tieát": "Thuøng 24 Lon Nöôùc EÙp Döùa Coù Thòt Döùa 250ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0019",
+     "Teân danh muïc chi tieát": "Lon Nöôùc Coù Gaz Höông Vò OÅi Hoàng 330ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0020",
+     "Teân danh muïc chi tieát": "Lon Nöôùc EÙp Döùa 250ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0021",
+     "Teân danh muïc chi tieát": "Lon Nöôùc EÙp Döùa Coù Thòt Döùa 250ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0022",
+     "Teân danh muïc chi tieát": "Loác 6 Lon Nöôùc EÙp Döùa Coù Thòt Döùa 250ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0023",
+     "Teân danh muïc chi tieát": "Loác 6 Lon Nöôùc Coù Gaz Höông Vò OÅi Hoàng 330ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0024",
+     "Teân danh muïc chi tieát": "Loác 6 Lon Nöôùc EÙp Döùa 250ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0025",
+     "Teân danh muïc chi tieát": "Thuøng 24 Lon Nöôùc Traø Chanh Thanh Nhieät 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0026",
+     "Teân danh muïc chi tieát": "Lon Nöôùc Traø Chanh Thanh Nhieät 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0027",
+     "Teân danh muïc chi tieát": "Loác 6 Lon Nöôùc Traø Chanh Thanh Nhieät 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0029",
+     "Teân danh muïc chi tieát": "Thuøng 24 lon nöôùc Döa Löôùi Höõu Cô - Nguyeân Baûn 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0030",
+     "Teân danh muïc chi tieát": "Loác 6 lon nöôùc Döa Löôùi Höõu Cô - Nguyeân baûn 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0031",
+     "Teân danh muïc chi tieát": "Lon nöôùc Döa Löôùi Höõu Cô - Nguyeân Baûn 320ml"
+    },
+    {
+     "Maõ CTieát": "NUOC__0032",
+     "Teân danh muïc chi tieát": "Combo 2 Loác Nöôùc Coù Gaz Vò OÅi Hoàng & Traø Chanh Thanh Nhieät"
+    },
+    {
+     "Maõ CTieát": "PHO___0001",
+     "Teân danh muïc chi tieát": "Phôû Gaïo Löùc 500g"
+    },
+    {
+     "Maõ CTieát": "PHO___0002",
+     "Teân danh muïc chi tieát": "Phôû Gaïo Traéng 500g"
+    },
+    {
+     "Maõ CTieát": "RAU___0001",
+     "Teân danh muïc chi tieát": "Bí Haït Ñaäu Höõu Cô DannyGreen"
+    },
+    {
+     "Maõ CTieát": "RAU___0002",
+     "Teân danh muïc chi tieát": "Bí non höõu cô DannyGreen"
+    },
+    {
+     "Maõ CTieát": "RAU___0003",
+     "Teân danh muïc chi tieát": "Ñaäu Baép Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "RAU___0004",
+     "Teân danh muïc chi tieát": "Ñaäu Ñuõa Höõu Cô 1kg"
+    },
+    {
+     "Maõ CTieát": "RAU___0005",
+     "Teân danh muïc chi tieát": "Rau Baàu Ñaát Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "RAU___0006",
+     "Teân danh muïc chi tieát": "Rau Caûi Xanh Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "RAU___0007",
+     "Teân danh muïc chi tieát": "Caûi Meøo Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "RAU___0008",
+     "Teân danh muïc chi tieát": "Caûi Duùn Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "RAU___0009",
+     "Teân danh muïc chi tieát": "Caûi Roå Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "RAU___0010",
+     "Teân danh muïc chi tieát": "Caûi Boù Xoâi Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "RAU___0011",
+     "Teân danh muïc chi tieát": "Xoaøi Taùo Höõu Cô DannyGreen"
+    },
+    {
+     "Maõ CTieát": "RAU___0012",
+     "Teân danh muïc chi tieát": "Rau Dieáp Caù Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "RAU___0013",
+     "Teân danh muïc chi tieát": "Baàu Sao"
+    },
+    {
+     "Maõ CTieát": "RAU___0014",
+     "Teân danh muïc chi tieát": "Möôùp Höông"
+    },
+    {
+     "Maõ CTieát": "RAU___0015",
+     "Teân danh muïc chi tieát": "Saàu Rieâng Ri 6"
+    },
+    {
+     "Maõ CTieát": "RAU___0016",
+     "Teân danh muïc chi tieát": "Traùi Sake"
+    },
+    {
+     "Maõ CTieát": "RAU___0017",
+     "Teân danh muïc chi tieát": "Saàu Rieâng Thaùi"
+    },
+    {
+     "Maõ CTieát": "RAU___0018",
+     "Teân danh muïc chi tieát": "Chuoái cau höông höõu cô DannyGreen"
+    },
+    {
+     "Maõ CTieát": "RAU___0019",
+     "Teân danh muïc chi tieát": "Baép Chuoái Cau Höông DNG"
+    },
+    {
+     "Maõ CTieát": "RAU___0020",
+     "Teân danh muïc chi tieát": "Baép Chuoái Löûa DNG"
+    },
+    {
+     "Maõ CTieát": "RAU___0021",
+     "Teân danh muïc chi tieát": "Nhaõn Xuoàng Tím"
+    },
+    {
+     "Maõ CTieát": "RAU___0022",
+     "Teân danh muïc chi tieát": "Hoäp Nhaõn Xuoàng Vaøng Höõa Cô 500g"
+    },
+    {
+     "Maõ CTieát": "RAU___0023",
+     "Teân danh muïc chi tieát": "Ñu Ñuû"
+    },
+    {
+     "Maõ CTieát": "RAU___0024",
+     "Teân danh muïc chi tieát": "Chuoái Löûa DannyGreen"
+    },
+    {
+     "Maõ CTieát": "RAU___0025",
+     "Teân danh muïc chi tieát": "Vuù Söõa Hoaøng Kim höõu cô"
+    },
+    {
+     "Maõ CTieát": "RAU___0026",
+     "Teân danh muïc chi tieát": "Xoaøi Caùt Hoøa Loäc Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "RAU___CB01",
+     "Teân danh muïc chi tieát": "Bí Haït Ñaäu Höõu Cô DannyGreen - CB"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0002",
+     "Teân danh muïc chi tieát": "Bí non höõu cô DannyGreen 500g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0003",
+     "Teân danh muïc chi tieát": "Ñaäu baép Höõu Cô 300g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0004",
+     "Teân danh muïc chi tieát": "Ñaäu Ñuõa Höõu Cô 500g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0005",
+     "Teân danh muïc chi tieát": "Tuùi Rau Baàu Ñaát Höõu Cô 350g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0007",
+     "Teân danh muïc chi tieát": "Tuùi Rau Caûi Meøo Höõu Cô 300g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0008",
+     "Teân danh muïc chi tieát": "Tuùi Rau Caûi Beï Duùn Höõu Cô 300g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0009",
+     "Teân danh muïc chi tieát": "Tuùi Rau Caûi Roå Höõu Cô 300g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0010",
+     "Teân danh muïc chi tieát": "Tuùi Rau Caûi Boù Xoâi Höõu Cô 300g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0011",
+     "Teân danh muïc chi tieát": "Tuùi Rau Dieáp Caù Höõu Cô 100g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0012",
+     "Teân danh muïc chi tieát": "Hoäp Nhaõn Xuoàng Tím 500g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0013",
+     "Teân danh muïc chi tieát": "Hoäp Nhaõn Xuoàng Tím 1000g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0019",
+     "Teân danh muïc chi tieát": "Tuùi Rau Caûi Ngoàng Höõu Cô 300g"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0020",
+     "Teân danh muïc chi tieát": "Ñaäu baép Höõu Cô 500g"
+    },
+    {
+     "Maõ CTieát": "SAY___0001",
+     "Teân danh muïc chi tieát": "Hoäp chuoái saáy deûo DannyGreen (270g)"
+    },
+    {
+     "Maõ CTieát": "SAY___0002",
+     "Teân danh muïc chi tieát": "Hoäp chuoái & thanh long ñoû saáy deûo DannyGreen (270g)"
+    },
+    {
+     "Maõ CTieát": "SAY___0003",
+     "Teân danh muïc chi tieát": "Hoäp Döa Löôùi Höõu Cô Saáy Deûo 105g"
+    },
+    {
+     "Maõ CTieát": "SAY___0004",
+     "Teân danh muïc chi tieát": "Hoäp Bí Ñoû Saáy Deûo 105g"
+    },
+    {
+     "Maõ CTieát": "SAY___0005",
+     "Teân danh muïc chi tieát": "Tuùi ñu ñuû sôïi saáy khoâ 100g"
+    },
+    {
+     "Maõ CTieát": "SAY___0006",
+     "Teân danh muïc chi tieát": "Tuùi döa löôùi saáy deûo 35g"
+    },
+    {
+     "Maõ CTieát": "SAY___0007",
+     "Teân danh muïc chi tieát": "Tuùi Bí Haït Ñaäu Saáy Deûo 35g"
+    },
+    {
+     "Maõ CTieát": "SAY___0008",
+     "Teân danh muïc chi tieát": "Chuoái saáy deûo DannyGreen ( 90g )"
+    },
+    {
+     "Maõ CTieát": "SAY___0009",
+     "Teân danh muïc chi tieát": "Chuoái & thanh long ñoû saáy deûo DannyGreen 90g"
+    },
+    {
+     "Maõ CTieát": "SAY___0010",
+     "Teân danh muïc chi tieát": "Tuùi bí ñoû saáy deûo 35g"
+    },
+    {
+     "Maõ CTieát": "SAY___0011",
+     "Teân danh muïc chi tieát": "Tuùi Khoùm Hoa Saáy Deûo Muoái ÔÙt 80g"
+    },
+    {
+     "Maõ CTieát": "SAY___0012",
+     "Teân danh muïc chi tieát": "Huõ Khoùm Hoa Saáy Deûo Muoái ÔÙt 105g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0001",
+     "Teân danh muïc chi tieát": "Hoäp Caù He Kho Rieäu - Ñaïi Ngö 400g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0002",
+     "Teân danh muïc chi tieát": "Hoäp Caù He Kho Rieäu - Song Ngö 400g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0003",
+     "Teân danh muïc chi tieát": "Hoäp Gaø AÙc Tieàm Thuoác Baéc 400g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0004",
+     "Teân danh muïc chi tieát": "Hoäp Rieâu Cua Ñoàng 350g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0005",
+     "Teân danh muïc chi tieát": "Hoäp Laïp Xöôûng Vòt Vò Tieâu Ñen 500g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0006",
+     "Teân danh muïc chi tieát": "Hoäp Laïp Xöôûng Vòt Vò Tieâu Loát 500g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0007",
+     "Teân danh muïc chi tieát": "Hoäp Ñaäu Phoäng Taåm Vò Carry 120g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0008",
+     "Teân danh muïc chi tieát": "Hoäp Ñaäu Phoäng Taåm Vò Phôû Boø 120g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0009",
+     "Teân danh muïc chi tieát": "Hoäp Ñaäu Phoäng Taåm Vò Toâm 120g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0010",
+     "Teân danh muïc chi tieát": "Hoäp Ñaäu Phoäng Taåm Vò Möïc 120g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0011",
+     "Teân danh muïc chi tieát": "Hoäp Ñaäu Phoäng Taåm Vò Tieâu Loát 120g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0012",
+     "Teân danh muïc chi tieát": "Tuùi ñaäu phoäng vò caø ri 42g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0013",
+     "Teân danh muïc chi tieát": "Tuùi ñaäu phoäng vò Phôû Boø 42g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0014",
+     "Teân danh muïc chi tieát": "Set Hoäp Laïp Xöôûng Vòt"
+    },
+    {
+     "Maõ CTieát": "SPCB__0015",
+     "Teân danh muïc chi tieát": "Set Hoäp Ñaäu Phoäng Caramel"
+    },
+    {
+     "Maõ CTieát": "SPCB__0016",
+     "Teân danh muïc chi tieát": "Tuùi Boät Bí Haït Ñaäu Höõu Cô 120g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0017",
+     "Teân danh muïc chi tieát": "Tuùi ñaäu phoäng vò Toâm 42g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0018",
+     "Teân danh muïc chi tieát": "Tuùi ñaäu phoäng vò Möïc 42g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0019",
+     "Teân danh muïc chi tieát": "Tuùi ñaäu phoäng vò Tieâu Loát 42g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0021",
+     "Teân danh muïc chi tieát": "Tuùi Döa Maém Chay DANNYGREEN 70g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0022",
+     "Teân danh muïc chi tieát": "Hoäp Caù He Kho Rieäu - Ñaïi Ngö OÂm Tröùng 400g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0023",
+     "Teân danh muïc chi tieát": "Traø Buùp Non Ñaøn Höông Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "SPCB__0024",
+     "Teân danh muïc chi tieát": "Hoäp Caù He Kho Rieäu - Super Ñaïi Ngö 400g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0025",
+     "Teân danh muïc chi tieát": "Tuùi Ñaäu Phoäng Vò Phôû Boø 30g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0026",
+     "Teân danh muïc chi tieát": "Tuùi Ñaäu Phoäng Vò Caø Ri 30g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0027",
+     "Teân danh muïc chi tieát": "Tuùi Ñaäu Phoäng Vò Möïc 30g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0028",
+     "Teân danh muïc chi tieát": "Tuùi Ñaäu Phoäng Vò Tieâu Loát 30g"
+    },
+    {
+     "Maõ CTieát": "SPCB__0029",
+     "Teân danh muïc chi tieát": "Tuùi Ñaäu Phoäng Vò Toâm 30g"
+    },
+    {
+     "Maõ CTieát": "SPCBK__016",
+     "Teân danh muïc chi tieát": "Tuùi Boät Bí Haït Ñaäu Höõu Cô 120g (Haøng maãu)"
+    },
+    {
+     "Maõ CTieát": "SPNK__0001",
+     "Teân danh muïc chi tieát": "Hoäp Kyû Töû Trung Ninh Qifuyuan 250g"
+    },
+    {
+     "Maõ CTieát": "SPNK__0002",
+     "Teân danh muïc chi tieát": "Hoäp Kyû Töû Toûa Tieân Trung Ninh Qifuyuan 180g"
+    },
+    {
+     "Maõ CTieát": "SPNK__0003",
+     "Teân danh muïc chi tieát": "Hoäp Nöôùc Coát Kyû Töû nguyeân chaát Qifuyuan (50 ml x 8 chai)"
+    },
+    {
+     "Maõ CTieát": "SPNK__0004",
+     "Teân danh muïc chi tieát": "Chai nöôùc coát kyû töû nguyeân chaát Qifuyuan 50ml"
+    },
+    {
+     "Maõ CTieát": "UOPLANH_01",
+     "Teân danh muïc chi tieát": "Lon nöôùc Döa Löôùi Coù Gaz - Nguyeân Baûn 330ml - Öôùp laïnh"
+    },
+    {
+     "Maõ CTieát": "UOPLANH_02",
+     "Teân danh muïc chi tieát": "Lon nöôùc Döa Löôùi Höõu Cô - Kyû Töû 320ml - Öôùp laïnh"
+    },
+    {
+     "Maõ CTieát": "UOPLANH_03",
+     "Teân danh muïc chi tieát": "Lon nöôùc Döa Löôùi Höõu Cô - Haït Chia 320ml - Öôùp laïnh"
+    },
+    {
+     "Maõ CTieát": "UOPLANH_04",
+     "Teân danh muïc chi tieát": "Lon nöôùc Döa Löôùi Höõu Cô - Nguyeân Baûn 320ml - Öôùp Laïnh"
+    },
+    {
+     "Maõ CTieát": "UOPLANH_05",
+     "Teân danh muïc chi tieát": "Lon Nöôùc Coù Gaz Höông Vò OÅi Hoàng 330ml - Öôùp laïnh"
+    },
+    {
+     "Maõ CTieát": "UOPLANH_06",
+     "Teân danh muïc chi tieát": "Lon Nöôùc EÙp Döùa 250ml - Öôùp laïnh"
+    },
+    {
+     "Maõ CTieát": "UOPLANH_07",
+     "Teân danh muïc chi tieát": "Lon Nöôùc EÙp Döùa Coù Thòt Döùa 250ml - Öôùp laïnh"
+    },
+    {
+     "Maõ CTieát": "UOPLANH_08",
+     "Teân danh muïc chi tieát": "Lon Nöôùc Traø Chanh Thanh Nhieät 320ml - Öôùp laïnh"
+    },
+    {
+     "Maõ CTieát": "YO_DUADN_S",
+     "Teân danh muïc chi tieát": "Yogurt Döa Löôùi Danny Green - S"
+    },
+    {
+     "Maõ CTieát": "YO_MIXCH_F",
+     "Teân danh muïc chi tieát": "Yogurt Döùa Löôùi Chuoái - F"
+    },
+    {
+     "Maõ CTieát": "YO_MIXCH_P",
+     "Teân danh muïc chi tieát": "Yogurt Döa Löôùi Chuoái - P"
+    },
+    {
+     "Maõ CTieát": "YO_MIXLU_M",
+     "Teân danh muïc chi tieát": "Yogurt Döa Löôùi Löïu Ñoû - M"
+    },
+    {
+     "Maõ CTieát": "YO_MIXLU_S",
+     "Teân danh muïc chi tieát": "Yogurt Döa Löôùi Löïu Ñoû - S"
+    },
+    {
+     "Maõ CTieát": "MMTB240604",
+     "Teân danh muïc chi tieát": "Tuû tröng baøy SLD- 1840F"
+    },
+    {
+     "Maõ CTieát": "MMTB240605",
+     "Teân danh muïc chi tieát": "Tuû ñoâng 4 caùnh taïi ST BioMarkt Model: BS4DUF\/Z"
+    },
+    {
+     "Maõ CTieát": "MMTB240606",
+     "Teân danh muïc chi tieát": "Heä thoáng baùo chaùy taïi cöûa haøng Bio 36"
+    },
+    {
+     "Maõ CTieát": "MMTB240611",
+     "Teân danh muïc chi tieát": "Tuû tröng baøy baùnh kính cong 1.2m Berjaya, model: CC12SB13-2FB"
+    },
+    {
+     "Maõ CTieát": "OCTRAICAY1",
+     "Teân danh muïc chi tieát": "Hoäc ñöïng traùi caây 0.96*0.35m"
+    },
+    {
+     "Maõ CTieát": "OCTRAICAY2",
+     "Teân danh muïc chi tieát": "Hoäc ñöïng traùi caây 0.59*0.37m"
+    },
+    {
+     "Maõ CTieát": "OCTRAICAY3",
+     "Teân danh muïc chi tieát": "Hoäc ñöïng traùi caây 0.55*0.27m"
+    }
+   ]

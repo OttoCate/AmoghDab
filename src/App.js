@@ -9,7 +9,7 @@ import excelLogo from './images/excel.png';
 import { Select } from 'antd';
 import enImg from './images/en.png';
 
-import {muaDichVuDaTienTe} from './utils/muaDichVuDaTienTe.js'
+import {muaDichVuDaTienTe, muaHangTrongNuocNhieuHD} from './utils/muaDichVuDaTienTe.js'
 
 const formOptions = [
   { value: '1', label: 'Mẫu bán dịch vụ đa tiền tệ' },
@@ -18,9 +18,14 @@ const formOptions = [
   { value: '4', label: 'Mẫu mua hàng trong nước đa tiền tệ' },
 ]
 
+const companyOptions = [
+  { value: 'dngrf', label: 'DNG-RF' },
+]
+
 function App() {
   const [dropState,setDropState] = useState(0);
   const [misaForm,setMisaForm] = useState("");
+  const [company,setCompany] = useState("");
   const [isProcessing,setIsProcessing] = useState(false);
   
   const handleProcessData = (data)=>{
@@ -36,10 +41,10 @@ function App() {
         finalData = data;
         break;
       case "3":
-        finalData = muaDichVuDaTienTe(data);
+        finalData = muaDichVuDaTienTe(data,company);
         break;
       case "4":
-        finalData = data;
+        finalData = muaHangTrongNuocNhieuHD(data,company);
         break;
     }
 
@@ -57,6 +62,11 @@ function App() {
     try {
       if (!misaForm) {
         alert("Vui lòng chỉ định mẫu form bạn muốn chuyển đổi dữ liệu");
+        return;
+      }
+
+      if (!company) {
+        alert("Vui lòng chỉ định công ty bạn muốn chuyển đổi dữ liệu");
         return;
       }
   
@@ -126,6 +136,22 @@ function App() {
             value = {misaForm}
             onChange = {(value)=>{setMisaForm(value)}}
             options={formOptions}
+          />
+        </div>
+        <div className='form-selection'>
+          <p>Dữ liệu này đến từ công ty nào?</p>
+          <Select
+            showSearch
+            className="sidebar-select"
+            allowClear
+            disabled = {isProcessing}
+            placeholder="Chọn công ty"
+            filterOption={(input, option) =>
+              (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+            }
+            value = {company}
+            onChange = {(value)=>{setCompany(value)}}
+            options={companyOptions}
           />
         </div>
         <div className="dropbox-area-wrapper">

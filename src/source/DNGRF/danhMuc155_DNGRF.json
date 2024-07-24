@@ -1,0 +1,830 @@
+[
+    {
+     "Maõ CTieát": "_155",
+     "Teân danh muïc chi tieát": "Thaønh Phaåm"
+    },
+    {
+     "Maõ CTieát": "BANHTP_001",
+     "Teân danh muïc chi tieát": "Baùnh Biscotti Bí Haït Ñaäu 30g"
+    },
+    {
+     "Maõ CTieát": "BANHTP_002",
+     "Teân danh muïc chi tieát": "Hoäp Baùnh Biscotti Mix Traùi Caây Saáy Deûo 40g"
+    },
+    {
+     "Maõ CTieát": "BANHTT_001",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Meø Ñen Haït OÙc Choù Ñoû + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_002",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Döa Löôùi + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_003",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Döøa Caø Pheâ + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_004",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Meø Ñen Haït OÙc Choù Ñoû + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_005",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Queá Hoa + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_006",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Bí Haït Ñaäu Phoâ Mai + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_007",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Thaäp Caåm Macadamia + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_008",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Jambong - Xaù Xíu + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_009",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Nguõ Haït Möùt Hoa Quaû + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_010",
+     "Teân danh muïc chi tieát": "Combo Cao Caáp Customize"
+    },
+    {
+     "Maõ CTieát": "BANHTT_011",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Hoa Hoàng Mô Cam + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_012",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Nguõ Haït Chay + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_013",
+     "Teân danh muïc chi tieát": "Combo Baùnh Trung Thu Meø Ñen Pistachios + gioû maây tre"
+    },
+    {
+     "Maõ CTieát": "BANHTT_014",
+     "Teân danh muïc chi tieát": "Combo Tuùi Baùnh Trung Thu Döa Löôùi + Loàng ñeøn"
+    },
+    {
+     "Maõ CTieát": "BANHTT_015",
+     "Teân danh muïc chi tieát": "Combo VIP Customize 2"
+    },
+    {
+     "Maõ CTieát": "BB_HONI_01",
+     "Teân danh muïc chi tieát": "Hoäp giaáy kraft vaø nóa goã"
+    },
+    {
+     "Maõ CTieát": "BITP350_01",
+     "Teân danh muïc chi tieát": "Bí haït ñaäu höõu cô DannyGreen 350g (væ)"
+    },
+    {
+     "Maõ CTieát": "CHAI_EPDCA",
+     "Teân danh muïc chi tieát": "Chai Nöôùc eùp Döa Löôùi Höõu Cô & Cam"
+    },
+    {
+     "Maõ CTieát": "CHAI_EPDDA",
+     "Teân danh muïc chi tieát": "Chai Nöôùc eùp Döa Löôùi Höõu Cô & Daâu"
+    },
+    {
+     "Maõ CTieát": "CHAI_EPDOI",
+     "Teân danh muïc chi tieát": "Chai Nöôùc eùp Döa Löôùi Höõu Cô & Oåi"
+    },
+    {
+     "Maõ CTieát": "CHAI_EPDSE",
+     "Teân danh muïc chi tieát": "Chai Nöôùc eùp Döa Löôùi Höõu Cô Bieån Ngoïc Bích"
+    },
+    {
+     "Maõ CTieát": "CHAI_EPDSM",
+     "Teân danh muïc chi tieát": "Chai Nöôùc eùp Döa Löôùi Höõu Cô Bieån Haèng Nga"
+    },
+    {
+     "Maõ CTieát": "COLD_MID_L",
+     "Teân danh muïc chi tieát": "ColdBrew Döa Löôùi Döùa Kyû Töû - L"
+    },
+    {
+     "Maõ CTieát": "COLD_MID_M",
+     "Teân danh muïc chi tieát": "ColdBrew Döa Löôùi Döùa Kyû Töû - M"
+    },
+    {
+     "Maõ CTieát": "COLD_MID_S",
+     "Teân danh muïc chi tieát": "ColdBrew Döa Löôùi Döùa Kyû Töû - S"
+    },
+    {
+     "Maõ CTieát": "COLD_MIX_L",
+     "Teân danh muïc chi tieát": "ColdBrew Döa Löôùi Xoaøi Kyû Töû - L"
+    },
+    {
+     "Maõ CTieát": "COLD_MIX_M",
+     "Teân danh muïc chi tieát": "ColdBrew Döa Löôùi Xoaøi Kyû Töû - M"
+    },
+    {
+     "Maõ CTieát": "COLD_MIX_S",
+     "Teân danh muïc chi tieát": "ColdBrew Döa Löôùi Xoaøi Kyû Töû - S"
+    },
+    {
+     "Maõ CTieát": "COMBO_2KTS",
+     "Teân danh muïc chi tieát": "COMBO 2 HỘP KỶ TỬ SẤY KHÔ"
+    },
+    {
+     "Maõ CTieát": "COMBO_2LXV",
+     "Teân danh muïc chi tieát": "Combo 2 Laïp Xöôûng Vòt DannyGreen"
+    },
+    {
+     "Maõ CTieát": "COMBO_2RCD",
+     "Teân danh muïc chi tieát": "Combo 2 Ñoà Hoäp Rieâu Cua Ñoàng DannyGreen"
+    },
+    {
+     "Maõ CTieát": "COMBO_3NOT",
+     "Teân danh muïc chi tieát": "Combo 3 saûn phaåm Hoäp Caù He Kho Rieäu - Ñaïi Ngö Oâm tröùng 400g"
+    },
+    {
+     "Maõ CTieát": "COMBO_3RAU",
+     "Teân danh muïc chi tieát": "Combo 3 Rau Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "COMBO_3RCD",
+     "Teân danh muïc chi tieát": "Combo 3 saûn phaåm Hoäp Rieâu Cua Ñoàng 350g"
+    },
+    {
+     "Maõ CTieát": "COMBO_3SNG",
+     "Teân danh muïc chi tieát": "COMBO 3 SAÛN PHAÅM HOÄP CAÙ HE KHO RIEÄU - SONG NGÖ 400G"
+    },
+    {
+     "Maõ CTieát": "COMBO_4DNT",
+     "Teân danh muïc chi tieát": "Combo 4 Ñoà Hoäp: Caù He Kho Rieäu Ñaïi Ngö OÂm Tröùng DannyGreen"
+    },
+    {
+     "Maõ CTieát": "COMBO_5RAU",
+     "Teân danh muïc chi tieát": "Combo 5 Rau Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "COMBO_7RAU",
+     "Teân danh muïc chi tieát": "Combo 7 Rau Höõu Cô"
+    },
+    {
+     "Maõ CTieát": "COMBO_CHAY",
+     "Teân danh muïc chi tieát": "Combo Böõa Aên Chay 3"
+    },
+    {
+     "Maõ CTieát": "COMBO_CNGA",
+     "Teân danh muïc chi tieát": "Combo Côm Nhaø - Gaø Aùc"
+    },
+    {
+     "Maõ CTieát": "COMBO_CNRC",
+     "Teân danh muïc chi tieát": "Combo Côm Nhaø - Rieâu Cua"
+    },
+    {
+     "Maõ CTieát": "COMBO_DHG2",
+     "Teân danh muïc chi tieát": "Combo 2 Ñoà Hoäp: Gaø Aùc Tieàm Thuoác Baéc DannyGreen"
+    },
+    {
+     "Maõ CTieát": "COMBO_DNRC",
+     "Teân danh muïc chi tieát": "Combo 2 Ñoà Hoäp:  Caù He Kho Rieäu Ñaïi Ngö OÂm Tröùng & Rieâu Cua Ñoàng"
+    },
+    {
+     "Maõ CTieát": "COMBO_DNSN",
+     "Teân danh muïc chi tieát": "Combo 4 Ñoà Hoäp: Caù He Kho Rieäu Ñaïi Ngö OÂm Tröùng & Caù He Kho Rieäu Song Ngö DannyGreen"
+    },
+    {
+     "Maõ CTieát": "COMBO_HDP2",
+     "Teân danh muïc chi tieát": "Combo 2 hoäp ñaäu phoäng"
+    },
+    {
+     "Maõ CTieát": "COMBO_HDP4",
+     "Teân danh muïc chi tieát": "Combo 4 hoäp ñaäu phoäng"
+    },
+    {
+     "Maõ CTieát": "COMBO_HDP6",
+     "Teân danh muïc chi tieát": "Combo 6 hoäp ñaäu phoäng"
+    },
+    {
+     "Maõ CTieát": "COMBO_HK01",
+     "Teân danh muïc chi tieát": "Combo Hoàng Kim"
+    },
+    {
+     "Maõ CTieát": "COMBO_KYTU",
+     "Teân danh muïc chi tieát": "COMBO 1 KYÛ TÖÛ SAÁY KHOÂ - 1 KYÛ TÖÛ NÖÔÙC"
+    },
+    {
+     "Maõ CTieát": "COMBO_PHU2",
+     "Teân danh muïc chi tieát": "Combo Böõa Phuï 2"
+    },
+    {
+     "Maõ CTieát": "COMBO_PHU3",
+     "Teân danh muïc chi tieát": "Combo Böõa Phuï 3"
+    },
+    {
+     "Maõ CTieát": "COMBO_PHU4",
+     "Teân danh muïc chi tieát": "Combo Böõa Phuï 4"
+    },
+    {
+     "Maõ CTieát": "COMBO_SNAC",
+     "Teân danh muïc chi tieát": "Combo Snack DannyGreen"
+    },
+    {
+     "Maõ CTieát": "COMBO_SNDU",
+     "Teân danh muïc chi tieát": "Combo Snack DannyGreen & Döa löôùi"
+    },
+    {
+     "Maõ CTieát": "COMBO_SNLX",
+     "Teân danh muïc chi tieát": "Combo Snack DannyGreen & Baùnh mì laïp xöôûng"
+    },
+    {
+     "Maõ CTieát": "COMBO_TDP3",
+     "Teân danh muïc chi tieát": "Combo 3 tuùi ñaäu phoäng"
+    },
+    {
+     "Maõ CTieát": "COMBOHACT1",
+     "Teân danh muïc chi tieát": "HACT - Breakfast box 1"
+    },
+    {
+     "Maõ CTieát": "COMBOHACT2",
+     "Teân danh muïc chi tieát": "HACT - Breakfast box 2"
+    },
+    {
+     "Maõ CTieát": "COMBOHACT3",
+     "Teân danh muïc chi tieát": "HACT - Breakfast box 3"
+    },
+    {
+     "Maõ CTieát": "COMBOHACT4",
+     "Teân danh muïc chi tieát": "HACT - Baùnh mì laïp xöôûng"
+    },
+    {
+     "Maõ CTieát": "COMBOQCD24",
+     "Teân danh muïc chi tieát": "Quaø Coâng Ñoaøn Trung Thu 2024"
+    },
+    {
+     "Maõ CTieát": "COMBOQS1",
+     "Teân danh muïc chi tieát": "Combo Quaø Saùng 1"
+    },
+    {
+     "Maõ CTieát": "COMBOQS2",
+     "Teân danh muïc chi tieát": "Combo Quaø Saùng 2"
+    },
+    {
+     "Maõ CTieát": "COMBOQS3",
+     "Teân danh muïc chi tieát": "Combo Quaø Saùng 3"
+    },
+    {
+     "Maõ CTieát": "DUACAT15_1",
+     "Teân danh muïc chi tieát": "Döa löôùi höõu cô DanyGreen caét hoäp 150g"
+    },
+    {
+     "Maõ CTieát": "DUACAT15_2",
+     "Teân danh muïc chi tieát": "Döa löôùi höõu cô DanyGreen mix caét hoäp 150g"
+    },
+    {
+     "Maõ CTieát": "DUACAT25_1",
+     "Teân danh muïc chi tieát": "Döa löôùi höõu cô DanyGreen caét hoäp 250g"
+    },
+    {
+     "Maõ CTieát": "DUACAT25_2",
+     "Teân danh muïc chi tieát": "Döa löôùi höõu cô DanyGreen mix caét hoäp 250g"
+    },
+    {
+     "Maõ CTieát": "DUACAT30_1",
+     "Teân danh muïc chi tieát": "Döa löôùi höõu cô DanyGreen caét hoäp 300g"
+    },
+    {
+     "Maõ CTieát": "EP_DUASE_L",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô Bieån Ngoïc Bích - L"
+    },
+    {
+     "Maõ CTieát": "EP_DUASE_M",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô Bieån Ngoïc Bích - M"
+    },
+    {
+     "Maõ CTieát": "EP_DUASE_S",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô Bieån Ngoïc Bích - S"
+    },
+    {
+     "Maõ CTieát": "EP_DUASE02",
+     "Teân danh muïc chi tieát": "Nöôùc eùp döa löôùi Bieån Ngoïc Bích 330ml"
+    },
+    {
+     "Maõ CTieát": "EP_DUASM_L",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô Bieån Haèng Nga - L"
+    },
+    {
+     "Maõ CTieát": "EP_DUASM_M",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô Bieån Haèng Nga - M"
+    },
+    {
+     "Maõ CTieát": "EP_DUASM_S",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô Bieån Haèng Nga - S"
+    },
+    {
+     "Maõ CTieát": "EP_DUASM01",
+     "Teân danh muïc chi tieát": "Nöôùc eùp döa löôùi Bieån Haèng Nga 330ml"
+    },
+    {
+     "Maõ CTieát": "EP_DUATL_F",
+     "Teân danh muïc chi tieát": "Nöôõc eùp Döa Löôùi Höõu Cô & Thanh Long - F"
+    },
+    {
+     "Maõ CTieát": "EP_MIXCA_L",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & Cam - L"
+    },
+    {
+     "Maõ CTieát": "EP_MIXCA_M",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & Cam - M"
+    },
+    {
+     "Maõ CTieát": "EP_MIXCA_S",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & Cam - S"
+    },
+    {
+     "Maõ CTieát": "EP_MIXDA_L",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & Daâu - L"
+    },
+    {
+     "Maõ CTieát": "EP_MIXDA_M",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & Daâu - M"
+    },
+    {
+     "Maõ CTieát": "EP_MIXDA_S",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & Daâu - S"
+    },
+    {
+     "Maõ CTieát": "EP_MIXDU_F",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & Döùa - F"
+    },
+    {
+     "Maõ CTieát": "EP_MIXOI_L",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & OÅi - L"
+    },
+    {
+     "Maõ CTieát": "EP_MIXOI_M",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & OÅi - M"
+    },
+    {
+     "Maõ CTieát": "EP_MIXOI_S",
+     "Teân danh muïc chi tieát": "Nöôùc eùp Döa Löôùi Höõu Cô & OÅi - S"
+    },
+    {
+     "Maõ CTieát": "EP_MIXSEOI",
+     "Teân danh muïc chi tieát": "Nöôùc eùp döa löôùi Bieån Ngoïc Bích OÅi 330ml"
+    },
+    {
+     "Maõ CTieát": "EP_MIXSMCA",
+     "Teân danh muïc chi tieát": "Nöôùc eùp döa löôùi Bieån Haèng Nga Cam 330ml"
+    },
+    {
+     "Maõ CTieát": "EP_MIXSMOI",
+     "Teân danh muïc chi tieát": "Nöôùc eùp döa löôùi Bieån Haèng Nga OÅi 330ml"
+    },
+    {
+     "Maõ CTieát": "HOPDUA_002",
+     "Teân danh muïc chi tieát": "Hoäp döa löôùi höõu cô SeaEmerald 270g"
+    },
+    {
+     "Maõ CTieát": "HOPDUA_004",
+     "Teân danh muïc chi tieát": "Hoäp döa löôùi höõu cô SeaMoon 350g"
+    },
+    {
+     "Maõ CTieát": "HOPDUA_005",
+     "Teân danh muïc chi tieát": "Hoäp döa löôùi höõu cô SR David 270g"
+    },
+    {
+     "Maõ CTieát": "HOPDUA_006",
+     "Teân danh muïc chi tieát": "Hoäp Döa Leâ Höõu Cô Hoàng Kim 350g"
+    },
+    {
+     "Maõ CTieát": "HOPDUA_007",
+     "Teân danh muïc chi tieát": "Döa leâ hoäp 220g"
+    },
+    {
+     "Maõ CTieát": "HOPDUA_008",
+     "Teân danh muïc chi tieát": "Döa löôùi hoäp 220g"
+    },
+    {
+     "Maõ CTieát": "L_JUSE_000",
+     "Teân danh muïc chi tieát": "SE Juice - L"
+    },
+    {
+     "Maõ CTieát": "L_JUSR_000",
+     "Teân danh muïc chi tieát": "SR Juice - L"
+    },
+    {
+     "Maõ CTieát": "L_JUSR_001",
+     "Teân danh muïc chi tieát": "Guava + SR juice - L"
+    },
+    {
+     "Maõ CTieát": "L_JUSR_002",
+     "Teân danh muïc chi tieát": "Orange + SR Juice L"
+    },
+    {
+     "Maõ CTieát": "L_JUSR_003",
+     "Teân danh muïc chi tieát": "Peach + SR juice - L"
+    },
+    {
+     "Maõ CTieát": "L_JUSR_004",
+     "Teân danh muïc chi tieát": "Strawberry + SR juice - L"
+    },
+    {
+     "Maõ CTieát": "L_SMSE_005",
+     "Teân danh muïc chi tieát": "Muskmelon SE Smoothie - L"
+    },
+    {
+     "Maõ CTieát": "L_SMSR_001",
+     "Teân danh muïc chi tieát": "Guava + SR Smoothie - L"
+    },
+    {
+     "Maõ CTieát": "L_SMSR_002",
+     "Teân danh muïc chi tieát": "Orange + SR Smoothie - L"
+    },
+    {
+     "Maõ CTieát": "L_SMSR_004",
+     "Teân danh muïc chi tieát": "Strawberry + SR Smoothie - L"
+    },
+    {
+     "Maõ CTieát": "L_SMSR_005",
+     "Teân danh muïc chi tieát": "Muskmelon SR Smoothie - L"
+    },
+    {
+     "Maõ CTieát": "L_YO__0005",
+     "Teân danh muïc chi tieát": "Muskmelon + Yogurt - L"
+    },
+    {
+     "Maõ CTieát": "L_YOSR_001",
+     "Teân danh muïc chi tieát": "Fruits + SR Yogurt - L"
+    },
+    {
+     "Maõ CTieát": "L_YOSR_003",
+     "Teân danh muïc chi tieát": "Peach + SR Yogurt - L"
+    },
+    {
+     "Maõ CTieát": "L_YOSR_004",
+     "Teân danh muïc chi tieát": "Strawberry + SR Yogurt - L"
+    },
+    {
+     "Maõ CTieát": "L_YOSR_006",
+     "Teân danh muïc chi tieát": "Pomegranate + SR Yogurt - L"
+    },
+    {
+     "Maõ CTieát": "LAPDEN_001",
+     "Teân danh muïc chi tieát": "Phaàn Laïp Xöôûng Vòt Vò Tieâu Ñen"
+    },
+    {
+     "Maõ CTieát": "LAPLOT_002",
+     "Teân danh muïc chi tieát": "Phaàn Laïp Xöôûng Vòt Vò Tieâu Loát"
+    },
+    {
+     "Maõ CTieát": "M_JUSE_000",
+     "Teân danh muïc chi tieát": "SE Juice - M"
+    },
+    {
+     "Maõ CTieát": "M_JUSR_000",
+     "Teân danh muïc chi tieát": "SR Juice - M"
+    },
+    {
+     "Maõ CTieát": "M_JUSR_001",
+     "Teân danh muïc chi tieát": "Guava + SR juice - M"
+    },
+    {
+     "Maõ CTieát": "M_JUSR_002",
+     "Teân danh muïc chi tieát": "Orange + SR Juice M"
+    },
+    {
+     "Maõ CTieát": "M_JUSR_003",
+     "Teân danh muïc chi tieát": "Peach + SR juice - M"
+    },
+    {
+     "Maõ CTieát": "M_JUSR_004",
+     "Teân danh muïc chi tieát": "Strawberry + SR juice - M"
+    },
+    {
+     "Maõ CTieát": "M_SMSR_001",
+     "Teân danh muïc chi tieát": "Guava + SR Smoothie - M"
+    },
+    {
+     "Maõ CTieát": "M_SMSR_002",
+     "Teân danh muïc chi tieát": "Orange + SR Smoothie - M"
+    },
+    {
+     "Maõ CTieát": "M_SMSR_004",
+     "Teân danh muïc chi tieát": "Strawberry + SR Smoothie - M"
+    },
+    {
+     "Maõ CTieát": "M_SMSR_005",
+     "Teân danh muïc chi tieát": "Muskmelon SR Smoothie - M"
+    },
+    {
+     "Maõ CTieát": "M_YO__0005",
+     "Teân danh muïc chi tieát": "Muskmelon + Yogurt - M"
+    },
+    {
+     "Maõ CTieát": "M_YOSR_001",
+     "Teân danh muïc chi tieát": "Fruits + SR Yogurt - M"
+    },
+    {
+     "Maõ CTieát": "M_YOSR_003",
+     "Teân danh muïc chi tieát": "Peach + SR Yogurt - M"
+    },
+    {
+     "Maõ CTieát": "M_YOSR_004",
+     "Teân danh muïc chi tieát": "Strawberry + SR Yogurt - M"
+    },
+    {
+     "Maõ CTieát": "M_YOSR_006",
+     "Teân danh muïc chi tieát": "Pomegranate + SR Yogurt - M"
+    },
+    {
+     "Maõ CTieát": "MI_DUACA_L",
+     "Teân danh muïc chi tieát": "Döa Löôùi Döøa Caramel - L"
+    },
+    {
+     "Maõ CTieát": "MI_DUACA_M",
+     "Teân danh muïc chi tieát": "Döa Löôùi Döøa Caramel - M"
+    },
+    {
+     "Maõ CTieát": "MI_DUACA_S",
+     "Teân danh muïc chi tieát": "Döa Löôùi Döøa Caramel - S"
+    },
+    {
+     "Maõ CTieát": "MI_DUACH_L",
+     "Teân danh muïc chi tieát": "Döa Löôùi Döøa Chesecake - L"
+    },
+    {
+     "Maõ CTieát": "MI_DUACH_M",
+     "Teân danh muïc chi tieát": "Döa Löôùi Döøa Chesecake - M"
+    },
+    {
+     "Maõ CTieát": "MI_DUACH_S",
+     "Teân danh muïc chi tieát": "Döa Löôùi Döøa Chesecake - S"
+    },
+    {
+     "Maõ CTieát": "MI_KHEMU_L",
+     "Teân danh muïc chi tieát": "Döa Löôùi Kheá Muoái ÔÙt - L"
+    },
+    {
+     "Maõ CTieát": "MI_KHEMU_M",
+     "Teân danh muïc chi tieát": "Döa Löôùi Kheá Muoái ÔÙt - M"
+    },
+    {
+     "Maõ CTieát": "MI_KHEMU_S",
+     "Teân danh muïc chi tieát": "Döa Löôùi Kheá Muoái ÔÙt - S"
+    },
+    {
+     "Maõ CTieát": "NUOC__0014",
+     "Teân danh muïc chi tieát": "Combo 2 Loác Nöôùc Döa Löôùi DannyGreen Coù Gaz Vò Nguyeân Baûn Vaø Vò Haït Chia"
+    },
+    {
+     "Maõ CTieát": "NUOC__0015",
+     "Teân danh muïc chi tieát": "Combo 2 Loác Nöôùc Döa Löôùi DannyGreen Coù Gaz Vò Nguyeân Baûn Vaø Vò Kyû Töû"
+    },
+    {
+     "Maõ CTieát": "NUOC__0028",
+     "Teân danh muïc chi tieát": "Combo 2 Lốc Nước Dưa Lưới Vị Kỷ Tử & Nước Dưa Lưới Vị Hạt Chia Danny Green"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0014",
+     "Teân danh muïc chi tieát": "Côm Saàu Rieâng Ri 6"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0015",
+     "Teân danh muïc chi tieát": "Côm Saàu Rieâng Thaùi"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0016",
+     "Teân danh muïc chi tieát": "Côm Saàu Rieâng (Thaùi vaø Ri6) Size L"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0017",
+     "Teân danh muïc chi tieát": "Côm Saàu Rieâng (Thaùi vaø Ri6) size S"
+    },
+    {
+     "Maõ CTieát": "RAUTP_0018",
+     "Teân danh muïc chi tieát": "Côm Saàu Rieâng (Thaùi vaø Ri6) size M"
+    },
+    {
+     "Maõ CTieát": "SAY___0013",
+     "Teân danh muïc chi tieát": "Combo Chuoái Saáy Deûo & Chuoái Thanh Long Saáy Deûo"
+    },
+    {
+     "Maõ CTieát": "SODA_DUA_L",
+     "Teân danh muïc chi tieát": "Soda Döa Löôùi Döøa - L"
+    },
+    {
+     "Maõ CTieát": "SODA_DUA_M",
+     "Teân danh muïc chi tieát": "Soda Döa Löôùi Döøa - M"
+    },
+    {
+     "Maõ CTieát": "SODA_DUA_S",
+     "Teân danh muïc chi tieát": "Soda Döa Löôùi Döøa - S"
+    },
+    {
+     "Maõ CTieát": "ST_DNG01_M",
+     "Teân danh muïc chi tieát": "Sinh toá Danny Green - M"
+    },
+    {
+     "Maõ CTieát": "ST_MIXCH_M",
+     "Teân danh muïc chi tieát": "Sinh toá Döa Löôùi Chuoái - M"
+    },
+    {
+     "Maõ CTieát": "ST_MIXCH_S",
+     "Teân danh muïc chi tieát": "Sinh toá Döa Löôùi Chuoái - S"
+    },
+    {
+     "Maõ CTieát": "ST_MIXDA_M",
+     "Teân danh muïc chi tieát": "Sinh toá Döa Löôùi Daâu - M"
+    },
+    {
+     "Maõ CTieát": "ST_MIXDA_S",
+     "Teân danh muïc chi tieát": "Sinh toá Döa Löôùi Daâu - S"
+    },
+    {
+     "Maõ CTieát": "ST_MIXYM_M",
+     "Teân danh muïc chi tieát": "Sinh toá Döa Löôùi Yeán Maïch - M"
+    },
+    {
+     "Maõ CTieát": "ST_MIXYM_S",
+     "Teân danh muïc chi tieát": "Sinh toá Döa Löôùi Yeán Maïch - S"
+    },
+    {
+     "Maõ CTieát": "TET_AGV113",
+     "Teân danh muïc chi tieát": "An Gia Vöôïng 1"
+    },
+    {
+     "Maõ CTieát": "TET_AGV214",
+     "Teân danh muïc chi tieát": "An Gia Vöôïng 2"
+    },
+    {
+     "Maõ CTieát": "TET_AGV308",
+     "Teân danh muïc chi tieát": "An Gia Vöôïng 3"
+    },
+    {
+     "Maõ CTieát": "TET_AGV411",
+     "Teân danh muïc chi tieát": "An Gia Vöôïng 4"
+    },
+    {
+     "Maõ CTieát": "TET_AGV615",
+     "Teân danh muïc chi tieát": "An Gia Vöôïng 6"
+    },
+    {
+     "Maõ CTieát": "TET_AGV706",
+     "Teân danh muïc chi tieát": "An Gia Vöôïng 7"
+    },
+    {
+     "Maõ CTieát": "TET_AGV809",
+     "Teân danh muïc chi tieát": "An Gia Vöôïng 8"
+    },
+    {
+     "Maõ CTieát": "TET_AGV907",
+     "Teân danh muïc chi tieát": "An Gia Vöôïng 9"
+    },
+    {
+     "Maõ CTieát": "TET_HGV101",
+     "Teân danh muïc chi tieát": "Höng Gia Vöôïng 1"
+    },
+    {
+     "Maõ CTieát": "TET_HGV105",
+     "Teân danh muïc chi tieát": "Hoøa Gia Vöôïng 1"
+    },
+    {
+     "Maõ CTieát": "TET_HGV203",
+     "Teân danh muïc chi tieát": "Höng Gia Vöôïng 2"
+    },
+    {
+     "Maõ CTieát": "TET_HGV217",
+     "Teân danh muïc chi tieát": "Hoøa Gia Vöôïng 2"
+    },
+    {
+     "Maõ CTieát": "TET_HGV518",
+     "Teân danh muïc chi tieát": "An Gia Vöôïng 5"
+    },
+    {
+     "Maõ CTieát": "TET_TVP102",
+     "Teân danh muïc chi tieát": "Thònh Vöôïng Phaùt 1"
+    },
+    {
+     "Maõ CTieát": "TET_TVP204",
+     "Teân danh muïc chi tieát": "Thònh Vöôïng Phaùt 2"
+    },
+    {
+     "Maõ CTieát": "TET_TXV116",
+     "Teân danh muïc chi tieát": "Taân Xuaân Vöôïng 1"
+    },
+    {
+     "Maõ CTieát": "TET_TXV220",
+     "Teân danh muïc chi tieát": "Taân Xuaân Vöôïng 2"
+    },
+    {
+     "Maõ CTieát": "TET_TXV319",
+     "Teân danh muïc chi tieát": "Taân Xuaân Vöôïng 3"
+    },
+    {
+     "Maõ CTieát": "TET_TXV410",
+     "Teân danh muïc chi tieát": "Taân Xuaân Vöôïng 4"
+    },
+    {
+     "Maõ CTieát": "TET_TXV512",
+     "Teân danh muïc chi tieát": "Taân Xuaân Vöôïng 5"
+    },
+    {
+     "Maõ CTieát": "TUIDP120_1",
+     "Teân danh muïc chi tieát": "Tuùi quaø taëng ñaäu phoäng 120g"
+    },
+    {
+     "Maõ CTieát": "XL_JUSE_00",
+     "Teân danh muïc chi tieát": "SE Juice - XL"
+    },
+    {
+     "Maõ CTieát": "XL_JUSEK_0",
+     "Teân danh muïc chi tieát": "SEK Juice XL"
+    },
+    {
+     "Maõ CTieát": "XL_JUSR_00",
+     "Teân danh muïc chi tieát": "SR Juice - XL"
+    },
+    {
+     "Maõ CTieát": "XL_JUSR_01",
+     "Teân danh muïc chi tieát": "Guava + SR juice - XL"
+    },
+    {
+     "Maõ CTieát": "XL_JUSR_02",
+     "Teân danh muïc chi tieát": "Orange + SR Juice XL"
+    },
+    {
+     "Maõ CTieát": "XL_JUSR_03",
+     "Teân danh muïc chi tieát": "Peach + SR juice - XL"
+    },
+    {
+     "Maõ CTieát": "XL_JUSR_04",
+     "Teân danh muïc chi tieát": "Strawberry + SR juice - XL"
+    },
+    {
+     "Maõ CTieát": "XL_SMSE_05",
+     "Teân danh muïc chi tieát": "Muskmelon SE Smoothie - XL"
+    },
+    {
+     "Maõ CTieát": "XL_SMSR_01",
+     "Teân danh muïc chi tieát": "Guava + SR Smoothie - XL"
+    },
+    {
+     "Maõ CTieát": "XL_SMSR_02",
+     "Teân danh muïc chi tieát": "Orange + SR Smoothie - XL"
+    },
+    {
+     "Maõ CTieát": "XL_SMSR_04",
+     "Teân danh muïc chi tieát": "Strawberry + SR Smoothie - XL"
+    },
+    {
+     "Maõ CTieát": "XL_SMSR_05",
+     "Teân danh muïc chi tieát": "Muskmelon SR Smoothie - XL"
+    },
+    {
+     "Maõ CTieát": "YO_DUADN_M",
+     "Teân danh muïc chi tieát": "Yogurt Döa Löôùi Danny Green - M"
+    },
+    {
+     "Maõ CTieát": "YO_DUADN_S",
+     "Teân danh muïc chi tieát": "Yogurt Döa Löôùi Danny Green - S"
+    },
+    {
+     "Maõ CTieát": "YO_MIXCH_F",
+     "Teân danh muïc chi tieát": "Yogurt Döùa Löôùi Chuoái - F"
+    },
+    {
+     "Maõ CTieát": "YO_MIXCH_P",
+     "Teân danh muïc chi tieát": "Yogurt Döa Löôùi Chuoái - P"
+    },
+    {
+     "Maõ CTieát": "YO_MIXLU_M",
+     "Teân danh muïc chi tieát": "Yogurt Döa Löôùi Löïu Ñoû - M"
+    },
+    {
+     "Maõ CTieát": "YO_MIXLU_S",
+     "Teân danh muïc chi tieát": "Yogurt Döa Löôùi Löïu Ñoû - S"
+    },
+    {
+     "Maõ CTieát": "MMTB240604",
+     "Teân danh muïc chi tieát": "Tuû tröng baøy SLD- 1840F"
+    },
+    {
+     "Maõ CTieát": "MMTB240605",
+     "Teân danh muïc chi tieát": "Tuû ñoâng 4 caùnh taïi ST BioMarkt Model: BS4DUF\/Z"
+    },
+    {
+     "Maõ CTieát": "MMTB240606",
+     "Teân danh muïc chi tieát": "Heä thoáng baùo chaùy taïi cöûa haøng Bio 36"
+    },
+    {
+     "Maõ CTieát": "MMTB240611",
+     "Teân danh muïc chi tieát": "Tuû tröng baøy baùnh kính cong 1.2m Berjaya, model: CC12SB13-2FB"
+    },
+    {
+     "Maõ CTieát": "OCTRAICAY1",
+     "Teân danh muïc chi tieát": "Hoäc ñöïng traùi caây 0.96*0.35m"
+    },
+    {
+     "Maõ CTieát": "OCTRAICAY2",
+     "Teân danh muïc chi tieát": "Hoäc ñöïng traùi caây 0.59*0.37m"
+    },
+    {
+     "Maõ CTieát": "OCTRAICAY3",
+     "Teân danh muïc chi tieát": "Hoäc ñöïng traùi caây 0.55*0.27m"
+    }
+   ]
