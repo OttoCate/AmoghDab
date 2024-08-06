@@ -9,7 +9,12 @@ import excelLogo from './images/excel.png';
 import { Select } from 'antd';
 import enImg from './images/en.png';
 
-import {muaDichVuDaTienTe, muaHangTrongNuocNhieuHD} from './utils/muaDichVuDaTienTe.js'
+import {
+  muaDichVuDaTienTe, 
+  muaHangTrongNuocNhieuHD,
+  banDichVuDaTienTe,
+  banHangDaTienTe
+} from './utils/processDataByFormType.js'
 
 const formOptions = [
   { value: '1', label: 'Mẫu bán dịch vụ đa tiền tệ' },
@@ -35,10 +40,10 @@ function App() {
 
     switch(misaForm){
       case "1":
-        finalData = data;
+        finalData = banDichVuDaTienTe(data,company);
         break;
       case "2":
-        finalData = data;
+        finalData = banHangDaTienTe(data,company);
         break;
       case "3":
         finalData = muaDichVuDaTienTe(data,company);
