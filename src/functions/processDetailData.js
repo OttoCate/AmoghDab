@@ -381,3 +381,88 @@ export const processDataBHDTT = (data,originalData,company) => {
 
     return processedData;
 }
+
+export const processDataXKF = (data,originalData,company) => {
+    const processedData = [...data].map((line)=>{
+
+        return {
+            "Loại xuất kho": ["154","62"].some(i => line["TK Nôï"].startsWith(i)) ? "Xuaát kho saûn xuaát" : ["632"].some(i => line["TK Nôï"].startsWith(i)) ? "Xuaát kho baùn haøng" : "Xuaát kho khaùc",
+            "Ngày hạch toán (*)": excelDateToJSDate(line["Ngaøy GS"]),
+            "Ngày chứng từ (*)": excelDateToJSDate(line["Ngaøy GS"]),
+            "Số chứng từ (*)":line["CTGS"]+"-"+line["Soá phieáu"],
+            "Mã đối tượng": line["C.Tieát Nôï"],
+            "Tên đối tượng": line["Ñoái töôïng (ghi chuù)"],
+            "Địa chỉ/Bộ phận": "",
+            "Người nhận": "",
+            "Lý do xuất": line["Dieãn giaûi"],
+            "Mã nhân viên bán hàng":"",
+            "Số chứng từ kèm theo":"",
+            "Mã hàng (*)": line["C.Tieát Coù"],
+            "Tên hàng":checkProduct(company,line["C.Tieát Coù"]),
+            "Là dòng ghi chú":"",
+            "Hàng khuyến mại":"khoâng",
+            "Mã kho": line["kho coù"],
+            "Hàng hóa giữ hộ/bán hộ":"",
+            "TK Nợ (*)": line["TK Nôï"],
+            "TK Có (*)": line["TK Coù"],
+            "ĐVT":"",
+            "Số lượng": line["S.Löôïng"],
+            "Đơn giá": lodash.isNumber(line["S.Löôïng"]) && line["S.Löôïng"] > 0 ?  line["Soá tieàn"] / line["S.Löôïng"] : "",
+            "Thành tiền": line["Soá tieàn"],
+            "Số lệnh sản xuất": "",
+            "Mã khoản mục chi phí":"",
+            "Mã đơn vị":"",
+            "Mã đối tượng THCP":"",
+            "Mã công trình":"",
+            "Số đơn đặt hàng":"",
+            "Số hợp đồng mua":"",
+            "Số hợp đồng bán":"",
+            "Mã thống kê":"",
+            "CP không hợp lý": line["TK Nôï"].toString().toUpperCase().includes("K") ? "Coù" : "Khoâng",
+        }
+    })
+
+    return processedData;
+}
+
+export const processNKF = (data,originalData,company) => {
+    const processedData = [...data].map((line)=>{
+        return {
+            "Loại nhập kho": ["154","62"].some(i => line["TK Coù"].startsWith(i)) ? "Nhaäp kho thaønh phaåm saûn xuaát" : ["632"].some(i => line["TK Coù"].startsWith(i)) ? "Nhaäp kho haøng baùn traû laïi" : "Nhaäp kho khaùc",
+            "Ngày hạch toán (*)": excelDateToJSDate(line["Ngaøy GS"]),
+            "Ngày chứng từ (*)": excelDateToJSDate(line["Ngaøy GS"]),
+            "Số chứng từ (*)":line["CTGS"]+"-"+line["Soá phieáu"],
+            "Mã đối tượng": line["C.Tieát Coù"],
+            "Tên đối tượng": line["Ñoái töôïng (ghi chuù)"],
+            "Địa chỉ": "",
+            "Người giao": "",
+            "Diễn giải": line["Dieãn giaûi"],
+            "Mã nhân viên bán hàng":"",
+            "Số chứng từ kèm theo":"",
+            "Mã hàng (*)": line["C.Tieát Nôï"],
+            "Tên hàng":checkProduct(company,line["C.Tieát Nôï"]),
+            "Là dòng ghi chú":"",
+            "Hàng khuyến mại":"khoâng",
+            "Mã kho": line["kho nôï"],
+            "Hàng hóa giữ hộ/bán hộ":"",
+            "TK Nợ (*)": line["TK Nôï"],
+            "TK Có (*)": line["TK Coù"],
+            "ĐVT":"",
+            "Số lượng": line["S.Löôïng"],
+            "Đơn giá": lodash.isNumber(line["S.Löôïng"]) && line["S.Löôïng"] > 0 ?  line["Soá tieàn"] / line["S.Löôïng"] : "",
+            "Thành tiền": line["Soá tieàn"],
+            "Số lệnh sản xuất": "",
+            "Mã khoản mục chi phí":"",
+            "Mã đơn vị":"",
+            "Mã đối tượng THCP":"",
+            "Mã công trình":"",
+            "Số đơn đặt hàng":"",
+            "Số hợp đồng mua":"",
+            "Số hợp đồng bán":"",
+            "Mã thống kê":"",
+            "CP không hợp lý": line["TK Coù"].toString().toUpperCase().includes("K") ? "Coù" : "Khoâng",
+        }
+    })
+
+    return processedData;
+}
