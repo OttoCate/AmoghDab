@@ -26,7 +26,7 @@ export const banHangDaTienTe = (inputData, company) =>
     handleTransaction(inputData, company, ["131", "111", "112", "138"], ["5111", "5112"], processDataBHDTT,true);
 
 export const xuatKhoFull = (inputData, company) => 
-    handleTransaction(inputData, company, ["6","8","157","154"], ["152","153","155","156"], processDataXKF, false);
+    handleTransaction(inputData, company, ["6","8","157","154","141"], ["152","153","155","156"], processDataXKF, false);
 
 export const nhapKhoFull = (inputData, company) => 
-    handleTransaction(inputData, company, ["152","153","155","156"], ["6","8","157","154"], processNKF,false);
+    handleTransaction(inputData, company, ["152","153","155","156"], ["6","8","157","154","141"], processNKF,false);
