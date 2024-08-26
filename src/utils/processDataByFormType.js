@@ -23,7 +23,7 @@ export const banDichVuDaTienTe = (inputData, company) =>
     handleTransaction(inputData, company, ["131", "111", "112", "138"], ["5113"], processDataBDVDTT,true);
 
 export const banHangDaTienTe = (inputData, company) =>
-    handleTransaction(inputData, company, ["131", "111", "112", "138"], ["5111", "5112"], processDataBHDTT,true);
+    handleTransaction(inputData, company, ["131", "111", "112", "138"], ["5111", "5112","1562A"], processDataBHDTT,true);
 
 export const xuatKhoFull = (inputData, company) => 
     handleTransaction(inputData, company, ["6","8","157","154","141"], ["152","153","155","156"], processDataXKF, false);
