@@ -15,7 +15,8 @@ import {
   banDichVuDaTienTe,
   banHangDaTienTe,
   xuatKhoFull,
-  nhapKhoFull
+  nhapKhoFull,
+  chungTuNghiepVuKhacDaTienTe
 } from './utils/processDataByFormType.js'
 
 const formOptions = [
@@ -25,6 +26,7 @@ const formOptions = [
   { value: '4', label: 'Mẫu mua hàng trong nước đa tiền tệ' },
   { value: '5', label: 'Mẫu xuất kho full' },
   { value: '6', label: 'Mẫu nhập kho full' },
+  { value: '7', label: 'Mẫu chứng từ nghiệp vụ khác đa tiền tệ' },
 ]
 
 const companyOptions = [
@@ -60,6 +62,9 @@ function App() {
         break;
       case "6":
         finalData = nhapKhoFull(data,company);
+        break;
+      case "7":
+        finalData = chungTuNghiepVuKhacDaTienTe(data,company);
         break;
     }
 

@@ -47,6 +47,18 @@ const checkServiceIncomeName = (company,productCode) => {
     return productName;
 }
 
+const checkTaxType = (line) => {
+    if(line["TK Coù"] === "1331"){
+        return "Giaûm thueá ñaàu vaøo";
+    } else if(line["TK Coù"] === "33311"){
+        return "Taêng thueá ñaàu ra";
+    } else if(line["TK Nôï"] === "1331"){
+        return "Taêng thueá ñaàu vaøo";
+    } else if(line["TK Nôï"] === "33311"){
+        return "Giaûm thueá ñaàu ra";
+    }
+}
+
 export const processDataMDVDTT = (data,originalData,company) => {
 
     const processedData = [...data].map((line)=>{
@@ -110,7 +122,7 @@ export const processDataMDVDTT = (data,originalData,company) => {
             "% thuế GTGT": taxLine.length === 0? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
             "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
-            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
             "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
             "Ngày hóa đơn": excelDateToJSDate(line["Ngaøy HÑ"]),
             "Số hóa đơn": line["Soá HÑ"],
@@ -195,7 +207,7 @@ export const processDataMHTNNHD = (data,originalData,company) => {
             "% thuế GTGT": taxLine.length === 0? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
             "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
-            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
             "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
             "Mẫu số HĐ":1,
             "Ký hiệu HĐ": line["Kyù hieäu"].slice(1),
@@ -271,7 +283,7 @@ export const processDataBDVDTT = (data,originalData,company) => {
             "% thuế GTGT": taxLine.length === 0? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
             "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
-            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
             "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
             "HH không TH trên tờ khai thuế GTGT":"",
             "Mã khoản mục chi phí":"",
@@ -358,7 +370,7 @@ export const processDataBHDTT = (data,originalData,company) => {
             "% thuế GTGT": line["TK Coù"] === "1562A" ? "KKKNT" : taxLine.length === 0? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
             "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
-            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
             "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
             "HH không TH trên tờ khai thuế GTGT":"",
             "Mã khoản mục chi phí":"",
@@ -461,6 +473,101 @@ export const processNKF = (data,originalData,company) => {
             "Số hợp đồng bán":"",
             "Mã thống kê":"",
             "CP không hợp lý": line["TK Coù"].toString().toUpperCase().includes("K") ? "Coù" : "Khoâng",
+        }
+    })
+
+    return processedData;
+}
+
+export const processNVK = (data,originalData,company) => {
+    const processedData = [...data].map((line)=>{
+        const taxLine = [...originalData].filter(i => {
+            if(
+                (i["CTGS"] === line["CTGS"] 
+                && i["Soá phieáu"] === line["Soá phieáu"] 
+                && i["Soá HÑ"] === line["Soá HÑ"] 
+                && i["Ngaøy HÑ"] === line["Ngaøy HÑ"]) 
+                && (
+                    i["TK Coù"].toString().startsWith("33311")
+                    || i["TK Nôï"].toString().startsWith("33311")
+                    || i["TK Coù"].toString().startsWith("1331")
+                    || i["TK Nôï"].toString().startsWith("1331")
+                )
+            ){
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        return {
+            "Ngày chứng từ (*)": excelDateToJSDate(line["Ngaøy GS"]),
+            "Ngày hạch toán (*)": excelDateToJSDate(line["Ngaøy GS"]),
+            "Số chứng từ (*)":line["CTGS"]+"-"+line["Soá phieáu"],
+            "Diễn giải": line["Dieãn giaûi"],
+            "Loại nghiệp vụ": "",
+            "Hạn thanh toán": "",
+            "Loại tiền":"",
+            "Tỷ giá":lodash.isNumber(line["Tyû giaù"]) ? line["Tyû giaù"] : "",
+            "Diễn giải (Hạch toán)": line["Dieãn giaûi"],
+            "TK Nợ (*)": line["TK Nôï"],
+            "TK Có (*)": line["TK Coù"],
+            "Số tiền": line["Soá tieàn"],
+            "Số tiền quy đổi": lodash.isNumber(line["Tyû giaù"]) ? line["Soá tieàn"] * line["Tyû giaù"] : 0,
+            "Mã đối tượng Nợ": line["C.Tieát Nôï"],
+            "Mã đối tượng Có": line["C.Tieát Coù"],
+            "Nghiệp vụ": "",
+            "Mã nhân viên": "",
+            "Số TK ngân hàng": "",
+            "Tên ngân hàng":"",
+            "Số khế ước đi vay":"",
+            "Số khế ước cho vay":"",
+            "Mã khoản mục chi phí":"",
+            "Mã đơn vị":"",
+            "Mã đối tượng THCP":"",
+            "Mã công trình":"",
+            "Số đơn đặt hàng":"",
+            "Số đơn mua hàng":"",
+            "Số hợp đồng mua":"",
+            "Số hợp đồng bán":"",
+            "Mã thống kê":"",
+            "CP không hợp lý": (line["TK Nôï"].toString().toUpperCase().includes("K") || line["TK Nôï"].toString().toUpperCase().includes("K")) ? "Coù" : "Khoâng",
+            "Hạch toán gộp nhiều hóa đơn": "Khoâng",
+            "Diễn giải thuế": "",
+            "Có hóa đơn": line["Soá HÑ"] ?  "Coù" : "Khoâng",
+            "Loại thuế": taxLine.length === 0 ? "" : checkTaxType(taxLine),
+            "Giá trị HHDV chưa thuế": taxLine.length === 0 ? line["Soá tieàn"] : line["Soá tieàn"] - taxLine[0]["Soá tieàn"],
+            "Giá trị HHDV chưa thuế quy đổi": lodash.isNumber(line["Tyû giaù"]) ? 
+                taxLine.length === 0 
+                ?
+                line["Soá tieàn"]  * line["Tyû giaù"]
+                : 
+                (line["Soá tieàn"] - taxLine[0]["Soá tieàn"]) * line["Tyû giaù"]
+            : 0,
+            "% thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TS %"],
+            "% thuế suất KHAC": "",
+            "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
+            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "TK thuế GTGT": 
+                taxLine.length === 0 
+                ? 
+                "" 
+                : 
+                [taxLine[0]["TK Nôï"], taxLine[0]["TK Coù"]].filter(i => i.toString().startsWith("1331") || i.toString().startsWith("33311")).length > 0 
+                ?
+                [taxLine[0]["TK Nôï"], taxLine[0]["TK Coù"]].filter(i => i.toString().startsWith("1331") || i.toString().startsWith("33311"))[0]
+                :
+                ""
+                ,
+
+            "Ngày hóa đơn": excelDateToJSDate(line["Ngaøy HÑ"]),
+            "Số hóa đơn": line["Soá HÑ"],
+            "Mẫu số HĐ":1,
+            "Ký hiệu HĐ": line["Kyù hieäu"].slice(1),
+            "Nhóm HHDV mua vào": "",
+            "Mã đối tượng thuế": "",
+            "Tên đối tượng thuế": "",
+            "Mã số thuế đối tượng thuế": "",
         }
     })
 
