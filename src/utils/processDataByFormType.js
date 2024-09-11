@@ -6,6 +6,7 @@ import {
     processDataBHDTT,
     processDataXKF,
     processNKF,
+    processNVK
 } from '../functions/processDetailData'
 
 const handleTransaction = (inputData, company, debitAccounts, creditAccounts, processFn, hasInvoice,laPhanBu) => {
@@ -32,4 +33,4 @@ export const nhapKhoFull = (inputData, company) =>
     handleTransaction(inputData, company, ["152","153","155","156"], ["6","8","157","154","141"], processNKF,false,false);
 
 export const chungTuNghiepVuKhacDaTienTe = (inputData, company) => 
-    handleTransaction(inputData, company, ["111", "112", "152", "153", "155", "156", "157"], ["111", "112", "152", "153", "155", "156", "157"], processNKF,false,true);
+    handleTransaction(inputData, company, ["111", "112", "152", "153", "155", "156", "157"], ["111", "112", "152", "153", "155", "156", "157"], processNVK,false,true);
