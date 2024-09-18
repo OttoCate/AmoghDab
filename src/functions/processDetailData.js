@@ -535,7 +535,7 @@ export const processNVK = (data,originalData,company) => {
             "Hạch toán gộp nhiều hóa đơn": "Khoâng",
             "Diễn giải thuế": "",
             "Có hóa đơn": line["Soá HÑ"] ?  "Coù" : "Khoâng",
-            "Loại thuế": taxLine.length === 0 ? "" : checkTaxType(taxLine),
+            "Loại thuế": taxLine.length === 0 ? "" : checkTaxType(taxLine[0]),
             "Giá trị HHDV chưa thuế": taxLine.length === 0 ? line["Soá tieàn"] : line["Soá tieàn"] - taxLine[0]["Soá tieàn"],
             "Giá trị HHDV chưa thuế quy đổi": lodash.isNumber(line["Tyû giaù"]) ? 
                 taxLine.length === 0 
