@@ -121,8 +121,25 @@ export const processDataMDVDTT = (data,originalData,company) => {
             "CP không hợp lý": line["TK Nôï"].toString().toUpperCase().includes("K") ? "Coù" : "Khoâng",
             "% thuế GTGT": taxLine.length === 0? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
-            "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
-            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "Tiền thuế GTGT": taxLine.length === 0 
+                ? 
+                0
+                :
+                lodash.isNumber(taxLine[0]["TS %"])
+                ?
+                Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+                : 
+                0,
+            "Tiền thuế GTGT quy đổi": 
+                taxLine.length === 0 || (taxLine.length > 0 && !lodash.isNumber(taxLine[0]["TS %"]))
+                ? 
+                0 
+                : 
+                !lodash.isNumber(line["Tyû giaù"]) 
+                ? 
+                Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+                : 
+                Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] * line["Tyû giaù"] / 100),
             "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
             "Ngày hóa đơn": excelDateToJSDate(line["Ngaøy HÑ"]),
             "Số hóa đơn": line["Soá HÑ"],
@@ -206,8 +223,24 @@ export const processDataMHTNNHD = (data,originalData,company) => {
             "CP không hợp lý": line["TK Nôï"].toString().toUpperCase().includes("K") ? "Coù" : "Khoâng",
             "% thuế GTGT": taxLine.length === 0? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
-            "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
-            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "Tiền thuế GTGT": taxLine.length === 0 
+            ? 
+            0
+            :
+            lodash.isNumber(taxLine[0]["TS %"])
+            ?
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+            : 
+            0,
+            "Tiền thuế GTGT quy đổi": taxLine.length === 0 || (taxLine.length > 0 && !lodash.isNumber(taxLine[0]["TS %"]))
+            ? 
+            0 
+            : 
+            !lodash.isNumber(line["Tyû giaù"]) 
+            ? 
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+            : 
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] * line["Tyû giaù"] / 100),
             "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
             "Mẫu số HĐ":1,
             "Ký hiệu HĐ": line["Kyù hieäu"].slice(1),
@@ -282,8 +315,24 @@ export const processDataBDVDTT = (data,originalData,company) => {
             "TK chiết khấu": "",
             "% thuế GTGT": taxLine.length === 0? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
-            "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
-            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "Tiền thuế GTGT": taxLine.length === 0 
+            ? 
+            0
+            :
+            lodash.isNumber(taxLine[0]["TS %"])
+            ?
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+            : 
+            0,
+            "Tiền thuế GTGT quy đổi": taxLine.length === 0 || (taxLine.length > 0 && !lodash.isNumber(taxLine[0]["TS %"]))
+            ? 
+            0 
+            : 
+            !lodash.isNumber(line["Tyû giaù"]) 
+            ? 
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+            : 
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] * line["Tyû giaù"] / 100),
             "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
             "HH không TH trên tờ khai thuế GTGT":"",
             "Mã khoản mục chi phí":"",
@@ -369,8 +418,24 @@ export const processDataBHDTT = (data,originalData,company) => {
             "TK thuế xuất khẩu": "",
             "% thuế GTGT": line["TK Coù"] === "1562A" ? "KKKNT" : taxLine.length === 0? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
-            "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
-            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "Tiền thuế GTGT": taxLine.length === 0 
+            ? 
+            0
+            :
+            lodash.isNumber(taxLine[0]["TS %"])
+            ?
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+            : 
+            0,
+            "Tiền thuế GTGT quy đổi": taxLine.length === 0 || (taxLine.length > 0 && !lodash.isNumber(taxLine[0]["TS %"]))
+            ? 
+            0 
+            : 
+            !lodash.isNumber(line["Tyû giaù"]) 
+            ? 
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+            : 
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] * line["Tyû giaù"] / 100),
             "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
             "HH không TH trên tờ khai thuế GTGT":"",
             "Mã khoản mục chi phí":"",
@@ -536,18 +601,33 @@ export const processNVK = (data,originalData,company) => {
             "Diễn giải thuế": "",
             "Có hóa đơn": line["Soá HÑ"] ?  "Coù" : "Khoâng",
             "Loại thuế": taxLine.length === 0 ? "" : checkTaxType(taxLine[0]),
-            "Giá trị HHDV chưa thuế": taxLine.length === 0 ? line["Soá tieàn"] : line["Soá tieàn"] - taxLine[0]["Soá tieàn"],
-            "Giá trị HHDV chưa thuế quy đổi": lodash.isNumber(line["Tyû giaù"]) ? 
-                taxLine.length === 0 
-                ?
-                line["Soá tieàn"]  * line["Tyû giaù"]
-                : 
-                (line["Soá tieàn"] - taxLine[0]["Soá tieàn"]) * line["Tyû giaù"]
-            : 0,
+            "Giá trị HHDV chưa thuế": line["Soá tieàn"],
+            "Giá trị HHDV chưa thuế quy đổi": 
+            lodash.isNumber(line["Tyû giaù"]) 
+            ? 
+            line["Soá tieàn"]  * line["Tyû giaù"]
+            :
+            line["Soá tieàn"],
             "% thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
-            "Tiền thuế GTGT": taxLine.length === 0 ? 0 : taxLine[0]["Soá tieàn"],
-            "Tiền thuế GTGT quy đổi": taxLine.length === 0 ? 0 : !lodash.isNumber(line["Tyû giaù"]) ? taxLine[0]["Soá tieàn"] : taxLine[0]["Soá tieàn"] * line["Tyû giaù"],
+            "Tiền thuế GTGT": taxLine.length === 0 
+            ? 
+            0
+            :
+            lodash.isNumber(taxLine[0]["TS %"])
+            ?
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+            : 
+            0,
+            "Tiền thuế GTGT quy đổi": taxLine.length === 0 || (taxLine.length > 0 && !lodash.isNumber(taxLine[0]["TS %"]))
+            ? 
+            0 
+            : 
+            !lodash.isNumber(line["Tyû giaù"]) 
+            ? 
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+            : 
+            Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] * line["Tyû giaù"] / 100),
             "TK thuế GTGT": 
                 taxLine.length === 0 
                 ? 

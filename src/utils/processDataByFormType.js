@@ -33,4 +33,4 @@ export const nhapKhoFull = (inputData, company) =>
     handleTransaction(inputData, company, ["152","153","155","156"], ["6","8","157","154","141"], processNKF,false,false);
 
 export const chungTuNghiepVuKhacDaTienTe = (inputData, company) => 
-    handleTransaction(inputData, company, ["111", "112", "152", "153", "155", "156", "157"], ["111", "112", "152", "153", "155", "156", "157"], processNVK,false,true);
+    handleTransaction(inputData, company, ["111", "112", "152", "153", "155", "156", "157","133","33311"], ["33311","133","111", "112", "152", "153", "155", "156", "157"], processNVK,false,true);
