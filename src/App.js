@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import excelLogo from './images/excel.png';
 import { Select } from 'antd';
 import enImg from './images/en.png';
+import { Alert } from 'antd';
 
 import {
   muaDichVuDaTienTe, 
@@ -76,6 +77,85 @@ function App() {
     const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
     const result = new Blob([excelBuffer], {type: fileType});
     FileSaver.saveAs(result, fileName + fileExtension);
+  }
+
+  const getFormDataRules = () => {
+    switch(misaForm){
+      case "1":
+        return (
+          <div>
+            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+            <ul style={{paddingLeft:15}}>
+              <li>TK Nợ thuộc nhóm (131,111,112,138)</li>
+              <li>TK Có thuộc nhóm (5113)</li>
+              <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
+            </ul>
+          </div>
+        )
+      case "2":
+        return (
+          <div>
+            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+            <ul style={{paddingLeft:15}}>
+              <li>TK Nợ thuộc nhóm (131,111,112,138)</li>
+              <li>TK Có thuộc nhóm (5111,5112)</li>
+              <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
+            </ul>
+          </div>
+        )
+      case "3":
+        return (
+          <div>
+            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+            <ul style={{paddingLeft:15}}>
+              <li>TK Nợ thuộc nhóm (335,6,8)</li>
+              <li>TK Có thuộc nhóm (335,331,111,112,338)</li>
+              <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
+            </ul>
+          </div>
+        )
+      case "4":
+        return (
+          <div>
+            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+            <ul style={{paddingLeft:15}}>
+              <li>TK Nợ thuộc nhóm (15,2)</li>
+              <li>TK Có thuộc nhóm (335,331,111,112,338)</li>
+              <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
+            </ul>
+          </div>
+        )
+      case "5":
+        return (
+          <div>
+            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+            <ul style={{paddingLeft:15}}>
+              <li>TK Nợ thuộc nhóm (6,8,157,154,141)</li>
+              <li>TK Có thuộc nhóm (152,153,155,156)</li>
+            </ul>
+          </div>
+        )
+      case "6":
+        return (
+          <div>
+            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+            <ul style={{paddingLeft:15}}>
+              <li>TK Nợ thuộc nhóm (152,153,155,156)</li>
+              <li>TK Có thuộc nhóm (6,8,157,154,141)</li>
+            </ul>
+          </div>
+        )
+      case "7":
+        return (
+          <div>
+            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+            <ul style={{paddingLeft:15}}>
+              <li>TK Nợ không thuộc nhóm (111,112,152,153,155,156,157,133,33311)</li>
+              <li>TK Có không thuộc nhóm (111,112,152,153,155,156,157,133,33311)</li>
+            </ul>
+          </div>
+        )
+    }
   }
 
   const handleAddFile = async (file) => {
@@ -174,6 +254,13 @@ function App() {
             options={companyOptions}
           />
         </div>
+        {misaForm && <Alert
+          style={{position:"absolute",top:15,right:15,width:350}}
+          message={<span style={{fontWeight:700}}>Quy tắc hệ thống lấy dữ liệu</span>}
+          description={getFormDataRules()}
+          type="info"
+          closable
+        />}
         <div className="dropbox-area-wrapper">
           {
             isProcessing
