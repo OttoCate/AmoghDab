@@ -333,7 +333,7 @@ export const processDataBDVDTT = (data,originalData,company) => {
             Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
             : 
             Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] * line["Tyû giaù"] / 100),
-            "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
+            "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Coù"],
             "HH không TH trên tờ khai thuế GTGT":"",
             "Mã khoản mục chi phí":"",
             "Mã đơn vị":"",
@@ -436,7 +436,7 @@ export const processDataBHDTT = (data,originalData,company) => {
             Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
             : 
             Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] * line["Tyû giaù"] / 100),
-            "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Nôï"],
+            "TK thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TK Coù"],
             "HH không TH trên tờ khai thuế GTGT":"",
             "Mã khoản mục chi phí":"",
             "Mã đơn vị":"",
