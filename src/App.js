@@ -1,7 +1,6 @@
 import './App.css';
 import {useState} from 'react'
 import Dropzone from 'react-dropzone'
-import * as XLSX from 'xlsx'
 import * as FileSaver from 'file-saver';
 import {validExcelFile} from './validTypeOfFile.js';
 import styled from 'styled-components';
@@ -9,16 +8,8 @@ import excelLogo from './images/excel.png';
 import { Select } from 'antd';
 import enImg from './images/en.png';
 import { Alert } from 'antd';
-
-import {
-  muaDichVuDaTienTe, 
-  muaHangTrongNuocNhieuHD,
-  banDichVuDaTienTe,
-  banHangDaTienTe,
-  xuatKhoFull,
-  nhapKhoFull,
-  chungTuNghiepVuKhacDaTienTe
-} from './utils/processDataByFormType.js'
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import DataProcessWorker from 'worker-loader!./workers/dataProcessor.worker.js';
 
 const formOptions = [
   { value: '1', label: 'Mẫu bán dịch vụ đa tiền tệ' },
@@ -41,42 +32,21 @@ function App() {
   const [isProcessing,setIsProcessing] = useState(false);
   
   const handleProcessData = (data)=>{
-    setIsProcessing(false);
+    const worker = new DataProcessWorker();
+    worker.postMessage({ data, company, misaForm, formOptions });
     
-    let finalData = [];
+    worker.onmessage = (e) => {
+      const { blob, fileName } = e.data;
+      FileSaver.saveAs(blob, fileName);
+      worker.terminate();
+      setIsProcessing(false);
+    };
 
-    switch(misaForm){
-      case "1":
-        finalData = banDichVuDaTienTe(data,company);
-        break;
-      case "2":
-        finalData = banHangDaTienTe(data,company);
-        break;
-      case "3":
-        finalData = muaDichVuDaTienTe(data,company);
-        break;
-      case "4":
-        finalData = muaHangTrongNuocNhieuHD(data,company);
-        break;
-      case "5":
-        finalData = xuatKhoFull(data,company);
-        break;
-      case "6":
-        finalData = nhapKhoFull(data,company);
-        break;
-      case "7":
-        finalData = chungTuNghiepVuKhacDaTienTe(data,company);
-        break;
-    }
-
-    const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
-    const fileExtension = '.xlsx';
-    const fileName = formOptions.find(i => i.value === misaForm)?.label || "Result"
-    const ws = XLSX.utils.json_to_sheet(finalData);
-    const wb = { Sheets: { 'data': ws }, SheetNames: ['data'] };
-    const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-    const result = new Blob([excelBuffer], {type: fileType});
-    FileSaver.saveAs(result, fileName + fileExtension);
+    worker.onerror = (err) => {
+      console.error('Worker error:', err);
+      worker.terminate();
+      setIsProcessing(false);
+    };
   }
 
   const getFormDataRules = () => {
@@ -155,6 +125,8 @@ function App() {
             </ul>
           </div>
         )
+      default:
+        return (<div></div>)
     }
   }
 
@@ -201,7 +173,6 @@ function App() {
           alert("Lỗi xử lý file: " + error);
         }
   
-        setIsProcessing(false);
         worker.terminate();
       };
   
@@ -209,7 +180,6 @@ function App() {
       worker.onerror = (err) => {
         console.error("Worker error:", err);
         alert("Đã xảy ra lỗi trong quá trình xử lý file.");
-        setIsProcessing(false);
         worker.terminate();
       };
   
@@ -267,7 +237,7 @@ function App() {
             ?
             <div className="loading">
               <img alt="" src={enImg}/>
-              <h4>Đang xử lý dữ liệu...</h4>
+              <div className="loader"></div>
             </div>
             :
             <div className={`dropbox-area ${dropState === 2 && 'alert'}`}>
@@ -356,6 +326,18 @@ const Wrapper = styled.div`
           margin:0;
           font-weight:500;
         }
+        .loader {
+          width: fit-content;
+          font-weight: bold;
+          font-family: monospace;
+          font-size: 24px;
+          clip-path: inset(0 3ch 0 0);
+          animation: l4 1.7s steps(4) infinite;
+        }
+        .loader:before {
+          content:"Đang xử lý..."
+        }
+        @keyframes l4 {to{clip-path: inset(0 -1ch 0 0)}}
       }
       @media (max-width:350px){
         width:260px;

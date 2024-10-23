@@ -601,13 +601,21 @@ export const processNVK = (data,originalData,company) => {
             "Diễn giải thuế": "",
             "Có hóa đơn": line["Soá HÑ"] ?  "Coù" : "Khoâng",
             "Loại thuế": taxLine.length === 0 ? "" : checkTaxType(taxLine[0]),
-            "Giá trị HHDV chưa thuế": line["Soá tieàn"],
-            "Giá trị HHDV chưa thuế quy đổi": 
-            lodash.isNumber(line["Tyû giaù"]) 
-            ? 
-            line["Soá tieàn"]  * line["Tyû giaù"]
-            :
-            line["Soá tieàn"],
+            "Giá trị HHDV chưa thuế": (taxLine.length === 0 || !lodash.isNumber(taxLine[0]["TS %"])) ? line["Soá tieàn"] :  line["Soá tieàn"] - Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100),
+            "Giá trị HHDV chưa thuế quy đổi": (taxLine.length === 0 || !lodash.isNumber(taxLine[0]["TS %"])) 
+                ? 
+                    lodash.isNumber(line["Tyû giaù"]) 
+                    ?
+                    line["Soá tieàn"] * line["Tyû giaù"]
+                    :
+                    line["Soá tieàn"]
+                :
+                lodash.isNumber(line["Tyû giaù"])
+                    ?  
+                    (line["Soá tieàn"] - Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)) * line["Tyû giaù"]
+                    :
+                    line["Soá tieàn"] - Math.round(line["Soá tieàn"] * taxLine[0]["TS %"] / 100)
+                ,
             "% thuế GTGT": taxLine.length === 0 ? "" : taxLine[0]["TS %"],
             "% thuế suất KHAC": "",
             "Tiền thuế GTGT": taxLine.length === 0 

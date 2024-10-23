@@ -18,6 +18,7 @@
     "style-components": "^0.1.0",
     "styled-components": "^6.1.17",
     "web-vitals": "^2.1.4",
+    "workerize-loader": "^2.0.2",
     "xlsx": "^0.18.5"
   },
   "scripts": {
@@ -43,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1",
+    "worker-loader": "^3.0.8"
   }
 }
