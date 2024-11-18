@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import excelLogo from './images/excel.png';
 import { Select } from 'antd';
 import enImg from './images/en.png';
-import { Alert } from 'antd';
+import { Alert, Input } from 'antd';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import DataProcessWorker from 'worker-loader!./workers/dataProcessor.worker.js';
 
@@ -30,10 +30,11 @@ function App() {
   const [misaForm,setMisaForm] = useState("");
   const [company,setCompany] = useState("");
   const [isProcessing,setIsProcessing] = useState(false);
+  const [ctgs,setCtgs] = useState("");
   
   const handleProcessData = (data)=>{
     const worker = new DataProcessWorker();
-    worker.postMessage({ data, company, misaForm, formOptions });
+    worker.postMessage({ data, company, misaForm, formOptions, ctgs });
     
     worker.onmessage = (e) => {
       const { blob, fileName } = e.data;
@@ -56,8 +57,8 @@ function App() {
           <div>
             <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
             <ul style={{paddingLeft:15}}>
-              <li>TK Nợ thuộc nhóm (131,111,112,138)</li>
-              <li>TK Có thuộc nhóm (5113)</li>
+              <li>TK Nợ thuộc nhóm (131,111,112,138,521)</li>
+              <li>TK Có thuộc nhóm (5113,131)</li>
               <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
             </ul>
           </div>
@@ -67,8 +68,8 @@ function App() {
           <div>
             <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
             <ul style={{paddingLeft:15}}>
-              <li>TK Nợ thuộc nhóm (131,111,112,138)</li>
-              <li>TK Có thuộc nhóm (5111,5112)</li>
+              <li>TK Nợ thuộc nhóm (131,111,112,138,521)</li>
+              <li>TK Có thuộc nhóm (5111,5112,131)</li>
               <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
             </ul>
           </div>
@@ -148,7 +149,6 @@ function App() {
       }
   
       setIsProcessing(true);
-  
       // Read file into ArrayBuffer
       const buffer = await new Promise((resolve, reject) => {
         const fileReader = new FileReader();
@@ -222,6 +222,15 @@ function App() {
             value = {company}
             onChange = {(value)=>{setCompany(value)}}
             options={companyOptions}
+          />
+        </div>
+        <div className='form-selection'>
+          <p>Bạn muốn lọc theo CTGS nào? (Không bắt buộc)</p>
+          <Input 
+            placeholder="DT" 
+            style={{width:300}}
+            disabled = {isProcessing}
+            onChange = {(e)=>setCtgs(e.target.value)}
           />
         </div>
         {misaForm && <Alert
