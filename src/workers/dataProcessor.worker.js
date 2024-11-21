@@ -11,17 +11,17 @@ import {
 } from '../utils/processDataByFormType';
 
 self.onmessage = function (e) {
-  const { data, company, misaForm, formOptions, ctgs } = e.data;
+  const { data, misaForm, formOptions, ctgs, software } = e.data;
   let finalData = [];
 
   switch (misaForm) {
-    case "1": finalData = banDichVuDaTienTe(data, company, ctgs); break;
-    case "2": finalData = banHangDaTienTe(data, company, ctgs); break;
-    case "3": finalData = muaDichVuDaTienTe(data, company, ctgs); break;
-    case "4": finalData = muaHangTrongNuocNhieuHD(data, company, ctgs); break;
-    case "5": finalData = xuatKhoFull(data, company, ctgs); break;
-    case "6": finalData = nhapKhoFull(data, company, ctgs); break;
-    case "7": finalData = chungTuNghiepVuKhacDaTienTe(data, company, ctgs); break;
+    case "1": finalData = banDichVuDaTienTe(data, ctgs, software); break;
+    case "2": finalData = banHangDaTienTe(data, ctgs, software); break;
+    case "3": finalData = muaDichVuDaTienTe(data, ctgs, software); break;
+    case "4": finalData = muaHangTrongNuocNhieuHD(data, ctgs, software); break;
+    case "5": finalData = xuatKhoFull(data, ctgs, software); break;
+    case "6": finalData = nhapKhoFull(data, ctgs, software); break;
+    case "7": finalData = chungTuNghiepVuKhacDaTienTe(data, ctgs, software); break;
     default: finalData = []; break;
   }
 

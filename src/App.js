@@ -16,25 +16,26 @@ const formOptions = [
   { value: '2', label: 'Mẫu bán hàng đa tiền tệ' },
   { value: '3', label: 'Mẫu mua dịch vụ đa tiền tệ' },
   { value: '4', label: 'Mẫu mua hàng trong nước đa tiền tệ' },
-  { value: '5', label: 'Mẫu xuất kho full' },
-  { value: '6', label: 'Mẫu nhập kho full' },
+  { value: '5', label: 'Mẫu xuất kho' },
+  { value: '6', label: 'Mẫu nhập kho' },
   { value: '7', label: 'Mẫu chứng từ nghiệp vụ khác đa tiền tệ' },
 ]
 
-const companyOptions = [
-  { value: 'dngrf', label: 'DNG-RF' },
+const softwareSource = [
+  { value: 'asa', label: 'Phần mềm ASA' },
+  { value: 'isale', label: 'ISale' },
 ]
 
 function App() {
   const [dropState,setDropState] = useState(0);
   const [misaForm,setMisaForm] = useState("");
-  const [company,setCompany] = useState("");
   const [isProcessing,setIsProcessing] = useState(false);
   const [ctgs,setCtgs] = useState("");
+  const [software,setSoftware] = useState("asa");
   
   const handleProcessData = (data)=>{
     const worker = new DataProcessWorker();
-    worker.postMessage({ data, company, misaForm, formOptions, ctgs });
+    worker.postMessage({ data, misaForm, formOptions, ctgs, software });
     
     worker.onmessage = (e) => {
       const { blob, fileName } = e.data;
@@ -112,7 +113,7 @@ function App() {
             <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
             <ul style={{paddingLeft:15}}>
               <li>TK Nợ thuộc nhóm (152,153,155,156)</li>
-              <li>TK Có thuộc nhóm (6,8,157,154,141)</li>
+              <li>TK Có thuộc nhóm (6,8,157,154,141,138)</li>
             </ul>
           </div>
         )
@@ -138,8 +139,8 @@ function App() {
         return;
       }
 
-      if (!company) {
-        alert("Vui lòng chỉ định công ty bạn muốn chuyển đổi dữ liệu");
+      if (!software) {
+        alert("Vui lòng chỉ định dữ liệu đến từ phần mềm nào");
         return;
       }
   
@@ -191,13 +192,14 @@ function App() {
 
   return (
     <Wrapper>
-      <div className="dropbox-container-wrapper">
+      <div className='sidebar'>
         <div className='form-selection'>
-          <p>Bạn muốn chuyển đổi dữ liệu ra mẫu nào?</p>
+          <p style={{fontSize:14,lineHeight:'14px'}}>Bạn muốn chuyển đổi dữ liệu ra mẫu nào? <span style={{color:'red',fontWeight:700}}>*</span></p>
           <Select
             showSearch
             className="sidebar-select"
             allowClear
+            style={{width:'100%'}}
             disabled = {isProcessing}
             placeholder="Chọn một mẫu cần xuất"
             filterOption={(input, option) =>
@@ -209,30 +211,32 @@ function App() {
           />
         </div>
         <div className='form-selection'>
-          <p>Dữ liệu này đến từ công ty nào?</p>
+          <p style={{fontSize:14,lineHeight:'14px'}}>Dữ liệu này đến từ phần mềm nào? <span style={{color:'red',fontWeight:700}}>*</span></p>
           <Select
             showSearch
             className="sidebar-select"
             allowClear
+            style={{width:'100%'}}
             disabled = {isProcessing}
-            placeholder="Chọn công ty"
+            placeholder="Chọn phần mềm"
             filterOption={(input, option) =>
               (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
             }
-            value = {company}
-            onChange = {(value)=>{setCompany(value)}}
-            options={companyOptions}
+            value = {software}
+            onChange = {(value)=>{setSoftware(value)}}
+            options={softwareSource}
           />
         </div>
         <div className='form-selection'>
-          <p>Bạn muốn lọc theo CTGS nào? (Không bắt buộc)</p>
+          <p style={{fontSize:14,lineHeight:'14px'}}>Bạn muốn lọc theo CTGS nào?</p>
           <Input 
-            placeholder="DT" 
-            style={{width:300}}
+            style={{width:'100%'}}
             disabled = {isProcessing}
             onChange = {(e)=>setCtgs(e.target.value)}
           />
         </div>
+      </div>
+      <div className="dropbox-container-wrapper">
         {misaForm && <Alert
           style={{position:"absolute",top:15,right:15,width:350}}
           message={<span style={{fontWeight:700}}>Quy tắc hệ thống lấy dữ liệu</span>}
@@ -300,7 +304,15 @@ export default App;
 
 const Wrapper = styled.div`
   height:100vh;
+  display:flex;
+  .sidebar {
+    width:350px;
+    background: #fafafa;
+    padding: 1.5rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  }
   .dropbox-container-wrapper{
+    flex:1;
     height:100%;
     display:flex;
     align-items:center;
@@ -317,7 +329,7 @@ const Wrapper = styled.div`
     }
     .dropbox-area-wrapper{
       display:flex;
-      height: calc(100vh - 100px);
+      height:100%;
       justify-content:center;
       align-items:center;
       .loading{
