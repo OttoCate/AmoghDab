@@ -565,7 +565,7 @@ export const processNVK = (data,originalData, software) => {
             "Ngày hạch toán (*)": excelDateToJSDate(line["Ngaøy GS"]),
             "Số chứng từ (*)":line["CTGS"]+"-"+line["Soá phieáu"],
             "Diễn giải": line["Dieãn giaûi"],
-            "Loại nghiệp vụ": "",
+            "Loại nghiệp vụ": line["TK Nôï"].startsWith("911") ? "Keát chuyeån TK 911" : "",
             "Hạn thanh toán": "",
             "Loại tiền":"",
             "Tỷ giá":lodash.isNumber(line["Tyû giaù"]) ? line["Tyû giaù"] : "",
