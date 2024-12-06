@@ -260,9 +260,9 @@ export const processDataBDVDTT = (data,originalData, software) => {
         let thanhTien = line["Soá tieàn"] || soLuong * donGia;
         let dvt = line["UOM"] || "";
         let TKThue = line["OutVATAcctID"] || (taxLine.length === 0 ? "" : taxLine[0]["TK Coù"]);
-        let taxPercent = software === 'isale' ? Math.round(line["VAT Amount"] * 100 / thanhTien) : (taxLine.length === 0? "" : taxLine[0]["TS %"]);
+        let taxPercent = line["VAT Amount"] ? Math.round(line["VAT Amount"] * 100 / thanhTien) : (taxLine.length === 0? "" : taxLine[0]["TS %"]);
         let taxAmount = line["VAT Amount"] || (taxLine.length === 0 ? 0 : lodash.isNumber(taxLine[0]["TS %"]) ? Math.round(thanhTien * taxLine[0]["TS %"] / 100) : 0);
-        let taxAmountQuyDoi = software === 'isale' ?  (line["VAT Amount"] * tyGia) : (taxLine.length === 0 || (taxLine.length > 0 && !lodash.isNumber(taxLine[0]["TS %"]))) ? 0 : !lodash.isNumber(tyGia) ? Math.round(thanhTien * taxLine[0]["TS %"] / 100) : Math.round(thanhTien * taxLine[0]["TS %"] * tyGia / 100);
+        let taxAmountQuyDoi = line["VAT Amount"] ?  (line["VAT Amount"] * tyGia) : (taxLine.length === 0 || (taxLine.length > 0 && !lodash.isNumber(taxLine[0]["TS %"]))) ? 0 : !lodash.isNumber(tyGia) ? Math.round(thanhTien * taxLine[0]["TS %"] / 100) : Math.round(thanhTien * taxLine[0]["TS %"] * tyGia / 100);
 
         return {
             "Phương thức thanh toán": 
@@ -368,9 +368,9 @@ export const processDataBHDTT = (data,originalData, software) => {
         let thanhTien = line["Soá tieàn"] || soLuong * donGia;
         let dvt = line["UOM"] || "";
         let TKThue = line["OutVATAcctID"] || (taxLine.length === 0 ? "" : taxLine[0]["TK Coù"]);
-        let taxPercent = software === 'isale' ? Math.round(line["VAT Amount"] * 100 / thanhTien) : (taxLine.length === 0? "" : taxLine[0]["TS %"]);
+        let taxPercent = line["VAT Amount"] ? Math.round(line["VAT Amount"] * 100 / thanhTien) : (taxLine.length === 0? "" : taxLine[0]["TS %"]);
         let taxAmount = line["VAT Amount"] || (taxLine.length === 0 ? 0 : lodash.isNumber(taxLine[0]["TS %"]) ? Math.round(thanhTien * taxLine[0]["TS %"] / 100) : 0);
-        let taxAmountQuyDoi = software === 'isale' ?  (line["VAT Amount"] * tyGia) : (taxLine.length === 0 || (taxLine.length > 0 && !lodash.isNumber(taxLine[0]["TS %"]))) ? 0 : !lodash.isNumber(tyGia) ? Math.round(thanhTien * taxLine[0]["TS %"] / 100) : Math.round(thanhTien * taxLine[0]["TS %"] * tyGia / 100);
+        let taxAmountQuyDoi = line["VAT Amount"] ?  (line["VAT Amount"] * tyGia) : (taxLine.length === 0 || (taxLine.length > 0 && !lodash.isNumber(taxLine[0]["TS %"]))) ? 0 : !lodash.isNumber(tyGia) ? Math.round(thanhTien * taxLine[0]["TS %"] / 100) : Math.round(thanhTien * taxLine[0]["TS %"] * tyGia / 100);
 
 
         return {
