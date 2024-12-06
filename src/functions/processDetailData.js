@@ -5,7 +5,7 @@ import ISaleProduct from '../source/NJSC/danhMucSanPham.json';
 const checkIsaleProductCode = (productCode) => {
     let myProductCode = "";
 
-    myProductCode = [...ISaleProduct].find(i => i['Tªn t¾t'] === productCode.trim()?.slice(1).trim())?.['M· hµng (KT)'] || "";
+    myProductCode = [...ISaleProduct].find(i => i['Tªn t¾t'] === productCode?.trim()?.slice(1)?.trim())?.['M· hµng (KT)'] || "";
 
     return myProductCode;
 }
