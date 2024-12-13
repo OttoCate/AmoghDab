@@ -113,7 +113,7 @@ function App() {
             <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
             <ul style={{paddingLeft:15}}>
               <li>TK Nợ thuộc nhóm (152,153,155,156)</li>
-              <li>TK Có thuộc nhóm (6,8,157,154,141,138)</li>
+              <li>TK Có thuộc nhóm (6,8,157,154,141,138,335)</li>
             </ul>
           </div>
         )

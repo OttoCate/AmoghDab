@@ -30,7 +30,7 @@ export const xuatKhoFull = (inputData, ctgs, software) =>
     handleTransaction(inputData, ["6","8","157","154","141"], ["152","153","155","156"], processDataXKF, false,false,ctgs, software);
 
 export const nhapKhoFull = (inputData, ctgs, software) => 
-    handleTransaction(inputData, ["152","153","155","156"], ["6","8","157","154","141","138"], processNKF,false,false,ctgs, software);
+    handleTransaction(inputData, ["152","153","155","156"], ["6","8","157","154","141","138","335"], processNKF,false,false,ctgs, software);
 
 export const chungTuNghiepVuKhacDaTienTe = (inputData, ctgs, software) => 
     handleTransaction(inputData, ["111", "112", "152", "153", "155", "156", "157","133","33311"], ["33311","133","111", "112", "152", "153", "155", "156", "157"], processNVK,false,true,ctgs, software);
