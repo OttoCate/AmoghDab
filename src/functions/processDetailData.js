@@ -223,7 +223,7 @@ export const processDataMHTNNHD = (data,originalData, software) => {
 
 export const processDataBDVDTT = (data,originalData, software) => {
     const processedData = [...data].map((line)=>{
-        const taxLine = software === 'isale' 
+        const taxLine = software !== 'isale' 
         ? [...originalData].filter(i => {
             if(
                 i["CTGS"] === line["CTGS"] 
@@ -331,7 +331,7 @@ export const processDataBDVDTT = (data,originalData, software) => {
 
 export const processDataBHDTT = (data,originalData, software) => {
     const processedData = [...data].map((line)=>{
-        const taxLine = software === 'isale' 
+        const taxLine = software !== 'isale' 
         ? [...originalData].filter(i => {
             if(
                 i["CTGS"] === line["CTGS"] 
