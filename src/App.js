@@ -19,6 +19,9 @@ const formOptions = [
   { value: '5', label: 'Mẫu xuất kho' },
   { value: '6', label: 'Mẫu nhập kho' },
   { value: '7', label: 'Mẫu chứng từ nghiệp vụ khác đa tiền tệ' },
+  { value: '8', label: 'Mẫu phiếu thu tiền gửi'},
+  { value: '9', label: 'Mẫu phiếu chi tiền gửi'},
+  { value: '10', label: 'Mẫu phiếu chuyển tiền nội bộ đa tiền tệ'},
 ]
 
 const softwareSource = [
@@ -127,6 +130,36 @@ function App() {
             </ul>
           </div>
         )
+      case "8":
+      return (
+        <div>
+          <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+          <ul style={{paddingLeft:15}}>
+            <li>TK Nợ thuộc nhóm (111,112)</li>
+            <li>TK Có thuộc nhóm (131,138,141,331,338,5,7)</li>
+          </ul>
+        </div>
+      )
+      case "9":
+      return (
+        <div>
+          <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+          <ul style={{paddingLeft:15}}>
+            <li>TK Nợ thuộc nhóm (131,133,138,141,331,333,334,335,338,5,6,7,8)</li>
+            <li>TK Có thuộc nhóm (111,112)</li>
+          </ul>
+        </div>
+      )
+      case "10":
+      return (
+        <div>
+          <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+          <ul style={{paddingLeft:15}}>
+            <li>TK Nợ thuộc nhóm (111,112)</li>
+            <li>TK Có thuộc nhóm (111,112)</li>
+          </ul>
+        </div>
+      )
       default:
         return (<div></div>)
     }
@@ -238,7 +271,7 @@ function App() {
       </div>
       <div className="dropbox-container-wrapper">
         {misaForm && <Alert
-          style={{position:"absolute",top:15,right:15,width:350}}
+          style={{position:"absolute",top:15,right:15,width:400}}
           message={<span style={{fontWeight:700}}>Quy tắc hệ thống lấy dữ liệu</span>}
           description={getFormDataRules()}
           type="info"

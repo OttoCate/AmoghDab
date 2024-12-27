@@ -7,7 +7,10 @@ import {
   banHangDaTienTe,
   xuatKhoFull,
   nhapKhoFull,
-  chungTuNghiepVuKhacDaTienTe
+  chungTuNghiepVuKhacDaTienTe,
+  phieuThuTienGui,
+  phieuChiTienGui,
+  phieuChuyenTienNoiBo
 } from '../utils/processDataByFormType';
 
 self.onmessage = function (e) {
@@ -22,6 +25,9 @@ self.onmessage = function (e) {
     case "5": finalData = xuatKhoFull(data, ctgs, software); break;
     case "6": finalData = nhapKhoFull(data, ctgs, software); break;
     case "7": finalData = chungTuNghiepVuKhacDaTienTe(data, ctgs, software); break;
+    case "8": finalData = phieuThuTienGui(data, ctgs, software); break;
+    case "9": finalData = phieuChiTienGui(data, ctgs, software); break;
+    case "10": finalData = phieuChuyenTienNoiBo(data, ctgs, software); break;
     default: finalData = []; break;
   }
 
