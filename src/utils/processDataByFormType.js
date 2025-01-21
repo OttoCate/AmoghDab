@@ -27,7 +27,7 @@ export const banDichVuDaTienTe = (inputData, ctgs, software) =>
     handleTransaction(inputData, ["131", "111", "112", "138","521"], ["5113","131"], processDataBDVDTT,true,false,ctgs, software);
 
 export const banHangDaTienTe = (inputData, ctgs, software) =>
-    handleTransaction(inputData, ["131", "111", "112", "138","521"], ["5111", "5112","1562A","131"], processDataBHDTT,true,false,ctgs, software);
+    handleTransaction(inputData, ["131", "111", "112", "138","521"], ["5111", "5112","1562A","131","138"], processDataBHDTT,true,false,ctgs, software);
 
 export const xuatKhoFull = (inputData, ctgs, software) => 
     handleTransaction(inputData, ["6","8","157","154","141"], ["152","153","155","156"], processDataXKF, false,false,ctgs, software);
