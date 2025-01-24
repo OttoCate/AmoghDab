@@ -21,7 +21,7 @@ export const muaDichVuDaTienTe = (inputData, ctgs, software) =>
     handleTransaction(inputData, ["335", "6", "8"], ["335", "331", "111", "112", "338"], processDataMDVDTT,true,false,ctgs, software);
 
 export const muaHangTrongNuocNhieuHD = (inputData, ctgs, software) =>
-    handleTransaction(inputData, ["15", "2"], ["335", "331", "111", "112", "338"], processDataMHTNNHD,true,false,ctgs, software);
+    handleTransaction(inputData, ["15", "2"], ["335", "331", "111", "112", "338","336"], processDataMHTNNHD,true,false,ctgs, software);
 
 export const banDichVuDaTienTe = (inputData, ctgs, software) =>
     handleTransaction(inputData, ["131", "111", "112", "138","521"], ["5113","131"], processDataBDVDTT,true,false,ctgs, software);
