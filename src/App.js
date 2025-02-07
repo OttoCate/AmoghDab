@@ -15,7 +15,7 @@ const formOptions = [
   { value: '1', label: 'Mẫu bán dịch vụ đa tiền tệ' },
   { value: '2', label: 'Mẫu bán hàng đa tiền tệ' },
   { value: '3', label: 'Mẫu mua dịch vụ đa tiền tệ' },
-  { value: '4', label: 'Mẫu mua hàng trong nước đa tiền tệ' },
+  { value: '4', label: 'Mẫu mua hàng trong nước nhiều hóa đơn đa tiền tệ' },
   { value: '5', label: 'Mẫu xuất kho' },
   { value: '6', label: 'Mẫu nhập kho' },
   { value: '7', label: 'Mẫu chứng từ nghiệp vụ khác đa tiền tệ' },
