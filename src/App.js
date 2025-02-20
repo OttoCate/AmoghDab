@@ -94,7 +94,7 @@ function App() {
           <div>
             <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
             <ul style={{paddingLeft:15}}>
-              <li>TK Nợ thuộc nhóm (15,2)</li>
+              <li>TK Nợ thuộc nhóm (15,2,64,335,62,811)</li>
               <li>TK Có thuộc nhóm (335,331,111,112,338,336)</li>
               <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
             </ul>
