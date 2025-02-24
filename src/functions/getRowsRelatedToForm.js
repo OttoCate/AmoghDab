@@ -1,15 +1,24 @@
-export const getRowsRelatedToForm = (data, allowedDebitAccounts,allowedCreditAccounts, hasInvoice,laPhanBu,ctgs) => {
-    return [...data].filter((line)=>{
-        let chungTuGhiSo = line["CTGS"] || line["Document ID"];
-        let kyHieuHD = line["Kyù hieäu"] || line["InvSeriNo"];
-        let soHD = line["Soá HÑ"] || line["InvoiceNo"];
-        let TKNo = line["TK Nôï"] || line["RecvAcctID"];
-        let TKCo = line["TK Coù"] || line["IncomeAcctID"];
+export const getRowsRelatedToForm = (data, allowedDebitAccounts, allowedCreditAccounts, hasInvoice, isComplement, ctgs) => {
+    const startsWithAny = (value, prefixes) => 
+        prefixes.some(prefix => value?.toString()?.startsWith(prefix?.toString()));
 
-        if(ctgs && !chungTuGhiSo?.startsWith(ctgs)) return false;
-        if(hasInvoice && (!kyHieuHD || !soHD)) return false;
-        if(laPhanBu && (allowedDebitAccounts.some(i => TKNo?.toString()?.startsWith(i?.toString())) || allowedCreditAccounts.some(i => TKCo?.toString()?.startsWith(i?.toString())))) return false;
-        if(!laPhanBu && (!allowedDebitAccounts.some(i => TKNo?.toString()?.startsWith(i?.toString())) || !allowedCreditAccounts.some(i => TKCo?.toString()?.startsWith(i?.toString())))) return false;
-        return true;
-    })
-}
+    return data.filter(line => {
+        const documentId = line["CTGS"] || line["Document ID"];
+        const invoiceSymbol = line["Kyù hieäu"] || line["InvSeriNo"];
+        const invoiceNumber = line["Soá HÑ"] || line["InvoiceNo"];
+        const debitAccount = line["TK Nôï"] || line["RecvAcctID"];
+        const creditAccount = line["TK Coù"] || line["IncomeAcctID"];
+
+        if (ctgs && !documentId?.startsWith(ctgs)) return false;
+        if (hasInvoice && (!invoiceSymbol || !invoiceNumber)) return false;
+
+        const isDebitAllowed = startsWithAny(debitAccount, allowedDebitAccounts);
+        const isCreditAllowed = startsWithAny(creditAccount, allowedCreditAccounts);
+
+        if (isComplement) {
+            return !(isDebitAllowed || isCreditAllowed);
+        } else {
+            return isDebitAllowed && isCreditAllowed;
+        }
+    });
+};
