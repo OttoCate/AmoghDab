@@ -29,6 +29,53 @@ const softwareSource = [
   { value: 'isale', label: 'ISale' },
 ]
 
+const rules = {
+  "1": [
+    "TK Nợ thuộc nhóm (131,111,112,138,521)",
+    "TK Có thuộc nhóm (5113,131)",
+    "Cột số HĐ và ký hiệu HĐ có giá trị",
+  ],
+  "2": [
+    "TK Nợ thuộc nhóm (131,111,112,138,521)",
+    "TK Có thuộc nhóm (5111,5112,131,138)",
+    "Cột số HĐ và ký hiệu HĐ có giá trị",
+  ],
+  "3": [
+    "TK Nợ thuộc nhóm (335,6,8)",
+    "TK Có thuộc nhóm (335,331,111,112,338)",
+    "Cột số HĐ và ký hiệu HĐ có giá trị",
+  ],
+  "4": [
+    "TK Nợ thuộc nhóm (15,2,64,335,62,811)",
+    "TK Có thuộc nhóm (335,331,111,112,338,336)",
+    "Cột số HĐ và ký hiệu HĐ có giá trị",
+  ],
+  "5": [
+    "TK Nợ thuộc nhóm (6,8,157,154,141)",
+    "TK Có thuộc nhóm (152,153,155,156)",
+  ],
+  "6": [
+    "TK Nợ thuộc nhóm (152,153,155,156)",
+    "TK Có thuộc nhóm (6,8,157,154,141,138,335)",
+  ],
+  "7": [
+    "TK Nợ không thuộc nhóm (111,112,152,153,155,156,157,133,33311)",
+    "TK Có không thuộc nhóm (111,112,152,153,155,156,157,133,33311)",
+  ],
+  "8": [
+    "TK Nợ thuộc nhóm (111,112)",
+    "TK Có thuộc nhóm (131,138,141,331,338,5,7)",
+  ],
+  "9": [
+    "TK Nợ thuộc nhóm (131,133,138,141,331,333,334,335,338,5,6,7,8)",
+    "TK Có thuộc nhóm (111,112)",
+  ],
+  "10": [
+    "TK Nợ thuộc nhóm (111,112)",
+    "TK Có thuộc nhóm (111,112)",
+  ],
+};
+
 function App() {
   const [dropState,setDropState] = useState(0);
   const [misaForm,setMisaForm] = useState("");
@@ -55,114 +102,17 @@ function App() {
   }
 
   const getFormDataRules = () => {
-    switch(misaForm){
-      case "1":
-        return (
-          <div>
-            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-            <ul style={{paddingLeft:15}}>
-              <li>TK Nợ thuộc nhóm (131,111,112,138,521)</li>
-              <li>TK Có thuộc nhóm (5113,131)</li>
-              <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
-            </ul>
-          </div>
-        )
-      case "2":
-        return (
-          <div>
-            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-            <ul style={{paddingLeft:15}}>
-              <li>TK Nợ thuộc nhóm (131,111,112,138,521)</li>
-              <li>TK Có thuộc nhóm (5111,5112,131,138)</li>
-              <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
-            </ul>
-          </div>
-        )
-      case "3":
-        return (
-          <div>
-            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-            <ul style={{paddingLeft:15}}>
-              <li>TK Nợ thuộc nhóm (335,6,8)</li>
-              <li>TK Có thuộc nhóm (335,331,111,112,338)</li>
-              <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
-            </ul>
-          </div>
-        )
-      case "4":
-        return (
-          <div>
-            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-            <ul style={{paddingLeft:15}}>
-              <li>TK Nợ thuộc nhóm (15,2,64,335,62,811)</li>
-              <li>TK Có thuộc nhóm (335,331,111,112,338,336)</li>
-              <li>Cột số HĐ và ký hiệu HĐ có giá trị</li>
-            </ul>
-          </div>
-        )
-      case "5":
-        return (
-          <div>
-            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-            <ul style={{paddingLeft:15}}>
-              <li>TK Nợ thuộc nhóm (6,8,157,154,141)</li>
-              <li>TK Có thuộc nhóm (152,153,155,156)</li>
-            </ul>
-          </div>
-        )
-      case "6":
-        return (
-          <div>
-            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-            <ul style={{paddingLeft:15}}>
-              <li>TK Nợ thuộc nhóm (152,153,155,156)</li>
-              <li>TK Có thuộc nhóm (6,8,157,154,141,138,335)</li>
-            </ul>
-          </div>
-        )
-      case "7":
-        return (
-          <div>
-            <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-            <ul style={{paddingLeft:15}}>
-              <li>TK Nợ không thuộc nhóm (111,112,152,153,155,156,157,133,33311)</li>
-              <li>TK Có không thuộc nhóm (111,112,152,153,155,156,157,133,33311)</li>
-            </ul>
-          </div>
-        )
-      case "8":
-      return (
-        <div>
-          <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-          <ul style={{paddingLeft:15}}>
-            <li>TK Nợ thuộc nhóm (111,112)</li>
-            <li>TK Có thuộc nhóm (131,138,141,331,338,5,7)</li>
-          </ul>
-        </div>
-      )
-      case "9":
-      return (
-        <div>
-          <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-          <ul style={{paddingLeft:15}}>
-            <li>TK Nợ thuộc nhóm (131,133,138,141,331,333,334,335,338,5,6,7,8)</li>
-            <li>TK Có thuộc nhóm (111,112)</li>
-          </ul>
-        </div>
-      )
-      case "10":
-      return (
-        <div>
-          <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
-          <ul style={{paddingLeft:15}}>
-            <li>TK Nợ thuộc nhóm (111,112)</li>
-            <li>TK Có thuộc nhóm (111,112)</li>
-          </ul>
-        </div>
-      )
-      default:
-        return (<div></div>)
-    }
+    const ruleList = rules[misaForm] || [];
+    return (
+      <div>
+        <span>Hệ thống lấy những dòng thỏa điều kiện sau:</span>
+        <ul style={{ paddingLeft: 15 }}>
+          {ruleList.map((rule, index) => (
+            <li key={index}>{rule}</li>
+          ))}
+        </ul>
+      </div>
+    );
   }
 
   const handleAddFile = async (file) => {
