@@ -26,7 +26,7 @@ const checkTaxType = (line) => {
 }
 
 export const processDataMDVDTT = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     const taxLine = [...originalData].filter((i) => {
       if (
         i['CTGS'] === line['CTGS'] &&
@@ -135,7 +135,7 @@ export const processDataMDVDTT = (data, originalData, software) => {
 }
 
 export const processDataMHTNNHD = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     const taxLine = [...originalData].filter((i) => {
       if (
         i['CTGS'] === line['CTGS'] &&
@@ -249,7 +249,7 @@ export const processDataMHTNNHD = (data, originalData, software) => {
 }
 
 export const processDataBDVDTT = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     const taxLine =
       software !== 'isale'
         ? [...originalData].filter((i) => {
@@ -383,7 +383,7 @@ export const processDataBDVDTT = (data, originalData, software) => {
 }
 
 export const processDataBHDTT = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     const taxLine =
       software !== 'isale'
         ? [...originalData].filter((i) => {
@@ -534,7 +534,7 @@ export const processDataBHDTT = (data, originalData, software) => {
 }
 
 export const processDataXKF = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     return {
       'Loại xuất kho': ['154', '62'].some((i) => line['TK Nôï'].startsWith(i))
         ? 'Xuaát kho saûn xuaát'
@@ -585,7 +585,7 @@ export const processDataXKF = (data, originalData, software) => {
 }
 
 export const processNKF = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     return {
       'Loại nhập kho': ['154', '62'].some((i) => line['TK Coù'].startsWith(i))
         ? 'Nhaäp kho thaønh phaåm saûn xuaát'
@@ -636,7 +636,7 @@ export const processNKF = (data, originalData, software) => {
 }
 
 export const processNVK = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     const taxLine = [...originalData].filter((i) => {
       if (
         i['CTGS'] === line['CTGS'] &&
@@ -659,9 +659,10 @@ export const processNVK = (data, originalData, software) => {
       'Ngày hạch toán (*)': excelDateToJSDate(line['Ngaøy GS']),
       'Số chứng từ (*)': line['CTGS'] + '-' + line['Soá phieáu'],
       'Diễn giải': line['Dieãn giaûi'],
-      'Loại nghiệp vụ': line['TK Nôï'].startsWith('911')
-        ? 'Keát chuyeån TK 911'
-        : '',
+      'Loại nghiệp vụ':
+        line['TK Nôï'].startsWith('911') || line['TK Coù'].startsWith('911')
+          ? 'Keát chuyeån TK 911'
+          : '',
       'Hạn thanh toán': '',
       'Loại tiền': '',
       'Tỷ giá': lodash.isNumber(line['Tyû giaù']) ? line['Tyû giaù'] : '',
@@ -760,7 +761,7 @@ export const processNVK = (data, originalData, software) => {
 }
 
 export const processPTTG = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     return {
       'Ngày hạch toán (*)': excelDateToJSDate(line['Ngaøy GS']),
       'Ngày chứng từ (*)': excelDateToJSDate(line['Ngaøy GS']),
@@ -801,7 +802,7 @@ export const processPTTG = (data, originalData, software) => {
 }
 
 export const processPCTG = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     const taxLine = [...originalData].filter((i) => {
       if (
         i['CTGS'] === line['CTGS'] &&
@@ -906,7 +907,7 @@ export const processPCTG = (data, originalData, software) => {
 }
 
 export const processPCTNB = (data, originalData, software) => {
-  const processedData = [...data].map((line) => {
+  const processedData = data.map((line) => {
     return {
       'Ngày hạch toán (*)': excelDateToJSDate(line['Ngaøy GS']),
       'Ngày chứng từ (*)': excelDateToJSDate(line['Ngaøy GS']),

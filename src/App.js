@@ -2,76 +2,20 @@ import './App.css'
 import { useState } from 'react'
 import Dropzone from 'react-dropzone'
 import * as FileSaver from 'file-saver'
-import { validExcelFile } from './validTypeOfFile.js'
+import {
+  validExcelFile,
+  formSettings,
+  softwareSource,
+  rules,
+} from './globalVariables.js'
 import styled from 'styled-components'
 import excelLogo from './images/excel.png'
 import { Select } from 'antd'
 import enImg from './images/en.png'
 import { Alert, Input } from 'antd'
+import { transformFormSettingsToArray } from './utils/tools.js'
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import DataProcessWorker from 'worker-loader!./workers/dataProcessor.worker.js'
-
-const formOptions = [
-  { value: '1', label: 'Mẫu bán dịch vụ đa tiền tệ' },
-  { value: '2', label: 'Mẫu bán hàng đa tiền tệ' },
-  { value: '3', label: 'Mẫu mua dịch vụ đa tiền tệ' },
-  { value: '4', label: 'Mẫu mua hàng trong nước nhiều hóa đơn đa tiền tệ' },
-  { value: '5', label: 'Mẫu xuất kho' },
-  { value: '6', label: 'Mẫu nhập kho' },
-  { value: '7', label: 'Mẫu chứng từ nghiệp vụ khác đa tiền tệ' },
-  { value: '8', label: 'Mẫu phiếu thu tiền gửi' },
-  { value: '9', label: 'Mẫu phiếu chi tiền gửi' },
-  { value: '10', label: 'Mẫu phiếu chuyển tiền nội bộ đa tiền tệ' },
-]
-
-const softwareSource = [
-  { value: 'asa', label: 'Phần mềm ASA' },
-  { value: 'isale', label: 'ISale' },
-]
-
-const rules = {
-  1: [
-    'TK Nợ thuộc nhóm (131,111,112,138,521)',
-    'TK Có thuộc nhóm (5113,131)',
-    'Cột số HĐ và ký hiệu HĐ có giá trị',
-  ],
-  2: [
-    'TK Nợ thuộc nhóm (131,111,112,138,521)',
-    'TK Có thuộc nhóm (5111,5112,131,138)',
-    'Cột số HĐ và ký hiệu HĐ có giá trị',
-  ],
-  3: [
-    'TK Nợ thuộc nhóm (335,6,8)',
-    'TK Có thuộc nhóm (335,331,111,112,338)',
-    'Cột số HĐ và ký hiệu HĐ có giá trị',
-  ],
-  4: [
-    'TK Nợ thuộc nhóm (15,2,64,335,62,811)',
-    'TK Có thuộc nhóm (335,331,111,112,338,336)',
-    'Cột số HĐ và ký hiệu HĐ có giá trị',
-  ],
-  5: [
-    'TK Nợ thuộc nhóm (6,8,157,154,141)',
-    'TK Có thuộc nhóm (152,153,155,156)',
-  ],
-  6: [
-    'TK Nợ thuộc nhóm (152,153,155,156)',
-    'TK Có thuộc nhóm (6,8,157,154,141,138,335)',
-  ],
-  7: [
-    'TK Nợ không thuộc nhóm (111,112,152,153,155,156,157,133,33311)',
-    'TK Có không thuộc nhóm (111,112,152,153,155,156,157,133,33311)',
-  ],
-  8: [
-    'TK Nợ thuộc nhóm (111,112)',
-    'TK Có thuộc nhóm (131,138,141,331,338,5,7)',
-  ],
-  9: [
-    'TK Nợ thuộc nhóm (131,133,138,141,331,333,334,335,338,5,6,7,8)',
-    'TK Có thuộc nhóm (111,112)',
-  ],
-  10: ['TK Nợ thuộc nhóm (111,112)', 'TK Có thuộc nhóm (111,112)'],
-}
 
 function App() {
   const [dropState, setDropState] = useState(0)
@@ -82,15 +26,13 @@ function App() {
 
   const handleProcessData = (data) => {
     const worker = new DataProcessWorker()
-    worker.postMessage({ data, misaForm, formOptions, ctgs, software })
-
+    worker.postMessage({ data, misaForm, ctgs, software })
     worker.onmessage = (e) => {
       const { blob, fileName } = e.data
       FileSaver.saveAs(blob, fileName)
       worker.terminate()
       setIsProcessing(false)
     }
-
     worker.onerror = (err) => {
       console.error('Worker error:', err)
       worker.terminate()
@@ -191,7 +133,7 @@ function App() {
             onChange={(value) => {
               setMisaForm(value)
             }}
-            options={formOptions}
+            options={transformFormSettingsToArray(formSettings)}
           />
         </div>
         <div className="form-selection">

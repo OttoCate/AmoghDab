@@ -1,60 +1,19 @@
 /* eslint-disable no-restricted-globals */
 import * as XLSX from 'xlsx'
-import {
-  muaDichVuDaTienTe,
-  muaHangTrongNuocNhieuHD,
-  banDichVuDaTienTe,
-  banHangDaTienTe,
-  xuatKhoFull,
-  nhapKhoFull,
-  chungTuNghiepVuKhacDaTienTe,
-  phieuThuTienGui,
-  phieuChiTienGui,
-  phieuChuyenTienNoiBo,
-} from '../utils/processDataByFormType'
+import { createTransactionHandler } from '../utils/processDataByFormType'
+import { formSettings } from '../globalVariables'
 
 self.onmessage = function (e) {
-  const { data, misaForm, formOptions, ctgs, software } = e.data
-  let finalData = []
+  const { data, misaForm, ctgs, software } = e.data
 
-  switch (misaForm) {
-    case '1':
-      finalData = banDichVuDaTienTe(data, ctgs, software)
-      break
-    case '2':
-      finalData = banHangDaTienTe(data, ctgs, software)
-      break
-    case '3':
-      finalData = muaDichVuDaTienTe(data, ctgs, software)
-      break
-    case '4':
-      finalData = muaHangTrongNuocNhieuHD(data, ctgs, software)
-      break
-    case '5':
-      finalData = xuatKhoFull(data, ctgs, software)
-      break
-    case '6':
-      finalData = nhapKhoFull(data, ctgs, software)
-      break
-    case '7':
-      finalData = chungTuNghiepVuKhacDaTienTe(data, ctgs, software)
-      break
-    case '8':
-      finalData = phieuThuTienGui(data, ctgs, software)
-      break
-    case '9':
-      finalData = phieuChiTienGui(data, ctgs, software)
-      break
-    case '10':
-      finalData = phieuChuyenTienNoiBo(data, ctgs, software)
-      break
-    default:
-      finalData = []
-      break
+  if (!formSettings[misaForm]) {
+    self.postMessage({ error: `Invalid misaForm: ${misaForm}` })
+    return
   }
 
-  const fileName =
-    formOptions.find((i) => i.value === misaForm)?.label || 'Result'
+  let finalData = createTransactionHandler(data, ctgs, software, misaForm)
+
+  const fileName = formSettings[misaForm].label || 'Result'
   const fileType =
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
   const fileExtension = '.xlsx'
