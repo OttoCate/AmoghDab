@@ -94,9 +94,11 @@ export const processDataMDVDTT = (data, originalData, software) => {
       'Mã thống kê': '',
       'Số khế ước đi vay': '',
       'Số khế ước cho vay': '',
-      'CP không hợp lý': line['TK Nôï']?.toString().toUpperCase().includes('K')
-        ? 'Coù'
-        : 'Khoâng',
+      'CP không hợp lý':
+        line['TK Nôï']?.toString().toUpperCase().includes('K') ||
+        line['TK Coù']?.toString().toUpperCase().includes('K')
+          ? 'Coù'
+          : 'Khoâng',
       '% thuế GTGT': taxLine.length === 0 ? '' : taxLine[0]['TS %'],
       '% thuế suất KHAC': '',
       'Tiền thuế GTGT':
@@ -208,9 +210,11 @@ export const processDataMHTNNHD = (data, originalData, software) => {
       'Mã thống kê': '',
       'Số khế ước đi vay': '',
       'Số khế ước cho vay': '',
-      'CP không hợp lý': line['TK Nôï']?.toString().toUpperCase().includes('K')
-        ? 'Coù'
-        : 'Khoâng',
+      'CP không hợp lý':
+        line['TK Nôï']?.toString().toUpperCase().includes('K') ||
+        line['TK Coù']?.toString().toUpperCase().includes('K')
+          ? 'Coù'
+          : 'Khoâng',
       '% thuế GTGT': taxLine.length === 0 ? '' : taxLine[0]['TS %'],
       '% thuế suất KHAC': '',
       'Tiền thuế GTGT':
@@ -373,9 +377,11 @@ export const processDataBDVDTT = (data, originalData, software) => {
       'Số hợp đồng bán': '',
       'Mã thống kê': '',
       'Số khế ước cho vay': '',
-      'CP không hợp lý': TKNo?.toString().toUpperCase().includes('K')
-        ? 'Coù'
-        : 'Khoâng',
+      'CP không hợp lý':
+        TKNo?.toString().toUpperCase().includes('K') ||
+        TKCo?.toString().toUpperCase().includes('K')
+          ? 'Coù'
+          : 'Khoâng',
     }
   })
 
@@ -518,9 +524,11 @@ export const processDataBHDTT = (data, originalData, software) => {
       'Số hợp đồng bán': '',
       'Mã thống kê': '',
       'Số khế ước cho vay': '',
-      'CP không hợp lý': TKNo?.toString().toUpperCase().includes('K')
-        ? 'Coù'
-        : 'Khoâng',
+      'CP không hợp lý':
+        TKNo?.toString().toUpperCase().includes('K') ||
+        TKCo?.toString().toUpperCase().includes('K')
+          ? 'Coù'
+          : 'Khoâng',
       'Mã kho': '',
       'TK giá vốn': '',
       'TK Kho': '',
@@ -575,9 +583,11 @@ export const processDataXKF = (data, originalData, software) => {
       'Số hợp đồng mua': '',
       'Số hợp đồng bán': '',
       'Mã thống kê': '',
-      'CP không hợp lý': line['TK Nôï']?.toString().toUpperCase().includes('K')
-        ? 'Coù'
-        : 'Khoâng',
+      'CP không hợp lý':
+        line['TK Nôï']?.toString().toUpperCase().includes('K') ||
+        line['TK Coù']?.toString().toUpperCase().includes('K')
+          ? 'Coù'
+          : 'Khoâng',
     }
   })
 
@@ -626,9 +636,11 @@ export const processNKF = (data, originalData, software) => {
       'Số hợp đồng mua': '',
       'Số hợp đồng bán': '',
       'Mã thống kê': '',
-      'CP không hợp lý': line['TK Coù']?.toString().toUpperCase().includes('K')
-        ? 'Coù'
-        : 'Khoâng',
+      'CP không hợp lý':
+        line['TK Coù']?.toString().toUpperCase().includes('K') ||
+        line['TK Nôï']?.toString().toUpperCase().includes('K')
+          ? 'Coù'
+          : 'Khoâng',
     }
   })
 
