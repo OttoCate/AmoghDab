@@ -704,7 +704,7 @@ export const processNVK = (data, originalData, software) => {
       'Mã thống kê': '',
       'CP không hợp lý':
         line['TK Nôï']?.toString().toUpperCase().includes('K') ||
-        line['TK Nôï']?.toString().toUpperCase().includes('K')
+        line['TK Coù']?.toString().toUpperCase().includes('K')
           ? 'Coù'
           : 'Khoâng',
       'Hạch toán gộp nhiều hóa đơn': 'Khoâng',
