@@ -3,26 +3,19 @@ import { excelDateToJSDate } from './convertToDate.js'
 import ISaleProduct from '../source/NJSC/danhMucSanPham.json'
 
 const checkIsaleProductCode = (productCode) => {
-  let myProductCode = ''
-
-  myProductCode =
+  return (
     [...ISaleProduct].find(
       (i) => i['Tªn t¾t'] === productCode?.trim()?.slice(1)?.trim()
     )?.['M· hµng (KT)'] || ''
-
-  return myProductCode
+  )
 }
 
 const checkTaxType = (line) => {
-  if (line['TK Coù'] === '1331') {
-    return 'Giaûm thueá ñaàu vaøo'
-  } else if (line['TK Coù'] === '33311') {
-    return 'Taêng thueá ñaàu ra'
-  } else if (line['TK Nôï'] === '1331') {
-    return 'Taêng thueá ñaàu vaøo'
-  } else if (line['TK Nôï'] === '33311') {
-    return 'Giaûm thueá ñaàu ra'
-  }
+  if (line['TK Coù'] === '1331') return 'Giaûm thueá ñaàu vaøo'
+  if (line['TK Coù'] === '33311') return 'Taêng thueá ñaàu ra'
+  if (line['TK Nôï'] === '1331') return 'Taêng thueá ñaàu vaøo'
+  if (line['TK Nôï'] === '33311') return 'Giaûm thueá ñaàu ra'
+  return ''
 }
 
 export const processDataMDVDTT = (data, originalData, software) => {
