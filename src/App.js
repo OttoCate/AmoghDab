@@ -13,7 +13,7 @@ import excelLogo from './images/excel.png'
 import { Select } from 'antd'
 import enImg from './images/en.png'
 import { Alert, Input } from 'antd'
-import { transformFormSettingsToArray } from './utils/tools.js'
+import { transformFormSettingsToArray } from './functions/turnObjectToArray.js'
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import DataProcessWorker from 'worker-loader!./workers/dataProcessor.worker.js'
 

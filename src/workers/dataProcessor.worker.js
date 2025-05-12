@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 import * as XLSX from 'xlsx'
-import { createTransactionHandler } from '../utils/processDataByFormType'
+import { createTransactionHandler } from '../functions/processDataByFormType'
 import { formSettings } from '../globalVariables'
 
 self.onmessage = function (e) {

@@ -1,4 +1,4 @@
-import { getRowsRelatedToForm } from '../functions/getRowsRelatedToForm'
+import { getRowsRelatedToForm } from './getRowsRelatedToForm'
 import { formSettings } from '../globalVariables'
 
 const handleTransaction = (
