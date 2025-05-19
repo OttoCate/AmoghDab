@@ -22,7 +22,7 @@ export const formSettings = {
   3: {
     debit: ['335', '6', '8'],
     credit: ['335', '331', '111', '112', '338'],
-    invoiceRequired: true,
+    invoiceRequired: false,
     isComplement: false,
     function: processDataMDVDTT,
     label: 'Mẫu mua dịch vụ đa tiền tệ',
@@ -31,7 +31,7 @@ export const formSettings = {
   4: {
     debit: ['15', '2', '64', '335', '62', '811'],
     credit: ['335', '331', '111', '112', '338', '336'],
-    invoiceRequired: true,
+    invoiceRequired: false,
     isComplement: false,
     function: processDataMHTNNHD,
     label: 'Mẫu mua hàng trong nước nhiều hóa đơn đa tiền tệ',
@@ -140,15 +140,10 @@ export const rules = {
     'TK Có thuộc nhóm (5111,5112,131,138)',
     'Cột số HĐ và ký hiệu HĐ có giá trị',
   ],
-  3: [
-    'TK Nợ thuộc nhóm (335,6,8)',
-    'TK Có thuộc nhóm (335,331,111,112,338)',
-    'Cột số HĐ và ký hiệu HĐ có giá trị',
-  ],
+  3: ['TK Nợ thuộc nhóm (335,6,8)', 'TK Có thuộc nhóm (335,331,111,112,338)'],
   4: [
     'TK Nợ thuộc nhóm (15,2,64,335,62,811)',
     'TK Có thuộc nhóm (335,331,111,112,338,336)',
-    'Cột số HĐ và ký hiệu HĐ có giá trị',
   ],
   5: [
     'TK Nợ thuộc nhóm (6,8,157,154,141)',
