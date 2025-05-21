@@ -16,6 +16,36 @@ import { Alert, Input } from 'antd'
 import { transformFormSettingsToArray } from './functions/turnObjectToArray.js'
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import DataProcessWorker from 'worker-loader!./workers/dataProcessor.worker.js'
+import { Upload } from 'antd'
+import { Button, ConfigProvider, Space } from 'antd'
+import { createStyles } from 'antd-style'
+import { MdOutlineContentPasteSearch } from 'react-icons/md'
+
+const useStyle = createStyles(({ prefixCls, css }) => ({
+  linearGradientButton: css`
+    &.${prefixCls}-btn-primary:not([disabled]):not(
+        .${prefixCls}-btn-dangerous
+      ) {
+      > span {
+        position: relative;
+      }
+
+      &::before {
+        content: '';
+        background: linear-gradient(135deg, #6253e1, #04befe);
+        position: absolute;
+        inset: -1px;
+        opacity: 1;
+        transition: all 0.3s;
+        border-radius: inherit;
+      }
+
+      &:hover::before {
+        opacity: 0;
+      }
+    }
+  `,
+}))
 
 function App() {
   const [dropState, setDropState] = useState(0)
@@ -24,9 +54,29 @@ function App() {
   const [ctgs, setCtgs] = useState('')
   const [software, setSoftware] = useState('asa')
 
+  const { styles } = useStyle()
+
   const handleProcessData = (data) => {
     const worker = new DataProcessWorker()
     worker.postMessage({ data, misaForm, ctgs, software })
+    worker.onmessage = (e) => {
+      const { blob, fileName } = e.data
+      FileSaver.saveAs(blob, fileName)
+      worker.terminate()
+      setIsProcessing(false)
+    }
+    worker.onerror = (err) => {
+      console.error('Worker error:', err)
+      worker.terminate()
+      setIsProcessing(false)
+    }
+  }
+
+  const handleCheckExclusiveData = (data) => {
+    const worker = new Worker(
+      new URL('./workers/exclusiveDataProcessor.worker.js', import.meta.url)
+    )
+    worker.postMessage({ data })
     worker.onmessage = (e) => {
       const { blob, fileName } = e.data
       FileSaver.saveAs(blob, fileName)
@@ -54,19 +104,20 @@ function App() {
     )
   }
 
-  const handleAddFile = async (file) => {
+  const handleAddFile = async (file, isCheckingExclusive) => {
     try {
-      if (!misaForm) {
+      if (!misaForm && !isCheckingExclusive) {
         alert('Vui lòng chỉ định mẫu form bạn muốn chuyển đổi dữ liệu')
         return
       }
 
-      if (!software) {
+      if (!software && !isCheckingExclusive) {
         alert('Vui lòng chỉ định dữ liệu đến từ phần mềm nào')
         return
       }
 
-      if (!validExcelFile.includes(file[0].type)) {
+      const fileType = isCheckingExclusive ? file.type : file[0].type
+      if (!validExcelFile.includes(fileType)) {
         alert('File của bạn phải là excel')
         return
       }
@@ -75,7 +126,7 @@ function App() {
       // Read file into ArrayBuffer
       const buffer = await new Promise((resolve, reject) => {
         const fileReader = new FileReader()
-        fileReader.readAsArrayBuffer(file[0])
+        fileReader.readAsArrayBuffer(isCheckingExclusive ? file : file[0])
         fileReader.onload = (e) => resolve(e.target.result)
         fileReader.onerror = (err) => reject(err)
       })
@@ -91,7 +142,11 @@ function App() {
         const { success, data, error } = e.data
 
         if (success) {
-          handleProcessData(data)
+          if (isCheckingExclusive) {
+            handleCheckExclusiveData(data)
+          } else {
+            handleProcessData(data)
+          }
         } else {
           alert('Lỗi xử lý file: ' + error)
         }
@@ -183,6 +238,34 @@ function App() {
             closable
           />
         )}
+
+        <div style={{ position: 'absolute', top: 15, left: 15 }}>
+          <Upload
+            disabled={isProcessing}
+            multiple={false}
+            beforeUpload={(file) => {
+              handleAddFile(file, true)
+              return false // Prevent upload
+            }}
+            showUploadList={false}
+          >
+            <ConfigProvider
+              button={{
+                className: styles.linearGradientButton,
+              }}
+            >
+              <Space>
+                <Button
+                  type="primary"
+                  size="medium"
+                  icon={<MdOutlineContentPasteSearch />}
+                >
+                  Kiểm tra loại trừ
+                </Button>
+              </Space>
+            </ConfigProvider>
+          </Upload>
+        </div>
         <div className="dropbox-area-wrapper">
           {isProcessing ? (
             <div className="loading">
@@ -202,7 +285,9 @@ function App() {
                   onDropRejected={() => setDropState(0)}
                   onDragLeave={() => setDropState(0)}
                   onFileDialogCancel={() => setDropState(0)}
-                  onDrop={(acceptedFiles) => handleAddFile(acceptedFiles)}
+                  onDrop={(acceptedFiles) =>
+                    handleAddFile(acceptedFiles, false)
+                  }
                 >
                   {({ getRootProps, getInputProps }) => (
                     <section
@@ -257,6 +342,7 @@ const Wrapper = styled.div`
   .dropbox-container-wrapper {
     flex: 1;
     height: 100%;
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
