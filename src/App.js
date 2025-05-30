@@ -18,34 +18,7 @@ import { transformFormSettingsToArray } from './functions/turnObjectToArray.js'
 import DataProcessWorker from 'worker-loader!./workers/dataProcessor.worker.js'
 import { Upload } from 'antd'
 import { Button, ConfigProvider, Space } from 'antd'
-import { createStyles } from 'antd-style'
 import { MdOutlineContentPasteSearch } from 'react-icons/md'
-
-const useStyle = createStyles(({ prefixCls, css }) => ({
-  linearGradientButton: css`
-    &.${prefixCls}-btn-primary:not([disabled]):not(
-        .${prefixCls}-btn-dangerous
-      ) {
-      > span {
-        position: relative;
-      }
-
-      &::before {
-        content: '';
-        background: linear-gradient(135deg, #6253e1, #04befe);
-        position: absolute;
-        inset: -1px;
-        opacity: 1;
-        transition: all 0.3s;
-        border-radius: inherit;
-      }
-
-      &:hover::before {
-        opacity: 0;
-      }
-    }
-  `,
-}))
 
 function App() {
   const [dropState, setDropState] = useState(0)
@@ -53,8 +26,6 @@ function App() {
   const [isProcessing, setIsProcessing] = useState(false)
   const [ctgs, setCtgs] = useState('')
   const [software, setSoftware] = useState('asa')
-
-  const { styles } = useStyle()
 
   const handleProcessData = (data) => {
     const worker = new DataProcessWorker()
@@ -249,21 +220,9 @@ function App() {
             }}
             showUploadList={false}
           >
-            <ConfigProvider
-              button={{
-                className: styles.linearGradientButton,
-              }}
-            >
-              <Space>
-                <Button
-                  type="primary"
-                  size="medium"
-                  icon={<MdOutlineContentPasteSearch />}
-                >
-                  Kiểm tra loại trừ
-                </Button>
-              </Space>
-            </ConfigProvider>
+            <Button size="medium" icon={<MdOutlineContentPasteSearch />}>
+              Kiểm tra loại trừ
+            </Button>
           </Upload>
         </div>
         <div className="dropbox-area-wrapper">
@@ -645,7 +604,7 @@ const Wrapper = styled.div`
       }
 
       .start-btn {
-        margin-top: 01rem;
+        margin-top: 1rem;
         background-color: ${(props) => props.theme.textColor};
         padding: 0.5rem;
         display: flex;

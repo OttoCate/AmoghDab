@@ -2,31 +2,7 @@
 import * as XLSX from 'xlsx'
 import { formSettings } from '../globalVariables'
 import { transformFormSettingsToArrayForExclusive } from '../functions/turnObjectToArray'
-
-const startsWithAny = (value, prefixes) =>
-  prefixes.some((prefix) => value?.toString()?.startsWith(prefix?.toString()))
-
-const checkIfDataIsMatchToForm = (
-  line,
-  allowedDebitAccounts,
-  allowedCreditAccounts,
-  hasInvoice,
-  isComplement
-) => {
-  const invoiceSymbol = line['Kyù hieäu'] || line['InvSeriNo']
-  const invoiceNumber = line['Soá HÑ'] || line['InvoiceNo']
-  const debitAccount = line['TK Nôï'] || line['RecvAcctID']
-  const creditAccount = line['TK Coù'] || line['IncomeAcctID']
-
-  if (hasInvoice && (!invoiceSymbol || !invoiceNumber)) return false
-
-  const isDebitAllowed = startsWithAny(debitAccount, allowedDebitAccounts)
-  const isCreditAllowed = startsWithAny(creditAccount, allowedCreditAccounts)
-
-  return isComplement
-    ? !(isDebitAllowed || isCreditAllowed)
-    : isDebitAllowed && isCreditAllowed
-}
+import { checkIfDataIsMatchToForm } from '../functions/getRowsRelatedToForm'
 
 const processExclusiveData = (data, transformedFormSettings) => {
   return data.filter((line) => {

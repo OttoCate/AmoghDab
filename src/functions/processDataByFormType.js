@@ -1,4 +1,4 @@
-import { getRowsRelatedToForm } from './getRowsRelatedToForm'
+import { checkIfDataIsMatchToForm } from './getRowsRelatedToForm'
 import { formSettings } from '../globalVariables'
 
 const handleTransaction = (
@@ -11,13 +11,15 @@ const handleTransaction = (
   ctgs,
   software
 ) => {
-  const preProcessedData = getRowsRelatedToForm(
-    inputData,
-    debitAccounts,
-    creditAccounts,
-    hasInvoice,
-    isComplement,
-    ctgs
+  const preProcessedData = inputData.filter((line) =>
+    checkIfDataIsMatchToForm(
+      line,
+      debitAccounts,
+      creditAccounts,
+      hasInvoice,
+      isComplement,
+      ctgs
+    )
   )
   return processFn(preProcessedData, inputData, software)
 }
