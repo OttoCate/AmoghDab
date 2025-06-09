@@ -417,6 +417,7 @@ export const processDataBHDTT = (data, originalData, software) => {
     let tenHang = line['TenHang'] || ''
     let maHang = line['C.Tieát Coù'] || checkIsaleProductCode(line['Item ID'])
     let soLuong = line['S.Löôïng'] || line['Quantity']
+    let soPhieuXuat = line['MSPNX'] || ''
     let donGia =
       line['Unit Price'] ||
       (lodash.isNumber(soLuong) && soLuong > 0
@@ -454,13 +455,13 @@ export const processDataBHDTT = (data, originalData, software) => {
         : TKNo.startsWith('112')
         ? 'Thu tieàn ngay - Chuyeån khoaûn'
         : 'Chöa thu tieàn',
-      'Kiêm phiếu xuất kho': 'Khoâng',
+      'Kiêm phiếu xuất kho': soPhieuXuat ? '' : 'Khoâng',
       'Lập kèm hóa đơn': 'Coù',
       'Đã lập hóa đơn': 'Đaõ laäp',
       'Ngày hạch toán (*)': NgayGS,
       'Ngày chứng từ (*)': NgayGS,
       'Số chứng từ (*)': soChungTu,
-      'Số phiếu xuất': '',
+      'Số phiếu xuất': soPhieuXuat,
       'Mẫu số HĐ': 1,
       'Ký hiệu HĐ': KyHieuHD,
       'Số hóa đơn': SoHD,
@@ -522,9 +523,9 @@ export const processDataBHDTT = (data, originalData, software) => {
         TKCo?.toString().toUpperCase().includes('K')
           ? 'Coù'
           : 'Khoâng',
-      'Mã kho': '',
-      'TK giá vốn': '',
-      'TK Kho': '',
+      'Mã kho': line['Store House ID'] || '',
+      'TK giá vốn': line['CostOfSalesAcctID'] || '',
+      'TK Kho': line['AssetAcctID'] || '',
       'Đơn giá vốn': '',
       'Tiền vốn': '',
       'Hàng hóa giữ hộ/bán hộ': '',
