@@ -56,7 +56,7 @@ export const formSettings = {
   },
 
   5: {
-    debit: ['6', '8', '157', '154', '141'],
+    debit: ['6', '8', '157', '154', '141', '1381', '1388', '242', '3381'],
     credit: ['152', '153', '155', '156'],
     invoiceRequired: false,
     isComplement: false,
@@ -146,7 +146,7 @@ export const rules = {
     'TK Có thuộc nhóm (335,331,111,112,338,336)',
   ],
   5: [
-    'TK Nợ thuộc nhóm (6,8,157,154,141)',
+    'TK Nợ thuộc nhóm (6,8,157,154,141,1381,1388,242,3381)',
     'TK Có thuộc nhóm (152,153,155,156)',
   ],
   6: [
