@@ -129,6 +129,18 @@ export const softwareSource = [
   { value: 'isale', label: 'ISale' },
 ]
 
+export const invoiceSymbolState = [
+  { value: 'yes', label: 'Bắt buộc có' },
+  { value: 'no', label: 'Bắt buộc không có' },
+  { value: 'whatever', label: 'Có hoặc không đều được' },
+]
+
+export const invoiceNumberState = [
+  { value: 'yes', label: 'Bắt buộc có' },
+  { value: 'no', label: 'Bắt buộc không có' },
+  { value: 'whatever', label: 'Có hoặc không đều được' },
+]
+
 export const rules = {
   1: [
     'TK Nợ thuộc nhóm (131,111,112,138,521)',

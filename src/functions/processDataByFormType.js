@@ -9,7 +9,9 @@ const handleTransaction = (
   hasInvoice,
   isComplement,
   ctgs,
-  software
+  software,
+  applyOveride,
+  overrideInfo
 ) => {
   const preProcessedData = inputData.filter((line) =>
     checkIfDataIsMatchToForm(
@@ -18,13 +20,22 @@ const handleTransaction = (
       creditAccounts,
       hasInvoice,
       isComplement,
-      ctgs
+      ctgs,
+      applyOveride,
+      overrideInfo
     )
   )
   return processFn(preProcessedData, inputData, software)
 }
 
-export const createTransactionHandler = (inputData, ctgs, software, misaForm) =>
+export const createTransactionHandler = (
+  inputData,
+  ctgs,
+  software,
+  misaForm,
+  applyOveride,
+  overrideInfo
+) =>
   handleTransaction(
     inputData,
     formSettings[misaForm].debit,
@@ -33,5 +44,7 @@ export const createTransactionHandler = (inputData, ctgs, software, misaForm) =>
     formSettings[misaForm].invoiceRequired,
     formSettings[misaForm].isComplement,
     ctgs,
-    software
+    software,
+    applyOveride,
+    overrideInfo
   )

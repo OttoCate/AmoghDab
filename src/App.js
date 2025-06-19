@@ -7,29 +7,46 @@ import {
   formSettings,
   softwareSource,
   rules,
+  invoiceSymbolState,
+  invoiceNumberState,
 } from './globalVariables.js'
 import styled from 'styled-components'
 import excelLogo from './images/excel.png'
-import { Select } from 'antd'
 import enImg from './images/en.png'
-import { Alert, Input } from 'antd'
 import { transformFormSettingsToArray } from './functions/turnObjectToArray.js'
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import DataProcessWorker from 'worker-loader!./workers/dataProcessor.worker.js'
-import { Upload } from 'antd'
-import { Button, ConfigProvider, Space } from 'antd'
+import { Upload, Tooltip, Button, Switch, Select, Alert, Input } from 'antd'
 import { MdOutlineContentPasteSearch } from 'react-icons/md'
 
 function App() {
   const [dropState, setDropState] = useState(0)
-  const [misaForm, setMisaForm] = useState('')
   const [isProcessing, setIsProcessing] = useState(false)
+  const [applyOveride, setApplyOverride] = useState(false)
+  const [misaForm, setMisaForm] = useState('')
   const [ctgs, setCtgs] = useState('')
   const [software, setSoftware] = useState('asa')
+  const [customDebits, setCustomDebits] = useState('')
+  const [customCredits, setCustomCredits] = useState('')
+  const [invoiceSymbol, setInvoiceSymbol] = useState('whatever')
+  const [invoiceNumber, setInvoiceNumber] = useState('whatever')
 
   const handleProcessData = (data) => {
+    const overrideInfo = {
+      debits: customDebits,
+      credits: customCredits,
+      invoiceSymbol: invoiceSymbol,
+      invoiceNumber: invoiceNumber,
+    }
     const worker = new DataProcessWorker()
-    worker.postMessage({ data, misaForm, ctgs, software })
+    worker.postMessage({
+      data,
+      misaForm,
+      ctgs,
+      software,
+      applyOveride,
+      overrideInfo,
+    })
     worker.onmessage = (e) => {
       const { blob, fileName } = e.data
       FileSaver.saveAs(blob, fileName)
@@ -77,15 +94,14 @@ function App() {
 
   const handleAddFile = async (file, isCheckingExclusive) => {
     try {
-      if (!misaForm && !isCheckingExclusive) {
-        alert('Vui lòng chỉ định mẫu form bạn muốn chuyển đổi dữ liệu')
-        return
-      }
+      if (!misaForm && !isCheckingExclusive)
+        return alert('Vui lòng chỉ định mẫu form bạn muốn chuyển đổi dữ liệu')
 
-      if (!software && !isCheckingExclusive) {
-        alert('Vui lòng chỉ định dữ liệu đến từ phần mềm nào')
-        return
-      }
+      if (!software && !isCheckingExclusive)
+        return alert('Vui lòng chỉ định dữ liệu đến từ phần mềm nào')
+
+      if (applyOveride && (!customDebits || !customCredits))
+        return alert('Vui lòng nhập đầy đủ thông tin muốn ghi đè')
 
       const fileType = isCheckingExclusive ? file.type : file[0].type
       if (!validExcelFile.includes(fileType)) {
@@ -194,6 +210,105 @@ function App() {
             onChange={(e) => setCtgs(e.target.value)}
           />
         </div>
+        <div className="form-selection">
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 16,
+              marginTop: 36,
+            }}
+          >
+            <p style={{ fontSize: 14, lineHeight: '14px' }}>
+              Bạn muốn ghi đè quy tắc lấy dữ liệu?
+            </p>
+            <Switch
+              disabled={isProcessing}
+              onChange={(checked) => setApplyOverride(checked)}
+              value={applyOveride}
+            />
+          </div>
+        </div>
+        {applyOveride && (
+          <div className="form-selection">
+            <p style={{ fontSize: 14, lineHeight: '14px' }}>
+              Danh sách tài khoản Nợ{' '}
+              <span style={{ color: 'red', fontWeight: 700 }}>*</span>
+            </p>
+            <Input
+              style={{ width: '100%' }}
+              disabled={isProcessing}
+              placeholder="111,112,6,7,811K"
+              value={customDebits}
+              onChange={(e) => setCustomDebits(e.target.value)}
+            />
+          </div>
+        )}
+        {applyOveride && (
+          <div className="form-selection">
+            <p style={{ fontSize: 14, lineHeight: '14px' }}>
+              Danh sách tài khoản Có{' '}
+              <span style={{ color: 'red', fontWeight: 700 }}>*</span>
+            </p>
+            <Input
+              style={{ width: '100%' }}
+              disabled={isProcessing}
+              placeholder="338,4,62"
+              value={customCredits}
+              onChange={(e) => setCustomCredits(e.target.value)}
+            />
+          </div>
+        )}
+        {applyOveride && (
+          <div className="form-selection">
+            <p style={{ fontSize: 14, lineHeight: '14px' }}>
+              Ký hiệu hóa đơn có bắt buộc?
+            </p>
+            <Select
+              showSearch
+              className="sidebar-select"
+              allowClear
+              style={{ width: '100%' }}
+              disabled={isProcessing}
+              placeholder="Chọn điều kiện cho ký hiệu hóa đơn"
+              filterOption={(input, option) =>
+                (option?.label ?? '')
+                  .toLowerCase()
+                  .includes(input.toLowerCase())
+              }
+              value={invoiceSymbol}
+              onChange={(value) => {
+                setInvoiceSymbol(value)
+              }}
+              options={invoiceSymbolState}
+            />
+          </div>
+        )}
+        {applyOveride && (
+          <div className="form-selection">
+            <p style={{ fontSize: 14, lineHeight: '14px' }}>
+              Số hóa đơn có bắt buộc?
+            </p>
+            <Select
+              showSearch
+              className="sidebar-select"
+              allowClear
+              style={{ width: '100%' }}
+              disabled={isProcessing}
+              placeholder="Chọn điều kiện cho ký hiệu hóa đơn"
+              filterOption={(input, option) =>
+                (option?.label ?? '')
+                  .toLowerCase()
+                  .includes(input.toLowerCase())
+              }
+              value={invoiceNumber}
+              onChange={(value) => {
+                setInvoiceNumber(value)
+              }}
+              options={invoiceNumberState}
+            />
+          </div>
+        )}
       </div>
       <div className="dropbox-container-wrapper">
         {misaForm && (
@@ -209,7 +324,6 @@ function App() {
             closable
           />
         )}
-
         <div style={{ position: 'absolute', top: 15, left: 15 }}>
           <Upload
             disabled={isProcessing}
@@ -220,9 +334,17 @@ function App() {
             }}
             showUploadList={false}
           >
-            <Button size="medium" icon={<MdOutlineContentPasteSearch />}>
-              Kiểm tra loại trừ
-            </Button>
+            <Tooltip
+              placement="bottom"
+              title={
+                'Dựa vào quy tắc lấy dữ liệu mặc định của hệ thống, hệ thống sẽ trả về danh sách các hạch toán không thỏa tất cả mẫu của MISA'
+              }
+              arrow={true}
+            >
+              <Button size="medium" icon={<MdOutlineContentPasteSearch />}>
+                Kiểm tra loại trừ
+              </Button>
+            </Tooltip>
           </Upload>
         </div>
         <div className="dropbox-area-wrapper">

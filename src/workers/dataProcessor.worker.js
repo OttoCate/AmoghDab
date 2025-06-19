@@ -4,14 +4,21 @@ import { createTransactionHandler } from '../functions/processDataByFormType'
 import { formSettings } from '../globalVariables'
 
 self.onmessage = function (e) {
-  const { data, misaForm, ctgs, software } = e.data
+  const { data, misaForm, ctgs, software, applyOveride, overrideInfo } = e.data
 
   if (!formSettings[misaForm]) {
     self.postMessage({ error: `Invalid misaForm: ${misaForm}` })
     return
   }
 
-  let finalData = createTransactionHandler(data, ctgs, software, misaForm)
+  let finalData = createTransactionHandler(
+    data,
+    ctgs,
+    software,
+    misaForm,
+    applyOveride,
+    overrideInfo
+  )
 
   const fileName = formSettings[misaForm].label || 'Result'
   const fileType =
