@@ -267,7 +267,6 @@ function App() {
             <Select
               showSearch
               className="sidebar-select"
-              allowClear
               style={{ width: '100%' }}
               disabled={isProcessing}
               placeholder="Chọn điều kiện cho ký hiệu hóa đơn"
@@ -292,7 +291,6 @@ function App() {
             <Select
               showSearch
               className="sidebar-select"
-              allowClear
               style={{ width: '100%' }}
               disabled={isProcessing}
               placeholder="Chọn điều kiện cho ký hiệu hóa đơn"
