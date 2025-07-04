@@ -1,12 +1,24 @@
 import lodash from 'lodash'
 import { excelDateToJSDate } from './convertToDate.js'
 import ISaleProduct from '../source/NJSC/danhMucSanPham.json'
+import ISaleCustomer from '../source/NJSC/danhMucKhachHang.json'
+import moment from 'moment'
 
 const checkIsaleProductCode = (productCode) => {
   return (
     [...ISaleProduct].find(
       (i) => i['Tªn t¾t'] === productCode?.trim()?.slice(1)?.trim()
     )?.['M· hµng (KT)'] || ''
+  )
+}
+
+const checkIsaleCustomerCode = (customerName) => {
+  return (
+    [...ISaleCustomer].find(
+      (i) =>
+        i['Tên khách hàng'].toUpperCase().trim() ===
+        customerName?.trim()?.toUpperCase()
+    )?.['Mã khách hàng'] || ''
   )
 }
 
@@ -265,9 +277,25 @@ export const processDataBDVDTT = (data, originalData, software) => {
         : []
 
     let soChungTu =
-      line['Document ID'] || line['CTGS'] + '-' + line['Soá phieáu']
-    let TKNo = line['TK Nôï'] || line['RecvAcctID'] || ''
-    let TKCo = line['TK Coù'] || line['IncomeAcctID'] || ''
+      software === 'isale'
+        ? !line['IncomeAcctID']
+          ? ''
+          : `DT${moment(line['InvoiceDate']).format('MM')}${moment(
+              line['InvoiceDate']
+            ).format('YY')}${line['InvoiceNo']?.slice(-4) || ''}`
+        : line['CTGS'] + '-' + line['Soá phieáu']
+    let TKNo =
+      line['TK Nôï'] ||
+      (line['CustName'] === 'Công Ty Cổ Phần Thiên Nhiên'
+        ? '6418'
+        : line['RecvAcctID']) ||
+      ''
+    let TKCo =
+      line['TK Coù'] ||
+      (line['CustName'] === 'Công Ty Cổ Phần Thiên Nhiên'
+        ? '1381'
+        : line['IncomeAcctID']) ||
+      ''
     let NgayGS = line['Document Date'] || excelDateToJSDate(line['Ngaøy GS'])
     let NgayHD = line['InvoiceDate'] || excelDateToJSDate(line['Ngaøy HÑ'])
     let KyHieuHD = line['Kyù hieäu']?.slice(1) || line['InvSeriNo']
@@ -326,7 +354,8 @@ export const processDataBDVDTT = (data, originalData, software) => {
       'Ký hiệu HĐ': KyHieuHD,
       'Số hóa đơn': SoHD,
       'Ngày hóa đơn': NgayHD,
-      'Mã khách hàng': line['C.Tieát Nôï'] || '',
+      'Mã khách hàng':
+        line['C.Tieát Nôï'] || checkIsaleCustomerCode(custonerName),
       'Tên khách hàng': custonerName,
       'Địa chỉ': customerAddress,
       'Mã số thuế': mst,
@@ -401,9 +430,25 @@ export const processDataBHDTT = (data, originalData, software) => {
         : []
 
     let soChungTu =
-      line['Document ID'] || line['CTGS'] + '-' + line['Soá phieáu']
-    let TKNo = line['TK Nôï'] || line['RecvAcctID'] || ''
-    let TKCo = line['TK Coù'] || line['IncomeAcctID'] || ''
+      software === 'isale'
+        ? !line['IncomeAcctID']
+          ? ''
+          : `DT${moment(line['InvoiceDate']).format('MM')}${moment(
+              line['InvoiceDate']
+            ).format('YY')}${line['InvoiceNo']?.slice(-4) || ''}`
+        : line['CTGS'] + '-' + line['Soá phieáu']
+    let TKNo =
+      line['TK Nôï'] ||
+      (line['CustName'] === 'Công Ty Cổ Phần Thiên Nhiên'
+        ? '6418'
+        : line['RecvAcctID']) ||
+      ''
+    let TKCo =
+      line['TK Coù'] ||
+      (line['CustName'] === 'Công Ty Cổ Phần Thiên Nhiên'
+        ? '1381'
+        : line['IncomeAcctID']) ||
+      ''
     let NgayGS = line['Document Date'] || excelDateToJSDate(line['Ngaøy GS'])
     let NgayHD = line['InvoiceDate'] || excelDateToJSDate(line['Ngaøy HÑ'])
     let KyHieuHD = line['Kyù hieäu']?.slice(1) || line['InvSeriNo']
@@ -466,7 +511,8 @@ export const processDataBHDTT = (data, originalData, software) => {
       'Ký hiệu HĐ': KyHieuHD,
       'Số hóa đơn': SoHD,
       'Ngày hóa đơn': NgayHD,
-      'Mã khách hàng': line['C.Tieát Nôï'] || '',
+      'Mã khách hàng':
+        line['C.Tieát Nôï'] || checkIsaleCustomerCode(custonerName),
       'Tên khách hàng': custonerName,
       'Địa chỉ': customerAddress,
       'Mã số thuế': mst,

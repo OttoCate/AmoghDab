@@ -1,0 +1,4486 @@
+[
+  {
+    "Tên khách hàng": "Ngân Hàng TMCP Công Thương Việt Nam - Chi Nhánh 10 TPHCM",
+    "Mã khách hàng": "010011194A"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Liên Doanh Khách Sạn Thống Nhất Metropole",
+    "Mã khách hàng": "0100112162"
+  },
+  {
+    "Tên khách hàng": "Công Ty Liên Doanh TNHH Berjaya - Hồ Tây",
+    "Mã khách hàng": "0100112268"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Phát Triển Hồ Tây",
+    "Mã khách hàng": "0100112282"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH S.A.S.- CTAMAD",
+    "Mã khách hàng": "0100112324"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Syrena",
+    "Mã khách hàng": "0100112525"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Tháp Trung Tâm Hà Nội",
+    "Mã khách hàng": "0100112758"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần ROXY Việt Nam",
+    "Mã khách hàng": "0100112814"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Bệnh Viện Việt Pháp Hà Nội",
+    "Mã khách hàng": "0100112966"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Quốc Tế Hồ Tây",
+    "Mã khách hàng": "0100113141"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH KCC HANOI PLAZA",
+    "Mã khách hàng": "0100113208"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Biệt Thự Vàng",
+    "Mã khách hàng": "0100144982"
+  },
+  {
+    "Tên khách hàng": "Tổng Công ty Cổ Phần Dịch Vụ Kỹ Thuật Dầu Khí Việt Nam",
+    "Mã khách hàng": "0100150577"
+  },
+  {
+    "Tên khách hàng": "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - CHI NHÁNH NAM KỲ KHỞI NGHĨA",
+    "Mã khách hàng": "0100150619-079"
+  },
+  {
+    "Tên khách hàng": "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN VIỆT NAM THỊNH VƯỢNG - CHI NHÁNH TP. HỒ CHÍ MINH",
+    "Mã khách hàng": "0100233583-003"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Duy Nghĩa",
+    "Mã khách hàng": "0100234562"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH Hòa Bình - CN Đà Nẵng",
+    "Mã khách hàng": "0100276146"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hòa Bình - Chi Nhánh Đà Nẵng",
+    "Mã khách hàng": "010027614601"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hòa Bình - CN Đà Nẵng",
+    "Mã khách hàng": "010027614A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Và Du Lịch Hoa Mai",
+    "Mã khách hàng": "0100284965"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN ALPHANAM E&C",
+    "Mã khách hàng": "0100520683"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần FORD Thăng Long",
+    "Mã khách hàng": "0100774222"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Savills Việt Nam - Chi Nhánh TPHCM",
+    "Mã khách hàng": "010077751A"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH THƯƠNG MẠI TRẦN HỒNG QUÂN - TÒA THÁP KHÁCH SẠN",
+    "Mã khách hàng": "0101058817-008"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công ty TNHH Thương Mại Trần Hồng Quân - Tòa Tháp Khách Sạn",
+    "Mã khách hàng": "010105881A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Và Xây Dựng Bảo Quân",
+    "Mã khách hàng": "0101100307"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH KHÁCH SẠN CROWNE PLAZA VĨNH YÊN CITY CENTRE - CÔNG TY CỔ PHẦN ĐẦU TƯ & XÂY DỰNG BẢO QUÂN",
+    "Mã khách hàng": "0101100307-003"
+  },
+  {
+    "Tên khách hàng": "CN KS Crowne Plaza Vĩnh Yên City Centre - Công Ty CP Đầu Tư & Xây Dựng Bảo Quân",
+    "Mã khách hàng": "010110030A"
+  },
+  {
+    "Tên khách hàng": "Công Ty cổ Phần Thời Trang Thiên Quang",
+    "Mã khách hàng": "0101100593"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY CỔ PHẦN THỜI TRANG THIÊN QUANG - ROSA ALBA RESORT TUY HÒA",
+    "Mã khách hàng": "0101100593-002"
+  },
+  {
+    "Tên khách hàng": "Tập Đoàn Vingroup - Công Ty CP",
+    "Mã khách hàng": "0101245486"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Và Quản Lý  LUXHOUSE",
+    "Mã khách hàng": "0101285672"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Tập Đoàn ECOPARK",
+    "Mã khách hàng": "0101395308"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Lạc Hồng",
+    "Mã khách hàng": "0101417985"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Du Lịch và Thương Mại Hoàn Kiếm",
+    "Mã khách hàng": "0101530250"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Du Lịch và Thương Mại Dân Chủ",
+    "Mã khách hàng": "0101587835"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Liên Doanh SOMERSET Hoà Bình",
+    "Mã khách hàng": "0102064683"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Xây Dựng Và Sản Xuất Thép Hòa Bình- CN Đà Nẵng",
+    "Mã khách hàng": "010218640A"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY CỔ PHẦN ĐẦU TƯ HG TẠI QUẢNG NAM - NAMIA RIVER RETREAT",
+    "Mã khách hàng": "0102192798-001"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư HG Tại Quảng Nam - Namia River Retreat",
+    "Mã khách hàng": "010219279A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Và Thương Mại Châu Thành",
+    "Mã khách hàng": "0102267757"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Loreal Việt Nam",
+    "Mã khách hàng": "0102289856"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MTV AON VINA",
+    "Mã khách hàng": "0102314172"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MTV AON Vina",
+    "Mã khách hàng": "0102314372"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh- Công ty Cổ Phần HT INVEST",
+    "Mã khách hàng": "010233549A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Thời Đại Mới T&T",
+    "Mã khách hàng": "0102479462"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN VINHOMES",
+    "Mã khách hàng": "0102671977"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Vinhomes",
+    "Mã khách hàng": "010267197A"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh tại Hải Phòng - Công ty Cổ Phần Vinhomes",
+    "Mã khách hàng": "010267197B"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh tại Bắc Ninh - Công ty Cổ Phần Vinhomes",
+    "Mã khách hàng": "010267197D"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh tại Hà Tĩnh - Công ty Cổ Phần Vinhomes",
+    "Mã khách hàng": "010267197H"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH TTD Việt Nam",
+    "Mã khách hàng": "0102747792"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương mại và Du lịch M & C Việt Nam",
+    "Mã khách hàng": "0102842559"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại & Dịch Vụ Kỹ Thuật Nam Phát",
+    "Mã khách hàng": "0102960464"
+  },
+  {
+    "Tên khách hàng": "Công Ty Bảo Hiểm BSH Bắc Trung Bộ",
+    "Mã khách hàng": "010308546A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Pearl Hà",
+    "Mã khách hàng": "0103966123"
+  },
+  {
+    "Tên khách hàng": "Tổng Công Ty CP Bưa Chính Viễn Thông Viettel",
+    "Mã khách hàng": "0104093672"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Joma Việt Nam",
+    "Mã khách hàng": "0104235172"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Du Lịch và Khách Sạn Phước Thịnh",
+    "Mã khách hàng": "0104375684"
+  },
+  {
+    "Tên khách hàng": "CN Công ty Cổ Phần TM Và DV Du Lịch Đại Dương",
+    "Mã khách hàng": "0105172373A"
+  },
+  {
+    "Tên khách hàng": "CN Công ty Cổ Phần TM Và DV Du Lịch Đại Dương",
+    "Mã khách hàng": "010517237A"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH DV EB",
+    "Mã khách hàng": "0105696842"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Quản Lý Khách Sạn - Bitexco",
+    "Mã khách hàng": "0105886025"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Sun Smile Travel Việt Nam",
+    "Mã khách hàng": "0105900625"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH PHÚ QUỐC - CÔNG TY TNHH BẤT ĐỘNG SẢN NEWVISION",
+    "Mã khách hàng": "0105924224-001"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Phú Quốc - Công ty TNHH Bất Động Sản NEWVISION",
+    "Mã khách hàng": "010592422A"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Oanh Beauty",
+    "Mã khách hàng": "0106007005"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Một Thành Viên Vinschool",
+    "Mã khách hàng": "0106156871"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Lotte Hotel Việt Nam",
+    "Mã khách hàng": "0106230331"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương Mại Thiên Thủy Mộc",
+    "Mã khách hàng": "0106239831"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Tại Thành Phố Hồ Chí Minh - Công ty TNHH Thương Mại Thiên Thủy Mộc",
+    "Mã khách hàng": "010623983A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Vận Hành Vincom Retail",
+    "Mã khách hàng": "0106250673"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Dịch Vụ Bảo Vệ Vincom",
+    "Mã khách hàng": "0106339402"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Dịch Vụ Chăm Sóc Sắc Đẹp và Sức Khoẻ Amadora",
+    "Mã khách hàng": "0106341320"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Truyền Thông Hoa Sao",
+    "Mã khách hàng": "0106362338"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Le Mont Ba Vì",
+    "Mã khách hàng": "0106453352"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Thương Mại Và Dịch Vụ Y Tế T&C",
+    "Mã khách hàng": "0106588790"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH SHOPEE",
+    "Mã khách hàng": "0106773786"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Giáo dục và Đào tạo VinAcademy",
+    "Mã khách hàng": "0106805396"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH LAVENDER Hà Nội",
+    "Mã khách hàng": "0106888321"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ DU LỊCH PHÚC LỘC",
+    "Mã khách hàng": "0107083506"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần ZIVA ASIA",
+    "Mã khách hàng": "0107267599"
+  },
+  {
+    "Tên khách hàng": "Bệnh Viện Mặt Trời - Chi Nhánh Công Ty Cổ Phần Phát Triển Công Nghệ Y Học Việt Nam - Nhật Bản",
+    "Mã khách hàng": "010735938A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Thương Mại F-Mart",
+    "Mã khách hàng": "0107509537"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Palmcorp",
+    "Mã khách hàng": "0107631343"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hưng Phát Invest Hà Nội",
+    "Mã khách hàng": "0107662609"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Một Thành Viên MARFOUR",
+    "Mã khách hàng": "0107751489"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Tập Đoàn TMS",
+    "Mã khách hàng": "0107811138"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Tư Vấn Và Phát Triển Hồng Quâ",
+    "Mã khách hàng": "0107938751"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Cổ Phần Quản Lý Khách Sạn Hồng Quân",
+    "Mã khách hàng": "010793875A"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương mại Đầu tư Vĩnh Bảo",
+    "Mã khách hàng": "0108117807"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần INTELLIFE",
+    "Mã khách hàng": "0108120341"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Quản Lý Khách Sạn& Dịch Vụ Mandala",
+    "Mã khách hàng": "0108129263"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Quản Lý Khách Sạn& Dịch Vụ Mandala- Chi nhánh Phú Yên",
+    "Mã khách hàng": "010812926A"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Quản lý Khách sạn & Dịch vụ Mandala - CN Mũi Né",
+    "Mã khách hàng": "010812926B"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Be Group",
+    "Mã khách hàng": "0108269207"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Bán Lẻ FUJIMART Việt Nam",
+    "Mã khách hàng": "0108432911"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Giải pháp Khách sạn Toàn Cầu",
+    "Mã khách hàng": "0108564989"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Đầu Tư Thương Mại và Dịch Vụ Vân Sơn",
+    "Mã khách hàng": "0108585308"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Ký ức Hội An",
+    "Mã khách hàng": "0108890485"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ phần VINARI",
+    "Mã khách hàng": "0109128745"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại NAC Việt Nam",
+    "Mã khách hàng": "0109450920"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Alacarte Hạ Long",
+    "Mã khách hàng": "0109475770"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Đường Chạy Xanh",
+    "Mã khách hàng": "0109494999"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Palmcorp",
+    "Mã khách hàng": "0110049470"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đầu Tư & Phát Triển AK (Việt Nam)",
+    "Mã khách hàng": "0110465738"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN QUẢN LÝ VÀ PHÁT TRIỂN NHÀ HÀNG KHÁCH SẠN THỦ ĐÔ",
+    "Mã khách hàng": "0110767520"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần HARBOUR VIEW",
+    "Mã khách hàng": "0200109572"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH VĨNH PHƯỚC",
+    "Mã khách hàng": "0200410331"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Trường Bình Minh",
+    "Mã khách hàng": "0200457435"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH NHẬT HẠ- KHÁCH SẠN NHẬT HẠ L'OPERA",
+    "Mã khách hàng": "0200578327-003"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Tnhh Nhật Hạ- Khách Sạn Nhật Hạ L'Opera",
+    "Mã khách hàng": "020057832703"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty TNHH Nhật Hạ-Khách Sạn Nhật Hạ L OPERA",
+    "Mã khách hàng": "020057832A"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh 1 - Công Ty TNHH Nhật Hạ",
+    "Mã khách hàng": "020057832B"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh 2 Công Ty TNHH Nhật Hạ",
+    "Mã khách hàng": "020057832C"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Bất Động Sản Sơn & Hóa Chất Á Châu",
+    "Mã khách hàng": "0200988891"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Đầu Tư và Du Lịch Vạn Hương",
+    "Mã khách hàng": "0201034792"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH SOMERSET CENTRAL TD",
+    "Mã khách hàng": "0201206201"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY CỔ PHẦN ĐẦU TƯ THƯƠNG MẠI CỘNG HÒA",
+    "Mã khách hàng": "0201240971-003"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công ty Cổ Phần Đầu Tư Thương Mại Cộng Hòa",
+    "Mã khách hàng": "0201240971A"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công ty Cổ Phần Đầu Tư Thương Mại Cộng",
+    "Mã khách hàng": "020124097C"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Chuo Việt Nam",
+    "Mã khách hàng": "0201352192"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần HERITAGE CRUISES",
+    "Mã khách hàng": "0201884912"
+  },
+  {
+    "Tên khách hàng": "Thái Thị Thủy",
+    "Mã khách hàng": "0300166006"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Xây Dựng Số 1",
+    "Mã khách hàng": "0300408745"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Phát Triển Và Kinh Doanh Nhà",
+    "Mã khách hàng": "0300446236"
+  },
+  {
+    "Tên khách hàng": "Công Ty Liên Doanh Căn Hộ và Văn Phòng Sài Gòn",
+    "Mã khách hàng": "0300580104"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH Phát Triển Phú Mỹ Hưng",
+    "Mã khách hàng": "0300604002"
+  },
+  {
+    "Tên khách hàng": "Cty LD HH Khách Sạn Chains Caravelle",
+    "Mã khách hàng": "0300624224"
+  },
+  {
+    "Tên khách hàng": "Khách Sạn Đồng Khởi GRAND HOTEL",
+    "Mã khách hàng": "030062521A"
+  },
+  {
+    "Tên khách hàng": "Công ty Tnhh Bến Thành - Rsc",
+    "Mã khách hàng": "0300629889"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Sài Gòn Boulevard Complex",
+    "Mã khách hàng": "0300631398"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP ĐT Time Square VN",
+    "Mã khách hàng": "0300648218"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Sông Thanh Đa",
+    "Mã khách hàng": "0300649123"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Liên Doanh Khách Sạn Plaza",
+    "Mã khách hàng": "0300674923"
+  },
+  {
+    "Tên khách hàng": "Công Ty Liên Doanh Khách Sạn Saigon Riverside",
+    "Mã khách hàng": "0300686975"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hải Thành-LOTTE",
+    "Mã khách hàng": "0300710949"
+  },
+  {
+    "Tên khách hàng": "Cty Liên Doanh Hải Thành - LOTTE",
+    "Mã khách hàng": "030071094B"
+  },
+  {
+    "Tên khách hàng": "Công ty Liên Doanh Đại Dương",
+    "Mã khách hàng": "0300741217"
+  },
+  {
+    "Tên khách hàng": "Công ty Liên Doanh TNHH MEKONG HACOTA",
+    "Mã khách hàng": "0300768963"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Garden Plaza",
+    "Mã khách hàng": "0300787846"
+  },
+  {
+    "Tên khách hàng": "Công Ty Liên Doanh Ven Sông Sài Gòn",
+    "Mã khách hàng": "0300827143"
+  },
+  {
+    "Tên khách hàng": "Khách Sạn Equatorial Thành Phố Hồ Chí Minh",
+    "Mã khách hàng": "0300831580"
+  },
+  {
+    "Tên khách hàng": "Ngân Hàng Thương Mại Cổ Phần Nam Á",
+    "Mã khách hàng": "0300872315"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần UNICO VINA",
+    "Mã khách hàng": "0300968786"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Dịch vụ Hàng không Sân bay Tân Sơn Nhất",
+    "Mã khách hàng": "0301123125"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY CỔ PHẦN DỊCH VỤ HÀNG KHÔNG SÂN BAY TÂN SƠN NHẤT TẠI PHÚ QUỐC",
+    "Mã khách hàng": "0301123125-006"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty TNHH MTV DV Hàng Không Sân Bay TSN Tại Phú Quốc",
+    "Mã khách hàng": "030112312506"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty CP Dịch Vụ Hàng Không Sân Bay Tân Sơn Nhất Tại Phú Quốc",
+    "Mã khách hàng": "030112312A"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công ty Cổ Phần Dịch Vụ Hàng Không Sân Bay Tân Sơn Nhất Tại Khánh Hòa",
+    "Mã khách hàng": "030112312B"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV Quản Lý Kinh Doanh Nhà Thành Phố Hồ Chí Minh",
+    "Mã khách hàng": "0301124062"
+  },
+  {
+    "Tên khách hàng": "Liên Hiệp Hợp Tác Xã Thương Mại TPHCM",
+    "Mã khách hàng": "0301175691"
+  },
+  {
+    "Tên khách hàng": "Công ty Liên Doanh Khách Sạn Sài Gòn Inn",
+    "Mã khách hàng": "0301217334"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Công Nghiệp Đức Bổn",
+    "Mã khách hàng": "0301219148"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương Mại Xây Lắp Điện Cao Trần",
+    "Mã khách hàng": "0301238013"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Sản Xuất Và Thương Mại Hòa Thịnh",
+    "Mã khách hàng": "0301292275"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH SX Hàng Tiêu Dùng Bình Tiên",
+    "Mã khách hàng": "0301340497"
+  },
+  {
+    "Tên khách hàng": "NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BẢN VIỆT",
+    "Mã khách hàng": "0301378892"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Nệm Vạn Thành",
+    "Mã khách hàng": "0301435068"
+  },
+  {
+    "Tên khách hàng": "Tổng Công Ty Công Nghiệp - In -Bao Bì Liksin-TNHH Một Thành Viên",
+    "Mã khách hàng": "0301441600"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH SX TM Liên Thành Phát",
+    "Mã khách hàng": "0301442749"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Sản Xuất - Thương Mại & Hóa Chất Phương Đông",
+    "Mã khách hàng": "0301445309"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty TNHH MADISION LAND Hồ Tràm",
+    "Mã khách hàng": "030144802A"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh Lê Thị Bích Thường",
+    "Mã khách hàng": "0301610390"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Bệnh Viện Đa Khoa Hoàn Mỹ Sài Gòn",
+    "Mã khách hàng": "0301867702"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Cổ Phần Bệnh Viện Đa Khoa Hoàn Mỹ Sài Gòn - Trung Tâm Y Khoa Prima PXL",
+    "Mã khách hàng": "030186770A"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần FEI YUEH Việt Nam",
+    "Mã khách hàng": "0302102135"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Một Thành Viên Đầu Tư Du Lịch Và Vận Tải Biển Phương Nam",
+    "Mã khách hàng": "0302182074"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Phát Triển Nguyễn Hoàng",
+    "Mã khách hàng": "0302201048"
+  },
+  {
+    "Tên khách hàng": "Bệnh Viện Đại Học Y Dược Thành Phố Hồ Chí Minh",
+    "Mã khách hàng": "0302203609"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH MM Mega Market (Việt Nam)",
+    "Mã khách hàng": "0302249586"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Khách Sạn Tân Hải Long",
+    "Mã khách hàng": "0302316507"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Mỹ Phẩm Mira",
+    "Mã khách hàng": "0302339310"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Dược phẩm Việt Đức",
+    "Mã khách hàng": "0302339800"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Vận Tải Và Thương Mại Quốc Tế",
+    "Mã khách hàng": "0302345459"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh Thái Hòa",
+    "Mã khách hàng": "0302379803"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương mại - Dịch vụ Phương Thiện",
+    "Mã khách hàng": "0302403661"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH SX TM Trần Bích",
+    "Mã khách hàng": "0302423530"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Đầu tư Sản xuất Kinh doanh Sài Gòn Cửu Long",
+    "Mã khách hàng": "0302454698"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty CP ĐT SX Kinh Doanh Sài Gòn Cửu Long - Khách Sạn Hilton SaiGon",
+    "Mã khách hàng": "030245469A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Con Ong",
+    "Mã khách hàng": "0302519803"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Xuất Nhập Khẩu Bình Tây",
+    "Mã khách hàng": "0302562816"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Dược Mỹ Phẩm May",
+    "Mã khách hàng": "0302854463"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH DV TM Khách Sạn Âu Lạc",
+    "Mã khách hàng": "030292225A"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH CÔNG NGHệ SONG PHáT",
+    "Mã khách hàng": "0302937832"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH B.P.V",
+    "Mã khách hàng": "0303004765"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần DV Nha Khoa Minh Khai",
+    "Mã khách hàng": "0303254860"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Ngân Anh",
+    "Mã khách hàng": "0303307992"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Thiện Phú Sĩ",
+    "Mã khách hàng": "0303376241"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Phát Triển BĐS Phát Đạt",
+    "Mã khách hàng": "0303493756"
+  },
+  {
+    "Tên khách hàng": "Trường Đại Học Công Nghệ Thành Phố Hồ Chí Minh",
+    "Mã khách hàng": "0303600888"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH Parkson Việt Nam",
+    "Mã khách hàng": "0303658990"
+  },
+  {
+    "Tên khách hàng": "CTY TNHH Xây Dựng - Thương Mại Tấn Duy Dương",
+    "Mã khách hàng": "0303794538"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Thiên Nhiên",
+    "Mã khách hàng": "0304189149"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Vias Vũng Tàu Hotel",
+    "Mã khách hàng": "0304221360"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH M BOUTIQUE HOTEL",
+    "Mã khách hàng": "0304242843"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Đầu Tư Thương Mại Châu Âu",
+    "Mã khách hàng": "0304535825"
+  },
+  {
+    "Tên khách hàng": "VPĐD RAPTAKOS, BRETT & CO; LTD",
+    "Mã khách hàng": "0304620799"
+  },
+  {
+    "Tên khách hàng": "VPĐD TURBO - MECH ASIA PTE LTD Tại TP.HCM",
+    "Mã khách hàng": "0304667571"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Hàng Hải- Dầu Khí Hải Âu",
+    "Mã khách hàng": "0304703484"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần TTTM LOTTE Việt Nam",
+    "Mã khách hàng": "0304741634"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Trung Tâm Thương Mại Lotte Việt Nam - Chi Nhánh Nha Trang",
+    "Mã khách hàng": "030474163411"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Trung Tâm Thương Mại Lotte Việt Nam- Ch",
+    "Mã khách hàng": "030474163A"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Lê Minh Khang",
+    "Mã khách hàng": "0304791674"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Xe Hơi Thể Thao Uy Tín",
+    "Mã khách hàng": "0304806560"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Tập đoàn Masterise",
+    "Mã khách hàng": "0304840018"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN PHÁT TRIỂN GS CỦ CHI",
+    "Mã khách hàng": "0304887520"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phẩn Thương mại Dịch vụ Sản xuát Hương Thủy",
+    "Mã khách hàng": "0304898593"
+  },
+  {
+    "Tên khách hàng": "CN Cty CP ĐT An Đông - KS TM An Đông",
+    "Mã khách hàng": "0304938912"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH In Thiết Kế -Quảng Cáo Rạng Đông",
+    "Mã khách hàng": "0304957344"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY CỔ PHẦN ĐỊA ỐC ALPHA NAM ĐÀ NẴNG",
+    "Mã khách hàng": "0304958281-002"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công ty Cổ Phần Địa ốc Alpha Nam Đà Nẵng",
+    "Mã khách hàng": "0304958281A"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty Cổ Phần Địa Oc Alpha Nam Đà Nẵng",
+    "Mã khách hàng": "030495828A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Làng Thảo Điền",
+    "Mã khách hàng": "0305085946"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần ROYAL CANARY",
+    "Mã khách hàng": "0305113505"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY CỔ PHẦN ROYAL CANARY – KHÁCH SẠN LM SAIGON",
+    "Mã khách hàng": "0305113505-001"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN ROYAL CANARY - CHI NHÁNH 2",
+    "Mã khách hàng": "0305113505-003"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty Cổ Phần ROYAL CANARY - Khách Sạn LM SAIGON",
+    "Mã khách hàng": "030511350A"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Royal Canary - Chi nhánh 2",
+    "Mã khách hàng": "030511350B"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH TM & DV Lâu Đài Pháp",
+    "Mã khách hàng": "0305143845"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Quảng Cáo& Tổ Chức Sự Kiện LongKan",
+    "Mã khách hàng": "0305230551"
+  },
+  {
+    "Tên khách hàng": "Cửa hàng Thực Phẩm Cao Cấp Phương Hà",
+    "Mã khách hàng": "030536844A"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Bất Động Sản Sơn Kim",
+    "Mã khách hàng": "0305390717"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV Thương Mại Và Dịch Vụ Minh Khoa Phát",
+    "Mã khách hàng": "0305687193"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH LUXEL APT",
+    "Mã khách hàng": "0305693422"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Gỗ Đỏ",
+    "Mã khách hàng": "0305714016"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Kinh Doanh Địa ốc Him Lam",
+    "Mã khách hàng": "0305747212"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại - Dịch Vụ - Xuất Nhập Khẩu Lê Nguyễn",
+    "Mã khách hàng": "0305807126"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Một Thành Viên Nhà Hàng Trên Sông",
+    "Mã khách hàng": "0305860088"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Cung ứng Cây Ô Liu",
+    "Mã khách hàng": "0305938538"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH THE ALCOVE LIBRARY HOTEL",
+    "Mã khách hàng": "0306009497"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Dòng Di Sản",
+    "Mã khách hàng": "0306034366"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Vy Vy",
+    "Mã khách hàng": "0306101125"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH CONNELL BROS. (VIỆT NAM)",
+    "Mã khách hàng": "0306104694"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Địa ốc Kỷ Nguyên",
+    "Mã khách hàng": "0306142065"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY CỔ PHẦN ĐỊA ỐC KỶ NGUYÊN - CAO ỐC SHERWOOD SUITES",
+    "Mã khách hàng": "0306142065-001"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Cổ Phần Địa ốc Kỷ Nguyên - Cao ốc SHERWOOD SUITES",
+    "Mã khách hàng": "030614206A"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH Vòng Tròn Đỏ",
+    "Mã khách hàng": "0306182043"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Xây Dựng Và Kinh Doanh Nhà Thái Sơn",
+    "Mã khách hàng": "0306985812"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh Haley'd Beauty & PMU",
+    "Mã khách hàng": "030700291A"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Trang Trí Nội Thất AND",
+    "Mã khách hàng": "0307638089"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Phan Phan Nguyễn",
+    "Mã khách hàng": "0308817394"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Dịch Vụ Hạnh Phúc",
+    "Mã khách hàng": "0309058277"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH TM SX Thảo My",
+    "Mã khách hàng": "0309091531"
+  },
+  {
+    "Tên khách hàng": "Ngân Hàng TNHH Một Thành Viên Shinhan Việt Nam",
+    "Mã khách hàng": "0309103635"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Nội Thất Bền Vững",
+    "Mã khách hàng": "0309267915"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Truyền Thông Golden Public Relations",
+    "Mã khách hàng": "0309343725"
+  },
+  {
+    "Tên khách hàng": "KHO BạC NHà NƯớC THàNH PHố Hồ CHí MINH",
+    "Mã khách hàng": "0309431837"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Khách Sạn Tân Hải Long Hai",
+    "Mã khách hàng": "0309498849"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CP TIKI",
+    "Mã khách hàng": "0309532909"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Đường Sông Đông Dương",
+    "Mã khách hàng": "0309533099"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Bình Minh Toàn Cầu",
+    "Mã khách hàng": "0309554620"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương Mại Dịch Vũ Tĩnh Gia (IXINA)",
+    "Mã khách hàng": "0309769584"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Hàng Khồng Bầu Trời Xanh",
+    "Mã khách hàng": "0309802369"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH SHOEFABRIK",
+    "Mã khách hàng": "0309820470"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Quốc Tế Phú Hưng",
+    "Mã khách hàng": "0309862826"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Hoàn Vũ Sài Gòn",
+    "Mã khách hàng": "0309884837"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Master Chemical Việt nam",
+    "Mã khách hàng": "0310061669"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Trường TH, THCS, THPT Quốc Tế CANADA",
+    "Mã khách hàng": "0310084289"
+  },
+  {
+    "Tên khách hàng": "Cty CP Địa ốc Phúc Đạt",
+    "Mã khách hàng": "0310101689"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Keppel Land Watco-II",
+    "Mã khách hàng": "0310128472"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Khách Sạn Hoàng Hải Long Ba",
+    "Mã khách hàng": "0310349376"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đầu Tư và Phát Triển Tài Năng Bóng Đá Việt Nam",
+    "Mã khách hàng": "0310423397"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH SX TM DV HMP Thiên Long",
+    "Mã khách hàng": "0310494140"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Phát Triển Bất Động Sản Việt Bắc",
+    "Mã khách hàng": "0310520471"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH ENJOY ONLINE",
+    "Mã khách hàng": "0310544828"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Hưng Quốc Thái",
+    "Mã khách hàng": "0310818187"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần In Hospitality",
+    "Mã khách hàng": "0310826692"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty CP In Hospitality",
+    "Mã khách hàng": "031082669B"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Cheil Việt Nam",
+    "Mã khách hàng": "0310919033"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Lavender Sài Gòn",
+    "Mã khách hàng": "0311074685"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Phân Phối Sành Điệu",
+    "Mã khách hàng": "0311187079"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Phân Phối Sành Điệu- CN Hà Nội",
+    "Mã khách hàng": "031118707A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Sài Gòn Phát Thịnh",
+    "Mã khách hàng": "0311205803"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Một Thành Viên Cái Thùng Gỗ",
+    "Mã khách hàng": "0311223087"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH AEON Việt Nam",
+    "Mã khách hàng": "0311241512"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH AEON VIỆT NAM – CHI NHÁNH THÀNH PHỐ HỒ CHÍ MINH",
+    "Mã khách hàng": "0311241512-003"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH AEON Việt Nam- Chi nhánh Thành phố Hồ Chí Minh",
+    "Mã khách hàng": "031124151A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Và Phát Triển Quốc Tế Nhà Việt",
+    "Mã khách hàng": "0311263996"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Seadent",
+    "Mã khách hàng": "0311373893"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH M.O.D",
+    "Mã khách hàng": "0311598600"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần DG Sài Gòn",
+    "Mã khách hàng": "0311782328"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MEG Việt Nam",
+    "Mã khách hàng": "0311828614"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Đầu Tư Quốc Tế Nam An",
+    "Mã khách hàng": "0311897914"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH XNK Phát Trường An",
+    "Mã khách hàng": "0311925819"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Quốc Tế Diplomat",
+    "Mã khách hàng": "0311989604"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư B&T",
+    "Mã khách hàng": "0312017908"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH VILLA Sông Sài Gòn",
+    "Mã khách hàng": "0312056336"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH DU THUYỂN HOA SEN",
+    "Mã khách hàng": "0312116507"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Bán Dẫn Tiên Phong",
+    "Mã khách hàng": "0312135323"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH TẠI TỈNH KHÁNH HÒA - CÔNG TY TNHH VINCOM RETAIL MIỀN NAM",
+    "Mã khách hàng": "0312196679-008"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương Mại BEST MENTHOD THN",
+    "Mã khách hàng": "0312214670"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Đầu tư BDS Khách sạn Thái Dương",
+    "Mã khách hàng": "0312357541"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Temple Leaf",
+    "Mã khách hàng": "0312367356"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH THƯƠNG MẠI & DU LỊCH TRÚC GIANG - CHI NHÁNH BẾN TRE",
+    "Mã khách hàng": "0312450607-001"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại LARIA",
+    "Mã khách hàng": "0312461711"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Một Thành Viên Khách Sạn Quốc Tế Bình Minh",
+    "Mã khách hàng": "0312470480"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Phú Mai Anh",
+    "Mã khách hàng": "0312473298"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Du Thuyền Viet Princess",
+    "Mã khách hàng": "0312522160"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Propolife Việt Nam",
+    "Mã khách hàng": "0312536646"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Khách Sạn Tân Hải Long Sáu",
+    "Mã khách hàng": "0312600612"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH PEGAS VIỆT NAM - CHI NHÁNH BÃI DÀI",
+    "Mã khách hàng": "0312618916-005"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV Hội Nhập Phát Triển Đông Hưn",
+    "Mã khách hàng": "0312629241"
+  },
+  {
+    "Tên khách hàng": "CN Cty TNHH MTV Hội Nhập Phát Triển Đông Hưng",
+    "Mã khách hàng": "031262924A"
+  },
+  {
+    "Tên khách hàng": "CN Cty TNHH MTV Hội Nhập Phát Triển Đông Hưng",
+    "Mã khách hàng": "031262924B"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công ty TNHH MTV Hội Nhập Phát Triển",
+    "Mã khách hàng": "031262924C"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Một Thành Viên Hội Nhập Phát Tri",
+    "Mã khách hàng": "031262924D"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Dịch Vụ Trần Quyên",
+    "Mã khách hàng": "0312637683"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Liberica Gold",
+    "Mã khách hàng": "0312659824"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương Mại Dịch Vụ Du Lịch ORCHIDS",
+    "Mã khách hàng": "0312680625"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Thời Trang Và Du Lịch Hải Au",
+    "Mã khách hàng": "0312777169"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH BLAGU Việt Nam",
+    "Mã khách hàng": "0312866443"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Mỹ Phẩm AROMA",
+    "Mã khách hàng": "0312868803"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Adu",
+    "Mã khách hàng": "0312887066"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Quốc Lộc Phát",
+    "Mã khách hàng": "0312912428"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Xây Dựng Hong Linh",
+    "Mã khách hàng": "0312941098"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Đầu tư KAT",
+    "Mã khách hàng": "0312995696"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Pizza 4PS",
+    "Mã khách hàng": "0313168515"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Khách Sạn Fusion Suites Sài Gòn",
+    "Mã khách hàng": "0313218607"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Tnhh Một Thành Viên Trường An Phát Hospitality Sài Gòn - Khách Sạn Fusion Suites Sài Gòn",
+    "Mã khách hàng": "031321860A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thời Trang Everluxe",
+    "Mã khách hàng": "0313275718"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Liên Kết Kỳ Lân",
+    "Mã khách hàng": "0313306518"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Seven System Việt Nam",
+    "Mã khách hàng": "0313330856"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Nihon Vina",
+    "Mã khách hàng": "0313334096"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần DANNYGREEN",
+    "Mã khách hàng": "0313338397"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đầu Tư CAPITALAND- Thiên Đức",
+    "Mã khách hàng": "0313382212"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Phát Triển Đô Thị Ba Son",
+    "Mã khách hàng": "0313390735"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại High Line",
+    "Mã khách hàng": "0313401715"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Phát Triển Phúc Điền",
+    "Mã khách hàng": "0313438962"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Sao Sáng An Phú",
+    "Mã khách hàng": "0313468188"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Căn Hộ Dịch Vụ Nam Sài Gòn",
+    "Mã khách hàng": "0313473928"
+  },
+  {
+    "Tên khách hàng": "CHI NHáNH CÔNG TY Cổ PHầN CHEZNOUS",
+    "Mã khách hàng": "0313497527A"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Nguyên Tố May Mắn",
+    "Mã khách hàng": "0313501886"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH USMART",
+    "Mã khách hàng": "0313508761"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại  ý Vinh",
+    "Mã khách hàng": "0313530076"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV Sunrise Sai Gon Hotel",
+    "Mã khách hàng": "0313537466"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Đầu Tư Xây Dựng & Kỹ Thuật Môi Trường Trí Lâm",
+    "Mã khách hàng": "0313545668"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH ALBATROSS VN",
+    "Mã khách hàng": "0313570093"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần IMPERIAL DELICACIES",
+    "Mã khách hàng": "0313580493"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH KOHNAN Việt Nam",
+    "Mã khách hàng": "0313666077"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Trung tâm Y Khoa Prima Sài Gòn",
+    "Mã khách hàng": "0313718776"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH TMDV SABI",
+    "Mã khách hàng": "0313753347"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Tập Đoàn Hoàng Quân",
+    "Mã khách hàng": "0313763585"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH TRG F & B",
+    "Mã khách hàng": "0313773495"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Wowy Việt Nam",
+    "Mã khách hàng": "0313792441"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đầu Tư Khách Sạn Hải Thành",
+    "Mã khách hàng": "0313829148"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Craft House",
+    "Mã khách hàng": "0313836138"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH Asia Dragon",
+    "Mã khách hàng": "0313845911"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Asia Dragon",
+    "Mã khách hàng": "031384591A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Xuất Nhập Khẩu Nguyễn Huy",
+    "Mã khách hàng": "0313898254"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH AB AGRI Việt Nam",
+    "Mã khách hàng": "0313902990"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MTV Khách Sạn SILVERLAND YEN",
+    "Mã khách hàng": "0313927071"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MTV Khách Sạn The MYST Đồng Khởi",
+    "Mã khách hàng": "0313963834"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công ty TNHH Quốc Tế Kim Và Kim Tại TP. Đà Lạt",
+    "Mã khách hàng": "0314048796A"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty TNHH Quốc Tế Kim Và Kim Tại TP.Đà Lạt",
+    "Mã khách hàng": "031404879A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương mại Dịch vụ Vận Tải Vietstar Sài Gòn",
+    "Mã khách hàng": "0314060056"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Thực Phẩm HP",
+    "Mã khách hàng": "0314070304"
+  },
+  {
+    "Tên khách hàng": "CN Cần Thơ AZERAI - Cty TNHH Đầu tư 0709",
+    "Mã khách hàng": "0314112233"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Tư Vấn Thiết Kế và Xây Dựng ON+",
+    "Mã khách hàng": "0314183280"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH UNIONSQUARE",
+    "Mã khách hàng": "0314205022"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH WESTERN CITY",
+    "Mã khách hàng": "0314224378"
+  },
+  {
+    "Tên khách hàng": "Địa Điểm Kinh Doanh An Phú-Công TY TNHH KAMO",
+    "Mã khách hàng": "0314299599"
+  },
+  {
+    "Tên khách hàng": "Địa Điểm Kinh Doanh An Phú - Công Ty TNHH Kamo",
+    "Mã khách hàng": "031429959A"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương mại Dịch vụ Lai Nhi",
+    "Mã khách hàng": "0314318107"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Phát Triển Nhà Văn Phòng Địa Chỉ Việt",
+    "Mã khách hàng": "0314341466"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Chemico Việt Nam",
+    "Mã khách hàng": "0314351665"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Emilie",
+    "Mã khách hàng": "0314360564"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Xuất Nhập Khẩu Pico Agriviet",
+    "Mã khách hàng": "0314430148"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH M GROUP",
+    "Mã khách hàng": "0314446892"
+  },
+  {
+    "Tên khách hàng": "Công Ty  TNHH SVH INVESTMENT",
+    "Mã khách hàng": "0314472645"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Kinh Doanh SUNSHINE",
+    "Mã khách hàng": "0314474716"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Dược Phẩm Biforna",
+    "Mã khách hàng": "0314505435"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Miu Miu SPA",
+    "Mã khách hàng": "0314539674"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Nhà Hàng Kingscross",
+    "Mã khách hàng": "0314555531"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh Công Ty TNHH Nhà Hàng KINGSCROSS",
+    "Mã khách hàng": "031455553A"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Empire Holding",
+    "Mã khách hàng": "0314563130"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH ETERNAL YOUTH",
+    "Mã khách hàng": "0314585582"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Dịch Vụ An Uống Nguyễn Vân",
+    "Mã khách hàng": "0314617611"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Lotte Properties HCMC",
+    "Mã khách hàng": "0314696885"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH ONPOINT",
+    "Mã khách hàng": "0314709816"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Quản Lý CT",
+    "Mã khách hàng": "0314711389"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH TM DV XNK Minh Anh H&A",
+    "Mã khách hàng": "0314733618"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương Mại Dịch Vụ Thiên May",
+    "Mã khách hàng": "0314788367"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Và Phát Triển Dịch Vụ CITIGYM",
+    "Mã khách hàng": "0314835419"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Gia Studios",
+    "Mã khách hàng": "0314977237"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MIU MIU SPA",
+    "Mã khách hàng": "0314983350"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH SảN XUấT THƯƠNG MạI DịCH Vụ ĐầU TƯ PHáT TRIểN AN KHANG",
+    "Mã khách hàng": "0315013838"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Phát Triển Kinh Doanh Như ý",
+    "Mã khách hàng": "0315130059"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Bán Dẫn Tiên Phong",
+    "Mã khách hàng": "0315135323"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH FABL",
+    "Mã khách hàng": "0315163819"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Hầm Rượu Thành Phố Hồ Chí Minh",
+    "Mã khách hàng": "0315189912"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH New Age Sports",
+    "Mã khách hàng": "0315191284"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH SX - TM - DV MISO",
+    "Mã khách hàng": "0315206702"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Quản Lý Công Viên Vĩnh Hằng",
+    "Mã khách hàng": "0315228657"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần RED WOK INVESTMENT",
+    "Mã khách hàng": "0315233858"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Chloe Hospitality",
+    "Mã khách hàng": "0315257922"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Công Nghệ Tin Học Viễn Sơn",
+    "Mã khách hàng": "0315372530"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Imperial Care",
+    "Mã khách hàng": "0315398641"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Odys",
+    "Mã khách hàng": "0315423506"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH ERNEST & MARTHA",
+    "Mã khách hàng": "0315450098"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Minh Tân Hospitality",
+    "Mã khách hàng": "0315471852"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương Mại Du Lịch MIU MIU Spa",
+    "Mã khách hàng": "0315485284"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty TNHH Ngon Ngon CATERING- Chi nhánh 1",
+    "Mã khách hàng": "031550965A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Thương Mại Dịch Vụ Á Âu",
+    "Mã khách hàng": "0315509908"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH ENZO & LEO",
+    "Mã khách hàng": "03155521415"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Xuất Nhập Khẩu Sáu Thu",
+    "Mã khách hàng": "0315556506"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Lilliput Vn",
+    "Mã khách hàng": "0315580611"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH The Vagabond",
+    "Mã khách hàng": "0315585352"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Shenying Amenities",
+    "Mã khách hàng": "0315653700"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Fusion Pasteur",
+    "Mã khách hàng": "0315663000"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Công Nghệ Và Thương Mại INITIATIVE",
+    "Mã khách hàng": "0315669147"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Colorfulcandy International Asia Pacific",
+    "Mã khách hàng": "0315691720"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Một Thành Viên CO.OP FINELIFE",
+    "Mã khách hàng": "0315815574"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH BOMNURI KINDER",
+    "Mã khách hàng": "0315866794"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Bán Buôn Bán Lẻ Vi Ve",
+    "Mã khách hàng": "0315872639"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Top Eyelash Beauty&academy",
+    "Mã khách hàng": "0315881464"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Quỳnh Lâm RYAN",
+    "Mã khách hàng": "0315978667"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Bệnh Viện Ngoại Khoa Sante",
+    "Mã khách hàng": "0315995662"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần In Holdings",
+    "Mã khách hàng": "0316001264"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Thương mại và Dịch vụ THETA",
+    "Mã khách hàng": "0316018613"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Roka Fella Việt Nam",
+    "Mã khách hàng": "0316031290"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Millennial Concepts",
+    "Mã khách hàng": "0316046032"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Truyền Thông GOLDEN STELLA",
+    "Mã khách hàng": "0316078059"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Khách sạn Eros",
+    "Mã khách hàng": "0316092663"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Global Target",
+    "Mã khách hàng": "0316095689"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Truyền Thông Fision",
+    "Mã khách hàng": "0316153965"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Quản lý Bất động Sản Masterise Property Chi nhánh Hồ Chí Minh",
+    "Mã khách hàng": "031623181A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Giỏ Hàng Vàng",
+    "Mã khách hàng": "0316241234"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Cooky Market",
+    "Mã khách hàng": "0316271398"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Glow INC",
+    "Mã khách hàng": "0316281406"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương Mại Dịch Vụ Nguyễn Sơn Bảo",
+    "Mã khách hàng": "0316283971"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH TM XNK Thanh Tú",
+    "Mã khách hàng": "0316330854"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Menas",
+    "Mã khách hàng": "0316333076"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thiết Kế In ấn Quảng Cáo Anh Khoa",
+    "Mã khách hàng": "0316341133"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Topping Beef",
+    "Mã khách hàng": "0316342465"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH ONVISTA",
+    "Mã khách hàng": "0316346861"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Tập Đoàn Y Khoa Sài Gòn",
+    "Mã khách hàng": "0316389061"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH EVOLVE",
+    "Mã khách hàng": "0316397231"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đầu Tư Dịch Vụ Khách Sạn Sao Mai",
+    "Mã khách hàng": "0316406158"
+  },
+  {
+    "Tên khách hàng": "Cong ty TNHH May SaiGon Hotel",
+    "Mã khách hàng": "0316446288"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Xây Dựng & Phát Triển Dự An Hqcons",
+    "Mã khách hàng": "0316464311"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Minh Tân Hospitality",
+    "Mã khách hàng": "0316517161"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Lavender By Chang Sài Gòn",
+    "Mã khách hàng": "0316576086"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Biolab International",
+    "Mã khách hàng": "0316589776"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Vitrac Sài Gòn",
+    "Mã khách hàng": "0316602434"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH KHÁCH SẠN ZANNIER VIỆT NAM TẠI PHÚ YÊN",
+    "Mã khách hàng": "0316605234-001"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty TNHH Khách Sạn ZANNIER Việt Nam Tại Phú Yên",
+    "Mã khách hàng": "031660523A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh The Partners",
+    "Mã khách hàng": "0316686603"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Nakune",
+    "Mã khách hàng": "0316712451"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hy Concept",
+    "Mã khách hàng": "0316714554"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Quảng Cáo CMS",
+    "Mã khách hàng": "0316715533"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Đầu Tư Côn Sơn",
+    "Mã khách hàng": "0316768285"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Yên Living",
+    "Mã khách hàng": "0316784826"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MAYYAN",
+    "Mã khách hàng": "0316784939"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH FT Việt Nam",
+    "Mã khách hàng": "0316805071"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH KHÁCH SẠN EROS 2",
+    "Mã khách hàng": "0316813474"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Dịch Vụ Mộc Spa Garden",
+    "Mã khách hàng": "0316819980"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hữu Cơ An Nhiên",
+    "Mã khách hàng": "0316826963"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH TMDV Tùng Bách Cát",
+    "Mã khách hàng": "031697062A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH TM Dịch Vụ Temple Leaf",
+    "Mã khách hàng": "0317026198"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh Công Ty TNHH TM DV Temple Leaf",
+    "Mã khách hàng": "031702619A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH JUNGLE LIFE GROUP",
+    "Mã khách hàng": "0317066031"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Thương Mại Và Dịch Vụ Sabi Việt Nam",
+    "Mã khách hàng": "0317095593"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh 2 Công Ty Cổ Phần Thương Mại và Dịch Vụ Sabi Việt Nam",
+    "Mã khách hàng": "031709559A"
+  },
+  {
+    "Tên khách hàng": "Công ty  TNHH Anna House Hotel - Apartment",
+    "Mã khách hàng": "031713463"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Anna House Hotel - Apartment",
+    "Mã khách hàng": "0317134637"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH THE WIN STAR",
+    "Mã khách hàng": "0317161655"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Đầu tư và Phát triển Khách sạn Landmark 81",
+    "Mã khách hàng": "0317164455"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH THƯƠNG MẠI WELLLIFE",
+    "Mã khách hàng": "0317185751"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương mại và XNK Hana Family",
+    "Mã khách hàng": "0317241614"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Zenbliss",
+    "Mã khách hàng": "0317270277"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Khai Trí HOSPITALITY",
+    "Mã khách hàng": "0317286090"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH ANNO-DOMINI CORPORATION",
+    "Mã khách hàng": "0317287721"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN ÂU LẠC CHARNER",
+    "Mã khách hàng": "0317298152"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV Paris Deli Sài Gòn",
+    "Mã khách hàng": "0317333329"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Red Horizon Holdings",
+    "Mã khách hàng": "0317359599"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH An Scent",
+    "Mã khách hàng": "0317403086"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Chefs Market",
+    "Mã khách hàng": "0317498578"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Quản Lý Khách Sạn EHG Việt Nam",
+    "Mã khách hàng": "0317553349"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH One Click",
+    "Mã khách hàng": "0317581963"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH DC NAM SÀI GÒN",
+    "Mã khách hàng": "0317635739"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Tập Đoàn Thương Mại Mega Group",
+    "Mã khách hàng": "0317673597"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Khách Sạn Silverland Mây",
+    "Mã khách hàng": "0317687744"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Empire Wellness",
+    "Mã khách hàng": "0317803045"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH ĐÀ NẴNG - CÔNG TY TNHH EMPIRE WELLNESS",
+    "Mã khách hàng": "0317803045-001"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh Đà Nẵng - Công Ty TNHH Empire Wellness",
+    "Mã khách hàng": "031780304A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH NEHAN GROUP",
+    "Mã khách hàng": "0317869832"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần In Hotel",
+    "Mã khách hàng": "0317889821"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hoa Của Các Loài Hoa",
+    "Mã khách hàng": "0318124617"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH 932 Design Việt Nam",
+    "Mã khách hàng": "0318163278"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Yasahei",
+    "Mã khách hàng": "0318180749"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH TRUYỀN THÔNG, DỊCH VỤ VÀ ĐẦU TƯ LTC",
+    "Mã khách hàng": "0318188561"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Dịch Vụ Khang Phú Thịnh",
+    "Mã khách hàng": "0318287932"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Brelax Heathcare",
+    "Mã khách hàng": "0318348198"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Khu Du Lịch Bắc Mỹ An",
+    "Mã khách hàng": "0400100866"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần ĐTXD & PTHT Nam Việt á",
+    "Mã khách hàng": "040012612A"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Hữu Thanh",
+    "Mã khách hàng": "0400447057"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Thành Quân",
+    "Mã khách hàng": "0400460587"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH ODK MIKAZUKI VIỆT NAM",
+    "Mã khách hàng": "0400510460"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Khu Du Lịch Biển VinaCapital Đà Nẵng",
+    "Mã khách hàng": "0400558832"
+  },
+  {
+    "Tên khách hàng": "Công Ty Trách Nhiệm Hữu Hạn Sao Việt Non Nước",
+    "Mã khách hàng": "0400560888"
+  },
+  {
+    "Tên khách hàng": "Cty CP Khu Du Lịch Biển Ngũ Hành Sơn",
+    "Mã khách hàng": "0400568686"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY CỔ PHẦN ĐẦU TƯ 559 - KHU DU LỊCH NGHỈ DƯỠNG TIA WELLNESS",
+    "Mã khách hàng": "0400580789-001"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty Cổ Phần Đầu Tư 559 - Khu DLND Tia Wellness",
+    "Mã khách hàng": "040058078A"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN DỊCH VỤ CÁP TREO BÀ NÀ - CHI NHÁNH KHU DU LỊCH VÀ BIỆT THỰ NGHỈ DƯỠNG LÀNG PHÁP",
+    "Mã khách hàng": "0400585547-001"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Dịch Vụ Cáp Treo Bà Nà - CN KDL Và Biệt Thự Nghỉ Dưỡng Làng Pháp",
+    "Mã khách hàng": "040058554A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Ngũ Long",
+    "Mã khách hàng": "0401301117"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Mặt Trời Sông Hàn",
+    "Mã khách hàng": "0401337219"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Bảo Phước",
+    "Mã khách hàng": "0401378222"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Biển Kim Cương",
+    "Mã khách hàng": "0401388693"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Cung ứng Hàng Hoá Thăng Long",
+    "Mã khách hàng": "0401389841"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Cung ứng Hàng Hoá Thăng Long-CN Đà Nẵng",
+    "Mã khách hàng": "040138984A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Khách Sạn Và Biệt Thự Nam Phát",
+    "Mã khách hàng": "0401391544"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Biệt Thự Và Khách Sạn Biển Đông Phương",
+    "Mã khách hàng": "0401409093"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Regal Group",
+    "Mã khách hàng": "0401414671"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành viên Du Lịch April",
+    "Mã khách hàng": "0401416887"
+  },
+  {
+    "Tên khách hàng": "Cty CP TM và DV Mỹ Khê",
+    "Mã khách hàng": "0401468691"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đá Chàm",
+    "Mã khách hàng": "0401481766"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH ĐÁ CHÀM TẠI PHÚ QUỐC",
+    "Mã khách hàng": "0401481766-007"
+  },
+  {
+    "Tên khách hàng": "CN Công ty TNHH Đá Chàm tại Phú Quốc",
+    "Mã khách hàng": "040148176A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Và Dịch Vụ Phạm Gia Phạm",
+    "Mã khách hàng": "0401503258"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Bình Minh Sông Hàn",
+    "Mã khách hàng": "0401633088"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Naman",
+    "Mã khách hàng": "0401633169"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Cát Tường Viên Mangala",
+    "Mã khách hàng": "0401660613"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Khu Biệt Thự Nghỉ Dưỡng Cao Cấp Sunrise",
+    "Mã khách hàng": "0401682254"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Dịch Vụ Thiên An Thành",
+    "Mã khách hàng": "0401741132"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Hải Vân Thành Đạt",
+    "Mã khách hàng": "0401747342"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần TMS HOTEL Đà Nẵng",
+    "Mã khách hàng": "0401803861"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Regis Bay Việt Nam",
+    "Mã khách hàng": "0401806887"
+  },
+  {
+    "Tên khách hàng": "Công ty CP BĐS Căn hộ KS Tokyo Grand",
+    "Mã khách hàng": "0401810812"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH EMPIRE HOSPITALITY",
+    "Mã khách hàng": "0401823480"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Phát Triển Khách Sạn Trung Tâm Đà Nẵng",
+    "Mã khách hàng": "0401866759"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Phát Triển Khách Sạn Đô Thị Đà Nãng",
+    "Mã khách hàng": "0401870850"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN SUN HOSPITALITY GROUP – CHI NHÁNH VŨNG BẦU ",
+    "Mã khách hàng": "0401895446-003"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Sun Hospitality Group - CN Bắc Bãi Khem",
+    "Mã khách hàng": "040189544A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Sun Hospitality Group - Chi nhánh Vũng Bầu",
+    "Mã khách hàng": "040189544B"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Đầu tư Thương mại và Dịch vụ Tùng Phát",
+    "Mã khách hàng": "0401933532"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MTV Tập đoàn Quản lý khách sạn ICITY",
+    "Mã khách hàng": "0401987626"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH MIKAZUKI ONSEN & SPA",
+    "Mã khách hàng": "0402054291"
+  },
+  {
+    "Tên khách hàng": "Công ty Ty TNHH 4 Drinks",
+    "Mã khách hàng": "0402075277"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Kinh Doanh Và Dịch Vụ E&M",
+    "Mã khách hàng": "0402155564"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH MTV REGAL HOTELS & RESORTS",
+    "Mã khách hàng": "0402160606"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần DK ENC Việt Nam",
+    "Mã khách hàng": "0500533895"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MTV Du Lịch Giải Trí Thiên Đường Bảo Sơn",
+    "Mã khách hàng": "0500579561"
+  },
+  {
+    "Tên khách hàng": "Công ty  TNHH Anna House Hotel - Apartment",
+    "Mã khách hàng": "0707190292"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Côn Sơn",
+    "Mã khách hàng": "0800357231"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Đầu Tư Và Phát Triển Sinh Thái",
+    "Mã khách hàng": "0900222333"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN KHAI THÁC VÀ QUẢN LÝ DỊCH VỤ ĐÔ THỊ ECOPARK",
+    "Mã khách hàng": "0900891623"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH FOREVER NEW",
+    "Mã khách hàng": "1101749982"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN ĐẦU TƯ - PHÁT TRIỂN GOLF LONG AN",
+    "Mã khách hàng": "1101919955"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Du Thuyền Victoria",
+    "Mã khách hàng": "1201439769"
+  },
+  {
+    "Tên khách hàng": "Phải Thu Của Khách Hàng trong nước ngắn hạn",
+    "Mã khách hàng": "_13111"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Một Thành Viên Khách Sạn Victoria Hàng Châu",
+    "Mã khách hàng": "1600193281"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH MỘT THÀNH VIÊN KHÁCH SẠN VICTORIA HÀNG CHÂU - LÀNG DU LỊCH VICTORIA NÚI SAM",
+    "Mã khách hàng": "1600193281-002"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty TNHH MTV Khách Sạn Victoria Hàng Châu- Làng Du Lịch Núi Sam",
+    "Mã khách hàng": "160019328A"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Đầu Tư Và Phát Triển Phú Quốc",
+    "Mã khách hàng": "1700446176"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH Linh Chi",
+    "Mã khách hàng": "1700448409"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đức Việt",
+    "Mã khách hàng": "1700449191"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thiên Thanh",
+    "Mã khách hàng": "1700450655"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Liên Doanh Khu Du Lịch Veranda",
+    "Mã khách hàng": "1700453529"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH BIM Kiên Giang",
+    "Mã khách hàng": "1700460501"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Ngôi Sao Cửa Dương",
+    "Mã khách hàng": "1700471366"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Hải Lâm",
+    "Mã khách hàng": "1700509429"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH An Cường",
+    "Mã khách hàng": "1700522370"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Nhà Tranh- Gia Vị",
+    "Mã khách hàng": "1700530540"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần StarBay Việt Nam",
+    "Mã khách hàng": "1700572981"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Phương Anh Đức",
+    "Mã khách hàng": "1700594713"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Bảo Minh Ông Lang",
+    "Mã khách hàng": "1701160966"
+  },
+  {
+    "Tên khách hàng": "Khạch sạn Eo Xoài 2",
+    "Mã khách hàng": "1701345004"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Bất Động Sản SYRENA Phú Quốc",
+    "Mã khách hàng": "1701515256"
+  },
+  {
+    "Tên khách hàng": "Cty CP Lan Anh - Phú Quốc",
+    "Mã khách hàng": "1701526709"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh doanh Black Spa",
+    "Mã khách hàng": "1701549946-001"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh Black Spa",
+    "Mã khách hàng": "170154994A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Milton",
+    "Mã khách hàng": "1701642536"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Du Lịch Quý Hải Phú Quốc",
+    "Mã khách hàng": "1701756854"
+  },
+  {
+    "Tên khách hàng": "CN Cty TNHH Mặt Trời Phú Quốc Tại Nam Bãi Khem",
+    "Mã khách hàng": "1701900730"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH MẶT TRỜI PHÚ QUỐC TẠI MŨI ÔNG ĐỘI",
+    "Mã khách hàng": "1701900730-003"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH MẶT TRỜI PHÚ QUỐC TẠI TRUNG BÃI KHEM",
+    "Mã khách hàng": "1701900730-005"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH MẶT TRỜI PHÚ QUỐC TẠI ĐỊA TRUNG HẢI",
+    "Mã khách hàng": "1701900730-011"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công ty TNHH Mặt Trời Phú Quốc Tại Trung Bãi Khem",
+    "Mã khách hàng": "170190073A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Mặt Trời Phú Quốc",
+    "Mã khách hàng": "170190073B"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh Công ty TNHH Mặt trời Phú Quốc tại Địa Trung Hải",
+    "Mã khách hàng": "170190073C"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty TNHH Mặt Trời Phú Quốc Tại Mũi Ông Đội",
+    "Mã khách hàng": "170190073D"
+  },
+  {
+    "Tên khách hàng": "Cty CP A B Phú Quốc",
+    "Mã khách hàng": "1701956388"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Và Phát Triển Du Lịch Phú Quốc",
+    "Mã khách hàng": "1701971178"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Đầu Tư Du Lịch Bốn Mùa Phú Quốc",
+    "Mã khách hàng": "1701977388"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Ha Na Phú Quốc",
+    "Mã khách hàng": "1702058644"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần SAILING CLUB Phú Quốc",
+    "Mã khách hàng": "1702069149"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MTV Phú Kiên Phú Quốc",
+    "Mã khách hàng": "1702075375"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH AVS Việt Nam Phú Quốc",
+    "Mã khách hàng": "1702083312"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Bình Minh Đảo Ngọc",
+    "Mã khách hàng": "1702088896"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Hà Phan Nam Đảo",
+    "Mã khách hàng": "1702111739"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Dịch Vụ Du Lịch Uy Nghi",
+    "Mã khách hàng": "1702121494"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Cung ứng Hàng Hóa Phương Nam",
+    "Mã khách hàng": "1702166248"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Ha Na Station Phú Quốc",
+    "Mã khách hàng": "1702182017"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Và Dịch Vụ Du Lịch Đảo Đào",
+    "Mã khách hàng": "1702224549"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Du Lịch TH Group Phú Quốc",
+    "Mã khách hàng": "1702231024"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Four Heal Rest",
+    "Mã khách hàng": "1702267905"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Hoàng Gia PQ",
+    "Mã khách hàng": "1702268994"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH SORRENTO PHÚ QUỐC",
+    "Mã khách hàng": "1702307481"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Victoria Cần Thơ",
+    "Mã khách hàng": "1800274788"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Một Thành Viên Nhà Hàng Khách Sạn Linh Phương",
+    "Mã khách hàng": "1801148320"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Nhà Hàng Khách Sạn Và Du Lịch Hải Âu Cần Thơ",
+    "Mã khách hàng": "1801484594"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Một Thành Viên Dịch Vụ Du Lịch Linh Phương",
+    "Mã khách hàng": "1801519751"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Liên Doanh Victoria Mekong Cruises",
+    "Mã khách hàng": "1801628662"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Phát triển Khách sạn Wink Bến Ninh Kiều",
+    "Mã khách hàng": "1801648330"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Nam Tam Đảo",
+    "Mã khách hàng": "2500234289"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Khách sạn Thùy Anh Ninh Bình Legend",
+    "Mã khách hàng": "2700117293"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thân Thiện Ninh Bình",
+    "Mã khách hàng": "2700660735"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Khoáng Nóng VEDANA Cúc Phương",
+    "Mã khách hàng": "2700942031"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN DU LỊCH VÀ THƯƠNG MẠI LAM SƠN",
+    "Mã khách hàng": "2801954185"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Và Phát Triển Khách Sạn Thanh Hóa",
+    "Mã khách hàng": "2803022903"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Đầu Tư Và Phát Triển Hải Lâm",
+    "Mã khách hàng": "2901881727"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Vinpearl Cửa Hội",
+    "Mã khách hàng": "2902171014"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CP DỊCH VỤ KHÁCH SẠN KIM THÀNH - CHI NHÁNH ĐÀ NẴNG",
+    "Mã khách hàng": "3000313576-001"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CP DỊCH VỤ KHÁCH SẠN KIM THÀNH - CHI NHÁNH SÔNG HÀN ĐÀ NẴNG",
+    "Mã khách hàng": "3000313576-002"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Dịch vụ Khách sạn Kim Thành - CN Đà Nẵng",
+    "Mã khách hàng": "300031357A"
+  },
+  {
+    "Tên khách hàng": "HKD THE LIGHT COFFEE ROASTER",
+    "Mã khách hàng": "3001943972"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH ĐẦU TƯ VÀ XÂY DỰNG HOÀNG GIA VIỆT NAM",
+    "Mã khách hàng": "3101024108-001"
+  },
+  {
+    "Tên khách hàng": "BRITEA - TEA AND COFFEE",
+    "Mã khách hàng": "32A8029719"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Thanh Tân Thừa Thiên Huế",
+    "Mã khách hàng": "3300100843"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Du Lịch Và Thương Mại Á Đông",
+    "Mã khách hàng": "3300318913"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Hùng Vương Huế",
+    "Mã khách hàng": "3300353192"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Khách Sạn Kinh Thành",
+    "Mã khách hàng": "3300355898"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV Du Lịch Đống Đa",
+    "Mã khách hàng": "3300364395"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Du Lịch Xanh - Huế VNECO",
+    "Mã khách hàng": "3300379190"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Du Lịch Mỹ An",
+    "Mã khách hàng": "3300422992"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Khu Du Lịch Sinh Thái Vedana",
+    "Mã khách hàng": "3300513583"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Mtv Du Lịch Đống Đa",
+    "Mã khách hàng": "3301492135"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Đầu tư Dự án Đại Phú Lộc",
+    "Mã khách hàng": "3301643761"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Du lịch TTC Huế",
+    "Mã khách hàng": "3301689861"
+  },
+  {
+    "Tên khách hàng": "Doanh Nghiệp Tư Nhân Trăng Tròn",
+    "Mã khách hàng": "3400044208"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH MTV Làng Du lịch Phan Thiết",
+    "Mã khách hàng": "3400182582"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Làng Tre - Mũi Né",
+    "Mã khách hàng": "3400188739"
+  },
+  {
+    "Tên khách hàng": "Công Ty Trách Nhiệm Hữu Hạn ECO",
+    "Mã khách hàng": "3400309503"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Thương Mại Du Lịch Dốc Đá - Phú Hài",
+    "Mã khách hàng": "3400335038"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Du Lịch Việt Pháp",
+    "Mã khách hàng": "3400382461"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH NOVA Phan Thiết",
+    "Mã khách hàng": "3400398260"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Huỳnh Gia Huy",
+    "Mã khách hàng": "3400432095"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Du Lịch Thương Mại Nguyệt Hằng",
+    "Mã khách hàng": "3400452447"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Du Lịch Tấn Phát",
+    "Mã khách hàng": "3400453105"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Dịch Vụ - Du Lịch Biển Trời Mũi Né",
+    "Mã khách hàng": "3400490770"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH MOVENPICK RESORT PHAN THIẾT – CÔNG TY TNHH DELTA - VALLEY BÌNH THUẬN",
+    "Mã khách hàng": "3400573917-002"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Movenpick Resort Phan Thiết - Công ty TNHH Delta-Valley Bình Thuận",
+    "Mã khách hàng": "340057391A"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Đầu tư Hoàng Gia",
+    "Mã khách hàng": "3400602893"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Sea Links City",
+    "Mã khách hàng": "3401031402"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Cà Ty Mũi Né",
+    "Mã khách hàng": "3401147044"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TRÁCH NHIỆM HỮU HẠN QUẢN LÝ SCLG",
+    "Mã khách hàng": "3401171294"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Phố Biển Hòn Lan",
+    "Mã khách hàng": "3401222703"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương mại Du lịch Hòa Bình",
+    "Mã khách hàng": "3401243848"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Da Vàng",
+    "Mã khách hàng": "3500442192"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH QUẢN LÝ KINH DOANH KHÁCH SẠN HODECO",
+    "Mã khách hàng": "3500444601-007"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh quản lý kinh doanh khách sạn Hodeco",
+    "Mã khách hàng": "350044460A"
+  },
+  {
+    "Tên khách hàng": "Công ty Trách Nhiệm Hữu Hạn Hà Đạt",
+    "Mã khách hàng": "3500456558"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Lạc Việt",
+    "Mã khách hàng": "3500612824"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Côn Đảo Resort",
+    "Mã khách hàng": "3500655708"
+  },
+  {
+    "Tên khách hàng": "Cty Cổ Phần Cam Ly",
+    "Mã khách hàng": "3500745528"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Cổ Phần Cam Ly - Khu Du Lịch Hồ Tràm Osaka",
+    "Mã khách hàng": "350074552801"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty CP Cam Ly- Khu Du Lịch Hồ Tràm OSAKA",
+    "Mã khách hàng": "350074552A"
+  },
+  {
+    "Tên khách hàng": "Cty CP DL Hải Vương",
+    "Mã khách hàng": "3500761336"
+  },
+  {
+    "Tên khách hàng": "Công Ty Trách Nhiệm Hữu Hạn Dự án Hồ Tràm",
+    "Mã khách hàng": "3500856718"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hóa Dầu Long Sơn",
+    "Mã khách hàng": "3500890966"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY TNHH BIỂN NGỌC - HỒ TRÀM- MELIA HỒ TRÀM",
+    "Mã khách hàng": "3501677503-002"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty TNHH Biển Ngọc- Hồ Tràm- MELIA Hồ Trà",
+    "Mã khách hàng": "350167750A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Dịch Vụ Du Lịch Nguyễn Hà",
+    "Mã khách hàng": "3502215269"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Cổ Phần Thương Mại Và Du Lịch Đoàn Gia - Lief Mila Vũng Tàu",
+    "Mã khách hàng": "350234855801"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty CP TM Và Du Lịch Đoàn Gia- LIEF MILA Vũng Tàu",
+    "Mã khách hàng": "350234855A"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Cổ Phần Thương Mại Và Du Lịch Đoàn Gia- SKOOL PLUS Vũng Tàu",
+    "Mã khách hàng": "350234855B"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Phát Triển Côn Đảo",
+    "Mã khách hàng": "3502360890"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH PHÚ QUỐC - CÔNG TY CỔ PHẦN TẬP ĐOÀN CÔN ĐẢO",
+    "Mã khách hàng": "3502360890-002"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Phú Quốc - Công Ty Cổ Phần Phát Triển Côn Đảo",
+    "Mã khách hàng": "350236089A"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN DU LỊCH NGHỈ DƯỠNG CÔN ĐẢO",
+    "Mã khách hàng": "3502380329"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Xây Dựng TM và DV Nguyễn Minh Quân",
+    "Mã khách hàng": "3502466054"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Chăn Nuôi C.P. Việt Nam - Chi nhánh Đông Lạnh Bến Tre",
+    "Mã khách hàng": "3600224423A"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH PHÚ QUỐC - CÔNG TY TNHH DU LỊCH PHÚ LẠC",
+    "Mã khách hàng": "3600514066-001"
+  },
+  {
+    "Tên khách hàng": "CN Phú Quốc - Cty TNHH DL Phú Lạc",
+    "Mã khách hàng": "360051406A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hóa Chất Công Nghệ Samsung Việt Nam",
+    "Mã khách hàng": "3600892935"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Logistics Tín Nghĩa - Icd Biên Hòa",
+    "Mã khách hàng": "3601047417"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH SAITEX INTERNATIONAL Đồng Nai",
+    "Mã khách hàng": "3601051082"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV Bệnh Viện Đại Học Y Dược Shing Mark",
+    "Mã khách hàng": "3603047236"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH FRIESLANDCAMPINA Việt Nam",
+    "Mã khách hàng": "3700229344"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Sản Xuất Thuận An",
+    "Mã khách hàng": "3700245106"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Tùng Trần",
+    "Mã khách hàng": "3700521204"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Ha San - Dermapharm",
+    "Mã khách hàng": "3700579772"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đất Mới",
+    "Mã khách hàng": "3700606200"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Và Sản Xuất Sao Nam",
+    "Mã khách hàng": "3700614339"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Bệnh Viện Đa Khoa Quốc Tế Hạnh Phúc",
+    "Mã khách hàng": "3700725416"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đầu Tư Claris Bình Dương",
+    "Mã khách hàng": "3700790334"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Đầu Tư Xây Dựng Thương Mại Dịch Vụ Thọ An",
+    "Mã khách hàng": "3700817152"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Tầm Nhìn Xanh",
+    "Mã khách hàng": "3701016966"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Liên Doanh Hasan - Dermapharm",
+    "Mã khách hàng": "3701634666"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đầu Tư Tân Thiên Khánh",
+    "Mã khách hàng": "3701800955"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Hoàng Mộc Thiên",
+    "Mã khách hàng": "3702266616"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Nho Corecam",
+    "Mã khách hàng": "3702470354"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần MCGOLDSON",
+    "Mã khách hàng": "3702547906"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Mặt Trời Tây Ninh - Chi Nhánh Sun World Tây Ninh",
+    "Mã khách hàng": "390124898A"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH LEPETIT COFFEE",
+    "Mã khách hàng": "3901252304"
+  },
+  {
+    "Tên khách hàng": "Công Ty Trách Nhiệm Hữu Hạn Kim Thủy 986",
+    "Mã khách hàng": "3901329733"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Kim Ngân TANI",
+    "Mã khách hàng": "3901334980"
+  },
+  {
+    "Tên khách hàng": "CN Công ty CP Khu Du Lịch Dịch Vụ Hội An-Khu Du Lịch Biển Hội An",
+    "Mã khách hàng": "4000102418"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH CÔNG TY CP DU LỊCH - DỊCH VỤ HỘI AN - KHU DU LỊCH BIỂN HỘI AN",
+    "Mã khách hàng": "4000102418-003"
+  },
+  {
+    "Tên khách hàng": "CN Công ty CP Khu Du Lịch Dịch Vụ Hội An-Khu Du Lịch Biển Hội An",
+    "Mã khách hàng": "400010241A"
+  },
+  {
+    "Tên khách hàng": "Cty TNHH Victoria Hội An",
+    "Mã khách hàng": "4000315575"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Indochina Resort (Hội An)",
+    "Mã khách hàng": "4000378078"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Thương Mại và Dịch Vụ Kim Vinh",
+    "Mã khách hàng": "4000379025"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Ngọc Hội An",
+    "Mã khách hàng": "4000379610"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Gami Hội An",
+    "Mã khách hàng": "4000407339"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Indochina Hội An Beach Villas",
+    "Mã khách hàng": "4000435375"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty TNHH Indochina Hội An Beach Villas",
+    "Mã khách hàng": "400043537A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Hội An FOCUS",
+    "Mã khách hàng": "4000437044"
+  },
+  {
+    "Tên khách hàng": "Cty CP Thương Mại - Dịch Vụ Cát Vàng",
+    "Mã khách hàng": "4000450817"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Khu Du Lịch Vinacapital Hội An",
+    "Mã khách hàng": "4000455981"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Mai Đoàn",
+    "Mã khách hàng": "4000462153"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Tập Đoàn ROYAL CAPITAL",
+    "Mã khách hàng": "4000490016"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Sài Gòn",
+    "Mã khách hàng": "4000552142"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Phát Triển Nam Hội An",
+    "Mã khách hàng": "4000789705"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Á Đông Villas",
+    "Mã khách hàng": "4000812288"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Du Lịch Nghỉ Dưỡng Làng Biển Nhiệt Đới Hội An",
+    "Mã khách hàng": "4001011795"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Du Lịch & Khách Sạn An Nguyên",
+    "Mã khách hàng": "4001050191"
+  },
+  {
+    "Tên khách hàng": "Công ty Trách Nhiệm Hữu Hạn SOL An Bàng",
+    "Mã khách hàng": "4001096742"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Resort Route Inn Việt Nam",
+    "Mã khách hàng": "4001101456"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH FAIFO ROASTERY",
+    "Mã khách hàng": "4001148616"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên VILLA DE SPA",
+    "Mã khách hàng": "4001170442"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Biệt Thự Du Lịch Nguyên Đạt",
+    "Mã khách hàng": "4001229777"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thanh Bình - Serene Spa Hội An",
+    "Mã khách hàng": "4001281230"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH TM&DV HIẾU HUY",
+    "Mã khách hàng": "4001290690"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Du Lịch Bãi Dài",
+    "Mã khách hàng": "4100446469"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Du Lịch Trung Hội",
+    "Mã khách hàng": "4101118559"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Khu Du Lịch Biển Maia Quy Nhơn",
+    "Mã khách hàng": "4101484393"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN ĐẦU TƯ THƯƠNG MẠI VÀ DỊCH VỤ GIA PHÙNG",
+    "Mã khách hàng": "4101517296"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Lamour",
+    "Mã khách hàng": "4101520027"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Mãi Tín Bình Định",
+    "Mã khách hàng": "4101531526"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh Cô Ba",
+    "Mã khách hàng": "41A8043850"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh Mộc Hương Thảo Điền",
+    "Mã khách hàng": "41Y8004001"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần VINPEARL",
+    "Mã khách hàng": "4200456848"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH NHA TRANG - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-005"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH QUẢNG NINH - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-007"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH ĐÀ NẴNG - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-008"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH QUẢNG NAM - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-009"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH HÀ TĨNH - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-011"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH HẢI PHÒNG - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-012"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH KIÊN GIANG - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-014"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH QUẢNG BÌNH - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-022"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH HUẾ - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-023"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH HÀ NAM - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-025"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH TÂY NINH - CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-026"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH HÀ GIANG � CÔNG TY CỔ PHẦN VINPEARL",
+    "Mã khách hàng": "4200456848-030"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Thành Phố Hồ Chí Minh - Công Ty Cổ Phần Vinpearl",
+    "Mã khách hàng": "420045684821"
+  },
+  {
+    "Tên khách hàng": "CN Đà Nẵng - Cty CP Vinpearl",
+    "Mã khách hàng": "420045684B"
+  },
+  {
+    "Tên khách hàng": "CN Cần Thơ - Cty CP Vinpearl",
+    "Mã khách hàng": "420045684C"
+  },
+  {
+    "Tên khách hàng": "CN Nha Trang - Cty CP Vinpearl",
+    "Mã khách hàng": "420045684D"
+  },
+  {
+    "Tên khách hàng": "CN Nghệ An - Cty CP Vinpearl",
+    "Mã khách hàng": "420045684E"
+  },
+  {
+    "Tên khách hàng": "CN Quảng Ninh - Cty CP Vinpearl",
+    "Mã khách hàng": "420045684F"
+  },
+  {
+    "Tên khách hàng": "CN Hà Tĩnh - Cty CP Vinpearl",
+    "Mã khách hàng": "420045684G"
+  },
+  {
+    "Tên khách hàng": "CN Quảng Nam - Cty CP Vinpearl",
+    "Mã khách hàng": "420045684H"
+  },
+  {
+    "Tên khách hàng": "Chi nhánh Hà Giang- Công ty Cổ phần Vinpearl",
+    "Mã khách hàng": "420045684I"
+  },
+  {
+    "Tên khách hàng": "CN Hải Phòng - Công ty CP Vinpearl",
+    "Mã khách hàng": "420045684J"
+  },
+  {
+    "Tên khách hàng": "CN Huế - Cty CP Vinpearl",
+    "Mã khách hàng": "420045684K"
+  },
+  {
+    "Tên khách hàng": "CN Quảng Bình- Công Ty Cổ Phần Vinpearl",
+    "Mã khách hàng": "420045684L"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Lạng Sơn- Công ty Cổ Phần Vinpearl",
+    "Mã khách hàng": "420045684M"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Thanh Hóa- Công ty Cổ Phần Vinpearl",
+    "Mã khách hàng": "420045684N"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Hà Nam- Công Ty Cổ Phần VinPearl",
+    "Mã khách hàng": "420045684P"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Tây Ninh- Công Ty Cổ Phần Vinpearl",
+    "Mã khách hàng": "420045684Q"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Thành Phố Hồ Chí Minh - Công Ty Cổ Phần Vinpe",
+    "Mã khách hàng": "420045684Y"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Kiên Giang- Công ty Cổ Phần Vinpearl",
+    "Mã khách hàng": "420045684Z"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Địa Oc - Du Lịch Đông Hải",
+    "Mã khách hàng": "4200481594"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Toàn Hưng Nha Trang",
+    "Mã khách hàng": "4200482090"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Phát Triển Du Lịch Cam Ranh",
+    "Mã khách hàng": "4200525107"
+  },
+  {
+    "Tên khách hàng": " Công Ty Cổ Phần Hóa Mỹ Phẩm Tự Nhiên",
+    "Mã khách hàng": "4200559628"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần T.D",
+    "Mã khách hàng": "4200592551"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Hòn Tằm Biển Nha Trang",
+    "Mã khách hàng": "4200669275"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Du Lịch Hồng Hải",
+    "Mã khách hàng": "4200686538"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Du Lịch Sinh Thái Thanh Vân",
+    "Mã khách hàng": "4200694874"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Du Lịch Và Dịch Vụ Hoà Phát",
+    "Mã khách hàng": "4200700454"
+  },
+  {
+    "Tên khách hàng": "KHU NGHỈ DƯỠNG RBCR- CHI NHÁNH CÔNG TY CỔ PHẦN ĐẦU TƯ DU LỊCH EUROWINDOW NHA TRANG",
+    "Mã khách hàng": "4200733964-002"
+  },
+  {
+    "Tên khách hàng": "KHU NGHỈ DƯỠNG MPCR- CHI NHÁNH CÔNG TY CỔ PHẦN ĐẦU TƯ DU LỊCH EUROWINDOW NHA TRANG",
+    "Mã khách hàng": "4200733964-003"
+  },
+  {
+    "Tên khách hàng": "Khu Nghỉ Dưỡng Mpcr- Chi Nhánh Công Ty Cổ Phần Đầu Tư Du Lịch Eurowindow Nha Trang",
+    "Mã khách hàng": "420073396403"
+  },
+  {
+    "Tên khách hàng": "Khu Nghỉ Dưỡng Mpcr- Chi Nhánh Công Ty Cổ Phần Đầu Tư Du Lịch Eurowindow Nha Trang",
+    "Mã khách hàng": "420073396A"
+  },
+  {
+    "Tên khách hàng": "KHU NGHỈ DƯỠNG RBCR - CHI NHÁNH CÔNG TY CỔ PHẦN ĐẦU TƯ DU LỊCH EUROWINDOW NHA TRANG",
+    "Mã khách hàng": "420073396B"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thiên Trường An",
+    "Mã khách hàng": "4201215362"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Vega City",
+    "Mã khách hàng": "4201401023"
+  },
+  {
+    "Tên khách hàng": "CHI NHÁNH NHA TRANG - CÔNG TY CỔ PHẦN VEGA CITY",
+    "Mã khách hàng": "4201401023-002"
+  },
+  {
+    "Tên khách hàng": "CN Nha Trang - Cty Cổ Phần VeGa City",
+    "Mã khách hàng": "420140102A"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Kinh Doanh Xuất Nhập Khẩu Việt Dương",
+    "Mã khách hàng": "4201531368"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Hoàng Thành Nha Trang",
+    "Mã khách hàng": "4201544303"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Tài Thành Công",
+    "Mã khách hàng": "4201581094"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Sovico Khánh Hòa",
+    "Mã khách hàng": "4201587843"
+  },
+  {
+    "Tên khách hàng": "Công Ty Tnhh Đầu Tư Cam Lâm",
+    "Mã khách hàng": "4201608162"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Xây Dựng Vịnh Nha Trang",
+    "Mã khách hàng": "4201610309"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH KN Cam Ranh",
+    "Mã khách hàng": "4201631958"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Xây dựng Ngân Hoàng",
+    "Mã khách hàng": "4201642692"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Synergy Nha Trang",
+    "Mã khách hàng": "4201659689"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên ánh Dương Nha Trang",
+    "Mã khách hàng": "4201671171"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Simi Khánh Hòa",
+    "Mã khách hàng": "4201705215"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Vịnh Thiên Đường Cam Ranh",
+    "Mã khách hàng": "4201869975"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Quản Lý Khách Sạn Biển Xanh",
+    "Mã khách hàng": "4201922925"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Sun & Spa",
+    "Mã khách hàng": "4201941300"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH DV DLeMinh - CN Đà Nẵng",
+    "Mã khách hàng": "420195527A"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Astop",
+    "Mã khách hàng": "4400428171"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Quản Lý Nam Núi Chúa",
+    "Mã khách hàng": "4500562188"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Phát triển Du lịch xanh Minh Đức",
+    "Mã khách hàng": "5200867977"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Garrya Mù Cang Chải - Công Ty Cổ Phần Phát Triển Du Lịch Xanh Minh Đức",
+    "Mã khách hàng": "520086797A"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV Khách Sạn VICTORIA SAPA",
+    "Mã khách hàng": "5300125993"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH TOPAS ECOLODGE",
+    "Mã khách hàng": "5300212565"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV Thương Mại Và Dịch Vụ Holiday",
+    "Mã khách hàng": "5300219994"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH DỊCH VỤ DU LỊCH CÁP TREO FANSIPAN SA PA - CHI NHÁNH HOTEL DE LA COUPOLE SAPA",
+    "Mã khách hàng": "5300634655-001"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Dịch Vụ Du Lịch Cáp Treo FanSiPan Sa Pa - Chi nhánh Hotel De La Coupole Sa Pa",
+    "Mã khách hàng": "530063465A"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Quản Lý Dịch Vụ Cao Cấp Đồi Ngọc Sa pa",
+    "Mã khách hàng": "5300703813"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên BITI’S-SAPA",
+    "Mã khách hàng": "5300808982"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH SAPA MOUTAIN RESORT ",
+    "Mã khách hàng": "5300824825"
+  },
+  {
+    "Tên khách hàng": "CN Công Ty Cổ Phần Du Lịch Thiên Minh Hoà Bình Tại Hội An",
+    "Mã khách hàng": "540024211A"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Cổ Phần Du Lịch Thiên Minh Hoà Bình tại TP. HCM",
+    "Mã khách hàng": "540024211B"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Thương Mại Du Lịch Lạc Hồng",
+    "Mã khách hàng": "5400259768"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH AVANA Mai Châu",
+    "Mã khách hàng": "5400466813"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Viglacera Vân Hải",
+    "Mã khách hàng": "5700101154"
+  },
+  {
+    "Tên khách hàng": "ANGSANA QUAN LẠN HẠ LONG BAY HOTEL & RESORT - CHI NHÁNH CÔNG TY CỔ PHẦN VIGLACERA VÂN HẢI",
+    "Mã khách hàng": "5700101154-004"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Quốc Tế Hoàng Gia",
+    "Mã khách hàng": "5700102119"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đầu Tư Phát Triển Sản Xuất Hạ Long",
+    "Mã khách hàng": "5700103433"
+  },
+  {
+    "Tên khách hàng": "Cty CP Phát triển Tùng Lâm",
+    "Mã khách hàng": "5700372683"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Du Lịch và Thương Mại Phương Dung",
+    "Mã khách hàng": "5700373126"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Một Thành Viên Du Thuyền Bảo Ngọc",
+    "Mã khách hàng": "5700428463"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Khách Sạn Hải Au",
+    "Mã khách hàng": "5700511746"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN DU THUYỀN NĂM SAO TUẦN CHÂU",
+    "Mã khách hàng": "5700639584"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Đá Chàm Hạ Long",
+    "Mã khách hàng": "5701804449"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Đầu Tư Tân Hoa Lư",
+    "Mã khách hàng": "5701864920"
+  },
+  {
+    "Tên khách hàng": "Công ty CP Đầu tư và Phát triển Du lịch Vân Đồn",
+    "Mã khách hàng": "5701879860"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Cung ứng hàng hóa Đông Bắc",
+    "Mã khách hàng": "5701998561"
+  },
+  {
+    "Tên khách hàng": "CN Công ty TNHH Du lịch Thành Công Lâm Đông - TTC Imperial Hotel",
+    "Mã khách hàng": "580039632A"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Dịch Vụ - Du Lịch Giao Hưởng Xanh",
+    "Mã khách hàng": "5800502287"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH MTV MAICO Đà Lạt",
+    "Mã khách hàng": "5800562624"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Bốn Mùa Tuyền Lâm",
+    "Mã khách hàng": "5800779264"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH Đỉnh Đồi",
+    "Mã khách hàng": "5801385093"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Ngũ Hoàng Quốc",
+    "Mã khách hàng": "5801426688"
+  },
+  {
+    "Tên khách hàng": "Cong ty TNHH Gia Minh Investco",
+    "Mã khách hàng": "5801487715"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ phần Samten Hills Đà Lạt",
+    "Mã khách hàng": "5801492465"
+  },
+  {
+    "Tên khách hàng": "Công ty TNHH MTV Win Foods Gia Lai",
+    "Mã khách hàng": "5901138059"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh Bàn Thạch Spa",
+    "Mã khách hàng": "8024364314"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh Dịch Vụ M&A",
+    "Mã khách hàng": "8034788792"
+  },
+  {
+    "Tên khách hàng": "Trần Thị Ngọc Thảo (Cửa hàng Ngọc Thảo)",
+    "Mã khách hàng": "8058885918"
+  },
+  {
+    "Tên khách hàng": "Hộ kinh doanh Bluish Records",
+    "Mã khách hàng": "840226872A"
+  },
+  {
+    "Tên khách hàng": "Hộ kinh Doanh King Kong Mart",
+    "Mã khách hàng": "8419718509"
+  },
+  {
+    "Tên khách hàng": "Thái Văn Đỉnh",
+    "Mã khách hàng": "8461439273"
+  },
+  {
+    "Tên khách hàng": "TRẦN HỒNG CƯƠNG (HKD NHÀ NGHỈ MAISON D' ROSE- BÃI KEM)",
+    "Mã khách hàng": "8483483974-001"
+  },
+  {
+    "Tên khách hàng": "Hộ KD Nhà Nghỉ Maison D Rose - Bãi Khem",
+    "Mã khách hàng": "848348397A"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh Forest",
+    "Mã khách hàng": "8489723044"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh The Malibu 1",
+    "Mã khách hàng": "850053400A"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh The Hill Spa",
+    "Mã khách hàng": "8623182867-002"
+  },
+  {
+    "Tên khách hàng": "Hộ kinh doanh The Hill Spa",
+    "Mã khách hàng": "862318286A"
+  },
+  {
+    "Tên khách hàng": "Hộ Kinh Doanh ART9",
+    "Mã khách hàng": "8848224636"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Phát Triển Nông Nghiệp Hải Au",
+    "Mã khách hàng": "ADC__004"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Truyền Thông Và Giải Trí AL FA MEGA",
+    "Mã khách hàng": "AFMG__007"
+  },
+  {
+    "Tên khách hàng": "Banyan Tree Gallery (Thailand)",
+    "Mã khách hàng": "BATRGAKH"
+  },
+  {
+    "Tên khách hàng": "Chi Nhánh Công Ty Bảo Hiểm Liên Hiệp Tại TP.Hồ Chí Minh",
+    "Mã khách hàng": "BHLH__009"
+  },
+  {
+    "Tên khách hàng": "Công Ty Bảo Hiểm PVI Bắc Trung Bộ",
+    "Mã khách hàng": "BHPVI__011"
+  },
+  {
+    "Tên khách hàng": "cao",
+    "Mã khách hàng": "BL_NB"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Sài Gòn Center",
+    "Mã khách hàng": "BL_NB05"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Crescent Mall",
+    "Mã khách hàng": "BL_NB33"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Vincom Nha Trang - Trần Phú",
+    "Mã khách hàng": "BL_NB41"
+  },
+  {
+    "Tên khách hàng": "Khách hàng kênh online",
+    "Mã khách hàng": "BL_NB43"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Parkson",
+    "Mã khách hàng": "BL_NB46"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Parkson thu ngoài",
+    "Mã khách hàng": "BL_NB461"
+  },
+  {
+    "Tên khách hàng": "Hộ kinh doanh Cô Ba",
+    "Mã khách hàng": "COBA00KH"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Kiến Trúc Đặng Nguyễn",
+    "Mã khách hàng": "DANG__010"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần DANNYGREEN",
+    "Mã khách hàng": "DANNY__007"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Hàng Hải - Dầu Khí Hải Au",
+    "Mã khách hàng": "HAAU__001"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY CỔ PHẦN HÀNG HẢI-DẦU KHÍ HẢI ÂU",
+    "Mã khách hàng": "KH00001"
+  },
+  {
+    "Tên khách hàng": "Phải thu ngắn hạn khác",
+    "Mã khách hàng": "KHAC_001"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ",
+    "Mã khách hàng": "KHACHLE"
+  },
+  {
+    "Tên khách hàng": "Đỗ Thị Mỹ Linh",
+    "Mã khách hàng": "KHCN  0017"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Ngọc Lân",
+    "Mã khách hàng": "KHCN  0027"
+  },
+  {
+    "Tên khách hàng": "Lê Thu Trang",
+    "Mã khách hàng": "KHCN  0135"
+  },
+  {
+    "Tên khách hàng": "Đào Minh Chánh",
+    "Mã khách hàng": "KHCN  01764"
+  },
+  {
+    "Tên khách hàng": "Lazada",
+    "Mã khách hàng": "KHCN  0310"
+  },
+  {
+    "Tên khách hàng": "Adayroi",
+    "Mã khách hàng": "KHCN  0334"
+  },
+  {
+    "Tên khách hàng": "MAC THUY LIEN",
+    "Mã khách hàng": "KHCN  0621"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Thị Hoàng Trang",
+    "Mã khách hàng": "KHCN  0635"
+  },
+  {
+    "Tên khách hàng": "Cafe LU",
+    "Mã khách hàng": "KHCN  1347"
+  },
+  {
+    "Tên khách hàng": "Khách Lẻ Tiki",
+    "Mã khách hàng": "KHCN  1377"
+  },
+  {
+    "Tên khách hàng": "CÔNG TY TNHH SHOPEE",
+    "Mã khách hàng": "KHCN  1379"
+  },
+  {
+    "Tên khách hàng": "Chị Trang JW",
+    "Mã khách hàng": "KHCN  1404"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Hữu Ngọc Minh",
+    "Mã khách hàng": "KHCN  1432"
+  },
+  {
+    "Tên khách hàng": "Sargon Bistro & Coffee",
+    "Mã khách hàng": "KHCN  1443"
+  },
+  {
+    "Tên khách hàng": " Nguyễn Thanh Tịnh",
+    "Mã khách hàng": "KHCN  1709"
+  },
+  {
+    "Tên khách hàng": "Miracle",
+    "Mã khách hàng": "KHCN 1724"
+  },
+  {
+    "Tên khách hàng": "Lê Thị Thu Hương",
+    "Mã khách hàng": "KHCN  1756"
+  },
+  {
+    "Tên khách hàng": "Dương Thúy Lan",
+    "Mã khách hàng": "KHCN  1757"
+  },
+  {
+    "Tên khách hàng": "Phạm Thị Bảo Châu",
+    "Mã khách hàng": "KHCN  1761"
+  },
+  {
+    "Tên khách hàng": "Lê Xuân Đan",
+    "Mã khách hàng": "KHCN 1766"
+  },
+  {
+    "Tên khách hàng": "Phan Thanh Bảo Phúc",
+    "Mã khách hàng": "KHCN 1768"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Ngọc Phương Thùy",
+    "Mã khách hàng": "KHCN 1769"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Linh Nhi",
+    "Mã khách hàng": "KHCN 1770"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Ngọc Khánh Vy",
+    "Mã khách hàng": "KHCN 1771"
+  },
+  {
+    "Tên khách hàng": "Lê Thị Hoàng Oanh",
+    "Mã khách hàng": "KHCN 1772"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Phương Tuấn",
+    "Mã khách hàng": "KHCN 1773"
+  },
+  {
+    "Tên khách hàng": "Trần Thị Thu An",
+    "Mã khách hàng": "KHCN 1774"
+  },
+  {
+    "Tên khách hàng": "Trần Thị Mỹ Vân",
+    "Mã khách hàng": "KHCN 1775"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Thị Luynh Trang",
+    "Mã khách hàng": "KHCN 1776"
+  },
+  {
+    "Tên khách hàng": "Dương Quang Vinh",
+    "Mã khách hàng": "KHCN 1777"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Thị Kim Phúc",
+    "Mã khách hàng": "KHCN 1778"
+  },
+  {
+    "Tên khách hàng": "Lê Nguyễn Thu Nhựt",
+    "Mã khách hàng": "KHCN 1779"
+  },
+  {
+    "Tên khách hàng": "Lê Thị Hồng Hạnh",
+    "Mã khách hàng": "KHCN 1780"
+  },
+  {
+    "Tên khách hàng": "Mạc Thị Xuất",
+    "Mã khách hàng": "khcn 1781"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Thanh Trúc",
+    "Mã khách hàng": "KHCN 1782"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Thị Bích Trâm",
+    "Mã khách hàng": "khcn 1783"
+  },
+  {
+    "Tên khách hàng": "Bùi Thị Minh Thảo",
+    "Mã khách hàng": "KHCN 1784"
+  },
+  {
+    "Tên khách hàng": "Lê Hồng Ngọc",
+    "Mã khách hàng": "KHCN 1785"
+  },
+  {
+    "Tên khách hàng": "Trần Thụy Thanh Trúc",
+    "Mã khách hàng": "KHCN 1786"
+  },
+  {
+    "Tên khách hàng": "Lê Văn Thu",
+    "Mã khách hàng": "KHCN 1787"
+  },
+  {
+    "Tên khách hàng": "Ngũ Tố Băng",
+    "Mã khách hàng": "KHCN 1788"
+  },
+  {
+    "Tên khách hàng": "Trần Ngọc Kim Phi",
+    "Mã khách hàng": "KHCN 1789"
+  },
+  {
+    "Tên khách hàng": "Lê Thanh Hùng",
+    "Mã khách hàng": "KHCN 1790"
+  },
+  {
+    "Tên khách hàng": "Phan Thị Thu Hiền",
+    "Mã khách hàng": "KHCN  1791"
+  },
+  {
+    "Tên khách hàng": "Dương Bảo Hoàng",
+    "Mã khách hàng": "KHCN 1800"
+  },
+  {
+    "Tên khách hàng": "Phan Thanh Thúy",
+    "Mã khách hàng": "KHCN 1801"
+  },
+  {
+    "Tên khách hàng": "Phạm Thị Mai Trang",
+    "Mã khách hàng": "KHCN  1802"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Vingroup",
+    "Mã khách hàng": "KHLE010009"
+  },
+  {
+    "Tên khách hàng": "Chị Vân (Spa Ha Noi)",
+    "Mã khách hàng": "KHLE010010"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - LUYNH TRANG",
+    "Mã khách hàng": "KHLE010014"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ (Người mua không lấy hóa đơn)",
+    "Mã khách hàng": "KHLE__013"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - My Phuong",
+    "Mã khách hàng": "KHLE120006"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - 986 Hotel",
+    "Mã khách hàng": "KHLE120011"
+  },
+  {
+    "Tên khách hàng": "MOAMI",
+    "Mã khách hàng": "KHLE120012"
+  },
+  {
+    "Tên khách hàng": "Lê Thanh Hương",
+    "Mã khách hàng": "KHLE120013"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Tú Spa",
+    "Mã khách hàng": "KHLE120015"
+  },
+  {
+    "Tên khách hàng": "Cloud village sapa",
+    "Mã khách hàng": "KHLE120016"
+  },
+  {
+    "Tên khách hàng": "Chị Vân (Lazure)",
+    "Mã khách hàng": "KHLE120017"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ One More Food",
+    "Mã khách hàng": "KHLE120018"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Ms. Mai",
+    "Mã khách hàng": "KHLE120019"
+  },
+  {
+    "Tên khách hàng": "Le J’ cafe Đà Lạt",
+    "Mã khách hàng": "KHLE120020"
+  },
+  {
+    "Tên khách hàng": "Anh Luu Nang",
+    "Mã khách hàng": "KHLE120023"
+  },
+  {
+    "Tên khách hàng": "Mộc Hương Spa",
+    "Mã khách hàng": "KHLE120025"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Thục Hảo",
+    "Mã khách hàng": "KHLE120026"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Ly",
+    "Mã khách hàng": "KHLE120027"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ- Chị Dương",
+    "Mã khách hàng": "KHLE120028"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Anh Duy",
+    "Mã khách hàng": "KHLE120029"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ- Tiệm trà của Thu",
+    "Mã khách hàng": "KHLE120032"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ- The Couple spa",
+    "Mã khách hàng": "KHLE120033"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ- Chị Misa",
+    "Mã khách hàng": "KHLE120038"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ- The Garden Spa 1975",
+    "Mã khách hàng": "KHLE120039"
+  },
+  {
+    "Tên khách hàng": "CH Tealush",
+    "Mã khách hàng": "KHLE120040"
+  },
+  {
+    "Tên khách hàng": "Khách le - Chị Quỳnh (Phan Rang)",
+    "Mã khách hàng": "KHLE120042"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Sel De Mer Phú Quốc",
+    "Mã khách hàng": "KHLE120043"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Ngọc Phương",
+    "Mã khách hàng": "KHLE120044"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Hotel Quy Nhơn",
+    "Mã khách hàng": "KHLE120045"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Anh Khánh",
+    "Mã khách hàng": "KHLE120046"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - City Center Rosa Phú Quốc",
+    "Mã khách hàng": "KHLE120047"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Quỳnh Dung",
+    "Mã khách hàng": "KHLE120051"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Hương HN",
+    "Mã khách hàng": "KHLE120053"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Tia",
+    "Mã khách hàng": "KHLE120054"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Anh Hiếu HN",
+    "Mã khách hàng": "KHLE120055"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Liên",
+    "Mã khách hàng": "KHLE120057"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Chị Hương VP",
+    "Mã khách hàng": "KHLE120058"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ- Chị Hằng",
+    "Mã khách hàng": "KHLE120061"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Anh Vũ Seacorp",
+    "Mã khách hàng": "KHLE120062"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Châu",
+    "Mã khách hàng": "KHLE120063"
+  },
+  {
+    "Tên khách hàng": "Phạm Thị Hồng Ngọc",
+    "Mã khách hàng": "KHLE120065"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Trang",
+    "Mã khách hàng": "KHLE120066"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Anh Chinh",
+    "Mã khách hàng": "KHLE120069"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Đảo Đào Phú Quốc",
+    "Mã khách hàng": "KHLE120070"
+  },
+  {
+    "Tên khách hàng": "Oishi Coffee",
+    "Mã khách hàng": "KHLE120072"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Yến",
+    "Mã khách hàng": "KHLE120074"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Anh Thăng (Dalat)",
+    "Mã khách hàng": "KHLE120076"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Thuý Lan Viên",
+    "Mã khách hàng": "KHLE120077"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Ngọc Phương PQ",
+    "Mã khách hàng": "KHLE120079"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Ms. Xuân (Mỹ phẩm Aroma)",
+    "Mã khách hàng": "KHLE120080"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Anh Luu Nang",
+    "Mã khách hàng": "KHLE120081"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Trương Lập Tiến",
+    "Mã khách hàng": "KHLE120082"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Hồ Điệp",
+    "Mã khách hàng": "KHLE120083"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Ngọc Phương Trần",
+    "Mã khách hàng": "KHLE120084"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Sel De Mer HN",
+    "Mã khách hàng": "KHLE120085"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Golf  Lạc Hồng",
+    "Mã khách hàng": "KHLE120086"
+  },
+  {
+    "Tên khách hàng": "The May A - S Coffee & Restaurant",
+    "Mã khách hàng": "KHLE120087"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Lê Viết Quang_Villa Spa DN",
+    "Mã khách hàng": "KHLE120088"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - An Nhiên Retreat",
+    "Mã khách hàng": "KHLE120089"
+  },
+  {
+    "Tên khách hàng": "Đào Nguyên Tân",
+    "Mã khách hàng": "KHLE120090"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Hằng Vinpearl",
+    "Mã khách hàng": "KHLE120091"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Thảo (Huế)",
+    "Mã khách hàng": "KHLE120092"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Ms. Tú Khang",
+    "Mã khách hàng": "KHLE120093"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Anh Cường",
+    "Mã khách hàng": "KHLE120094"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Thảo (PET Q7)",
+    "Mã khách hàng": "KHLE120095"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Phúc",
+    "Mã khách hàng": "KHLE120096"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Nam Imperial VT",
+    "Mã khách hàng": "KHLE120097"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Phạm Nguyễn Tố Phương",
+    "Mã khách hàng": "KHLE120098"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Duy Anh",
+    "Mã khách hàng": "KHLE120099"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Ms. Helen",
+    "Mã khách hàng": "KHLE120100"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - 9 Grains Bakery and Caf",
+    "Mã khách hàng": "KHLE120101"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - New Star Inn Hotel",
+    "Mã khách hàng": "KHLE120102"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Phan Thanh Xuân",
+    "Mã khách hàng": "KHLE120103"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Nam",
+    "Mã khách hàng": "KHLE120104"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Kiều Trinh",
+    "Mã khách hàng": "KHLE120105"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Linh",
+    "Mã khách hàng": "KHLE120106"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Dung",
+    "Mã khách hàng": "KHLE120107"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Cát Mộc",
+    "Mã khách hàng": "KHLE120108"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Thu Spa",
+    "Mã khách hàng": "KHLE120109"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Pineapple Spa Danang",
+    "Mã khách hàng": "KHLE120110"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Ms. Phi",
+    "Mã khách hàng": "KHLE120111"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Thành",
+    "Mã khách hàng": "KHLE120112"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - SCJ",
+    "Mã khách hàng": "KHLE120113"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Sofitel",
+    "Mã khách hàng": "KHLE120114"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Ms. Phượng PQ",
+    "Mã khách hàng": "KHLE120115"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Acqua Villa Nha Trang",
+    "Mã khách hàng": "KHLE120116"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Tô Thị Kim Oanh",
+    "Mã khách hàng": "KHLE120117"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Thị Thu Phương",
+    "Mã khách hàng": "KHLE120118"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Đăng Hải",
+    "Mã khách hàng": "KHLE120119"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Alberto Ladringan Lafuente",
+    "Mã khách hàng": "KHLE120120"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Trần Minh Hơn",
+    "Mã khách hàng": "KHLE120121"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Trương Thị Thuỳ Dung",
+    "Mã khách hàng": "KHLE120122"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Linh Skylake",
+    "Mã khách hàng": "KHLE120123"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Minh Hoàng Hotel (Vũng Tàu)",
+    "Mã khách hàng": "KHLE120124"
+  },
+  {
+    "Tên khách hàng": "Shop Đồ Hiệu (Starhill)",
+    "Mã khách hàng": "KHLE120125"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ Nguyễn Anh Thiện (Mỹ phẩm Thiện Nguyễn)",
+    "Mã khách hàng": "KHLE120126"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Dũng (New Zealand)",
+    "Mã khách hàng": "KHLE120127"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Nguyễn Thị Hạnh Trang",
+    "Mã khách hàng": "KHLE120128"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Thanh Tùng",
+    "Mã khách hàng": "KHLE120129"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Kiki",
+    "Mã khách hàng": "KHLE120130"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Diệu",
+    "Mã khách hàng": "KHLE120131"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Võ Đào Công Trí",
+    "Mã khách hàng": "KHLE120132"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Mỹ Lan (Bachsuite)",
+    "Mã khách hàng": "KHLE120133"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chế Linh",
+    "Mã khách hàng": "KHLE120134"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Tuyền",
+    "Mã khách hàng": "KHLE120135"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Thư Seacorp",
+    "Mã khách hàng": "KHLE120136"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Nhiên",
+    "Mã khách hàng": "KHLE120137"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Hải Marriot DN",
+    "Mã khách hàng": "KHLE120138"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Hoàng Anh",
+    "Mã khách hàng": "KHLE120139"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Thanh Vy",
+    "Mã khách hàng": "KHLE120140"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Tuyết Mai",
+    "Mã khách hàng": "KHLE120141"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Lanh",
+    "Mã khách hàng": "KHLE120142"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Hội (Viettel Post)",
+    "Mã khách hàng": "KHLE120143"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Nguyễn Thị Phương Linh",
+    "Mã khách hàng": "KHLE120144"
+  },
+  {
+    "Tên khách hàng": "Sen Boutique Hotel & Spa",
+    "Mã khách hàng": "KHLE120145"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Lê Thị Thi",
+    "Mã khách hàng": "KHLE120146"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Trí Landmark",
+    "Mã khách hàng": "KHLE120147"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Ms. Kristin - Caravelle",
+    "Mã khách hàng": "KHLE120148"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Hoàng Windsor",
+    "Mã khách hàng": "KHLE120149"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Black spa Phú Quốc",
+    "Mã khách hàng": "KHLE120150"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Ut",
+    "Mã khách hàng": "KHLE120151"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Buzz",
+    "Mã khách hàng": "KHLE120152"
+  },
+  {
+    "Tên khách hàng": "Đinh Hải Vi",
+    "Mã khách hàng": "KHLE120153"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Nguyễn Mỹ Duyên",
+    "Mã khách hàng": "KHLE120154"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Nguyễn Phương Thảo",
+    "Mã khách hàng": "KHLE120155"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Trung",
+    "Mã khách hàng": "KHLE120156"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Bảo Nghi",
+    "Mã khách hàng": "KHLE120157"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Lê Phi Dương",
+    "Mã khách hàng": "KHLE120158"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Nguyễn Văn Sơn",
+    "Mã khách hàng": "KHLE120159"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Kaylin",
+    "Mã khách hàng": "KHLE120160"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Nhung",
+    "Mã khách hàng": "KHLE120161"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Loan (Mailibu)",
+    "Mã khách hàng": "KHLE120162"
+  },
+  {
+    "Tên khách hàng": "HAIR SALON TOMMY LOC",
+    "Mã khách hàng": "KHLE120163"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Oanh Beauty Hà Nội",
+    "Mã khách hàng": "KHLE120164"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Vũ",
+    "Mã khách hàng": "KHLE120165"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Thuý",
+    "Mã khách hàng": "KHLE120166"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Thích",
+    "Mã khách hàng": "KHLE120167"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Eric Live",
+    "Mã khách hàng": "KHLE120168"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Hoàn Trinh",
+    "Mã khách hàng": "KHLE120169"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Mr.Louis",
+    "Mã khách hàng": "KHLE120170"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - chị Thủy",
+    "Mã khách hàng": "KHLE120172"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Lan Hà Nội",
+    "Mã khách hàng": "KHLE120173"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Geo Spa Hội An",
+    "Mã khách hàng": "KHLE120174"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Tiên",
+    "Mã khách hàng": "KHLE120175"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Anh Luân (Resort An Lâm SaiGon River)",
+    "Mã khách hàng": "KHLE120176"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Hoàng Lê Xuân Ngọc",
+    "Mã khách hàng": "KHLE120177"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Phượng - An Lâm NVB",
+    "Mã khách hàng": "KHLE120178"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Spa Sel De Mer Phú Quốc",
+    "Mã khách hàng": "KHLE120179"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Phương Famiana Phú Quốc",
+    "Mã khách hàng": "KHLE120180"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Master Villa Vũ Yên",
+    "Mã khách hàng": "KHLE120181"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Cicellie",
+    "Mã khách hàng": "KHLE120182"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Bhutan Spirit Sanctuary",
+    "Mã khách hàng": "KHLE120183"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Chị Ruby",
+    "Mã khách hàng": "KHLE120184"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Hoa (BMT Hotel)",
+    "Mã khách hàng": "KHLE120185"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Ms Quyên",
+    "Mã khách hàng": "KHLE120186"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Trịnh Thị Kim Cúc",
+    "Mã khách hàng": "KHLE120187"
+  },
+  {
+    "Tên khách hàng": "Khách mua lẻ - Anh Dũng",
+    "Mã khách hàng": "KHLE120188"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ  Anh Dũng",
+    "Mã khách hàng": "KHLE120189"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Trịnh Thị Kim Cúc",
+    "Mã khách hàng": "KHLE120190"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Phạm Hùng",
+    "Mã khách hàng": "KHLE120191"
+  },
+  {
+    "Tên khách hàng": "Cty CP Lạc Việt",
+    "Mã khách hàng": "KHMASS0002"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Shoppee",
+    "Mã khách hàng": "KLE_001"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ online",
+    "Mã khách hàng": "KLE_002"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ",
+    "Mã khách hàng": "KLE_003"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ Tiki",
+    "Mã khách hàng": "KLE_004"
+  },
+  {
+    "Tên khách hàng": "Miracle",
+    "Mã khách hàng": "MI0000KH"
+  },
+  {
+    "Tên khách hàng": "cao",
+    "Mã khách hàng": "NB"
+  },
+  {
+    "Tên khách hàng": "Công ty Cổ Phần Thiên Nhiên",
+    "Mã khách hàng": "NB0000KH"
+  },
+  {
+    "Tên khách hàng": "Phòng Kinh Doanh",
+    "Mã khách hàng": "NB02"
+  },
+  {
+    "Tên khách hàng": "Bán lẻ  tại cửa hàng SG Centre",
+    "Mã khách hàng": "NB05"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Crescent Mall",
+    "Mã khách hàng": "NB33"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Vincom Nha Trang - Trần Phú",
+    "Mã khách hàng": "NB41"
+  },
+  {
+    "Tên khách hàng": "ONLINE",
+    "Mã khách hàng": "NB43"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Parkson",
+    "Mã khách hàng": "NB46"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Parkson thu ngoài",
+    "Mã khách hàng": "NB461"
+  },
+  {
+    "Tên khách hàng": "Cửa Hàng Diamond",
+    "Mã khách hàng": "NB47"
+  },
+  {
+    "Tên khách hàng": "Cửa hàng Diamond thu ngoài",
+    "Mã khách hàng": "NB471"
+  },
+  {
+    "Tên khách hàng": "Tik Tok Shop",
+    "Mã khách hàng": "NB48"
+  },
+  {
+    "Tên khách hàng": "VNPAY",
+    "Mã khách hàng": "NB49"
+  },
+  {
+    "Tên khách hàng": "AB Food And Beverages (Thailan) LTD",
+    "Mã khách hàng": "NN00000031"
+  },
+  {
+    "Tên khách hàng": "Công Ty Impac Asia Control System",
+    "Mã khách hàng": "NN00000048"
+  },
+  {
+    "Tên khách hàng": "Vanity Group Pty Limited",
+    "Mã khách hàng": "NN00000057"
+  },
+  {
+    "Tên khách hàng": "LATHER Inc",
+    "Mã khách hàng": "NN00000076"
+  },
+  {
+    "Tên khách hàng": "NUDE BEAUTY PRODUCTS AUSTRALIA",
+    "Mã khách hàng": "NN00000077"
+  },
+  {
+    "Tên khách hàng": "Else Kuala Lumpur",
+    "Mã khách hàng": "NN00000078"
+  },
+  {
+    "Tên khách hàng": "Zil PasYon Resort LTD (Six Senses)",
+    "Mã khách hàng": "NN00000079"
+  },
+  {
+    "Tên khách hàng": "Victoria Xiengthong Place",
+    "Mã khách hàng": "nn00000080"
+  },
+  {
+    "Tên khách hàng": "Viking River Tour Ltd",
+    "Mã khách hàng": "nn00000081"
+  },
+  {
+    "Tên khách hàng": "Vanity Global Cosmetics PTE LTD",
+    "Mã khách hàng": "nn00000082"
+  },
+  {
+    "Tên khách hàng": "Nguyễn Ngọc Lân",
+    "Mã khách hàng": "N.N.LAN"
+  },
+  {
+    "Tên khách hàng": "ONLINE-THANN (cấn trừ công nợ bên vietel)",
+    "Mã khách hàng": "ONLINE"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Hàng Hải Và Phát Triển Phi Mã",
+    "Mã khách hàng": "PHIMA__002"
+  },
+  {
+    "Tên khách hàng": "Phải thu ngắn hạn khác",
+    "Mã khách hàng": "PHTHNGKH"
+  },
+  {
+    "Tên khách hàng": "Công Ty Bảo Hiểm PVI Bắc Trung Bộ",
+    "Mã khách hàng": "PVI__015"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ - Chị Chung",
+    "Mã khách hàng": "RE.C.CHUNG"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Seagull ADC",
+    "Mã khách hàng": "SADC__005"
+  },
+  {
+    "Tên khách hàng": "Công Ty CP Nông Nghiệp Công Nghệ Cao SeaFarm",
+    "Mã khách hàng": "SFARM__009"
+  },
+  {
+    "Tên khách hàng": "Công Ty Cổ Phần Phát Triển Xây Dựng SeaLand",
+    "Mã khách hàng": "SLAND__012"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Thương Mại Và Dịch Vụ Hàng Hải Sealion",
+    "Mã khách hàng": "SLION__006"
+  },
+  {
+    "Tên khách hàng": "Công Ty TNHH Dịch Vụ & Phát Triển Công Nghệ Seatek",
+    "Mã khách hàng": "STEK__014"
+  },
+  {
+    "Tên khách hàng": "Lê Thị Anh Thư",
+    "Mã khách hàng": "THANTHNB"
+  },
+  {
+    "Tên khách hàng": "Thuế TNCN",
+    "Mã khách hàng": "THTNCNKH"
+  },
+  {
+    "Tên khách hàng": "Thuế TNCN",
+    "Mã khách hàng": "TNCN"
+  },
+  {
+    "Tên khách hàng": "Khách lẻ đang chờ bổ sung thông tin",
+    "Mã khách hàng": "TREOTAM"
+  },
+  {
+    "Tên khách hàng": "Vanity Global Cosmetics PTE LTD",
+    "Mã khách hàng": "VAGLCONB"
+  },
+  {
+    "Tên khách hàng": "Viking River Tours Ltd",
+    "Mã khách hàng": "VIRITOKH"
+  }
+]
