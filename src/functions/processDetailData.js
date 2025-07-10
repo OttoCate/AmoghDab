@@ -280,9 +280,11 @@ export const processDataBDVDTT = (data, originalData, software) => {
       software === 'isale'
         ? !line['IncomeAcctID']
           ? ''
-          : `DT${moment(line['InvoiceDate']).format('MM')}${moment(
-              line['InvoiceDate']
-            ).format('YY')}${line['InvoiceNo']?.slice(-4) || ''}`
+          : `DT${moment(line['InvoiceDate'], 'MM/DD/YYYY', true).format(
+              'MM'
+            )}${moment(line['InvoiceDate'], 'MM/DD/YYYY', true).format('YY')}${
+              line['InvoiceNo']?.slice(-4) || ''
+            }`
         : line['CTGS'] + '-' + line['Soá phieáu']
     let TKNo =
       line['TK Nôï'] ||
@@ -433,9 +435,11 @@ export const processDataBHDTT = (data, originalData, software) => {
       software === 'isale'
         ? !line['IncomeAcctID']
           ? ''
-          : `DT${moment(line['InvoiceDate']).format('MM')}${moment(
-              line['InvoiceDate']
-            ).format('YY')}${line['InvoiceNo']?.slice(-4) || ''}`
+          : `DT${moment(line['InvoiceDate'], 'MM/DD/YYYY', true).format(
+              'MM'
+            )}${moment(line['InvoiceDate']).format('YY', 'MM/DD/YYYY', true)}${
+              line['InvoiceNo']?.slice(-4) || ''
+            }`
         : line['CTGS'] + '-' + line['Soá phieáu']
     let TKNo =
       line['TK Nôï'] ||
