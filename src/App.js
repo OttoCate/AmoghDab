@@ -18,6 +18,7 @@ import { transformFormSettingsToArray } from './functions/turnObjectToArray.js'
 import DataProcessWorker from 'worker-loader!./workers/dataProcessor.worker.js'
 import { Upload, Tooltip, Button, Switch, Select, Alert, Input } from 'antd'
 import { MdOutlineContentPasteSearch } from 'react-icons/md'
+import lodash from 'lodash'
 
 function App() {
   const [dropState, setDropState] = useState(0)
@@ -30,6 +31,7 @@ function App() {
   const [customCredits, setCustomCredits] = useState('')
   const [invoiceSymbol, setInvoiceSymbol] = useState('whatever')
   const [invoiceNumber, setInvoiceNumber] = useState('whatever')
+  const [maxRowPerSheet, setMaxRowPerSheet] = useState(495)
 
   const handleProcessData = (data) => {
     const overrideInfo = {
@@ -46,6 +48,7 @@ function App() {
       software,
       applyOveride,
       overrideInfo,
+      maxRowPerSheet,
     })
     worker.onmessage = (e) => {
       const { blob, fileName } = e.data
@@ -103,11 +106,12 @@ function App() {
       if (applyOveride && (!customDebits || !customCredits))
         return alert('Vui lòng nhập đầy đủ thông tin muốn ghi đè')
 
+      if (!lodash.isInteger(parseInt(maxRowPerSheet)))
+        return alert('Số dòng tối đa mỗi sheet phải là số nguyên dương')
+
       const fileType = isCheckingExclusive ? file.type : file[0].type
-      if (!validExcelFile.includes(fileType)) {
-        alert('File của bạn phải là excel')
-        return
-      }
+      if (!validExcelFile.includes(fileType))
+        return alert('File của bạn phải là excel')
 
       setIsProcessing(true)
       // Read file into ArrayBuffer
@@ -211,12 +215,24 @@ function App() {
           />
         </div>
         <div className="form-selection">
+          <p style={{ fontSize: 14, lineHeight: '14px' }}>
+            Bạn muốn mỗi sheet tối đa bao nhiêu dòng?
+          </p>
+          <Input
+            style={{ width: '100%' }}
+            value={maxRowPerSheet}
+            disabled={isProcessing}
+            inputMode="numeric"
+            onChange={(e) => setMaxRowPerSheet(e.target.value)}
+          />
+        </div>
+        <div className="form-selection">
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: 16,
-              marginTop: 36,
+              marginTop: 24,
             }}
           >
             <p style={{ fontSize: 14, lineHeight: '14px' }}>

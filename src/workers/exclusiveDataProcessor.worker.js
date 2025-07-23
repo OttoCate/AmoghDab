@@ -36,7 +36,7 @@ self.onmessage = function (e) {
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
   const fileExtension = '.xlsx'
 
-  const CHUNK_SIZE = 495
+  const CHUNK_SIZE = 70000
   let wb = { Sheets: {}, SheetNames: [] }
   if (finalData.length === 0) {
     const ws = XLSX.utils.json_to_sheet(finalData)

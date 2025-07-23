@@ -4,7 +4,15 @@ import { createTransactionHandler } from '../functions/processDataByFormType'
 import { formSettings } from '../globalVariables'
 
 self.onmessage = function (e) {
-  const { data, misaForm, ctgs, software, applyOveride, overrideInfo } = e.data
+  const {
+    data,
+    misaForm,
+    ctgs,
+    software,
+    applyOveride,
+    overrideInfo,
+    maxRowPerSheet,
+  } = e.data
 
   if (!formSettings[misaForm]) {
     self.postMessage({ error: `Invalid misaForm: ${misaForm}` })
@@ -25,7 +33,7 @@ self.onmessage = function (e) {
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
   const fileExtension = '.xlsx'
 
-  const CHUNK_SIZE = 495
+  const CHUNK_SIZE = parseInt(maxRowPerSheet)
   let wb = { Sheets: {}, SheetNames: [] }
   if (finalData.length === 0) {
     const ws = XLSX.utils.json_to_sheet(finalData)
