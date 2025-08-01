@@ -47,9 +47,9 @@ export const processDataMDVDTT = (data, originalData, software) => {
     })
 
     return {
-      'Phương thức thanh toán': line['TK Coù'].startsWith('111')
+      'Phương thức thanh toán': line['TK Coù']?.toString()?.startsWith('111')
         ? 'Tieàn maët'
-        : line['TK Coù'].startsWith('112')
+        : line['TK Coù']?.toString()?.startsWith('112')
         ? 'UÛy nhieäm chi'
         : 'Chöa thanh toaùn',
       'Nhận kèm hóa đơn': 'Nhaän keøm hoùa ñôn',
@@ -59,7 +59,9 @@ export const processDataMDVDTT = (data, originalData, software) => {
       'Số chứng từ (*)': line['CTGS'] + '-' + line['Soá phieáu'],
       'Số tài khoản chi': '',
       'Tên ngân hàng chi': '',
-      'Nhà cung cấp': ['111', '112'].some((i) => line['TK Coù'].startsWith(i))
+      'Nhà cung cấp': ['111', '112'].some((i) =>
+        line['TK Coù']?.toString()?.startsWith(i)
+      )
         ? ''
         : line['Ñoái töôïng (ghi chuù)'],
       'Địa chỉ': '',
@@ -127,10 +129,14 @@ export const processDataMDVDTT = (data, originalData, software) => {
       'Mẫu số HĐ': 1,
       'Ký hiệu HĐ': line['Kyù hieäu']?.slice(1),
       'Nhóm HHDV mua vào': '',
-      'Mã NCC': ['111', '112'].some((i) => line['TK Coù'].startsWith(i))
+      'Mã NCC': ['111', '112'].some((i) =>
+        line['TK Coù']?.toString()?.startsWith(i)
+      )
         ? ''
         : line['C.Tieát Coù'],
-      'Tên NCC': ['111', '112'].some((i) => line['TK Coù'].startsWith(i))
+      'Tên NCC': ['111', '112'].some((i) =>
+        line['TK Coù']?.toString()?.startsWith(i)
+      )
         ? ''
         : line['Ñoái töôïng (ghi chuù)'],
       'Mã số thuế NCC': line['Maõ Thueá'],
@@ -158,12 +164,12 @@ export const processDataMHTNNHD = (data, originalData, software) => {
     })
 
     return {
-      'Hình thức mua hàng': line['TK Nôï'].startsWith('15')
+      'Hình thức mua hàng': line['TK Nôï']?.toString()?.startsWith('15')
         ? 'Mua haøng trong nöôùc nhaäp kho'
         : 'Mua haøng trong nöôùc khoâng qua kho',
-      'Phương thức thanh toán': line['TK Coù'].startsWith('111')
+      'Phương thức thanh toán': line['TK Coù']?.toString()?.startsWith('111')
         ? 'Tieàn maët'
-        : line['TK Coù'].startsWith('112')
+        : line['TK Coù']?.toString()?.startsWith('112')
         ? 'UÛy nhieäm chi'
         : 'Chöa thanh toaùn',
       'Ngày hạch toán (*)': excelDateToJSDate(line['Ngaøy GS']),
@@ -243,10 +249,14 @@ export const processDataMHTNNHD = (data, originalData, software) => {
       'Số hóa đơn': line['Soá HÑ'],
       'Ngày hóa đơn': excelDateToJSDate(line['Ngaøy HÑ']),
       'Nhóm HHDV mua vào': '',
-      'Mã NCC': ['111', '112'].some((i) => line['TK Coù'].startsWith(i))
+      'Mã NCC': ['111', '112'].some((i) =>
+        line['TK Coù']?.toString()?.startsWith(i)
+      )
         ? ''
         : line['C.Tieát Coù'],
-      'Tên NCC': ['111', '112'].some((i) => line['TK Coù'].startsWith(i))
+      'Tên NCC': ['111', '112'].some((i) =>
+        line['TK Coù']?.toString()?.startsWith(i)
+      )
         ? ''
         : line['Ñoái töôïng (ghi chuù)'],
       'Mã số thuế NCC': line['Maõ Thueá'],
@@ -588,36 +598,44 @@ export const processDataBHDTT = (data, originalData, software) => {
 export const processDataXKF = (data, originalData, software) => {
   const processedData = data.map((line) => {
     return {
-      'Loại xuất kho': ['154', '62'].some((i) => line['TK Nôï'].startsWith(i))
+      'Loại xuất kho': ['154', '62'].some((i) =>
+        line['TK Nôï'].toString().startsWith(i)
+      )
         ? 'Xuaát kho saûn xuaát'
-        : ['632'].some((i) => line['TK Nôï'].startsWith(i))
+        : ['632'].some((i) => line['TK Nôï'].toString().startsWith(i))
         ? 'Xuaát kho baùn haøng'
         : 'Xuaát kho khaùc',
-      'Ngày hạch toán (*)': excelDateToJSDate(line['Ngaøy GS']),
-      'Ngày chứng từ (*)': excelDateToJSDate(line['Ngaøy GS']),
-      'Số chứng từ (*)': line['CTGS'] + '-' + line['Soá phieáu'],
-      'Mã đối tượng': line['C.Tieát Nôï'],
-      'Tên đối tượng': line['Ñoái töôïng (ghi chuù)'],
+      'Ngày hạch toán (*)': excelDateToJSDate(
+        line['Ngaøy GS'] || line['NgayLap']
+      ),
+      'Ngày chứng từ (*)': excelDateToJSDate(
+        line['Ngaøy GS'] || line['NgayLap']
+      ),
+      'Số chứng từ (*)':
+        line['SoChungTu'] || line['CTGS'] + '-' + line['Soá phieáu'],
+      'Mã đối tượng': line['C.Tieát Nôï'] || '',
+      'Tên đối tượng': line['Ñoái töôïng (ghi chuù)'] || '',
       'Địa chỉ/Bộ phận': '',
       'Người nhận': '',
-      'Lý do xuất': line['Dieãn giaûi'],
+      'Lý do xuất': line['Dieãn giaûi'] || '',
       'Mã nhân viên bán hàng': '',
       'Số chứng từ kèm theo': '',
-      'Mã hàng (*)': line['C.Tieát Coù'],
-      'Tên hàng': '',
+      'Mã hàng (*)': line['C.Tieát Coù'] || line['MaCuaPhongKeToan'],
+      'Tên hàng': line['TenHang'] || '',
       'Là dòng ghi chú': '',
       'Hàng khuyến mại': 'khoâng',
-      'Mã kho': line['kho coù'],
+      'Mã kho': line['kho coù'] || line['TenKhoDich'] || '',
       'Hàng hóa giữ hộ/bán hộ': '',
       'TK Nợ (*)': line['TK Nôï'],
       'TK Có (*)': line['TK Coù'],
-      ĐVT: '',
-      'Số lượng': line['S.Löôïng'],
+      ĐVT: line['DVT'] || '',
+      'Số lượng': line['S.Löôïng'] || line['SoLuong'],
       'Đơn giá':
-        lodash.isNumber(line['S.Löôïng']) && line['S.Löôïng'] > 0
+        line['DonGia'] ||
+        (lodash.isNumber(line['S.Löôïng']) && line['S.Löôïng'] > 0
           ? line['Soá tieàn'] / line['S.Löôïng']
-          : line['Soá tieàn'],
-      'Thành tiền': line['Soá tieàn'],
+          : line['Soá tieàn']),
+      'Thành tiền': line['Soá tieàn'] || line['ThanhTien'],
       'Số lệnh sản xuất': '',
       'Mã khoản mục chi phí': '',
       'Mã đơn vị': '',
@@ -641,36 +659,44 @@ export const processDataXKF = (data, originalData, software) => {
 export const processNKF = (data, originalData, software) => {
   const processedData = data.map((line) => {
     return {
-      'Loại nhập kho': ['154', '62'].some((i) => line['TK Coù'].startsWith(i))
+      'Loại nhập kho': ['154', '62'].some((i) =>
+        line['TK Coù']?.toString().startsWith(i)
+      )
         ? 'Nhaäp kho thaønh phaåm saûn xuaát'
-        : ['632'].some((i) => line['TK Coù'].startsWith(i))
+        : ['632'].some((i) => line['TK Coù']?.toString().startsWith(i))
         ? 'Nhaäp kho haøng baùn traû laïi'
         : 'Nhaäp kho khaùc',
-      'Ngày hạch toán (*)': excelDateToJSDate(line['Ngaøy GS']),
-      'Ngày chứng từ (*)': excelDateToJSDate(line['Ngaøy GS']),
-      'Số chứng từ (*)': line['CTGS'] + '-' + line['Soá phieáu'],
-      'Mã đối tượng': line['C.Tieát Coù'],
-      'Tên đối tượng': line['Ñoái töôïng (ghi chuù)'],
+      'Ngày hạch toán (*)': excelDateToJSDate(
+        line['Ngaøy GS'] || line['NgayLap']
+      ),
+      'Ngày chứng từ (*)': excelDateToJSDate(
+        line['Ngaøy GS'] || line['NgayLap']
+      ),
+      'Số chứng từ (*)':
+        line['SoChungTu'] || line['CTGS'] + '-' + line['Soá phieáu'],
+      'Mã đối tượng': line['C.Tieát Coù'] || '',
+      'Tên đối tượng': line['Ñoái töôïng (ghi chuù)'] || '',
       'Địa chỉ': '',
       'Người giao': '',
-      'Diễn giải': line['Dieãn giaûi'],
+      'Diễn giải': line['Dieãn giaûi'] || '',
       'Mã nhân viên bán hàng': '',
       'Số chứng từ kèm theo': '',
-      'Mã hàng (*)': line['C.Tieát Nôï'],
-      'Tên hàng': '',
+      'Mã hàng (*)': line['C.Tieát Nôï'] || line['MaCuaPhongKeToan'],
+      'Tên hàng': line['TenHang'] || '',
       'Là dòng ghi chú': '',
       'Hàng khuyến mại': 'khoâng',
-      'Mã kho': line['kho nôï'],
+      'Mã kho': line['kho nôï'] || line['TenKhoDich'] || '',
       'Hàng hóa giữ hộ/bán hộ': '',
       'TK Nợ (*)': line['TK Nôï'],
       'TK Có (*)': line['TK Coù'],
-      ĐVT: '',
-      'Số lượng': line['S.Löôïng'],
+      ĐVT: line['DVT'] || '',
+      'Số lượng': line['S.Löôïng'] || line['SoLuong'],
       'Đơn giá':
-        lodash.isNumber(line['S.Löôïng']) && line['S.Löôïng'] > 0
+        line['DonGia'] ||
+        (lodash.isNumber(line['S.Löôïng']) && line['S.Löôïng'] > 0
           ? line['Soá tieàn'] / line['S.Löôïng']
-          : line['Soá tieàn'],
-      'Thành tiền': line['Soá tieàn'],
+          : line['Soá tieàn']),
+      'Thành tiền': line['Soá tieàn'] || line['ThanhTien'],
       'Số lệnh sản xuất': '',
       'Mã khoản mục chi phí': '',
       'Mã đơn vị': '',
@@ -716,7 +742,8 @@ export const processNVK = (data, originalData, software) => {
       'Số chứng từ (*)': line['CTGS'] + '-' + line['Soá phieáu'],
       'Diễn giải': line['Dieãn giaûi'],
       'Loại nghiệp vụ':
-        line['TK Nôï'].startsWith('911') || line['TK Coù'].startsWith('911')
+        line['TK Nôï']?.toString()?.startsWith('911') ||
+        line['TK Coù']?.toString()?.startsWith('911')
           ? 'Keát chuyeån TK 911'
           : '',
       'Hạn thanh toán': '',
@@ -865,7 +892,7 @@ export const processPCTG = (data, originalData, software) => {
     })
 
     return {
-      'Phương thức thanh toán': line['TK Coù'].startsWith('112')
+      'Phương thức thanh toán': line['TK Coù']?.toString()?.startsWith('112')
         ? 'UÛy nhieäm chi'
         : '',
       'Ngày hạch toán (*)': excelDateToJSDate(line['Ngaøy GS']),
@@ -981,6 +1008,68 @@ export const processPCTNB = (data, originalData, software) => {
       )
         ? 'Coù'
         : 'Khoâng',
+    }
+  })
+
+  return processedData
+}
+
+export const processCKF = (data, originalData, software) => {
+  const processedData = data.map((line) => {
+    return {
+      'Hình thức chuyển kho': '',
+      'Ngày hạch toán (*)': excelDateToJSDate(
+        line['Ngaøy GS'] || line['NgayLap']
+      ),
+      'Ngày chứng từ (*)': excelDateToJSDate(
+        line['Ngaøy GS'] || line['NgayLap']
+      ),
+      'Số chứng từ (*)':
+        line['SoChungTu'] || line['CTGS'] + '-' + line['Soá phieáu'] || '',
+      'Mẫu số HĐ': '',
+      'Ký hiệu HĐ': line['Kyù hieäu']?.slice(1) || '',
+      'Hợp đồng KT số/Lệnh điều động số': '',
+      Ngày: '',
+      Của: '',
+      'Về việc/Diễn giải': line['Dieãn giaûi'] || '',
+      'Với đại lý/ Mã đơn vị nhận': '',
+      'Tên đại lý/ Tên đơn vị nhận': '',
+      'Mã số thuế đại lý/ MST đơn vị nhận': '',
+      'Hợp đồng vận chuyển': '',
+      'Phương tiện vận chuyển': '',
+      'Mã người vận chuyển': '',
+      'Tên người vận chuyển': '',
+      'Mã hàng (*)': line['MaCuaPhongKeToan'] || line['C.Tieát Nôï'],
+      'Tên hàng': line['TenHang'] || '',
+      'Là dòng ghi chú': '',
+      'Xuất tại kho': line['kho coù'] || line['TenKho'] || '',
+      'Nhập tại kho': line['kho nôï'] || line['TenKhoDich'] || '',
+      'Hàng hóa giữ hộ/bán hộ': '',
+      'TK Nợ (*)': line['TK Nôï'],
+      'TK Có (*)': line['TK Coù'],
+      ĐVT: line['DVT'] || '',
+      'Số lượng': line['S.Löôïng'] || line['SoLuong'],
+      'Đơn giá bán':
+        line['DonGia'] ||
+        (lodash.isNumber(line['S.Löôïng']) && line['S.Löôïng'] > 0
+          ? line['Soá tieàn'] / line['S.Löôïng']
+          : line['Soá tieàn']),
+      'Thành tiền': line['Soá tieàn'] || line['ThanhTien'],
+      'Đơn giá vốn': '',
+      'Tiền vốn': '',
+      'Mã khoản mục chi phí': '',
+      'Mã đơn vị': '',
+      'Mã đối tượng THCP': '',
+      'Mã công trình': '',
+      'Số đơn đặt hàng': '',
+      'Số hợp đồng mua': '',
+      'Số hợp đồng bán': '',
+      'Mã thống kê': '',
+      'CP không hợp lý':
+        line['TK Coù']?.toString().toUpperCase().includes('K') ||
+        line['TK Nôï']?.toString().toUpperCase().includes('K')
+          ? 'Coù'
+          : 'Khoâng',
     }
   })
 

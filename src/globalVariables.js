@@ -9,6 +9,7 @@ import {
   processPTTG,
   processPCTG,
   processPCTNB,
+  processCKF,
 } from './functions/processDetailData'
 
 export const validExcelFile = [
@@ -71,6 +72,15 @@ export const formSettings = {
     isComplement: false,
     function: processNKF,
     label: 'Mẫu nhập kho',
+  },
+
+  11: {
+    debit: ['15'],
+    credit: ['15'],
+    invoiceRequired: false,
+    isComplement: false,
+    function: processCKF,
+    label: 'Mẫu phiếu chuyển kho',
   },
 
   7: {
@@ -178,4 +188,5 @@ export const rules = {
     'TK Có thuộc nhóm (111,112)',
   ],
   10: ['TK Nợ thuộc nhóm (111,112)', 'TK Có thuộc nhóm (111,112)'],
+  11: ['TK Nợ thuộc nhóm (15)', 'TK Có thuộc nhóm (15)'],
 }
