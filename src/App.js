@@ -204,16 +204,18 @@ function App() {
             options={softwareSource}
           />
         </div>
-        <div className="form-selection">
-          <p style={{ fontSize: 14, lineHeight: '14px' }}>
-            Bạn muốn lọc theo CTGS nào?
-          </p>
-          <Input
-            style={{ width: '100%' }}
-            disabled={isProcessing}
-            onChange={(e) => setCtgs(e.target.value)}
-          />
-        </div>
+        {software !== 'odoo' && (
+          <div className="form-selection">
+            <p style={{ fontSize: 14, lineHeight: '14px' }}>
+              Bạn muốn lọc theo CTGS nào?
+            </p>
+            <Input
+              style={{ width: '100%' }}
+              disabled={isProcessing}
+              onChange={(e) => setCtgs(e.target.value)}
+            />
+          </div>
+        )}
         <div className="form-selection">
           <p style={{ fontSize: 14, lineHeight: '14px' }}>
             Bạn muốn mỗi sheet tối đa bao nhiêu dòng?
@@ -226,26 +228,28 @@ function App() {
             onChange={(e) => setMaxRowPerSheet(e.target.value)}
           />
         </div>
-        <div className="form-selection">
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 16,
-              marginTop: 24,
-            }}
-          >
-            <p style={{ fontSize: 14, lineHeight: '14px' }}>
-              Bạn muốn ghi đè quy tắc lấy dữ liệu?
-            </p>
-            <Switch
-              disabled={isProcessing}
-              onChange={(checked) => setApplyOverride(checked)}
-              value={applyOveride}
-            />
+        {software !== 'odoo' && (
+          <div className="form-selection">
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 16,
+                marginTop: 24,
+              }}
+            >
+              <p style={{ fontSize: 14, lineHeight: '14px' }}>
+                Bạn muốn ghi đè quy tắc lấy dữ liệu?
+              </p>
+              <Switch
+                disabled={isProcessing}
+                onChange={(checked) => setApplyOverride(checked)}
+                value={applyOveride}
+              />
+            </div>
           </div>
-        </div>
-        {applyOveride && (
+        )}
+        {applyOveride && software !== 'odoo' && (
           <div className="form-selection">
             <p style={{ fontSize: 14, lineHeight: '14px' }}>
               Danh sách tài khoản Nợ{' '}
@@ -260,7 +264,7 @@ function App() {
             />
           </div>
         )}
-        {applyOveride && (
+        {applyOveride && software !== 'odoo' && (
           <div className="form-selection">
             <p style={{ fontSize: 14, lineHeight: '14px' }}>
               Danh sách tài khoản Có{' '}
@@ -275,7 +279,7 @@ function App() {
             />
           </div>
         )}
-        {applyOveride && (
+        {applyOveride && software !== 'odoo' && (
           <div className="form-selection">
             <p style={{ fontSize: 14, lineHeight: '14px' }}>
               Ký hiệu hóa đơn có bắt buộc?
@@ -299,7 +303,7 @@ function App() {
             />
           </div>
         )}
-        {applyOveride && (
+        {applyOveride && software !== 'odoo' && (
           <div className="form-selection">
             <p style={{ fontSize: 14, lineHeight: '14px' }}>
               Số hóa đơn có bắt buộc?

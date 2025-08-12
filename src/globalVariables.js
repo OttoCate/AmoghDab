@@ -137,6 +137,7 @@ export const formSettings = {
 export const softwareSource = [
   { value: 'asa', label: 'Phần mềm ASA' },
   { value: 'isale', label: 'ISale' },
+  { value: 'odoo', label: 'Phần mềm Odoo ' },
 ]
 
 export const invoiceSymbolState = [
