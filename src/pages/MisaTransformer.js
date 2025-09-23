@@ -1,4 +1,4 @@
-import './App.css'
+import '../App.css'
 import { useState } from 'react'
 import Dropzone from 'react-dropzone'
 import * as FileSaver from 'file-saver'
@@ -9,18 +9,18 @@ import {
   rules,
   invoiceSymbolState,
   invoiceNumberState,
-} from './globalVariables.js'
+} from '../globalVariables.js'
 import styled from 'styled-components'
-import excelLogo from './images/excel.png'
-import enImg from './images/en.png'
-import { transformFormSettingsToArray } from './functions/turnObjectToArray.js'
+import excelLogo from '../images/excel.png'
+import enImg from '../images/en.png'
+import { transformFormSettingsToArray } from '../functions/turnObjectToArray.js'
 // eslint-disable-next-line import/no-webpack-loader-syntax
-import DataProcessWorker from 'worker-loader!./workers/dataProcessor.worker.js'
+import DataProcessWorker from 'worker-loader!../workers/dataProcessor.worker.js'
 import { Upload, Tooltip, Button, Switch, Select, Alert, Input } from 'antd'
 import { MdOutlineContentPasteSearch } from 'react-icons/md'
 import lodash from 'lodash'
 
-function App() {
+function MisaTransformer() {
   const [dropState, setDropState] = useState(0)
   const [isProcessing, setIsProcessing] = useState(false)
   const [applyOveride, setApplyOverride] = useState(false)
@@ -65,7 +65,7 @@ function App() {
 
   const handleCheckExclusiveData = (data) => {
     const worker = new Worker(
-      new URL('./workers/exclusiveDataProcessor.worker.js', import.meta.url)
+      new URL('../workers/exclusiveDataProcessor.worker.js', import.meta.url)
     )
     worker.postMessage({ data })
     worker.onmessage = (e) => {
@@ -123,7 +123,9 @@ function App() {
       })
 
       // Create a worker from public directory
-      const worker = new Worker(`${process.env.PUBLIC_URL}/excelWorker.js`)
+      const worker = new Worker(
+        new URL('../workers/excelWorker.worker.js', import.meta.url)
+      )
 
       // Post the buffer to the worker
       worker.postMessage(buffer)
@@ -427,7 +429,7 @@ function App() {
   )
 }
 
-export default App
+export default MisaTransformer
 
 const Wrapper = styled.div`
   height: 100vh;
