@@ -18,8 +18,14 @@ const limiter = rateLimit({
 });
 
 router.get("/check-auth", limiter, authenticate, userCtrl.checkAuth);
-router.post("/create-user", limiter, authenticate, userCtrl.createUser);
+router.post("/create-user", limiter, userCtrl.createUser);
 router.post("/login", limiter, userCtrl.login);
 router.delete("/log-out", userCtrl.logout);
+router.patch(
+  "/change-password",
+  limiter,
+  authenticate,
+  userCtrl.changePassword
+);
 
 module.exports = router;

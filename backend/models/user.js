@@ -7,6 +7,7 @@ const UserSchema = mongoose.Schema(
     name: String,
     companyIds: [{ type: mongoose.Types.ObjectId, ref: "Company" }],
     isAdmin: Boolean,
+    active: { type: Boolean, default: true },
   },
   { timestamps: true }
 );
