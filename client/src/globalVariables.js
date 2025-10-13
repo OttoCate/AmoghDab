@@ -190,3 +190,10 @@ export const rules = {
   10: ['TK Nợ thuộc nhóm (111,112)', 'TK Có thuộc nhóm (111,112)'],
   11: ['TK Nợ thuộc nhóm (15)', 'TK Có thuộc nhóm (15)'],
 }
+
+export const sysmtemUserRole = {
+  basic: 'basic',
+  editor: 'editor',
+  manager: 'manager',
+  admin: 'admin',
+}

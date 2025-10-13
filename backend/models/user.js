@@ -6,8 +6,8 @@ const UserSchema = mongoose.Schema(
     password: { type: String },
     name: String,
     companyIds: [{ type: mongoose.Types.ObjectId, ref: "Company" }],
-    isAdmin: Boolean,
     active: { type: Boolean, default: true },
+    role: { type: String, default: "basic" },
   },
   { timestamps: true }
 );

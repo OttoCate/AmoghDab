@@ -46,6 +46,7 @@ app.use(hpp());
 app.use(morgan("tiny"));
 
 app.use("/api", require("./routes/auth.js"));
+app.use("/api", require("./routes/data.js"));
 
 const start = async () => {
   try {

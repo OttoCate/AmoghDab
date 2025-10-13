@@ -28,9 +28,9 @@ const userCtrl = {
         secure: process.env.NODE_ENV === "production",
       });
 
-      const myUser = await Users.findOne({ username }).select(
-        "username name companyIds"
-      );
+      const myUser = await Users.findOne({ username })
+        .select("username name companyIds role")
+        .populate("companyIds", "name");
 
       res.status(200).json({ data: myUser });
     } catch (error) {
@@ -40,7 +40,7 @@ const userCtrl = {
 
   createUser: async (req, res) => {
     try {
-      const { username, password, name, isAdmin } = req.body;
+      const { username, password, name, role } = req.body;
       if (!username.trim() || !password.trim())
         return res
           .status(400)
@@ -54,10 +54,46 @@ const userCtrl = {
         username,
         password: passwordHash,
         name,
-        isAdmin,
+        role,
       });
 
       res.status(200).json({ msg: "Đã tạo hoàn tất người dùng" });
+    } catch (error) {
+      res.status(500).json({ msg: error.message });
+    }
+  },
+
+  getUsers: async (req, res) => {
+    try {
+      const users = await Users.find({})
+        .select("username name active role companyIds")
+        .populate("companyIds", "name");
+
+      res.status(200).json({ data: users });
+    } catch (error) {
+      res.status(500).json({ msg: error.message });
+    }
+  },
+
+  updateUser: async (req, res) => {
+    try {
+      let parameters = { ...req.body };
+      const { id } = req.params;
+      Object.keys(parameters).forEach((key) => {
+        if (parameters[key] === null) {
+          delete parameters[key];
+        }
+      });
+      if (parameters?.role && parameters?.role === "admin")
+        return res.status(400).json({ msg: "Không được phép cấp quyền admin" });
+
+      const user = await Users.findOne({ _id: id });
+      if (user && user.role === "admin" && parameters?.active !== undefined)
+        return res
+          .status(400)
+          .json({ msg: "Không được phép thay đổi trạng thái của admin" });
+      await Users.findOneAndUpdate({ _id: id }, { ...parameters });
+      res.status(200).json({ msg: "Thành công" });
     } catch (error) {
       res.status(500).json({ msg: error.message });
     }
@@ -75,9 +111,9 @@ const userCtrl = {
         return res
           .status(403)
           .json({ msg: "Phiên làm việc không hợp lệ! Vui lòng đăng nhập lại" });
-      const user = await Users.findById(payload.id).select(
-        "username role name companies active"
-      );
+      const user = await Users.findById(payload.id)
+        .select("username role name companyIds active")
+        .populate("companyIds", "name");
 
       if (!user.active)
         return res.status(400).json({ msg: "Tài khoản đã bị vô hiệu hóa" });

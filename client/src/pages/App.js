@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { UserOutlined, HomeOutlined } from '@ant-design/icons'
 import { Layout, Menu, theme } from 'antd'
 import { Avatar } from 'antd'
-import { useAuth } from '../zustand'
+import { useAuth, useCompanies, useUsers } from '../zustand'
 import { Dropdown } from 'antd'
 import { PoweroffOutlined, LockOutlined } from '@ant-design/icons'
 import { FaCaretDown } from 'react-icons/fa'
 import app from '../axiosConfig'
 import ChangePasswordModal from '../widgets/changePasswordModal'
-import { Outlet } from 'react-router'
+import { Outlet, useNavigate } from 'react-router'
 const { Header, Content, Sider } = Layout
+
 const siderStyle = {
   overflow: 'auto',
   height: '100vh',
@@ -23,9 +24,13 @@ const siderStyle = {
 
 const App = () => {
   const { auth, logout } = useAuth()
+  const { reset: resetUsers, setUserState } = useUsers()
+  const { reset: resetCompanies, setCompanyState } = useCompanies()
   const [loading, setLoading] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [sidebarIndex, setSidebarIndex] = useState('1')
+  const navigate = useNavigate()
+
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken()
@@ -34,9 +39,14 @@ const App = () => {
     if (needConfirm && !window.confirm('Bạn có muốn đăng xuất?')) return
     await app.delete('/api/log-out')
     logout()
+    resetUsers()
+    resetCompanies()
   }
 
-  const handleChangeIndex = (value) => setSidebarIndex(value.toString())
+  const handleNavigate = (name, value) => {
+    setSidebarIndex(value.toString())
+    navigate(name)
+  }
 
   const navbarItems = [
     {
@@ -44,7 +54,7 @@ const App = () => {
       icon: React.createElement(UserOutlined),
       label: 'Người dùng',
       onClick: () => {
-        handleChangeIndex(1)
+        handleNavigate('/', 1)
       },
     },
     {
@@ -52,7 +62,7 @@ const App = () => {
       icon: React.createElement(HomeOutlined),
       label: 'Công ty',
       onClick: () => {
-        handleChangeIndex(2)
+        handleNavigate('/company', 2)
       },
     },
   ]
@@ -78,6 +88,25 @@ const App = () => {
       setLoading(false)
     }
   }
+
+  const handleFetchDatas = async () => {
+    try {
+      console.log('hahaha')
+      const result = await Promise.all([
+        app.get(`/api/get-users`),
+        app.get('/api/get-companies'),
+      ])
+
+      setUserState(result[0]?.data?.data)
+      setCompanyState(result[1]?.data?.data)
+    } catch (error) {
+      alert(error?.response?.data?.msg || error)
+    }
+  }
+
+  useEffect(() => {
+    handleFetchDatas()
+  }, [])
 
   const items = [
     {
@@ -116,6 +145,7 @@ const App = () => {
             background: colorBgContainer,
             position: 'sticky',
             top: 0,
+            zIndex: 100,
             boxShadow: '1px 1px 3px rgba(0,0,0,0.2)',
             display: 'flex',
             alignItems: 'center',
@@ -156,16 +186,17 @@ const App = () => {
             </span>
           </Dropdown>
         </Header>
-        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+        <Content style={{ margin: '24px 16px 24px', overflow: 'initial' }}>
           <div
             style={{
               padding: 24,
-              textAlign: 'center',
               boxShadow: '1px 1px 1px rgba(0,0,0,0.1)',
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}
-          ></div>
+          >
+            <Outlet />
+          </div>
         </Content>
       </Layout>
     </Layout>

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Modal } from 'antd'
 
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
-import { Input, Space, Form } from 'antd'
+import { Input, Form } from 'antd'
 
 const ChangePasswordModal = ({
   isModalOpen,

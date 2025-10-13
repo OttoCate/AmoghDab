@@ -8,6 +8,7 @@ import Loading from '../widgets/loading'
 import { useState, useEffect } from 'react'
 import app from '../axiosConfig'
 import Company from './Outlets/Company'
+import User from './Outlets/User'
 
 const Main = () => {
   const { auth, setAuth } = useAuth()
@@ -47,10 +48,14 @@ const Main = () => {
             </PrivateRoute>
           }
         >
+          <Route path="/" element={<User />} />
           <Route path="company" element={<Company />} />
         </Route>
         <Route path="/login" element={auth ? <Navigate to="/" /> : <Login />} />
-        <Route path="/login" element={<MisaDataTransformer />} />
+        <Route
+          path="/misa-data-transformer"
+          element={<MisaDataTransformer />}
+        />
       </Routes>
     </BrowserRouter>
   )
