@@ -12,8 +12,6 @@ import { Outlet, useNavigate } from 'react-router'
 import Loading from '../widgets/loading'
 import { FaRegUser } from 'react-icons/fa6'
 import { BsBank2 } from 'react-icons/bs'
-import { RiBankCardFill } from 'react-icons/ri'
-
 const { Header, Content, Sider } = Layout
 
 const siderStyle = {
@@ -75,14 +73,6 @@ const App = () => {
       label: 'Ngân hàng',
       onClick: () => {
         handleNavigate('/bank', 3)
-      },
-    },
-    {
-      key: 4,
-      icon: <RiBankCardFill />,
-      label: 'Số tài khoản',
-      onClick: () => {
-        handleNavigate('/bank-account', 4)
       },
     },
   ]

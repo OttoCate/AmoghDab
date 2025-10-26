@@ -3,15 +3,16 @@ import Home from './App'
 import Login from './Login'
 import { Navigate, Routes, Route, BrowserRouter } from 'react-router'
 import PrivateRoute from '../privateRoute'
-import { useAuth } from '../zustand'
+import { useZustand } from '../zustand'
 import Loading from '../widgets/loading'
 import { useState, useEffect } from 'react'
 import app from '../axiosConfig'
 import Company from './Outlets/Company'
 import User from './Outlets/User'
+import Bank from './Outlets/Bank'
 
 const Main = () => {
-  const { auth, setAuth } = useAuth()
+  const { auth, setAuth } = useZustand()
   const [checkingAuth, setCheckingAuth] = useState(false)
 
   const checkAuth = async () => {
@@ -50,6 +51,7 @@ const Main = () => {
         >
           <Route path="/" element={<User />} />
           <Route path="company" element={<Company />} />
+          <Route path="bank" element={<Bank />} />
         </Route>
         <Route path="/login" element={auth ? <Navigate to="/" /> : <Login />} />
         <Route

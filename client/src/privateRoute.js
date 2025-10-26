@@ -1,8 +1,8 @@
 import { Navigate } from 'react-router'
-import { useAuth } from './zustand'
+import { useZustand } from './zustand'
 
 const PrivateRoute = ({ children }) => {
-  const { auth } = useAuth()
+  const { auth } = useZustand()
   return auth ? <>{children}</> : <Navigate to="/login" />
 }
 

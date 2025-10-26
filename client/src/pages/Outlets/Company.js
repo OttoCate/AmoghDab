@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Table, Tag } from 'antd'
-import app from '../../axiosConfig'
-import { useCompanies } from '../../zustand'
+import { useZustand } from '../../zustand'
 
-const User = () => {
+const Company = () => {
   const [companies, setCompanies] = useState([])
-  const { companies: currentCompanies } = useCompanies()
+  const { companies: currentCompanies } = useZustand()
   const columns = [
     {
       title: 'Tên công ty',
@@ -51,4 +50,4 @@ const User = () => {
     />
   )
 }
-export default User
+export default Company

@@ -1,19 +1,16 @@
 import { create } from 'zustand'
 
-export const useAuth = create((set) => ({
+export const useZustand = create((set) => ({
   auth: null,
-  setAuth: (value) => set({ auth: value }),
-  logout: () => set({ auth: null }),
-}))
-
-export const useUsers = create((set) => ({
   users: [],
-  setUserState: (value) => set({ users: value }),
-  reset: () => set([]),
-}))
-
-export const useCompanies = create((set) => ({
   companies: [],
+  banks: [],
+  bankAccounts: [],
+  setAuth: (value) => set({ auth: value }),
+  setUserState: (value) => set({ users: value }),
   setCompanyState: (value) => set({ companies: value }),
-  reset: () => set([]),
+  setBankState: (value) => set({ banks: value }),
+  setBankAccountState: (value) => set({ bankAccounts: value }),
+  logout: () =>
+    set({ auth: null, users: [], companies: [], banks: [], bankAccounts: [] }),
 }))

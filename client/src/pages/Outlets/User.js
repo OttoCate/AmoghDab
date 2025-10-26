@@ -1,21 +1,21 @@
 import { useState, useEffect, useRef } from 'react'
 import { Space, Table, Tag } from 'antd'
 import { Button, Input } from 'antd'
+import Highlighter from 'react-highlight-words'
 import { SearchOutlined, UserAddOutlined } from '@ant-design/icons'
 import app from '../../axiosConfig'
-import Highlighter from 'react-highlight-words'
-import { useUsers, useAuth } from '../../zustand'
+import { useZustand } from '../../zustand'
 import UpdateRoleModal from '../../widgets/updateRoleModal'
 import { sysmtemUserRole } from '../../globalVariables'
 import CreateUserModal from '../../widgets/createUserModal'
 
 const User = () => {
-  const { auth } = useAuth()
+  const { auth } = useZustand()
   const [users, setUsers] = useState([])
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
   const searchInput = useRef(null)
-  const { users: currentUsers, setUserState } = useUsers()
+  const { users: currentUsers, setUserState } = useZustand()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isModalCreateUserOpen, setIsModalCreateUserOpen] = useState(false)
   const [loading, setLoading] = useState(false)

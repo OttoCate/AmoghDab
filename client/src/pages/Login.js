@@ -3,11 +3,11 @@ import { Button, Form, Input } from 'antd'
 import enLogo from '../images/logo.png'
 import { useNavigate } from 'react-router'
 import app from '../axiosConfig'
-import { useAuth } from '../zustand'
+import { useZustand } from '../zustand'
 import { getErrorMessage } from '../functions/getErrorMessage'
 
 const Login = () => {
-  const { setAuth } = useAuth()
+  const { setAuth } = useZustand()
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
 
