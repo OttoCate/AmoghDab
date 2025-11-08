@@ -6,14 +6,17 @@ import BankCreateModal from '../../widgets/createBankModal'
 import { Input } from 'antd'
 import Highlighter from 'react-highlight-words'
 import { SearchOutlined } from '@ant-design/icons'
+import app from '../../axiosConfig'
+import { sysmtemUserRole } from '../../globalVariables'
 
 const Bank = () => {
   const [banks, setBanks] = useState([])
-  const { banks: currentBanks, auth } = useZustand()
+  const { banks: currentBanks, auth, setBankState } = useZustand()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
   const searchInput = useRef(null)
+  const [loading, setLoading] = useState(false)
 
   const showModal = (user) => {
     setIsModalOpen(user)
@@ -139,6 +142,31 @@ const Bank = () => {
       ),
   })
 
+  const handleFetchBanks = async () => {
+    try {
+      const { data } = await app.get('/api/get-banks')
+      setBanks(data.data)
+      setBankState(data.data)
+    } catch (error) {
+      alert(error?.response?.data?.msg || error)
+    }
+  }
+
+  const handleChangeActiveState = async (activeState, id) => {
+    try {
+      if (loading) return
+      setLoading(true)
+      await app.patch(`/api/update-bank/${id}`, {
+        active: activeState,
+      })
+      await handleFetchBanks()
+    } catch (error) {
+      alert(error?.response?.data?.msg || error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const columns = [
     {
       title: 'Tên ngân hàng',
@@ -168,6 +196,49 @@ const Bank = () => {
           {active ? 'Khả dụng' : 'Bị vô hiệu'}
         </Tag>
       ),
+    },
+    {
+      title: 'Hành động',
+      align: 'center',
+      key: 'action',
+      render: (_) =>
+        auth.role === sysmtemUserRole.basic && !_.active ? (
+          <></>
+        ) : (
+          <Space size="middle">
+            <Button
+              color="default"
+              variant="outlined"
+              size="small"
+              onClick={() => showModal(_)}
+            >
+              Chỉnh sửa
+            </Button>
+            {auth.role !== sysmtemUserRole.basic && (
+              <div>
+                {_.active ? (
+                  <Button
+                    color="danger"
+                    variant="filled"
+                    size="small"
+                    onClick={() => handleChangeActiveState(false, _._id)}
+                  >
+                    Vô hiệu
+                  </Button>
+                ) : (
+                  <Button
+                    color="primary"
+                    variant="filled"
+                    size="small"
+                    onClick={() => handleChangeActiveState(true, _._id)}
+                  >
+                    Kích hoạt
+                  </Button>
+                )}
+              </div>
+            )}
+          </Space>
+        ),
     },
   ]
 
@@ -200,6 +271,7 @@ const Bank = () => {
           handleCancel={handleCancel}
           isModalOpen={isModalOpen}
           setBanks={setBanks}
+          handleFetchBanks={handleFetchBanks}
         />
       )}
     </>

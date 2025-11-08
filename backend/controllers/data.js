@@ -54,6 +54,25 @@ const dataCtrl = {
     }
   },
 
+  updateBank: async (req, res) => {
+    try {
+      let parameters = { ...req.body };
+      const { id } = req.params;
+      Object.keys(parameters).forEach((key) => {
+        if (parameters[key] === null) {
+          delete parameters[key];
+        }
+      });
+      console.log(id)
+      console.log({...parameters})
+      const newOne = await Banks.findOneAndUpdate({_id:id},{ ...parameters },{ new: true });
+      if(!newOne) return res.status(400).json({msg:"Ngân hàng không có trong cơ sở dữ liệu"})
+      res.status(200).json({ msg:"Đã cập nhật thành công" });
+    } catch (error) {
+      res.status(500).json({ msg: error.message });
+    }
+  },
+
   getBanks: async (req, res) => {
     try {
       const banks = await Banks.find({}).select("name active");

@@ -20,6 +20,7 @@ const limiter = rateLimit({
 router.post("/create-company", limiter, authenticate, dataCtrl.createCompany);
 router.get("/get-companies", limiter, authenticate, dataCtrl.getCompanies);
 router.post("/create-bank",limiter,authenticate, dataCtrl.createBank);
+router.patch("/update-bank/:id",limiter,authenticate,dataCtrl.updateBank)
 router.post("/create-bank-account",limiter,authenticate, dataCtrl.createBankAccount);
 router.get("/get-banks", limiter, authenticate, dataCtrl.getBanks);
 router.get("/get-bank-accounts", limiter, authenticate, dataCtrl.getBankAccounts);

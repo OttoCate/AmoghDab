@@ -2,22 +2,10 @@ import { useEffect, useState } from 'react'
 import { Modal } from 'antd'
 import { Form, Input } from 'antd'
 import app from '../axiosConfig'
-import { useZustand } from '../zustand'
 
-const BankCreateModal = ({ isModalOpen, handleCancel, setBanks }) => {
+const BankCreateModal = ({ isModalOpen, handleCancel, handleFetchBanks }) => {
   const [form] = Form.useForm()
   const [loading, setLoading] = useState(false)
-  const { setBankState } = useZustand()
-
-  const handleFetchBanks = async () => {
-    try {
-      const { data } = await app.get('/api/get-banks')
-      setBanks(data.data)
-      setBankState(data.data)
-    } catch (error) {
-      alert(error?.response?.data?.msg || error)
-    }
-  }
 
   const handleOk = async () => {
     try {
@@ -25,7 +13,11 @@ const BankCreateModal = ({ isModalOpen, handleCancel, setBanks }) => {
       const { name } = form.getFieldsValue()
       if (!name?.trim()) return alert('Vui lòng nhập đầy đủ thông tin')
       setLoading(true)
-      await app.post('/api/create-bank', { name })
+      if (isModalOpen?._id) {
+        await app.patch(`/api/update-bank/${isModalOpen?._id}`, { name })
+      } else {
+        await app.post('/api/create-bank', { name })
+      }
       await handleFetchBanks()
       handleClose()
     } catch (error) {
@@ -41,7 +33,7 @@ const BankCreateModal = ({ isModalOpen, handleCancel, setBanks }) => {
   }
 
   useEffect(() => {
-    form.setFieldValue('role', 'basic')
+    if (isModalOpen?._id) form.setFieldValue('name', isModalOpen?.name)
   }, [])
 
   return (
