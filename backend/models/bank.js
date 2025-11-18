@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const BankSchema = mongoose.Schema(
   {
@@ -6,6 +6,6 @@ const BankSchema = mongoose.Schema(
     active: { type: Boolean, default: true },
   },
   { timestamps: true }
-);
+)
 
-module.exports = mongoose.model("Bank", BankSchema);
+module.exports = mongoose.model('Bank', BankSchema)

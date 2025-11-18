@@ -1,17 +1,22 @@
 import { useState, useEffect, useRef } from 'react'
-import { Table, Tag, Button, Space } from 'antd'
+import { Table, Button, Space, Tag, Tooltip } from 'antd'
 import { useZustand } from '../../zustand'
 import { FiPlus } from 'react-icons/fi'
-import BankCreateModal from '../../widgets/createBankModal'
+import IndentureCreateModal from '../../widgets/createIndentureModal'
 import { Input } from 'antd'
 import Highlighter from 'react-highlight-words'
 import { SearchOutlined } from '@ant-design/icons'
 import app from '../../axiosConfig'
-import { sysmtemUserRole } from '../../globalVariables'
+import moment from 'moment'
+import { MdEdit } from 'react-icons/md'
 
-const Bank = () => {
-  const [banks, setBanks] = useState([])
-  const { banks: currentBanks, auth, setBankState } = useZustand()
+const Indenture = () => {
+  const [indentures, setIndentures] = useState([])
+  const {
+    indentures: currentIndentures,
+    auth,
+    setIndentureState,
+  } = useZustand()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
@@ -142,58 +147,121 @@ const Bank = () => {
       ),
   })
 
-  const handleFetchBanks = async () => {
+  const handleFetchIndentures = async () => {
     try {
-      const { data } = await app.get('/api/get-banks')
-      setBanks(data.data)
-      setBankState(data.data)
+      const { data } = await app.get('/api/get-indentures')
+      setIndentures(data.data)
+      setIndentureState(data.data)
     } catch (error) {
       alert(error?.response?.data?.msg || error)
-    }
-  }
-
-  const handleChangeActiveState = async (activeState, id) => {
-    try {
-      if (loading) return
-      setLoading(true)
-      await app.patch(`/api/update-bank/${id}`, {
-        active: activeState,
-      })
-      await handleFetchBanks()
-    } catch (error) {
-      alert(error?.response?.data?.msg || error)
-    } finally {
-      setLoading(false)
     }
   }
 
   const columns = [
     {
-      title: 'Tên ngân hàng',
-      dataIndex: 'name',
-      key: 'name',
+      title: 'Số khế ước',
+      dataIndex: 'number',
+      key: 'number',
       align: 'center',
-      ...getColumnSearchProps('name'),
+      width: 150,
+      fixed: 'left',
+      ...getColumnSearchProps('number'),
     },
     {
-      title: 'Đang hoạt động',
-      dataIndex: 'active',
+      title: 'Ngân hàng',
+      dataIndex: 'bank',
+      key: 'bank',
       align: 'center',
-      key: 'active',
+      width: 250,
+      ...getColumnSearchProps('bank'),
+    },
+    {
+      title: 'Công ty',
+      dataIndex: 'company',
+      key: 'company',
+      align: 'center',
+      width: 200,
+      ...getColumnSearchProps('company'),
+    },
+    {
+      title: 'Ngày',
+      dataIndex: 'date',
+      key: 'date',
+      align: 'center',
+      sorter: (a, b) => moment(a.date) - moment(b.date),
+      width: 100,
+      render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
+    },
+    {
+      title: 'Ngày đến hạn',
+      dataIndex: 'dueDate',
+      key: 'dueDate',
+      align: 'center',
+      sorter: (a, b) => moment(a.dueDate) - moment(b.dueDate),
+      render: (date) => {
+        return <span>{moment(date).format('DD/MM/YYYY')}</span>
+      },
+    },
+    {
+      title: 'Giá trị',
+      dataIndex: 'amount',
+      key: 'amount',
+      align: 'center',
+      sorter: (a, b) => a.amount - b.amount,
+      width: 130,
+      render: (value) => {
+        return <span>{Intl.NumberFormat().format(value)}</span>
+      },
+    },
+    {
+      title: 'Lãi suất',
+      dataIndex: 'interestRate',
+      key: 'interestRate',
+      sorter: (a, b) => a.interestRate - b.interestRate,
+      align: 'center',
+    },
+    {
+      title: 'Giá trị lãi',
+      dataIndex: 'interestAmount',
+      key: 'interestAmount',
+      align: 'center',
+      sorter: (a, b) => a.interestAmount - b.interestAmount,
+      width: 130,
+      render: (value) => {
+        return <span>{Intl.NumberFormat().format(value)}</span>
+      },
+    },
+    {
+      title: 'Còn lại',
+      dataIndex: 'residual',
+      key: 'residual',
+      sorter: (a, b) => a.residual - b.residual,
+      align: 'center',
+      width: 130,
+      render: (value) => {
+        return <span>{Intl.NumberFormat().format(value)}</span>
+      },
+    },
+    {
+      title: 'Trạng thái',
+      dataIndex: 'state',
+      key: 'state',
+      align: 'center',
+      fixed: 'right',
       filters: [
         {
-          text: 'Khả dụng',
-          value: true,
+          text: 'Chưa xong',
+          value: 'ongoing',
         },
         {
-          text: 'Bị vô hiệu',
-          value: false,
+          text: 'Hoàn thành',
+          value: 'done',
         },
       ],
-      onFilter: (value, record) => record.active === value,
-      render: (active) => (
-        <Tag color={active ? 'green' : 'volcano'}>
-          {active ? 'Khả dụng' : 'Bị vô hiệu'}
+      onFilter: (value, record) => record.state === value,
+      render: (state) => (
+        <Tag color={state === 'done' ? 'green' : ''}>
+          {state === 'done' ? 'Hoàn thành' : 'Chưa xong'}
         </Tag>
       ),
     },
@@ -201,43 +269,28 @@ const Bank = () => {
       title: 'Hành động',
       align: 'center',
       key: 'action',
-      render: (_) => (
-        <Space size="middle">
-          <Button
-            color="default"
-            variant="outlined"
-            size="small"
-            onClick={() => showModal(_)}
-          >
-            Chỉnh sửa
-          </Button>
-          {_.active ? (
-            <Button
-              color="danger"
-              variant="filled"
-              size="small"
-              onClick={() => handleChangeActiveState(false, _._id)}
-            >
-              Vô hiệu
-            </Button>
-          ) : (
-            <Button
-              color="primary"
-              variant="filled"
-              size="small"
-              onClick={() => handleChangeActiveState(true, _._id)}
-            >
-              Kích hoạt
-            </Button>
-          )}
-        </Space>
-      ),
+      fixed: 'right',
+      render: (_) =>
+        _.state != 'done' && (
+          <Space size="middle">
+            <Tooltip title="Chỉnh sửa">
+              <Button
+                color="default"
+                variant="outlined"
+                size="small"
+                icon={<MdEdit />}
+                onClick={() => showModal(_)}
+              ></Button>
+            </Tooltip>
+          </Space>
+        ),
     },
   ]
 
   useEffect(() => {
-    if (currentBanks.length > 0) setBanks(currentBanks)
+    if (currentIndentures.length > 0) setIndentures(currentIndentures)
   }, [])
+
   return (
     <>
       <Button
@@ -247,14 +300,17 @@ const Bank = () => {
         style={{ marginBottom: 16 }}
         icon={<FiPlus />}
       >
-        Tạo ngân hàng
+        Tạo khế ước ngân hàng
       </Button>
       <Table
         columns={columns}
-        dataSource={banks}
+        dataSource={[...indentures].map((i) => {
+          return { ...i, bank: i.bankId?.name, company: i.companyId?.name }
+        })}
         bordered
         size="small"
         rowKey={(record) => record._id}
+        scroll={{ x: 'max-content' }}
         pagination={{
           pageSize: 40,
           simple: true,
@@ -268,13 +324,13 @@ const Bank = () => {
         }}
       />
       {isModalOpen && (
-        <BankCreateModal
+        <IndentureCreateModal
           handleCancel={handleCancel}
           isModalOpen={isModalOpen}
-          handleFetchBanks={handleFetchBanks}
+          handleFetchIndentures={handleFetchIndentures}
         />
       )}
     </>
   )
 }
-export default Bank
+export default Indenture

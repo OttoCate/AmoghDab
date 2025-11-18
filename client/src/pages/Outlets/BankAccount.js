@@ -8,10 +8,11 @@ import Highlighter from 'react-highlight-words'
 import { SearchOutlined } from '@ant-design/icons'
 import app from '../../axiosConfig'
 import { sysmtemUserRole } from '../../globalVariables'
+import BankAccountCreateModal from '../../widgets/createBankAccountModal'
 
-const Bank = () => {
-  const [banks, setBanks] = useState([])
-  const { banks: currentBanks, auth, setBankState } = useZustand()
+const BankAccount = () => {
+  const [bankAccs, setBankAccs] = useState([])
+  const { bankAccounts, auth, setBankAccountState } = useZustand()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
@@ -142,11 +143,11 @@ const Bank = () => {
       ),
   })
 
-  const handleFetchBanks = async () => {
+  const handleFetchBankAccounts = async () => {
     try {
-      const { data } = await app.get('/api/get-banks')
-      setBanks(data.data)
-      setBankState(data.data)
+      const { data } = await app.get('/api/get-bank-accounts')
+      setBankAccs(data.data)
+      setBankAccountState(data.data)
     } catch (error) {
       alert(error?.response?.data?.msg || error)
     }
@@ -156,10 +157,10 @@ const Bank = () => {
     try {
       if (loading) return
       setLoading(true)
-      await app.patch(`/api/update-bank/${id}`, {
+      await app.patch(`/api/update-bank-account/${id}`, {
         active: activeState,
       })
-      await handleFetchBanks()
+      await handleFetchBankAccounts()
     } catch (error) {
       alert(error?.response?.data?.msg || error)
     } finally {
@@ -169,11 +170,25 @@ const Bank = () => {
 
   const columns = [
     {
-      title: 'Tên ngân hàng',
-      dataIndex: 'name',
-      key: 'name',
+      title: 'Số tài khoản',
+      dataIndex: 'accountNumber',
+      key: 'accountNumber',
       align: 'center',
-      ...getColumnSearchProps('name'),
+      ...getColumnSearchProps('accountNumber'),
+    },
+    {
+      title: 'Ngân hàng',
+      dataIndex: 'bank',
+      key: 'bank',
+      align: 'center',
+      ...getColumnSearchProps('bank'),
+    },
+    {
+      title: 'Công ty',
+      dataIndex: 'company',
+      key: 'company',
+      align: 'center',
+      ...getColumnSearchProps('company'),
     },
     {
       title: 'Đang hoạt động',
@@ -211,24 +226,28 @@ const Bank = () => {
           >
             Chỉnh sửa
           </Button>
-          {_.active ? (
-            <Button
-              color="danger"
-              variant="filled"
-              size="small"
-              onClick={() => handleChangeActiveState(false, _._id)}
-            >
-              Vô hiệu
-            </Button>
-          ) : (
-            <Button
-              color="primary"
-              variant="filled"
-              size="small"
-              onClick={() => handleChangeActiveState(true, _._id)}
-            >
-              Kích hoạt
-            </Button>
+          {auth.role !== sysmtemUserRole.basic && (
+            <div>
+              {_.active ? (
+                <Button
+                  color="danger"
+                  variant="filled"
+                  size="small"
+                  onClick={() => handleChangeActiveState(false, _._id)}
+                >
+                  Vô hiệu
+                </Button>
+              ) : (
+                <Button
+                  color="primary"
+                  variant="filled"
+                  size="small"
+                  onClick={() => handleChangeActiveState(true, _._id)}
+                >
+                  Kích hoạt
+                </Button>
+              )}
+            </div>
           )}
         </Space>
       ),
@@ -236,7 +255,7 @@ const Bank = () => {
   ]
 
   useEffect(() => {
-    if (currentBanks.length > 0) setBanks(currentBanks)
+    if (bankAccounts.length > 0) setBankAccs(bankAccounts)
   }, [])
   return (
     <>
@@ -247,12 +266,19 @@ const Bank = () => {
         style={{ marginBottom: 16 }}
         icon={<FiPlus />}
       >
-        Tạo ngân hàng
+        Tạo số tài khoản
       </Button>
       <Table
         columns={columns}
-        dataSource={banks}
-        bordered
+        dataSource={bankAccs.map((i) => {
+          return {
+            ...i,
+            companyId: i?.companyId?._id,
+            bankId: i?.bankId?._id,
+            company: i?.companyId?.name,
+            bank: i?.bankId?.name,
+          }
+        })}
         size="small"
         rowKey={(record) => record._id}
         pagination={{
@@ -268,13 +294,13 @@ const Bank = () => {
         }}
       />
       {isModalOpen && (
-        <BankCreateModal
+        <BankAccountCreateModal
           handleCancel={handleCancel}
           isModalOpen={isModalOpen}
-          handleFetchBanks={handleFetchBanks}
+          handleFetchBankAccounts={handleFetchBankAccounts}
         />
       )}
     </>
   )
 }
-export default Bank
+export default BankAccount

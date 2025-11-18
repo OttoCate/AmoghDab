@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Layout, Menu, theme } from 'antd'
+import { Layout, Menu, theme, Button } from 'antd'
 import { Avatar } from 'antd'
 import { useZustand } from '../zustand'
 import { FaRegBuilding } from 'react-icons/fa'
@@ -13,6 +13,9 @@ import Loading from '../widgets/loading'
 import { FaRegUser } from 'react-icons/fa6'
 import { BsBank2 } from 'react-icons/bs'
 import { RiBankCardFill } from 'react-icons/ri'
+import { IoDocument } from 'react-icons/io5'
+import { BsPiggyBankFill } from 'react-icons/bs'
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 
 const { Header, Content, Sider } = Layout
 
@@ -29,12 +32,18 @@ const siderStyle = {
 
 const App = () => {
   const { auth, logout } = useZustand()
-  const { setUserState, setCompanyState, setBankState, setBankAccountState } =
-    useZustand()
+  const {
+    setUserState,
+    setCompanyState,
+    setBankState,
+    setBankAccountState,
+    setIndentureState,
+  } = useZustand()
   const [loading, setLoading] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isFetching, setIsFetching] = useState(true)
   const [sidebarIndex, setSidebarIndex] = useState('1')
+  const [collapsed, setCollapsed] = useState(false)
   const navigate = useNavigate()
 
   const {
@@ -85,6 +94,22 @@ const App = () => {
         handleNavigate('/bank-account', 4)
       },
     },
+    {
+      key: 5,
+      icon: <IoDocument />,
+      label: 'Khế ước ngân hàng',
+      onClick: () => {
+        handleNavigate('/indenture', 5)
+      },
+    },
+    {
+      key: 6,
+      icon: <BsPiggyBankFill />,
+      label: 'Kế hoạch thanh toán',
+      onClick: () => {
+        handleNavigate('/payment-plan', 6)
+      },
+    },
   ]
 
   const showModal = () => {
@@ -117,12 +142,14 @@ const App = () => {
         app.get('/api/get-companies'),
         app.get('/api/get-banks'),
         app.get('/api/get-bank-accounts'),
+        app.get('/api/get-indentures'),
       ])
 
       setUserState(result[0]?.data?.data)
       setCompanyState(result[1]?.data?.data)
       setBankState(result[2]?.data?.data)
       setBankAccountState(result[3]?.data?.data)
+      setIndentureState(result[4]?.data?.data)
     } catch (error) {
       alert(error?.response?.data?.msg || error)
     } finally {
@@ -157,7 +184,13 @@ const App = () => {
 
   return (
     <Layout hasSider>
-      <Sider style={siderStyle}>
+      <Sider
+        style={siderStyle}
+        width={220}
+        collapsible
+        trigger={null}
+        collapsed={!collapsed}
+      >
         <div className="demo-logo-vertical" />
         <Menu
           theme="dark"
@@ -177,10 +210,20 @@ const App = () => {
             boxShadow: '1px 1px 3px rgba(0,0,0,0.2)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'flex-end',
-            padding: '0 1rem',
+            justifyContent: 'space-between',
+            padding: '0 1rem 0 0',
           }}
         >
+          <Button
+            type="text"
+            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            onClick={() => setCollapsed(!collapsed)}
+            style={{
+              fontSize: '16px',
+              width: 64,
+              height: 64,
+            }}
+          />
           {isModalOpen && (
             <ChangePasswordModal
               handleCancel={handleCancel}

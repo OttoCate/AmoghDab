@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const CompanySchema = mongoose.Schema(
   {
@@ -6,6 +6,6 @@ const CompanySchema = mongoose.Schema(
     active: { type: Boolean, default: true },
   },
   { timestamps: true }
-);
+)
 
-module.exports = mongoose.model("Company", CompanySchema);
+module.exports = mongoose.model('Company', CompanySchema)

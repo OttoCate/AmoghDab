@@ -10,6 +10,8 @@ import app from '../axiosConfig'
 import Company from './Outlets/Company'
 import User from './Outlets/User'
 import Bank from './Outlets/Bank'
+import BankAccount from './Outlets/BankAccount'
+import Indenture from './Outlets/Indenture'
 
 const Main = () => {
   const { auth, setAuth } = useZustand()
@@ -52,6 +54,8 @@ const Main = () => {
           <Route path="/" element={<User />} />
           <Route path="company" element={<Company />} />
           <Route path="bank" element={<Bank />} />
+          <Route path="bank-account" element={<BankAccount />} />
+          <Route path="indenture" element={<Indenture />} />
         </Route>
         <Route path="/login" element={auth ? <Navigate to="/" /> : <Login />} />
         <Route

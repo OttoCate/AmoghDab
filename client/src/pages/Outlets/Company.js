@@ -46,7 +46,17 @@ const Company = () => {
       bordered
       size="small"
       rowKey={(record) => record._id}
-      pagination={{ pageSize: 80 }}
+      pagination={{
+        pageSize: 40,
+        simple: true,
+        size: 'small',
+        position: ['bottomRight'],
+        showTotal: (total, range) => (
+          <span>
+            {range[0]}-{range[1]} / {total}
+          </span>
+        ),
+      }}
     />
   )
 }
