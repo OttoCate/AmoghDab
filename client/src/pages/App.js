@@ -38,6 +38,7 @@ const App = () => {
     setBankState,
     setBankAccountState,
     setIndentureState,
+    setPaymentPlanState,
   } = useZustand()
   const [loading, setLoading] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -143,6 +144,7 @@ const App = () => {
         app.get('/api/get-banks'),
         app.get('/api/get-bank-accounts'),
         app.get('/api/get-indentures'),
+        app.get('/api/get-payment-plans'),
       ])
 
       setUserState(result[0]?.data?.data)
@@ -150,6 +152,7 @@ const App = () => {
       setBankState(result[2]?.data?.data)
       setBankAccountState(result[3]?.data?.data)
       setIndentureState(result[4]?.data?.data)
+      setPaymentPlanState(result[5]?.data?.data)
     } catch (error) {
       alert(error?.response?.data?.msg || error)
     } finally {

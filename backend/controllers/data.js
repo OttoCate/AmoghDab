@@ -2,6 +2,7 @@ const Companies = require('../models/company')
 const Banks = require('../models/bank')
 const BankAccounts = require('../models/bankAccount')
 const Indentures = require('../models/indenture')
+const PaymentPlans = require('../models/paymentPlan')
 
 const dataCtrl = {
   createCompany: async (req, res) => {
@@ -221,6 +222,62 @@ const dataCtrl = {
           .status(400)
           .json({ msg: 'Số tài khoản không có trong cơ sở dữ liệu' })
       res.status(200).json({ msg: 'Đã cập nhật thành công' })
+    } catch (error) {
+      res.status(500).json({ msg: error.message })
+    }
+  },
+
+  createPaymentPlan: async (req, res) => {
+    try {
+      const { subject, content, amount, dueDate } = req.body
+      if (!subject.trim() || !amount || !dueDate || !content.trim())
+        return res
+          .status(400)
+          .json({ msg: 'Vui lòng cung cấp đầy đủ thông tin' })
+
+      await PaymentPlans.create({
+        subject,
+        content,
+        amount,
+        dueDate,
+      })
+
+      res.status(200).json({ msg: 'Đã tạo hoàn tất kế hoạch thanh toán' })
+    } catch (error) {
+      res.status(500).json({ msg: error.message })
+    }
+  },
+
+  updatePaymentPlan: async (req, res) => {
+    try {
+      let parameters = { ...req.body }
+      const { id } = req.params
+      Object.keys(parameters).forEach((key) => {
+        if (parameters[key] === null) {
+          delete parameters[key]
+        }
+      })
+      const newOne = await PaymentPlans.findOneAndUpdate(
+        { _id: id },
+        { ...parameters },
+        { new: true }
+      )
+      if (!newOne)
+        return res
+          .status(400)
+          .json({ msg: 'Kế hoạc thanh toán này không có trong cơ sở dữ liệu' })
+      res.status(200).json({ msg: 'Đã cập nhật thành công' })
+    } catch (error) {
+      res.status(500).json({ msg: error.message })
+    }
+  },
+
+  getPaymentPlans: async (req, res) => {
+    try {
+      const banks = await PaymentPlans.find({}).select(
+        'subject content amount dueDate state'
+      )
+      res.status(200).json({ data: banks })
     } catch (error) {
       res.status(500).json({ msg: error.message })
     }

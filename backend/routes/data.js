@@ -31,6 +31,12 @@ router.post(
   authenticate,
   dataCtrl.createIndenture
 )
+router.post(
+  '/create-payment-plan',
+  limiter,
+  authenticate,
+  dataCtrl.createPaymentPlan
+)
 
 router.patch('/update-bank/:id', limiter, authenticate, dataCtrl.updateBank)
 router.patch(
@@ -45,6 +51,12 @@ router.patch(
   authenticate,
   dataCtrl.updateIndenture
 )
+router.patch(
+  '/update-payment-plan/:id',
+  limiter,
+  authenticate,
+  dataCtrl.updatePaymentPlan
+)
 
 router.get('/get-companies', limiter, authenticate, dataCtrl.getCompanies)
 router.get('/get-banks', limiter, authenticate, dataCtrl.getBanks)
@@ -55,5 +67,11 @@ router.get(
   dataCtrl.getBankAccounts
 )
 router.get('/get-indentures', limiter, authenticate, dataCtrl.getIndentures)
+router.get(
+  '/get-payment-plans',
+  limiter,
+  authenticate,
+  dataCtrl.getPaymentPlans
+)
 
 module.exports = router

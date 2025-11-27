@@ -5,7 +5,8 @@ const PaymentPlanSchema = mongoose.Schema(
     subject: String,
     content: String,
     amount: Number,
-    dueDate: Number,
+    dueDate: Date,
+    state: { type: String, default: 'ongoing' },
   },
   { timestamps: true }
 )

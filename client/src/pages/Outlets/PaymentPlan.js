@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Table, Button, Space, Tag, Tooltip } from 'antd'
 import { useZustand } from '../../zustand'
 import { FiPlus } from 'react-icons/fi'
-import IndentureCreateModal from '../../widgets/createIndentureModal'
+import PaymentPlanCreateModal from '../../widgets/createPaymentPlanModal'
 import { Input } from 'antd'
 import Highlighter from 'react-highlight-words'
 import { SearchOutlined } from '@ant-design/icons'
@@ -11,12 +11,12 @@ import moment from 'moment'
 import { MdEdit } from 'react-icons/md'
 import { sysmtemUserRole } from '../../globalVariables'
 
-const Indenture = () => {
-  const [indentures, setIndentures] = useState([])
+const PaymentPlan = () => {
+  const [paymentPlans, setPaymentPlans] = useState([])
   const {
-    indentures: currentIndentures,
+    paymentPlans: currentPaymentPlans,
     auth,
-    setIndentureState,
+    setPaymentPlanState,
   } = useZustand()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [searchText, setSearchText] = useState('')
@@ -147,11 +147,11 @@ const Indenture = () => {
       ),
   })
 
-  const handleFetchIndentures = async () => {
+  const handleFetchPaymentPlans = async () => {
     try {
-      const { data } = await app.get('/api/get-indentures')
-      setIndentures(data.data)
-      setIndentureState(data.data)
+      const { data } = await app.get('/api/get-payment-plans')
+      setPaymentPlans(data.data)
+      setPaymentPlanState(data.data)
     } catch (error) {
       alert(error?.response?.data?.msg || error)
     }
@@ -159,48 +159,27 @@ const Indenture = () => {
 
   const columns = [
     {
-      title: 'Số khế ước',
-      dataIndex: 'number',
-      key: 'number',
+      title: 'Đối tượng',
+      dataIndex: 'subject',
+      key: 'subject',
       align: 'center',
-      width: 150,
       fixed: 'left',
-      ...getColumnSearchProps('number'),
+      ...getColumnSearchProps('subject'),
     },
     {
-      title: 'Ngân hàng',
-      dataIndex: 'bank',
-      key: 'bank',
+      title: 'Nội dung',
+      dataIndex: 'content',
+      key: 'content',
       align: 'center',
-      width: 250,
-      ...getColumnSearchProps('bank'),
+      ...getColumnSearchProps('content'),
     },
     {
-      title: 'Công ty',
-      dataIndex: 'company',
-      key: 'company',
-      align: 'center',
-      width: 200,
-      ...getColumnSearchProps('company'),
-    },
-    {
-      title: 'Ngày',
-      dataIndex: 'date',
-      key: 'date',
-      align: 'center',
-      sorter: (a, b) => moment(a.date) - moment(b.date),
-      width: 100,
-      render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
-    },
-    {
-      title: 'Ngày đến hạn',
+      title: 'Ngày thanh toán',
       dataIndex: 'dueDate',
       key: 'dueDate',
       align: 'center',
       sorter: (a, b) => moment(a.dueDate) - moment(b.dueDate),
-      render: (date) => {
-        return <span>{moment(date).format('DD/MM/YYYY')}</span>
-      },
+      render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
     },
     {
       title: 'Giá trị',
@@ -208,35 +187,6 @@ const Indenture = () => {
       key: 'amount',
       align: 'center',
       sorter: (a, b) => a.amount - b.amount,
-      width: 130,
-      render: (value) => {
-        return <span>{Intl.NumberFormat().format(value)}</span>
-      },
-    },
-    {
-      title: 'Lãi suất',
-      dataIndex: 'interestRate',
-      key: 'interestRate',
-      sorter: (a, b) => a.interestRate - b.interestRate,
-      align: 'center',
-    },
-    {
-      title: 'Giá trị lãi',
-      dataIndex: 'interestAmount',
-      key: 'interestAmount',
-      align: 'center',
-      sorter: (a, b) => a.interestAmount - b.interestAmount,
-      width: 130,
-      render: (value) => {
-        return <span>{Intl.NumberFormat().format(value)}</span>
-      },
-    },
-    {
-      title: 'Còn lại',
-      dataIndex: 'residual',
-      key: 'residual',
-      sorter: (a, b) => a.residual - b.residual,
-      align: 'center',
       width: 130,
       render: (value) => {
         return <span>{Intl.NumberFormat().format(value)}</span>
@@ -290,7 +240,7 @@ const Indenture = () => {
   ]
 
   useEffect(() => {
-    if (currentIndentures.length > 0) setIndentures(currentIndentures)
+    if (currentPaymentPlans.length > 0) setPaymentPlans(currentPaymentPlans)
   }, [])
 
   return (
@@ -302,13 +252,11 @@ const Indenture = () => {
         style={{ marginBottom: 16 }}
         icon={<FiPlus />}
       >
-        Tạo khế ước ngân hàng
+        Tạo kế hoạch thanh toán
       </Button>
       <Table
         columns={columns}
-        dataSource={[...indentures].map((i) => {
-          return { ...i, bank: i.bankId?.name, company: i.companyId?.name }
-        })}
+        dataSource={paymentPlans}
         bordered
         size="small"
         rowKey={(record) => record._id}
@@ -326,13 +274,13 @@ const Indenture = () => {
         }}
       />
       {isModalOpen && (
-        <IndentureCreateModal
+        <PaymentPlanCreateModal
           handleCancel={handleCancel}
           isModalOpen={isModalOpen}
-          handleFetchIndentures={handleFetchIndentures}
+          handleFetchPaymentPlans={handleFetchPaymentPlans}
         />
       )}
     </>
   )
 }
-export default Indenture
+export default PaymentPlan
