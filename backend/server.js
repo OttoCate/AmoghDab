@@ -14,7 +14,12 @@ const uri = process.env.MONGO_URI
 const port = process.env.PORT || 5000
 const jwtSecret = process.env.JWT_SECRET
 
-const whitelist = ['http://localhost:3000', 'http://localhost:3000/']
+const whitelist = [
+  'http://localhost:3000',
+  'http://localhost:3000/',
+  'https://sea-acc-service.onrender.com',
+  'https://sea-acc-service.onrender.com/',
+]
 
 const isOriginAllowed = (origin) => {
   if (whitelist.indexOf(origin) !== -1) {
