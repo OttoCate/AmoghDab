@@ -17,8 +17,8 @@ const jwtSecret = process.env.JWT_SECRET
 const whitelist = [
   'http://localhost:3000',
   'http://localhost:3000/',
-  'https://sea-acc-service.onrender.com',
-  'https://sea-acc-service.onrender.com/',
+  'https://sea-accounting.onrender.com/',
+  'https://sea-accounting.onrender.com',
 ]
 
 const isOriginAllowed = (origin) => {
