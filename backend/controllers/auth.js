@@ -27,7 +27,7 @@ const userCtrl = {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sign: true,
-        sameSite: 'None',
+        sameSite: 'Lax',
       })
 
       const myUser = await Users.findOne({ username })
