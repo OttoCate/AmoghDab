@@ -19,6 +19,8 @@ const whitelist = [
   'http://localhost:3000/',
   'https://sea-accounting.onrender.com/',
   'https://sea-accounting.onrender.com',
+  'https://sea-acc-service.onrender.com/',
+  'https://sea-acc-service.onrender.com',
 ]
 
 const isOriginAllowed = (origin) => {
@@ -42,9 +44,9 @@ const corsConfig = {
 
 const app = express()
 app.use(express.json())
-app.use(cookieParser(jwtSecret))
 app.use(bodyParser.json({ limit: '1mb', type: 'application/json' }))
 app.use(bodyParser.urlencoded({ extended: true, limit: '1mb' }))
+app.use(cookieParser(jwtSecret))
 app.use(cors(corsConfig))
 app.use(helmet())
 app.use(hpp())
