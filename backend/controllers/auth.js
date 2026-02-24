@@ -27,6 +27,7 @@ const userCtrl = {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sign: true,
+        maxAge: 24 * 60 * 60 * 1000,
       })
 
       const myUser = await Users.findOne({ username })
