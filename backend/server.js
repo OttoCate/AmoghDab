@@ -43,6 +43,8 @@ const corsConfig = {
 }
 
 const app = express()
+// Trust first proxy
+app.set('trust proxy', 1)
 app.use(express.json())
 app.use(bodyParser.json({ limit: '1mb', type: 'application/json' }))
 app.use(bodyParser.urlencoded({ extended: true, limit: '1mb' }))
