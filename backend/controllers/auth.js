@@ -25,6 +25,8 @@ const userCtrl = {
       const access_token = createAccessToken({ id: user._id })
       res.cookie(process.env.COOKIE_NAME, access_token, {
         httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sign: true,
       })
 
       const myUser = await Users.findOne({ username })
