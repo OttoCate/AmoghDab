@@ -1,5 +1,6 @@
 {
   "name": "misa_data_transformer",
+  "proxy": "https://sea-acc-service.onrender.com",
   "version": "0.1.0",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
