@@ -175,8 +175,13 @@ const dataCtrl = {
 
   createBankAccount: async (req, res) => {
     try {
-      const { accountNumber, bankId, companyId } = req.body
-      if (!accountNumber.trim() || !bankId.trim() || !companyId.trim())
+      const { accountNumber, bankId, companyId, currency } = req.body
+      if (
+        !accountNumber.trim() ||
+        !bankId.trim() ||
+        !companyId.trim() ||
+        !currency.trim()
+      )
         return res
           .status(400)
           .json({ msg: 'Vui lòng cung cấp đầy đủ thông tin' })
@@ -184,7 +189,7 @@ const dataCtrl = {
       if (existingRecord)
         return res.status(400).json({ msg: 'Số tài khoản đã tồn tại' })
 
-      await BankAccounts.create({ accountNumber, bankId, companyId })
+      await BankAccounts.create({ accountNumber, bankId, companyId, currency })
 
       res.status(200).json({ msg: 'Đã tạo hoàn tất số tài khoản' })
     } catch (error) {
@@ -195,7 +200,7 @@ const dataCtrl = {
   getBankAccounts: async (req, res) => {
     try {
       const banks = await BankAccounts.find({})
-        .select('accountNumber bankId companyId active')
+        .select('accountNumber bankId companyId active currency')
         .populate('bankId companyId')
       res.status(200).json({ data: banks })
     } catch (error) {
@@ -229,8 +234,14 @@ const dataCtrl = {
 
   createPaymentPlan: async (req, res) => {
     try {
-      const { subject, content, amount, dueDate } = req.body
-      if (!subject.trim() || !amount || !dueDate || !content.trim())
+      const { subject, content, amount, dueDate, companyId } = req.body
+      if (
+        !subject.trim() ||
+        !amount ||
+        !dueDate ||
+        !content.trim() ||
+        !companyId.trim()
+      )
         return res
           .status(400)
           .json({ msg: 'Vui lòng cung cấp đầy đủ thông tin' })
@@ -240,6 +251,7 @@ const dataCtrl = {
         content,
         amount,
         dueDate,
+        companyId,
       })
 
       res.status(200).json({ msg: 'Đã tạo hoàn tất kế hoạch thanh toán' })
@@ -274,9 +286,9 @@ const dataCtrl = {
 
   getPaymentPlans: async (req, res) => {
     try {
-      const banks = await PaymentPlans.find({}).select(
-        'subject content amount dueDate state'
-      )
+      const banks = await PaymentPlans.find({})
+        .select('subject content amount dueDate state companyId')
+        .populate('companyId', 'name')
       res.status(200).json({ data: banks })
     } catch (error) {
       res.status(500).json({ msg: error.message })

@@ -170,31 +170,54 @@ const BankAccount = () => {
 
   const columns = [
     {
+      title: 'Công ty',
+      dataIndex: 'company',
+      width: 300,
+      key: 'company',
+      ...getColumnSearchProps('company'),
+    },
+    {
       title: 'Số tài khoản',
       dataIndex: 'accountNumber',
       key: 'accountNumber',
-      align: 'center',
+      width: 250,
       ...getColumnSearchProps('accountNumber'),
     },
     {
       title: 'Ngân hàng',
       dataIndex: 'bank',
       key: 'bank',
-      align: 'center',
       ...getColumnSearchProps('bank'),
     },
     {
-      title: 'Công ty',
-      dataIndex: 'company',
-      key: 'company',
+      title: 'Loại tiền',
+      dataIndex: 'currency',
+      key: 'currency',
+      width: 100,
       align: 'center',
-      ...getColumnSearchProps('company'),
+      filters: [
+        {
+          text: 'VND',
+          value: 'vnd',
+        },
+        {
+          text: 'USD',
+          value: 'usd',
+        },
+        {
+          text: 'CNY',
+          value: 'cny',
+        },
+      ],
+      onFilter: (value, record) => record.currency === value,
+      render: (text) => <span>{text.toUpperCase()}</span>,
     },
     {
       title: 'Đang hoạt động',
       dataIndex: 'active',
       align: 'center',
       key: 'active',
+      width: 150,
       filters: [
         {
           text: 'Khả dụng',
@@ -216,6 +239,7 @@ const BankAccount = () => {
       title: 'Hành động',
       align: 'center',
       key: 'action',
+      width: 150,
       render: (_) => (
         <Space size="middle">
           <Button

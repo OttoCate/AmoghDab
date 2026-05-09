@@ -7,7 +7,6 @@ import { Input } from 'antd'
 import Highlighter from 'react-highlight-words'
 import { SearchOutlined } from '@ant-design/icons'
 import app from '../../axiosConfig'
-import { sysmtemUserRole } from '../../globalVariables'
 
 const Bank = () => {
   const [banks, setBanks] = useState([])
@@ -172,7 +171,6 @@ const Bank = () => {
       title: 'Tên ngân hàng',
       dataIndex: 'name',
       key: 'name',
-      align: 'center',
       ...getColumnSearchProps('name'),
     },
     {
@@ -180,6 +178,7 @@ const Bank = () => {
       dataIndex: 'active',
       align: 'center',
       key: 'active',
+      width: 150,
       filters: [
         {
           text: 'Khả dụng',
@@ -201,6 +200,7 @@ const Bank = () => {
       title: 'Hành động',
       align: 'center',
       key: 'action',
+      width: 150,
       render: (_) => (
         <Space size="middle">
           <Button

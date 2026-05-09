@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Modal } from 'antd'
-import { Form, Input, Select, DatePicker } from 'antd'
+import { Form, Input, Select, DatePicker, Space } from 'antd'
 import app from '../axiosConfig'
 import { InputNumber } from 'antd'
 import dayjs from 'dayjs'
+import { useZustand } from '../zustand'
 
 const PaymentPlanCreateModal = ({
   isModalOpen,
@@ -12,17 +13,20 @@ const PaymentPlanCreateModal = ({
 }) => {
   const [form] = Form.useForm()
   const [loading, setLoading] = useState(false)
+  const { companies } = useZustand()
 
   const handleOk = async () => {
     try {
       if (loading) return
-      const { subject, content, amount, dueDate, state } = form.getFieldsValue()
+      const { subject, content, amount, dueDate, state, companyId } =
+        form.getFieldsValue()
       if (
         !subject?.trim() ||
         !amount ||
         !dueDate ||
         !state?.trim() ||
-        !content?.trim()
+        !content?.trim() ||
+        !companyId
       )
         return alert('Vui lòng nhập đầy đủ thông tin')
       setLoading(true)
@@ -33,6 +37,7 @@ const PaymentPlanCreateModal = ({
           amount,
           dueDate,
           state,
+          companyId,
         })
       } else {
         await app.post('/api/create-payment-plan', {
@@ -40,6 +45,7 @@ const PaymentPlanCreateModal = ({
           content,
           amount,
           dueDate,
+          companyId,
         })
       }
       await handleFetchPaymentPlans()
@@ -63,6 +69,7 @@ const PaymentPlanCreateModal = ({
       form.setFieldValue('amount', isModalOpen?.amount)
       form.setFieldValue('dueDate', dayjs(isModalOpen?.dueDate))
       form.setFieldValue('state', isModalOpen?.state)
+      form.setFieldValue('companyId', isModalOpen?.companyId?._id)
     } else {
       form.setFieldValue('state', 'ongoing')
     }
@@ -89,6 +96,23 @@ const PaymentPlanCreateModal = ({
         layout="vertical"
       >
         <Form.Item
+          name="companyId"
+          label="Công ty"
+          rules={[
+            { required: true, message: 'Tài khoản này thuộc công ty nào!' },
+          ]}
+        >
+          <Select
+            showSearch
+            filterOption={(input, option) =>
+              (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+            }
+            options={companies.map((i) => {
+              return { value: i._id, label: i.name }
+            })}
+          />
+        </Form.Item>
+        <Form.Item
           name="subject"
           label="Đối tượng"
           rules={[{ required: true, message: 'Nhập đối tượng!' }]}
@@ -102,34 +126,38 @@ const PaymentPlanCreateModal = ({
         >
           <Input className="w-full" placeholder="" />
         </Form.Item>
-        <Form.Item
-          name="dueDate"
-          label="Ngày thanh toán"
-          rules={[{ required: true, message: 'Nhập ngày thanh toán!' }]}
-        >
-          <DatePicker style={{ width: '100%' }} />
-        </Form.Item>
-        <Form.Item
-          name="amount"
-          label="Giá trị"
-          rules={[{ required: true, message: 'Nhập giá trị thanh toán!' }]}
-        >
-          <InputNumber
-            inputMode="decimal"
-            style={{ width: '100%' }}
-            formatter={(value) =>
-              value
-                ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') // thousands with comma
-                : ''
-            }
-            parser={(value) =>
-              value
-                ? parseFloat(value.toString().replace(/,/g, '')) // remove commas
-                : 0
-            }
-            min={0}
-          />
-        </Form.Item>
+        <Space.Compact style={{ display: 'flex' }}>
+          <Form.Item
+            name="dueDate"
+            label="Ngày thanh toán"
+            style={{ flex: 1 }}
+            rules={[{ required: true, message: 'Nhập ngày thanh toán!' }]}
+          >
+            <DatePicker style={{ width: '100%' }} />
+          </Form.Item>
+          <Form.Item
+            name="amount"
+            label="Giá trị"
+            style={{ flex: 1 }}
+            rules={[{ required: true, message: 'Nhập giá trị thanh toán!' }]}
+          >
+            <InputNumber
+              inputMode="decimal"
+              style={{ width: '100%' }}
+              formatter={(value) =>
+                value
+                  ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') // thousands with comma
+                  : ''
+              }
+              parser={(value) =>
+                value
+                  ? parseFloat(value.toString().replace(/,/g, '')) // remove commas
+                  : 0
+              }
+              min={0}
+            />
+          </Form.Item>
+        </Space.Compact>
         <Form.Item
           name="state"
           label="Trạng thái"

@@ -159,35 +159,32 @@ const Indenture = () => {
 
   const columns = [
     {
-      title: 'Số khế ước',
-      dataIndex: 'number',
-      key: 'number',
-      align: 'center',
-      width: 150,
-      fixed: 'left',
-      ...getColumnSearchProps('number'),
+      title: 'Công ty',
+      dataIndex: 'company',
+      key: 'company',
+      width: 200,
+      ...getColumnSearchProps('company'),
     },
     {
       title: 'Ngân hàng',
       dataIndex: 'bank',
       key: 'bank',
-      align: 'center',
       width: 250,
       ...getColumnSearchProps('bank'),
     },
     {
-      title: 'Công ty',
-      dataIndex: 'company',
-      key: 'company',
-      align: 'center',
-      width: 200,
-      ...getColumnSearchProps('company'),
+      title: 'Số khế ước',
+      dataIndex: 'number',
+      key: 'number',
+      width: 150,
+      fixed: 'left',
+      ...getColumnSearchProps('number'),
     },
     {
       title: 'Ngày',
       dataIndex: 'date',
       key: 'date',
-      align: 'center',
+      align: 'right',
       sorter: (a, b) => moment(a.date) - moment(b.date),
       width: 100,
       render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
@@ -196,7 +193,8 @@ const Indenture = () => {
       title: 'Ngày đến hạn',
       dataIndex: 'dueDate',
       key: 'dueDate',
-      align: 'center',
+      align: 'right',
+      width: 130,
       sorter: (a, b) => moment(a.dueDate) - moment(b.dueDate),
       render: (date) => {
         return <span>{moment(date).format('DD/MM/YYYY')}</span>
@@ -206,7 +204,7 @@ const Indenture = () => {
       title: 'Giá trị',
       dataIndex: 'amount',
       key: 'amount',
-      align: 'center',
+      align: 'right',
       sorter: (a, b) => a.amount - b.amount,
       width: 130,
       render: (value) => {
@@ -217,14 +215,15 @@ const Indenture = () => {
       title: 'Lãi suất',
       dataIndex: 'interestRate',
       key: 'interestRate',
+      width: 100,
       sorter: (a, b) => a.interestRate - b.interestRate,
-      align: 'center',
+      align: 'right',
     },
     {
       title: 'Giá trị lãi',
       dataIndex: 'interestAmount',
       key: 'interestAmount',
-      align: 'center',
+      align: 'right',
       sorter: (a, b) => a.interestAmount - b.interestAmount,
       width: 130,
       render: (value) => {
@@ -236,7 +235,7 @@ const Indenture = () => {
       dataIndex: 'residual',
       key: 'residual',
       sorter: (a, b) => a.residual - b.residual,
-      align: 'center',
+      align: 'right',
       width: 130,
       render: (value) => {
         return <span>{Intl.NumberFormat().format(value)}</span>
@@ -246,6 +245,7 @@ const Indenture = () => {
       title: 'Trạng thái',
       dataIndex: 'state',
       key: 'state',
+      width: 100,
       align: 'center',
       fixed: 'right',
       filters: [
@@ -270,6 +270,7 @@ const Indenture = () => {
       align: 'center',
       key: 'action',
       fixed: 'right',
+      width: 100,
       render: (_) =>
         _.state === 'done' && auth.role === sysmtemUserRole.basic ? (
           <></>

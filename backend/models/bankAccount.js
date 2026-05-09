@@ -9,6 +9,7 @@ const BankAccountSchema = mongoose.Schema(
       ref: 'Company',
       required: true,
     },
+    currency: String,
     active: { type: Boolean, default: true },
   },
   { timestamps: true }

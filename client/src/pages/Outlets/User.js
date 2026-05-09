@@ -186,14 +186,13 @@ const User = () => {
       title: 'Tên đăng nhập',
       dataIndex: 'username',
       key: 'username',
-      align: 'center',
+      width: 300,
       ...getColumnSearchProps('username'),
     },
     {
       title: 'Tên người dùng',
       dataIndex: 'name',
       key: 'name',
-      align: 'center',
       ...getColumnSearchProps('name'),
     },
     {
@@ -201,6 +200,7 @@ const User = () => {
       dataIndex: 'active',
       align: 'center',
       key: 'active',
+      width: 150,
       filters: [
         {
           text: 'Khả dụng',
@@ -223,6 +223,7 @@ const User = () => {
       dataIndex: 'role',
       align: 'center',
       key: 'role',
+      width: 150,
       ...getColumnSearchProps('role'),
       render: (role) => (
         <Tag
@@ -249,6 +250,7 @@ const User = () => {
     {
       title: 'Hành động',
       align: 'center',
+      width: 150,
       hidden: auth.role === 'basic' || auth.role === sysmtemUserRole.editor,
       key: 'action',
       render: (_, record) =>

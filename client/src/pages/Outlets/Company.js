@@ -10,13 +10,13 @@ const Company = () => {
       title: 'Tên công ty',
       dataIndex: 'name',
       key: 'name',
-      align: 'center',
     },
     {
       title: 'Đang hoạt động',
       dataIndex: 'active',
       align: 'center',
       key: 'active',
+      width: 150,
       filters: [
         {
           text: 'Khả dụng',

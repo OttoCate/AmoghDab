@@ -3,6 +3,11 @@ const mongoose = require('mongoose')
 const PaymentPlanSchema = mongoose.Schema(
   {
     subject: String,
+    companyId: {
+      type: mongoose.Types.ObjectId,
+      ref: 'Company',
+      required: true,
+    },
     content: String,
     amount: Number,
     dueDate: Date,

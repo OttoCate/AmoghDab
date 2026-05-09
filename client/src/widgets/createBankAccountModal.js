@@ -16,8 +16,14 @@ const BankCreateModal = ({
   const handleOk = async () => {
     try {
       if (loading) return
-      const { accountNumber, bankId, companyId } = form.getFieldsValue()
-      if (!accountNumber?.trim() || !bankId?.trim() || !companyId?.trim())
+      const { accountNumber, bankId, companyId, currency } =
+        form.getFieldsValue()
+      if (
+        !accountNumber?.trim() ||
+        !bankId?.trim() ||
+        !companyId?.trim() ||
+        !currency.trim()
+      )
         return alert('Vui lòng nhập đầy đủ thông tin')
       setLoading(true)
       if (isModalOpen?._id) {
@@ -25,12 +31,14 @@ const BankCreateModal = ({
           accountNumber,
           bankId,
           companyId,
+          currency,
         })
       } else {
         await app.post('/api/create-bank-account', {
           accountNumber,
           bankId,
           companyId,
+          currency,
         })
       }
       await handleFetchBankAccounts()
@@ -52,6 +60,7 @@ const BankCreateModal = ({
       form.setFieldValue('accountNumber', isModalOpen?.accountNumber)
       form.setFieldValue('bankId', isModalOpen?.bankId)
       form.setFieldValue('companyId', isModalOpen?.companyId)
+      form.setFieldValue('currency', isModalOpen?.currency)
     }
   }, [])
 
@@ -95,6 +104,28 @@ const BankCreateModal = ({
             options={banks.map((i) => {
               return { value: i._id, label: i.name }
             })}
+          />
+        </Form.Item>
+        <Form.Item
+          name="currency"
+          label="Loại tiền"
+          rules={[
+            {
+              required: true,
+              message: 'Hãy cho biết tài khoản này thuộc tiền tệ gì!',
+            },
+          ]}
+        >
+          <Select
+            showSearch
+            filterOption={(input, option) =>
+              (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+            }
+            options={[
+              { value: 'vnd', label: 'VND' },
+              { value: 'usd', label: 'USD' },
+              { value: 'cny', label: 'CNY' },
+            ]}
           />
         </Form.Item>
         <Form.Item

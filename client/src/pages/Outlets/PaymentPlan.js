@@ -159,10 +159,17 @@ const PaymentPlan = () => {
 
   const columns = [
     {
+      title: 'Công ty',
+      dataIndex: 'company',
+      key: 'company',
+      width: 250,
+      fixed: 'left',
+      ...getColumnSearchProps('company'),
+    },
+    {
       title: 'Đối tượng',
       dataIndex: 'subject',
       key: 'subject',
-      align: 'center',
       fixed: 'left',
       ...getColumnSearchProps('subject'),
     },
@@ -170,22 +177,13 @@ const PaymentPlan = () => {
       title: 'Nội dung',
       dataIndex: 'content',
       key: 'content',
-      align: 'center',
       ...getColumnSearchProps('content'),
-    },
-    {
-      title: 'Ngày thanh toán',
-      dataIndex: 'dueDate',
-      key: 'dueDate',
-      align: 'center',
-      sorter: (a, b) => moment(a.dueDate) - moment(b.dueDate),
-      render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
     },
     {
       title: 'Giá trị',
       dataIndex: 'amount',
       key: 'amount',
-      align: 'center',
+      align: 'right',
       sorter: (a, b) => a.amount - b.amount,
       width: 130,
       render: (value) => {
@@ -193,11 +191,21 @@ const PaymentPlan = () => {
       },
     },
     {
+      title: 'Ngày thanh toán',
+      dataIndex: 'dueDate',
+      key: 'dueDate',
+      width: 150,
+      align: 'right',
+      sorter: (a, b) => moment(a.dueDate) - moment(b.dueDate),
+      render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
+    },
+    {
       title: 'Trạng thái',
       dataIndex: 'state',
       key: 'state',
       align: 'center',
       fixed: 'right',
+      width: 110,
       filters: [
         {
           text: 'Chưa xong',
@@ -219,6 +227,7 @@ const PaymentPlan = () => {
       title: 'Hành động',
       align: 'center',
       key: 'action',
+      width: 100,
       fixed: 'right',
       render: (_) =>
         _.state === 'done' && auth.role === sysmtemUserRole.basic ? (
@@ -256,7 +265,9 @@ const PaymentPlan = () => {
       </Button>
       <Table
         columns={columns}
-        dataSource={paymentPlans}
+        dataSource={paymentPlans.map((i) => {
+          return { ...i, company: i?.companyId?.name }
+        })}
         bordered
         size="small"
         rowKey={(record) => record._id}
