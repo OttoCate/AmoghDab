@@ -3,6 +3,7 @@ const Banks = require('../models/bank')
 const BankAccounts = require('../models/bankAccount')
 const Indentures = require('../models/indenture')
 const PaymentPlans = require('../models/paymentPlan')
+const Sources = require('../models/source')
 
 const dataCtrl = {
   createCompany: async (req, res) => {
@@ -199,7 +200,9 @@ const dataCtrl = {
 
   getBankAccounts: async (req, res) => {
     try {
-      const banks = await BankAccounts.find({})
+      const banks = await BankAccounts.find({
+        companyId: { $in: req.user.companyIds },
+      })
         .select('accountNumber bankId companyId active currency')
         .populate('bankId companyId')
       res.status(200).json({ data: banks })
@@ -218,7 +221,7 @@ const dataCtrl = {
         }
       })
       const newOne = await BankAccounts.findOneAndUpdate(
-        { _id: id },
+        { _id: id, companyId: { $in: req.user.companyIds } },
         { ...parameters },
         { new: true }
       )
@@ -270,7 +273,7 @@ const dataCtrl = {
         }
       })
       const newOne = await PaymentPlans.findOneAndUpdate(
-        { _id: id },
+        { _id: id, companyId: { $in: req.user.companyIds } },
         { ...parameters },
         { new: true }
       )
@@ -286,10 +289,74 @@ const dataCtrl = {
 
   getPaymentPlans: async (req, res) => {
     try {
-      const banks = await PaymentPlans.find({})
+      const banks = await PaymentPlans.find({
+        companyId: { $in: req.user.companyIds },
+      })
         .select('subject content amount dueDate state companyId')
         .populate('companyId', 'name')
       res.status(200).json({ data: banks })
+    } catch (error) {
+      res.status(500).json({ msg: error.message })
+    }
+  },
+
+  createSource: async (req, res) => {
+    try {
+      const { companyId, departmentCode, thb, usd, vnd, type } = req.body
+      if ((!type, !companyId))
+        return res
+          .status(400)
+          .json({ msg: 'Vui lòng cung cấp đầy đủ thông tin' })
+
+      await Sources.create({
+        type,
+        vnd,
+        usd,
+        thb,
+        companyId,
+        departmentCode,
+        updatedBy: req.user._id,
+        updatedAt: Date.now(),
+      })
+
+      res.status(200).json({ msg: 'Đã tạo hoàn tất nguồn' })
+    } catch (error) {
+      res.status(500).json({ msg: error.message })
+    }
+  },
+
+  updateSource: async (req, res) => {
+    try {
+      let parameters = { ...req.body }
+      const { id } = req.params
+      Object.keys(parameters).forEach((key) => {
+        if (parameters[key] === null) {
+          delete parameters[key]
+        }
+      })
+      const newOne = await Sources.findOneAndUpdate(
+        { _id: id, companyId: { $in: req.user.companyIds } },
+        { ...parameters, updatedBy: req.user._id, updatedAt: Date.now() },
+        { new: true }
+      )
+      if (!newOne)
+        return res
+          .status(400)
+          .json({ msg: 'Nguồn này không có trong cơ sở dữ liệu' })
+      res.status(200).json({ msg: 'Đã cập nhật thành công' })
+    } catch (error) {
+      res.status(500).json({ msg: error.message })
+    }
+  },
+
+  getSources: async (req, res) => {
+    try {
+      const list = await Sources.find({
+        companyId: { $in: req.user.companyIds },
+      })
+        .select('companyId departmentCode thb usd vnd type updatedBy updatedAt')
+        .populate('companyId updatedBy', 'name')
+      res.status(200).json({ data: list })
     } catch (error) {
       res.status(500).json({ msg: error.message })
     }

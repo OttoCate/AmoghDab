@@ -37,6 +37,7 @@ router.post(
   authenticate,
   dataCtrl.createPaymentPlan
 )
+router.post('/create-source', limiter, authenticate, dataCtrl.createSource)
 
 router.patch('/update-bank/:id', limiter, authenticate, dataCtrl.updateBank)
 router.patch(
@@ -57,6 +58,7 @@ router.patch(
   authenticate,
   dataCtrl.updatePaymentPlan
 )
+router.patch('/update-source/:id', limiter, authenticate, dataCtrl.updateSource)
 
 router.get('/get-companies', limiter, authenticate, dataCtrl.getCompanies)
 router.get('/get-banks', limiter, authenticate, dataCtrl.getBanks)
@@ -73,5 +75,6 @@ router.get(
   authenticate,
   dataCtrl.getPaymentPlans
 )
+router.get('/get-payment-plans', limiter, authenticate, dataCtrl.getSources)
 
 module.exports = router
