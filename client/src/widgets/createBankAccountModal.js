@@ -11,7 +11,7 @@ const BankCreateModal = ({
 }) => {
   const [form] = Form.useForm()
   const [loading, setLoading] = useState(false)
-  const { banks, companies } = useZustand()
+  const { banks, companies, auth } = useZustand()
 
   const handleOk = async () => {
     try {
@@ -140,9 +140,11 @@ const BankCreateModal = ({
             filterOption={(input, option) =>
               (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
             }
-            options={companies.map((i) => {
-              return { value: i._id, label: i.name }
-            })}
+            options={[companies]
+              .filter((i) => auth.companyIds.includes(i._id))
+              .map((i) => {
+                return { value: i._id, label: i.name }
+              })}
           />
         </Form.Item>
       </Form>

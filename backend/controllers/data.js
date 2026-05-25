@@ -114,7 +114,7 @@ const dataCtrl = {
         }
       })
       const newOne = await Indentures.findOneAndUpdate(
-        { _id: id },
+        { _id: id, companyId: { $in: req.user.companyIds } },
         { ...parameters },
         { new: true }
       )
@@ -130,7 +130,9 @@ const dataCtrl = {
 
   getIndentures: async (req, res) => {
     try {
-      const banks = await Indentures.find({})
+      const banks = await Indentures.find({
+        companyId: { $in: req.user.companyIds },
+      })
         .select(
           'number bankId amount date dueDate interestRate interestAmount residual state companyId'
         )
@@ -200,6 +202,7 @@ const dataCtrl = {
 
   getBankAccounts: async (req, res) => {
     try {
+      console.log(req.user)
       const banks = await BankAccounts.find({
         companyId: { $in: req.user.companyIds },
       })

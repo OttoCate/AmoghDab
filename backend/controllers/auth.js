@@ -41,7 +41,7 @@ const userCtrl = {
 
   createUser: async (req, res) => {
     try {
-      const { username, password, name, role } = req.body
+      const { username, password, name, role, companyIds } = req.body
       if (!username.trim() || !password.trim())
         return res
           .status(400)
@@ -60,6 +60,7 @@ const userCtrl = {
         password: passwordHash,
         name,
         role,
+        companyIds,
       })
 
       res.status(200).json({ msg: 'Đã tạo hoàn tất người dùng' })
@@ -70,9 +71,9 @@ const userCtrl = {
 
   getUsers: async (req, res) => {
     try {
-      const users = await Users.find({ role: { $ne: 'admin' } })
-        .select('username name active role companyIds')
-        .populate('companyIds', 'name')
+      const users = await Users.find({}).select(
+        'username name active role companyIds'
+      )
       res.status(200).json({ data: users })
     } catch (error) {
       res.status(500).json({ msg: error.message })
@@ -88,8 +89,6 @@ const userCtrl = {
           delete parameters[key]
         }
       })
-      if (parameters?.role && parameters?.role === 'admin')
-        return res.status(400).json({ msg: 'Không được phép cấp quyền admin' })
 
       const user = await Users.findOne({ _id: id })
       if (user && user.role === 'admin' && parameters?.active !== undefined)
@@ -115,9 +114,9 @@ const userCtrl = {
         return res
           .status(403)
           .json({ msg: 'Phiên làm việc không hợp lệ! Vui lòng đăng nhập lại' })
-      const user = await Users.findById(payload.id)
-        .select('username role name companyIds active')
-        .populate('companyIds', 'name')
+      const user = await Users.findById(payload.id).select(
+        'username role name companyIds active'
+      )
 
       if (!user.active)
         return res.status(400).json({ msg: 'Tài khoản đã bị vô hiệu hóa' })

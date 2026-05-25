@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const Users = require('../models/user')
 
 const isTokenValid = (token) => jwt.verify(token, process.env.JWT_SECRET)
 
@@ -19,7 +20,8 @@ const authenticate = async (req, res, next) => {
         msg: 'Phiên làm việc không hợp lệ! Vui lòng đăng nhập lại',
         noCookies: false,
       })
-    req.user = payload.id
+    const user = await Users.findOne({ _id: payload.id })
+    req.user = user
     return next()
   } catch (error) {
     res.status(500).json({ msg: error.message })

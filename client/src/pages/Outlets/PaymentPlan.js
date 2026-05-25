@@ -16,6 +16,7 @@ const PaymentPlan = () => {
   const {
     paymentPlans: currentPaymentPlans,
     auth,
+    companies,
     setPaymentPlanState,
   } = useZustand()
   const [isModalOpen, setIsModalOpen] = useState(false)

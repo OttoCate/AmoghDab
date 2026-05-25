@@ -4,6 +4,7 @@ import { Form, Select, Input } from 'antd'
 import { sysmtemUserRole } from '../globalVariables'
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 import app from '../axiosConfig'
+import { useZustand } from '../zustand'
 
 const CreateUserModal = ({
   isModalOpen,
@@ -12,19 +13,28 @@ const CreateUserModal = ({
   handleFetchUsers,
 }) => {
   const [form] = Form.useForm()
+  const { companies } = useZustand()
 
   const handleOk = async () => {
     try {
       if (loading) return
-      const { name, username, password, role } = form.getFieldsValue()
+      const { name, username, password, role, companyIds } =
+        form.getFieldsValue()
       if (
         !role?.trim() ||
         !name?.trim() ||
         !username?.trim() ||
-        !password?.trim()
+        !password?.trim() ||
+        companyIds.length === 0
       )
         return alert('Vui lòng nhập đầy đủ thông tin')
-      await app.post('/api/create-user', { name, username, password, role })
+      await app.post('/api/create-user', {
+        name,
+        username,
+        password,
+        role,
+        companyIds,
+      })
       await handleFetchUsers()
       handleClose()
     } catch (error) {
@@ -92,12 +102,21 @@ const CreateUserModal = ({
           <Select
             options={[
               { value: sysmtemUserRole.basic, label: <span>Cơ bản</span> },
-              {
-                value: sysmtemUserRole.editor,
-                label: <span>Người chỉnh sửa</span>,
-              },
               { value: sysmtemUserRole.manager, label: <span>Quản lý</span> },
             ]}
+          />
+        </Form.Item>
+        <Form.Item
+          name="companyIds"
+          label="Công ty người dùng đảm nhận"
+          rules={[{ required: true, message: 'Hãy chọn công ty!' }]}
+        >
+          <Select
+            mode="tags"
+            maxTagCount={1}
+            options={companies.map((i) => {
+              return { value: i._id, label: i.name }
+            })}
           />
         </Form.Item>
       </Form>

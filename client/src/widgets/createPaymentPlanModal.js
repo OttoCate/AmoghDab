@@ -13,7 +13,7 @@ const PaymentPlanCreateModal = ({
 }) => {
   const [form] = Form.useForm()
   const [loading, setLoading] = useState(false)
-  const { companies } = useZustand()
+  const { companies, auth } = useZustand()
 
   const handleOk = async () => {
     try {
@@ -107,9 +107,11 @@ const PaymentPlanCreateModal = ({
             filterOption={(input, option) =>
               (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
             }
-            options={companies.map((i) => {
-              return { value: i._id, label: i.name }
-            })}
+            options={companies
+              .filter((i) => auth.companyIds.includes(i._id))
+              .map((i) => {
+                return { value: i._id, label: i.name }
+              })}
           />
         </Form.Item>
         <Form.Item

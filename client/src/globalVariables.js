@@ -193,7 +193,6 @@ export const rules = {
 
 export const sysmtemUserRole = {
   basic: 'basic',
-  editor: 'editor',
   manager: 'manager',
   admin: 'admin',
 }

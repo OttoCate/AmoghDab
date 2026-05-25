@@ -51,11 +51,11 @@ const User = () => {
     setIsModalOpen(false)
   }
 
-  const handleUpdateRole = async (role, userId) => {
+  const handleUpdateRole = async (role, userId, companyIds) => {
     try {
       if (loading) return
       setLoading(true)
-      await app.patch(`/api/update-user/${userId}`, { role })
+      await app.patch(`/api/update-user/${userId}`, { role, companyIds })
       await handleFetchUsers()
       handleCancel()
     } catch (error) {
@@ -230,8 +230,6 @@ const User = () => {
           color={
             role === sysmtemUserRole.admin
               ? 'green'
-              : role === sysmtemUserRole.editor
-              ? 'pink'
               : role === sysmtemUserRole.manager
               ? 'blue'
               : ''
@@ -239,8 +237,6 @@ const User = () => {
         >
           {role === 'basic'
             ? 'Cơ bản'
-            : role === sysmtemUserRole.editor
-            ? 'Người chỉnh sửa'
             : role === sysmtemUserRole.manager
             ? 'Quản lý'
             : 'Quản trị viên'}
@@ -251,10 +247,11 @@ const User = () => {
       title: 'Hành động',
       align: 'center',
       width: 150,
-      hidden: auth.role === 'basic' || auth.role === sysmtemUserRole.editor,
+      hidden: auth.role === 'basic',
       key: 'action',
-      render: (_, record) =>
-        _.role === sysmtemUserRole.admin || _.role === auth.role ? (
+      render: (_) =>
+        _.role === sysmtemUserRole.admin &&
+        auth.role !== sysmtemUserRole.admin ? (
           <></>
         ) : (
           <Space size="middle">
