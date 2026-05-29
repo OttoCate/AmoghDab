@@ -16,6 +16,7 @@ import { RiBankCardFill } from 'react-icons/ri'
 import { IoDocument } from 'react-icons/io5'
 import { BsPiggyBankFill } from 'react-icons/bs'
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
+import { FaMoneyBill1Wave } from 'react-icons/fa6'
 
 const { Header, Content, Sider } = Layout
 
@@ -39,6 +40,7 @@ const App = () => {
     setBankAccountState,
     setIndentureState,
     setPaymentPlanState,
+    setSourceState,
   } = useZustand()
   const [loading, setLoading] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -111,6 +113,14 @@ const App = () => {
         handleNavigate('/payment-plan', 6)
       },
     },
+    {
+      key: 7,
+      icon: <FaMoneyBill1Wave />,
+      label: 'Nguồn',
+      onClick: () => {
+        handleNavigate('/source', 7)
+      },
+    },
   ]
 
   const showModal = () => {
@@ -145,6 +155,7 @@ const App = () => {
         app.get('/api/get-bank-accounts'),
         app.get('/api/get-indentures'),
         app.get('/api/get-payment-plans'),
+        app.get('/api/get-sources'),
       ])
 
       setUserState(result[0]?.data?.data)
@@ -153,6 +164,7 @@ const App = () => {
       setBankAccountState(result[3]?.data?.data)
       setIndentureState(result[4]?.data?.data)
       setPaymentPlanState(result[5]?.data?.data)
+      setSourceState(result[6]?.data?.data)
     } catch (error) {
       alert(error?.response?.data?.msg || error)
     } finally {

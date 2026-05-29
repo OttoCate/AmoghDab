@@ -9,20 +9,28 @@ import { SearchOutlined } from '@ant-design/icons'
 import app from '../../axiosConfig'
 import moment from 'moment'
 import { MdEdit } from 'react-icons/md'
-import { sysmtemUserRole } from '../../globalVariables'
+import { sysmtemUserRole, validExcelFile } from '../../globalVariables'
+import { MdDelete } from 'react-icons/md'
+import { FaFileExport } from 'react-icons/fa'
+import * as FileSaver from 'file-saver'
+import { FaUpload } from 'react-icons/fa'
+import _ from 'lodash'
 
 const PaymentPlan = () => {
   const [paymentPlans, setPaymentPlans] = useState([])
   const {
     paymentPlans: currentPaymentPlans,
     auth,
-    companies,
     setPaymentPlanState,
+    companies,
   } = useZustand()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
   const searchInput = useRef(null)
+  const [loading, setLoading] = useState(false)
+  const [isProcessing, setIsProcessing] = useState(false)
+  const fileInputRef = useRef(null)
 
   const showModal = (user) => {
     setIsModalOpen(user)
@@ -158,6 +166,158 @@ const PaymentPlan = () => {
     }
   }
 
+  const handleDeleteRecord = async (record) => {
+    try {
+      if (loading) return
+      if (
+        !window.confirm(
+          'Bạn có chắc muốn xóa dữ liệu này? Để phục vụ truy vết, hệ thống sẽ ghi nhận lại bạn đã xóa dữ liệu'
+        )
+      )
+        return
+      setLoading(true)
+      await app.delete(`/api/delete-payment-plan/${record._id}`)
+      const newSources = [...paymentPlans].filter((i) => i._id !== record._id)
+      setPaymentPlans(newSources)
+      setPaymentPlanState(newSources)
+    } catch (error) {
+      alert(error?.response?.data?.msg || error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleExportExcel = () => {
+    setIsProcessing(true)
+    const worker = new Worker(
+      new URL('../../workers/exportToExcelFile.worker.js', import.meta.url)
+    )
+    worker.postMessage({
+      data: paymentPlans.map((i) => {
+        return {
+          ...i,
+          companyId: i.companyId?.name,
+        }
+      }),
+      fileName: 'Dữ liệu kế hoạch thanh toán',
+    })
+    worker.onmessage = (e) => {
+      const { blob, fileName } = e.data
+      FileSaver.saveAs(blob, fileName)
+      worker.terminate()
+      setIsProcessing(false)
+    }
+    worker.onerror = (err) => {
+      console.error('Worker error:', err)
+      worker.terminate()
+      setIsProcessing(false)
+    }
+  }
+
+  const handleAddFile = async (e) => {
+    try {
+      const file = e.target.files
+      const fileType = file[0].type
+      if (!validExcelFile.includes(fileType))
+        return alert('File của bạn phải là excel')
+
+      setIsProcessing(true)
+      // Read file into ArrayBuffer
+      const buffer = await new Promise((resolve, reject) => {
+        const fileReader = new FileReader()
+        fileReader.readAsArrayBuffer(file[0])
+        fileReader.onload = (e) => resolve(e.target.result)
+        fileReader.onerror = (err) => reject(err)
+      })
+
+      // Create a worker from public directory
+      const worker = new Worker(
+        new URL('../../workers/excelWorker.worker.js', import.meta.url)
+      )
+
+      // Post the buffer to the worker
+      worker.postMessage(buffer)
+
+      // Handle response from the worker
+      worker.onmessage = async (e) => {
+        const { success, data, error } = e.data
+        if (success) {
+          const allCompaniesValid = data.every((i) =>
+            companies.find((item) => item.name === i.companyId)
+          )
+
+          if (!allCompaniesValid) {
+            fileInputRef.current.value = ''
+            setIsProcessing(false)
+            worker.terminate()
+            return alert(
+              'Có công ty trong file import không có trong hệ thống hoặc không có trong danh sách công ty bạn đảm nhận'
+            )
+          }
+
+          const myMapList = data.map((i) => {
+            const { subject, content, amount, dueDate, companyId, state } = i
+            const newCompanyId = companies.find(
+              (item) => item.name === companyId
+            )
+            let myDueDate = undefined
+            if (_.isDate(dueDate)) {
+              myDueDate = dueDate
+            } else if (_.isNumber(dueDate)) {
+              const utc_days = Math.floor(dueDate - 25569) // Excel epoch is Jan 1, 1900
+              const utc_value = utc_days * 86400 // seconds in a day
+              myDueDate = utc_value
+            } else {
+              myDueDate = dueDate
+            }
+
+            if (
+              !subject?.trim() ||
+              !amount ||
+              !myDueDate ||
+              !content?.trim() ||
+              !companyId ||
+              !state
+            ) {
+              fileInputRef.current.value = ''
+              setIsProcessing(false)
+              worker.terminate()
+              return alert('Đảm bảo dữ liệu phải đầy đủ')
+            }
+            return app.post('/api/create-payment-plan', {
+              subject,
+              content,
+              amount,
+              dueDate: myDueDate,
+              companyId: newCompanyId._id,
+            })
+          })
+
+          await Promise.all(myMapList)
+          await handleFetchPaymentPlans()
+          setIsProcessing(false)
+        } else {
+          alert('Lỗi xử lý file: ' + error)
+        }
+
+        worker.terminate()
+      }
+
+      // Handle worker errors
+      worker.onerror = (err) => {
+        console.error('Worker error:', err)
+        alert('Đã xảy ra lỗi trong quá trình xử lý file.')
+        worker.terminate()
+      }
+    } catch (error) {
+      alert('Lỗi không xác định: ' + error?.response?.data?.msg)
+      setIsProcessing(false)
+    } finally {
+      fileInputRef.current.value = ''
+      setIsProcessing(false)
+    }
+  }
+
   const columns = [
     {
       title: 'Công ty',
@@ -244,6 +404,15 @@ const PaymentPlan = () => {
                 onClick={() => showModal(_)}
               ></Button>
             </Tooltip>
+            <Tooltip title="Xóa">
+              <Button
+                color="danger"
+                size="small"
+                variant="filled"
+                icon={<MdDelete />}
+                onClick={() => handleDeleteRecord(_)}
+              ></Button>
+            </Tooltip>
           </Space>
         ),
     },
@@ -255,15 +424,44 @@ const PaymentPlan = () => {
 
   return (
     <>
-      <Button
-        color="primary"
-        onClick={() => showModal(true)}
-        variant="filled"
-        style={{ marginBottom: 16 }}
-        icon={<FiPlus />}
-      >
-        Tạo kế hoạch thanh toán
-      </Button>
+      <Space.Compact>
+        <Button
+          color="primary"
+          onClick={() => showModal(true)}
+          variant="filled"
+          style={{ marginBottom: 16 }}
+          icon={<FiPlus />}
+        >
+          Tạo
+        </Button>
+        <Button
+          color="primary"
+          disabled={isProcessing}
+          onClick={handleExportExcel}
+          style={{ marginBottom: 16 }}
+          icon={<FaFileExport />}
+        >
+          Export
+        </Button>
+        <div>
+          <input
+            type="file"
+            ref={fileInputRef}
+            style={{ display: 'none' }}
+            onChange={handleAddFile}
+          />
+          <Button
+            icon={<FaUpload />}
+            color="primary"
+            disabled={isProcessing}
+            onClick={() => {
+              fileInputRef.current.click()
+            }}
+          >
+            Upload
+          </Button>
+        </div>
+      </Space.Compact>
       <Table
         columns={columns}
         dataSource={paymentPlans.map((i) => {

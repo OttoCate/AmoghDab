@@ -290,6 +290,16 @@ const dataCtrl = {
     }
   },
 
+  deletePaymentPlan: async (req, res) => {
+    try {
+      const { id } = req.params
+      await PaymentPlans.findOneAndDelete({ _id: id })
+      res.status(200).json({ msg: 'Đã xóa thành công' })
+    } catch (error) {
+      res.status(500).json({ msg: error.message })
+    }
+  },
+
   getPaymentPlans: async (req, res) => {
     try {
       const banks = await PaymentPlans.find({
@@ -347,6 +357,16 @@ const dataCtrl = {
           .status(400)
           .json({ msg: 'Nguồn này không có trong cơ sở dữ liệu' })
       res.status(200).json({ msg: 'Đã cập nhật thành công' })
+    } catch (error) {
+      res.status(500).json({ msg: error.message })
+    }
+  },
+
+  deleteSource: async (req, res) => {
+    try {
+      const { id } = req.params
+      await Sources.findOneAndDelete({ _id: id })
+      res.status(200).json({ msg: 'Đã xóa thành công' })
     } catch (error) {
       res.status(500).json({ msg: error.message })
     }

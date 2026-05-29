@@ -75,6 +75,19 @@ router.get(
   authenticate,
   dataCtrl.getPaymentPlans
 )
-router.get('/get-payment-plans', limiter, authenticate, dataCtrl.getSources)
+router.get('/get-sources', limiter, authenticate, dataCtrl.getSources)
+
+router.delete(
+  '/delete-source/:id',
+  limiter,
+  authenticate,
+  dataCtrl.deleteSource
+)
+router.delete(
+  '/delete-payment-plan/:id',
+  limiter,
+  authenticate,
+  dataCtrl.deletePaymentPlan
+)
 
 module.exports = router

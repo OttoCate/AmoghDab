@@ -13,6 +13,7 @@ import Bank from './Outlets/Bank'
 import BankAccount from './Outlets/BankAccount'
 import Indenture from './Outlets/Indenture'
 import PaymentPlan from './Outlets/PaymentPlan'
+import Source from './Outlets/Source'
 
 const Main = () => {
   const { auth, setAuth } = useZustand()
@@ -58,6 +59,7 @@ const Main = () => {
           <Route path="bank-account" element={<BankAccount />} />
           <Route path="indenture" element={<Indenture />} />
           <Route path="payment-plan" element={<PaymentPlan />} />
+          <Route path="source" element={<Source />} />
         </Route>
         <Route path="/login" element={auth ? <Navigate to="/" /> : <Login />} />
         <Route

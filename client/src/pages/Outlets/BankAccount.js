@@ -290,7 +290,7 @@ const BankAccount = () => {
         style={{ marginBottom: 16 }}
         icon={<FiPlus />}
       >
-        Tạo số tài khoản
+        Tạo
       </Button>
       <Table
         columns={columns}

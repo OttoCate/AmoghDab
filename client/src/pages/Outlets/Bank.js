@@ -247,7 +247,7 @@ const Bank = () => {
         style={{ marginBottom: 16 }}
         icon={<FiPlus />}
       >
-        Tạo ngân hàng
+        Tạo
       </Button>
       <Table
         columns={columns}

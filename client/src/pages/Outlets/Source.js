@@ -1,27 +1,27 @@
 import { useState, useEffect, useRef } from 'react'
-import { Table, Button, Space, Tag, Tooltip } from 'antd'
+import { Table, Button, Space, Tooltip } from 'antd'
 import { useZustand } from '../../zustand'
 import { FiPlus } from 'react-icons/fi'
-import IndentureCreateModal from '../../widgets/createIndentureModal'
+import SourceCreateModal from '../../widgets/createSourceModal'
 import { Input } from 'antd'
 import Highlighter from 'react-highlight-words'
 import { SearchOutlined } from '@ant-design/icons'
 import app from '../../axiosConfig'
 import moment from 'moment'
 import { MdEdit } from 'react-icons/md'
-import { sysmtemUserRole } from '../../globalVariables'
+import { MdDelete } from 'react-icons/md'
+import { FaFileExport } from 'react-icons/fa'
+import * as FileSaver from 'file-saver'
 
-const Indenture = () => {
-  const [indentures, setIndentures] = useState([])
-  const {
-    indentures: currentIndentures,
-    auth,
-    setIndentureState,
-  } = useZustand()
+const PaymentPlan = () => {
+  const [sources, setSources] = useState([])
+  const { sources: currentSources, setSourceState } = useZustand()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [searchText, setSearchText] = useState('')
   const [searchedColumn, setSearchedColumn] = useState('')
   const searchInput = useRef(null)
+  const [loading, setLoading] = useState(false)
+  const [isProcessing, setIsProcessing] = useState(false)
 
   const showModal = (user) => {
     setIsModalOpen(user)
@@ -147,13 +147,62 @@ const Indenture = () => {
       ),
   })
 
-  const handleFetchIndentures = async () => {
+  const handleFetchSources = async () => {
     try {
-      const { data } = await app.get('/api/get-indentures')
-      setIndentures(data.data)
-      setIndentureState(data.data)
+      const { data } = await app.get('/api/get-sources')
+      setSources(data.data)
+      setSourceState(data.data)
     } catch (error) {
       alert(error?.response?.data?.msg || error)
+    }
+  }
+
+  const handleDeleteRecord = async (record) => {
+    try {
+      if (loading) return
+      if (
+        !window.confirm(
+          'Bạn có chắc muốn xóa dữ liệu này? Để phục vụ truy vết, hệ thống sẽ ghi nhận lại bạn đã xóa dữ liệu'
+        )
+      )
+        return
+      setLoading(true)
+      await app.delete(`/api/delete-source/${record._id}`)
+      const newSources = [...sources].filter((i) => i._id !== record._id)
+      setSources(newSources)
+      setSourceState(newSources)
+    } catch (error) {
+      alert(error?.response?.data?.msg || error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleExportExcel = () => {
+    setIsProcessing(true)
+    const worker = new Worker(
+      new URL('../../workers/exportToExcelFile.worker.js', import.meta.url)
+    )
+    worker.postMessage({
+      data: sources.map((i) => {
+        return {
+          ...i,
+          companyId: i.companyId?.name,
+          updatedBy: i.updatedBy?.name,
+        }
+      }),
+      fileName: 'Dữ liệu nguồn',
+    })
+    worker.onmessage = (e) => {
+      const { blob, fileName } = e.data
+      FileSaver.saveAs(blob, fileName)
+      worker.terminate()
+      setIsProcessing(false)
+    }
+    worker.onerror = (err) => {
+      console.error('Worker error:', err)
+      worker.terminate()
+      setIsProcessing(false)
     }
   }
 
@@ -162,153 +211,138 @@ const Indenture = () => {
       title: 'Công ty',
       dataIndex: 'company',
       key: 'company',
-      width: 200,
+      width: 300,
+      fixed: 'left',
       ...getColumnSearchProps('company'),
     },
     {
-      title: 'Ngân hàng',
-      dataIndex: 'bank',
-      key: 'bank',
-      width: 250,
-      ...getColumnSearchProps('bank'),
+      title: 'Loại nguồn',
+      dataIndex: 'type',
+      key: 'type',
+      minWidth: 250,
+      ...getColumnSearchProps('type'),
     },
     {
-      title: 'Số khế ước',
-      dataIndex: 'number',
-      key: 'number',
+      title: 'VND',
+      dataIndex: 'vnd',
+      key: 'vnd',
+      align: 'right',
+      sorter: (a, b) => a.vnd - b.vnd,
+      width: 130,
+      render: (value) => {
+        return <span>{Intl.NumberFormat().format(value)}</span>
+      },
+    },
+    {
+      title: 'USD',
+      dataIndex: 'usd',
+      key: 'usd',
+      align: 'right',
+      sorter: (a, b) => a.usd - b.usd,
+      width: 130,
+      render: (value) => {
+        return <span>{Intl.NumberFormat().format(value)}</span>
+      },
+    },
+    {
+      title: 'THB',
+      dataIndex: 'thb',
+      key: 'thb',
+      align: 'right',
+      sorter: (a, b) => a.thb - b.thb,
+      width: 130,
+      render: (value) => {
+        return <span>{Intl.NumberFormat().format(value)}</span>
+      },
+    },
+    {
+      title: 'Mã đơn vị',
+      dataIndex: 'departmentCode',
+      key: 'departmentCode',
       width: 150,
-      fixed: 'left',
-      ...getColumnSearchProps('number'),
+      ...getColumnSearchProps('departmentCode'),
     },
     {
-      title: 'Ngày',
-      dataIndex: 'date',
-      key: 'date',
+      title: 'Lần cập nhật gần nhất',
+      dataIndex: 'updatedAt',
+      key: 'updatedAt',
       align: 'right',
-      sorter: (a, b) => moment(a.date) - moment(b.date),
-      width: 100,
-      render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
-    },
-    {
-      title: 'Ngày đến hạn',
-      dataIndex: 'dueDate',
-      key: 'dueDate',
-      align: 'right',
-      width: 130,
-      sorter: (a, b) => moment(a.dueDate) - moment(b.dueDate),
-      render: (date) => {
-        return <span>{moment(date).format('DD/MM/YYYY')}</span>
-      },
-    },
-    {
-      title: 'Giá trị',
-      dataIndex: 'amount',
-      key: 'amount',
-      align: 'right',
-      sorter: (a, b) => a.amount - b.amount,
-      width: 130,
-      render: (value) => {
-        return <span>{Intl.NumberFormat().format(value)}</span>
-      },
-    },
-    {
-      title: 'Lãi suất',
-      dataIndex: 'interestRate',
-      key: 'interestRate',
-      width: 100,
-      sorter: (a, b) => a.interestRate - b.interestRate,
-      align: 'right',
-    },
-    {
-      title: 'Giá trị lãi',
-      dataIndex: 'interestAmount',
-      key: 'interestAmount',
-      align: 'right',
-      sorter: (a, b) => a.interestAmount - b.interestAmount,
-      width: 130,
-      render: (value) => {
-        return <span>{Intl.NumberFormat().format(value)}</span>
-      },
-    },
-    {
-      title: 'Còn lại',
-      dataIndex: 'residual',
-      key: 'residual',
-      sorter: (a, b) => a.residual - b.residual,
-      align: 'right',
-      width: 130,
-      render: (value) => {
-        return <span>{Intl.NumberFormat().format(value)}</span>
-      },
-    },
-    {
-      title: 'Trạng thái',
-      dataIndex: 'state',
-      key: 'state',
-      width: 100,
-      align: 'center',
-      fixed: 'right',
-      filters: [
-        {
-          text: 'Chưa xong',
-          value: 'ongoing',
-        },
-        {
-          text: 'Hoàn thành',
-          value: 'done',
-        },
-      ],
-      onFilter: (value, record) => record.state === value,
-      render: (state) => (
-        <Tag color={state === 'done' ? 'green' : ''}>
-          {state === 'done' ? 'Hoàn thành' : 'Chưa xong'}
-        </Tag>
+      sorter: (a, b) => moment(a.updatedAt) - moment(b.updatedAt),
+      render: (value) => (
+        <span>{moment(value).format('DD/MM/YYYY hh:mm:ss')}</span>
       ),
+    },
+    {
+      title: 'Người cập nhật gần nhất',
+      dataIndex: 'personUpdating',
+      key: 'personUpdating',
+      ...getColumnSearchProps('personUpdating'),
     },
     {
       title: 'Hành động',
       align: 'center',
       key: 'action',
-      fixed: 'right',
       width: 100,
-      render: (_) =>
-        _.state === 'done' && auth.role === sysmtemUserRole.basic ? (
-          <></>
-        ) : (
-          <Space size="middle">
-            <Tooltip title="Chỉnh sửa">
-              <Button
-                color="default"
-                variant="outlined"
-                size="small"
-                icon={<MdEdit />}
-                onClick={() => showModal(_)}
-              ></Button>
-            </Tooltip>
-          </Space>
-        ),
+      fixed: 'right',
+      render: (_) => (
+        <Space size="middle">
+          <Tooltip title="Chỉnh sửa">
+            <Button
+              color="default"
+              variant="outlined"
+              size="small"
+              icon={<MdEdit />}
+              onClick={() => showModal(_)}
+            ></Button>
+          </Tooltip>
+          <Tooltip title="Xóa">
+            <Button
+              color="danger"
+              size="small"
+              variant="filled"
+              icon={<MdDelete />}
+              onClick={() => handleDeleteRecord(_)}
+            ></Button>
+          </Tooltip>
+        </Space>
+      ),
     },
   ]
 
   useEffect(() => {
-    if (currentIndentures.length > 0) setIndentures(currentIndentures)
+    if (currentSources.length > 0) setSources(currentSources)
   }, [])
 
   return (
     <>
-      <Button
-        color="primary"
-        onClick={() => showModal(true)}
-        variant="filled"
-        style={{ marginBottom: 16 }}
-        icon={<FiPlus />}
-      >
-        Tạo
-      </Button>
+      <Space.Compact>
+        <Button
+          color="primary"
+          onClick={() => showModal(true)}
+          variant="filled"
+          style={{ marginBottom: 16 }}
+          icon={<FiPlus />}
+        >
+          Tạo
+        </Button>
+        <Button
+          color="primary"
+          disabled={isProcessing}
+          onClick={handleExportExcel}
+          style={{ marginBottom: 16 }}
+          icon={<FaFileExport />}
+        >
+          Export
+        </Button>
+      </Space.Compact>
       <Table
         columns={columns}
-        dataSource={[...indentures].map((i) => {
-          return { ...i, bank: i.bankId?.name, company: i.companyId?.name }
+        dataSource={sources.map((i) => {
+          return {
+            ...i,
+            company: i?.companyId?.name,
+            personUpdating: i?.updatedBy?.name,
+          }
         })}
         bordered
         size="small"
@@ -327,13 +361,13 @@ const Indenture = () => {
         }}
       />
       {isModalOpen && (
-        <IndentureCreateModal
+        <SourceCreateModal
           handleCancel={handleCancel}
           isModalOpen={isModalOpen}
-          handleFetchIndentures={handleFetchIndentures}
+          handleFetchSources={handleFetchSources}
         />
       )}
     </>
   )
 }
-export default Indenture
+export default PaymentPlan

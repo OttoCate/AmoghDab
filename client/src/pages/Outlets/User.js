@@ -8,6 +8,7 @@ import { useZustand } from '../../zustand'
 import UpdateRoleModal from '../../widgets/updateRoleModal'
 import { sysmtemUserRole } from '../../globalVariables'
 import CreateUserModal from '../../widgets/createUserModal'
+import { FiPlus } from 'react-icons/fi'
 
 const User = () => {
   const { auth } = useZustand()
@@ -311,9 +312,9 @@ const User = () => {
           onClick={() => setIsModalCreateUserOpen(true)}
           variant="filled"
           style={{ marginBottom: 16 }}
-          icon={<UserAddOutlined />}
+          icon={<FiPlus />}
         >
-          Tạo người dùng
+          Tạo
         </Button>
       )}
       <Table
