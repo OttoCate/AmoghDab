@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Layout, Menu, theme, Button } from 'antd'
+import { Layout, Menu, theme, Button, Space } from 'antd'
 import { Avatar } from 'antd'
 import { useZustand } from '../zustand'
 import { FaRegBuilding } from 'react-icons/fa'
@@ -17,7 +17,7 @@ import { IoDocument } from 'react-icons/io5'
 import { BsPiggyBankFill } from 'react-icons/bs'
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import { FaMoneyBill1Wave } from 'react-icons/fa6'
-
+import MisaLogo from '../images/logo-misa.png'
 const { Header, Content, Sider } = Layout
 
 const siderStyle = {
@@ -172,6 +172,10 @@ const App = () => {
     }
   }
 
+  const handleClickToMisaDataTransformer = () => {
+    window.open('/misa-data-transformer', '_blank')
+  }
+
   const items = [
     {
       label: 'Đổi mật khẩu',
@@ -229,16 +233,27 @@ const App = () => {
             padding: '0 1rem 0 0',
           }}
         >
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '16px',
-              width: 64,
-              height: 64,
-            }}
-          />
+          <Space>
+            <Button
+              type="text"
+              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+              onClick={() => setCollapsed(!collapsed)}
+              style={{
+                fontSize: '16px',
+                width: 64,
+                height: 64,
+              }}
+            />
+            <Button
+              style={{ display: 'flex', alignItems: 'center' }}
+              color="default"
+              variant="text"
+              onClick={handleClickToMisaDataTransformer}
+            >
+              <span>Xuất file import vào MISA</span>
+              <img src={MisaLogo} alt="" style={{ width: 20 }} />
+            </Button>
+          </Space>
           {isModalOpen && (
             <ChangePasswordModal
               handleCancel={handleCancel}
