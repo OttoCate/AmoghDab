@@ -86,7 +86,6 @@ const IndentureCreateModal = ({
 
   useEffect(() => {
     if (isModalOpen?._id) {
-      console.log(isModalOpen)
       form.setFieldValue('number', isModalOpen?.number)
       form.setFieldValue('bankId', isModalOpen?.bankId?._id)
       form.setFieldValue('amount', isModalOpen?.amount)

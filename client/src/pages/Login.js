@@ -34,10 +34,6 @@ const Login = () => {
     }
   }
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo)
-  }
-
   const handleClickToMisaDataTransformer = () => {
     window.open('/misa-data-transformer', '_blank')
   }
@@ -59,7 +55,6 @@ const Login = () => {
         layout="vertical"
         style={{ width: 300 }}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
       >
         <Form.Item
           label="Tên đăng nhập"

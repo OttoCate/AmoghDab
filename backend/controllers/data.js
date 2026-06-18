@@ -202,7 +202,6 @@ const dataCtrl = {
 
   getBankAccounts: async (req, res) => {
     try {
-      console.log(req.user)
       const banks = await BankAccounts.find({
         companyId: { $in: req.user.companyIds },
       })
