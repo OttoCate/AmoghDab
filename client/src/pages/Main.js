@@ -53,7 +53,7 @@ const Main = () => {
             </PrivateRoute>
           }
         >
-          <Route path="/" element={<User />} />
+          <Route path="user" element={<User />} />
           <Route path="company" element={<Company />} />
           <Route path="bank" element={<Bank />} />
           <Route path="bank-account" element={<BankAccount />} />
