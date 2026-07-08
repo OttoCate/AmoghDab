@@ -70,7 +70,7 @@ const App = () => {
       icon: <FaRegUser />,
       label: 'Người dùng',
       onClick: () => {
-        handleNavigate('/', 1)
+        handleNavigate('/user', 1)
       },
     },
     {
