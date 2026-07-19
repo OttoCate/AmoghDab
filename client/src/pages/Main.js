@@ -61,7 +61,10 @@ const Main = () => {
           <Route path="payment-plan" element={<PaymentPlan />} />
           <Route path="source" element={<Source />} />
         </Route>
-        <Route path="/login" element={auth ? <Navigate to="/" /> : <Login />} />
+        <Route
+          path="/login"
+          element={auth ? <Navigate to="/user" /> : <Login />}
+        />
         <Route
           path="/misa-data-transformer"
           element={<MisaDataTransformer />}
