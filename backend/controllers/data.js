@@ -239,13 +239,25 @@ const dataCtrl = {
 
   createPaymentPlan: async (req, res) => {
     try {
-      const { subject, content, amount, dueDate, companyId } = req.body
+      const {
+        subject,
+        content,
+        amount,
+        dueDate,
+        companyId,
+        document,
+        total,
+        exchangeRate,
+        currency,
+        note,
+      } = req.body
       if (
         !subject.trim() ||
         !amount ||
         !dueDate ||
         !content.trim() ||
-        !companyId.trim()
+        !companyId.trim() ||
+        !currency.trim()
       )
         return res
           .status(400)
@@ -257,6 +269,11 @@ const dataCtrl = {
         amount,
         dueDate,
         companyId,
+        document,
+        total,
+        exchangeRate,
+        currency,
+        note,
       })
 
       res.status(200).json({ msg: 'Đã tạo hoàn tất kế hoạch thanh toán' })

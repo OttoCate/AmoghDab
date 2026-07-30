@@ -11,6 +11,11 @@ const PaymentPlanSchema = mongoose.Schema(
     content: String,
     amount: Number,
     dueDate: Date,
+    document: String,
+    total: Number,
+    exchangeRate: Number,
+    currency: String,
+    note: String,
     state: { type: String, default: 'ongoing' },
   },
   { timestamps: true }

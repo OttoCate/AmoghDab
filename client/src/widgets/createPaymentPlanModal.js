@@ -79,6 +79,7 @@ const PaymentPlanCreateModal = ({
     <Modal
       okText="Xác nhận"
       cancelText="Hủy"
+      width={800}
       confirmLoading={loading}
       title={
         isModalOpen?._id
@@ -114,13 +115,19 @@ const PaymentPlanCreateModal = ({
               })}
           />
         </Form.Item>
-        <Form.Item
-          name="subject"
-          label="Đối tượng"
-          rules={[{ required: true, message: 'Nhập đối tượng!' }]}
-        >
-          <Input className="w-full" placeholder="" />
-        </Form.Item>
+        <Space.Compact style={{ display: 'flex' }}>
+          <Form.Item
+            name="subject"
+            label="Đối tượng"
+            style={{ flex: 1 }}
+            rules={[{ required: true, message: 'Nhập đối tượng!' }]}
+          >
+            <Input className="w-full" placeholder="" />
+          </Form.Item>
+          <Form.Item name="document" label="Chứng từ gốc" style={{ flex: 1 }}>
+            <Input className="w-full" placeholder="" />
+          </Form.Item>
+        </Space.Compact>
         <Form.Item
           name="content"
           label="Nội dung"
@@ -138,13 +145,112 @@ const PaymentPlanCreateModal = ({
             <DatePicker style={{ width: '100%' }} />
           </Form.Item>
           <Form.Item
+            style={{ flex: 1 }}
+            name="currency"
+            label="Loại tiền"
+            rules={[
+              {
+                required: true,
+                message: 'Hãy cho biết tài khoản này thuộc tiền tệ gì!',
+              },
+            ]}
+          >
+            <Select
+              showSearch
+              filterOption={(input, option) =>
+                (option?.label ?? '')
+                  .toLowerCase()
+                  .includes(input.toLowerCase())
+              }
+              options={[
+                { value: 'vnd', label: 'VND' },
+                { value: 'usd', label: 'USD' },
+                { value: 'cny', label: 'CNY' },
+                { value: 'thb', label: 'THB' },
+              ]}
+            />
+          </Form.Item>
+        </Space.Compact>
+        <Space.Compact style={{ display: 'flex' }}>
+          <Form.Item
+            name="total"
+            label="Tổng thành tiền"
+            style={{ flex: 1 }}
+            rules={[{ required: true, message: 'Nhập giá trị!' }]}
+          >
+            <InputNumber
+              inputMode="decimal"
+              style={{ width: '100%' }}
+              formatter={(value) =>
+                value
+                  ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') // thousands with comma
+                  : ''
+              }
+              parser={(value) =>
+                value
+                  ? parseFloat(value.toString().replace(/,/g, '')) // remove commas
+                  : 0
+              }
+              min={0}
+            />
+          </Form.Item>
+          <Form.Item
             name="amount"
-            label="Giá trị"
+            label="Giá trị thanh toán"
             style={{ flex: 1 }}
             rules={[{ required: true, message: 'Nhập giá trị thanh toán!' }]}
           >
             <InputNumber
               inputMode="decimal"
+              style={{ width: '100%' }}
+              formatter={(value) =>
+                value
+                  ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') // thousands with comma
+                  : ''
+              }
+              parser={(value) =>
+                value
+                  ? parseFloat(value.toString().replace(/,/g, '')) // remove commas
+                  : 0
+              }
+              min={0}
+            />
+          </Form.Item>
+          <Form.Item
+            name="exchangeRate"
+            label="Tỷ giá hối đoái"
+            style={{ flex: 1 }}
+            rules={[{ required: true, message: 'Nhập tỷ giá hối đoái!' }]}
+          >
+            <InputNumber
+              inputMode="decimal"
+              style={{ width: '100%' }}
+              formatter={(value) =>
+                value
+                  ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') // thousands with comma
+                  : ''
+              }
+              parser={(value) =>
+                value
+                  ? parseFloat(value.toString().replace(/,/g, '')) // remove commas
+                  : 0
+              }
+              min={0}
+            />
+          </Form.Item>
+          <Form.Item
+            name="conversedValue"
+            label="Giá trị quy đổi"
+            style={{ flex: 1 }}
+          >
+            <InputNumber
+              inputMode="decimal"
+              readOnly={true}
+              disabled={true}
+              value={
+                form.getFieldValue('exchangeRate') *
+                form.getFieldValue('amount')
+              }
               style={{ width: '100%' }}
               formatter={(value) =>
                 value
