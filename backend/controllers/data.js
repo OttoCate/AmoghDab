@@ -250,6 +250,7 @@ const dataCtrl = {
         exchangeRate,
         currency,
         note,
+        conversedValue,
       } = req.body
       if (
         !subject.trim() ||
@@ -264,15 +265,16 @@ const dataCtrl = {
           .json({ msg: 'Vui lòng cung cấp đầy đủ thông tin' })
 
       await PaymentPlans.create({
+        companyId,
         subject,
         content,
         amount,
         dueDate,
-        companyId,
         document,
-        total,
-        exchangeRate,
         currency,
+        exchangeRate,
+        total,
+        conversedValue,
         note,
       })
 
@@ -320,9 +322,7 @@ const dataCtrl = {
     try {
       const banks = await PaymentPlans.find({
         companyId: { $in: req.user.companyIds },
-      })
-        .select('subject content amount dueDate state companyId')
-        .populate('companyId', 'name')
+      }).populate('companyId', 'name')
       res.status(200).json({ data: banks })
     } catch (error) {
       res.status(500).json({ msg: error.message })
@@ -331,7 +331,7 @@ const dataCtrl = {
 
   createSource: async (req, res) => {
     try {
-      const { companyId, departmentCode, thb, usd, vnd, type } = req.body
+      const { companyId, thb, usd, vnd, type } = req.body
       if ((!type, !companyId))
         return res
           .status(400)
@@ -343,9 +343,7 @@ const dataCtrl = {
         usd,
         thb,
         companyId,
-        departmentCode,
         updatedBy: req.user._id,
-        updatedAt: Date.now(),
       })
 
       res.status(200).json({ msg: 'Đã tạo hoàn tất nguồn' })
@@ -393,7 +391,7 @@ const dataCtrl = {
       const list = await Sources.find({
         companyId: { $in: req.user.companyIds },
       })
-        .select('companyId departmentCode thb usd vnd type updatedBy updatedAt')
+        .select('companyId thb usd vnd type updatedAt')
         .populate('companyId updatedBy', 'name')
       res.status(200).json({ data: list })
     } catch (error) {

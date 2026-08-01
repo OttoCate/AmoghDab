@@ -160,12 +160,7 @@ const PaymentPlan = () => {
   const handleDeleteRecord = async (record) => {
     try {
       if (loading) return
-      if (
-        !window.confirm(
-          'Bạn có chắc muốn xóa dữ liệu này? Để phục vụ truy vết, hệ thống sẽ ghi nhận lại bạn đã xóa dữ liệu'
-        )
-      )
-        return
+      if (!window.confirm('Bạn có chắc muốn xóa dữ liệu này?')) return
       setLoading(true)
       await app.delete(`/api/delete-source/${record._id}`)
       const newSources = [...sources].filter((i) => i._id !== record._id)
@@ -254,13 +249,6 @@ const PaymentPlan = () => {
       render: (value) => {
         return <span>{Intl.NumberFormat().format(value)}</span>
       },
-    },
-    {
-      title: 'Mã đơn vị',
-      dataIndex: 'departmentCode',
-      key: 'departmentCode',
-      width: 150,
-      ...getColumnSearchProps('departmentCode'),
     },
     {
       title: 'Lần cập nhật gần nhất',

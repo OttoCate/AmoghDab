@@ -15,6 +15,7 @@ import { FaFileExport } from 'react-icons/fa'
 import * as FileSaver from 'file-saver'
 import { FaUpload } from 'react-icons/fa'
 import _ from 'lodash'
+import { FaCheck } from 'react-icons/fa'
 
 const PaymentPlan = () => {
   const [paymentPlans, setPaymentPlans] = useState([])
@@ -169,15 +170,29 @@ const PaymentPlan = () => {
   const handleDeleteRecord = async (record) => {
     try {
       if (loading) return
-      if (
-        !window.confirm(
-          'Bạn có chắc muốn xóa dữ liệu này? Để phục vụ truy vết, hệ thống sẽ ghi nhận lại bạn đã xóa dữ liệu'
-        )
-      )
-        return
+      if (!window.confirm('Bạn có chắc muốn xóa dữ liệu này?')) return
       setLoading(true)
       await app.delete(`/api/delete-payment-plan/${record._id}`)
       const newSources = [...paymentPlans].filter((i) => i._id !== record._id)
+      setPaymentPlans(newSources)
+      setPaymentPlanState(newSources)
+    } catch (error) {
+      alert(error?.response?.data?.msg || error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleCheckDone = async (record) => {
+    try {
+      if (loading) return
+      setLoading(true)
+      await app.patch(`/api/update-payment-plan/${record._id}`, {
+        state: 'done',
+      })
+      const newSources = [...paymentPlans].map((i) =>
+        i._id === record._id ? { ...i, state: 'done' } : i
+      )
       setPaymentPlans(newSources)
       setPaymentPlanState(newSources)
     } catch (error) {
@@ -194,10 +209,15 @@ const PaymentPlan = () => {
     )
     worker.postMessage({
       data: paymentPlans.map((i) => {
-        return {
+        let object = {
           ...i,
           companyId: i.companyId?.name,
         }
+        delete object._id
+        delete object.createdAt
+        delete object.updatedAt
+        delete object.__v
+        return object
       }),
       fileName: 'Dữ liệu kế hoạch thanh toán',
     })
@@ -256,7 +276,20 @@ const PaymentPlan = () => {
           }
 
           const myMapList = data.map((i) => {
-            const { subject, content, amount, dueDate, companyId, state } = i
+            const {
+              subject,
+              content,
+              amount,
+              dueDate,
+              companyId,
+              document,
+              currency,
+              exchangeRate,
+              conversedValue,
+              total,
+              state,
+              note,
+            } = i
             const newCompanyId = companies.find(
               (item) => item.name === companyId
             )
@@ -290,6 +323,12 @@ const PaymentPlan = () => {
               amount,
               dueDate: myDueDate,
               companyId: newCompanyId._id,
+              document,
+              currency,
+              exchangeRate,
+              total,
+              conversedValue,
+              note,
             })
           })
 
@@ -323,7 +362,7 @@ const PaymentPlan = () => {
       title: 'Công ty',
       dataIndex: 'company',
       key: 'company',
-      width: 250,
+      width: 200,
       fixed: 'left',
       ...getColumnSearchProps('company'),
     },
@@ -331,17 +370,38 @@ const PaymentPlan = () => {
       title: 'Đối tượng',
       dataIndex: 'subject',
       key: 'subject',
-      fixed: 'left',
+      width: 200,
       ...getColumnSearchProps('subject'),
     },
     {
       title: 'Nội dung',
       dataIndex: 'content',
       key: 'content',
+      width: 200,
       ...getColumnSearchProps('content'),
     },
     {
-      title: 'Giá trị',
+      title: 'Ngày thanh toán',
+      dataIndex: 'dueDate',
+      key: 'dueDate',
+      width: 150,
+      align: 'right',
+      sorter: (a, b) => moment(a.dueDate) - moment(b.dueDate),
+      render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
+    },
+    {
+      title: 'Tổng thành tiền',
+      dataIndex: 'total',
+      key: 'total',
+      align: 'right',
+      sorter: (a, b) => a.total - b.total,
+      width: 130,
+      render: (value) => {
+        return <span>{Intl.NumberFormat().format(value)}</span>
+      },
+    },
+    {
+      title: 'Giá trị thanh toán',
       dataIndex: 'amount',
       key: 'amount',
       align: 'right',
@@ -352,13 +412,64 @@ const PaymentPlan = () => {
       },
     },
     {
-      title: 'Ngày thanh toán',
-      dataIndex: 'dueDate',
-      key: 'dueDate',
-      width: 150,
+      title: 'Tiền tệ',
+      dataIndex: 'currency',
+      key: 'currency',
+      align: 'center',
+      fixed: 'right',
+      width: 110,
+      filters: [
+        {
+          text: 'VND',
+          value: 'vnd',
+        },
+        {
+          text: 'USD',
+          value: 'usd',
+        },
+        {
+          text: 'THB',
+          value: 'thb',
+        },
+        {
+          text: 'CNY',
+          value: 'cny',
+        },
+      ],
+      onFilter: (value, record) => record.currency === value,
+      render: (state) => <span>{state.toUpperCase()}</span>,
+    },
+    {
+      title: 'Tỷ giá',
+      dataIndex: 'exchangeRate',
+      key: 'exchangeRate',
+      ...getColumnSearchProps('exchangeRate'),
+      render: (value) => {
+        return <span>{Intl.NumberFormat().format(value)}</span>
+      },
+    },
+    {
+      title: 'Giá trị quy đổi (VND)',
+      dataIndex: 'conversedValue',
+      key: 'conversedValue',
       align: 'right',
-      sorter: (a, b) => moment(a.dueDate) - moment(b.dueDate),
-      render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
+      sorter: (a, b) => a.conversedValue - b.conversedValue,
+      width: 130,
+      render: (value) => {
+        return <span>{Intl.NumberFormat().format(value)}</span>
+      },
+    },
+    {
+      title: 'Chứng từ gốc',
+      dataIndex: 'document',
+      key: 'document',
+      ...getColumnSearchProps('document'),
+    },
+    {
+      title: 'Ghi chú',
+      dataIndex: 'note',
+      key: 'note',
+      ...getColumnSearchProps('note'),
     },
     {
       title: 'Trạng thái',
@@ -404,6 +515,17 @@ const PaymentPlan = () => {
                 onClick={() => showModal(_)}
               ></Button>
             </Tooltip>
+            {_.state !== 'done' && (
+              <Tooltip title="Đánh dấu hoàn tất">
+                <Button
+                  color="default"
+                  variant="outlined"
+                  size="small"
+                  icon={<FaCheck />}
+                  onClick={() => handleCheckDone(_)}
+                ></Button>
+              </Tooltip>
+            )}
             <Tooltip title="Xóa">
               <Button
                 color="danger"

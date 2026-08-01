@@ -2,7 +2,11 @@ const mongoose = require('mongoose')
 
 const SourceSchema = mongoose.Schema(
   {
-    type: String,
+    type: {
+      type: mongoose.Types.ObjectId,
+      ref: 'Company',
+      required: true,
+    },
     companyId: {
       type: mongoose.Types.ObjectId,
       ref: 'Company',
@@ -11,13 +15,11 @@ const SourceSchema = mongoose.Schema(
     vnd: Number,
     usd: Number,
     thb: Number,
-    departmentCode: String,
     updatedBy: {
       type: mongoose.Types.ObjectId,
       ref: 'User',
       required: true,
     },
-    updatedAt: Date,
   },
   { timestamps: true }
 )

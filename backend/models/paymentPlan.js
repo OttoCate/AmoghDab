@@ -16,6 +16,7 @@ const PaymentPlanSchema = mongoose.Schema(
     exchangeRate: Number,
     currency: String,
     note: String,
+    conversedValue: Number,
     state: { type: String, default: 'ongoing' },
   },
   { timestamps: true }

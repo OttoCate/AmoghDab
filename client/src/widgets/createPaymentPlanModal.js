@@ -18,8 +18,20 @@ const PaymentPlanCreateModal = ({
   const handleOk = async () => {
     try {
       if (loading) return
-      const { subject, content, amount, dueDate, state, companyId } =
-        form.getFieldsValue()
+      const {
+        subject,
+        content,
+        amount,
+        dueDate,
+        companyId,
+        document,
+        currency,
+        exchangeRate,
+        conversedValue,
+        total,
+        state,
+        note,
+      } = form.getFieldsValue()
       if (
         !subject?.trim() ||
         !amount ||
@@ -38,6 +50,12 @@ const PaymentPlanCreateModal = ({
           dueDate,
           state,
           companyId,
+          document,
+          currency,
+          exchangeRate,
+          total,
+          conversedValue,
+          note,
         })
       } else {
         await app.post('/api/create-payment-plan', {
@@ -45,7 +63,14 @@ const PaymentPlanCreateModal = ({
           content,
           amount,
           dueDate,
+          state,
           companyId,
+          document,
+          currency,
+          exchangeRate,
+          total,
+          conversedValue,
+          note,
         })
       }
       await handleFetchPaymentPlans()
@@ -62,6 +87,11 @@ const PaymentPlanCreateModal = ({
     handleCancel()
   }
 
+  const handleCalculateValueConversed = () => {
+    const { exchangeRate, amount } = form.getFieldsValue()
+    form.setFieldValue('conversedValue', exchangeRate * amount)
+  }
+
   useEffect(() => {
     if (isModalOpen?._id) {
       form.setFieldValue('subject', isModalOpen?.subject)
@@ -69,9 +99,17 @@ const PaymentPlanCreateModal = ({
       form.setFieldValue('amount', isModalOpen?.amount)
       form.setFieldValue('dueDate', dayjs(isModalOpen?.dueDate))
       form.setFieldValue('state', isModalOpen?.state)
+      form.setFieldValue('document', isModalOpen?.document)
+      form.setFieldValue('exchangeRate', isModalOpen?.exchangeRate)
+      form.setFieldValue('currency', isModalOpen?.currency)
+      form.setFieldValue('total', isModalOpen?.total)
       form.setFieldValue('companyId', isModalOpen?.companyId?._id)
+      form.setFieldValue('conversedValue', isModalOpen?.conversedValue)
+      form.setFieldValue('note', isModalOpen?.note)
     } else {
       form.setFieldValue('state', 'ongoing')
+      form.setFieldValue('currency', 'vnd')
+      form.setFieldValue('exchangeRate', 1)
     }
   }, [])
 
@@ -120,7 +158,7 @@ const PaymentPlanCreateModal = ({
             name="subject"
             label="Đối tượng"
             style={{ flex: 1 }}
-            rules={[{ required: true, message: 'Nhập đối tượng!' }]}
+            rules={[{ required: true, message: 'Nhập đối tượng thanh toán!' }]}
           >
             <Input className="w-full" placeholder="" />
           </Form.Item>
@@ -131,7 +169,7 @@ const PaymentPlanCreateModal = ({
         <Form.Item
           name="content"
           label="Nội dung"
-          rules={[{ required: true, message: 'Nhập nội dung!' }]}
+          rules={[{ required: true, message: 'Nhập nội dung thanh toán!' }]}
         >
           <Input className="w-full" placeholder="" />
         </Form.Item>
@@ -203,6 +241,7 @@ const PaymentPlanCreateModal = ({
             <InputNumber
               inputMode="decimal"
               style={{ width: '100%' }}
+              onChange={handleCalculateValueConversed}
               formatter={(value) =>
                 value
                   ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') // thousands with comma
@@ -225,6 +264,7 @@ const PaymentPlanCreateModal = ({
             <InputNumber
               inputMode="decimal"
               style={{ width: '100%' }}
+              onChange={handleCalculateValueConversed}
               formatter={(value) =>
                 value
                   ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') // thousands with comma
@@ -240,17 +280,13 @@ const PaymentPlanCreateModal = ({
           </Form.Item>
           <Form.Item
             name="conversedValue"
-            label="Giá trị quy đổi"
+            label="Giá trị quy đổi (VND)"
             style={{ flex: 1 }}
           >
             <InputNumber
               inputMode="decimal"
               readOnly={true}
               disabled={true}
-              value={
-                form.getFieldValue('exchangeRate') *
-                form.getFieldValue('amount')
-              }
               style={{ width: '100%' }}
               formatter={(value) =>
                 value
@@ -266,24 +302,31 @@ const PaymentPlanCreateModal = ({
             />
           </Form.Item>
         </Space.Compact>
-        <Form.Item
-          name="state"
-          label="Trạng thái"
-          style={{ flex: 1 }}
-          rules={[{ required: true, message: 'Hãy chọn trạng thái!' }]}
-        >
-          <Select
-            showSearch
-            disabled={!isModalOpen?._id}
-            filterOption={(input, option) =>
-              (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-            }
-            options={[
-              { value: 'ongoing', label: 'Đang thực hiện' },
-              { value: 'done', label: 'Hoàn thành' },
-            ]}
-          />
-        </Form.Item>
+        <Space.Compact style={{ display: 'flex' }}>
+          <Form.Item
+            name="state"
+            label="Trạng thái"
+            style={{ flex: 1 }}
+            rules={[{ required: true, message: 'Hãy chọn trạng thái!' }]}
+          >
+            <Select
+              showSearch
+              disabled={!isModalOpen?._id}
+              filterOption={(input, option) =>
+                (option?.label ?? '')
+                  .toLowerCase()
+                  .includes(input.toLowerCase())
+              }
+              options={[
+                { value: 'ongoing', label: 'Đang thực hiện' },
+                { value: 'done', label: 'Hoàn thành' },
+              ]}
+            />
+          </Form.Item>
+          <Form.Item name="note" label="Ghi chú" style={{ flex: 3 }}>
+            <Input className="w-full" placeholder="" />
+          </Form.Item>
+        </Space.Compact>
       </Form>
     </Modal>
   )
