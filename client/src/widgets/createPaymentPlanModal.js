@@ -157,22 +157,23 @@ const PaymentPlanCreateModal = ({
           <Form.Item
             name="subject"
             label="Đối tượng"
-            style={{ flex: 1 }}
+            style={{ flex: 3 }}
             rules={[{ required: true, message: 'Nhập đối tượng thanh toán!' }]}
           >
             <Input className="w-full" placeholder="" />
           </Form.Item>
-          <Form.Item name="document" label="Chứng từ gốc" style={{ flex: 1 }}>
+          <Form.Item
+            name="content"
+            style={{ flex: 4 }}
+            label="Nội dung"
+            rules={[{ required: true, message: 'Nhập nội dung thanh toán!' }]}
+          >
+            <Input className="w-full" placeholder="" />
+          </Form.Item>
+          <Form.Item name="document" label="Chứng từ gốc" style={{ flex: 2 }}>
             <Input className="w-full" placeholder="" />
           </Form.Item>
         </Space.Compact>
-        <Form.Item
-          name="content"
-          label="Nội dung"
-          rules={[{ required: true, message: 'Nhập nội dung thanh toán!' }]}
-        >
-          <Input className="w-full" placeholder="" />
-        </Form.Item>
         <Space.Compact style={{ display: 'flex' }}>
           <Form.Item
             name="dueDate"

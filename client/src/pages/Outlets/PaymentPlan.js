@@ -370,15 +370,21 @@ const PaymentPlan = () => {
       title: 'Đối tượng',
       dataIndex: 'subject',
       key: 'subject',
-      width: 200,
+      width: 150,
       ...getColumnSearchProps('subject'),
     },
     {
       title: 'Nội dung',
       dataIndex: 'content',
       key: 'content',
-      width: 200,
+      width: 150,
       ...getColumnSearchProps('content'),
+    },
+    {
+      title: 'Chứng từ gốc',
+      dataIndex: 'document',
+      key: 'document',
+      ...getColumnSearchProps('document'),
     },
     {
       title: 'Ngày thanh toán',
@@ -390,7 +396,7 @@ const PaymentPlan = () => {
       render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
     },
     {
-      title: 'Tổng thành tiền',
+      title: 'Thành tiền',
       dataIndex: 'total',
       key: 'total',
       align: 'right',
@@ -401,7 +407,7 @@ const PaymentPlan = () => {
       },
     },
     {
-      title: 'Giá trị thanh toán',
+      title: 'Thanh toán',
       dataIndex: 'amount',
       key: 'amount',
       align: 'right',
@@ -417,7 +423,6 @@ const PaymentPlan = () => {
       key: 'currency',
       align: 'center',
       fixed: 'right',
-      width: 110,
       filters: [
         {
           text: 'VND',
@@ -458,12 +463,6 @@ const PaymentPlan = () => {
       render: (value) => {
         return <span>{Intl.NumberFormat().format(value)}</span>
       },
-    },
-    {
-      title: 'Chứng từ gốc',
-      dataIndex: 'document',
-      key: 'document',
-      ...getColumnSearchProps('document'),
     },
     {
       title: 'Ghi chú',
