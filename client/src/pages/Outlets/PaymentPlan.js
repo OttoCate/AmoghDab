@@ -262,8 +262,13 @@ const PaymentPlan = () => {
       worker.onmessage = async (e) => {
         const { success, data, error } = e.data
         if (success) {
-          const allCompaniesValid = data.every((i) =>
-            companies.find((item) => item.name === i.companyId)
+          const allCompaniesValid = data.every(
+            (i) =>
+              companies.find((item) => item.name === i.companyId) &&
+              ['in_country', 'out_contry', 'delivery', 'other'].find(
+                (o) => o === i.type
+              ) &&
+              ['vnd', 'usd', 'cny', 'thb'].find((e) => e === i.currency)
           )
 
           if (!allCompaniesValid) {
@@ -289,6 +294,7 @@ const PaymentPlan = () => {
               total,
               state,
               note,
+              type,
             } = i
             const newCompanyId = companies.find(
               (item) => item.name === companyId
@@ -329,6 +335,7 @@ const PaymentPlan = () => {
               total,
               conversedValue,
               note,
+              type,
             })
           })
 
@@ -469,6 +476,35 @@ const PaymentPlan = () => {
       dataIndex: 'note',
       key: 'note',
       ...getColumnSearchProps('note'),
+    },
+    {
+      title: 'Loại',
+      dataIndex: 'type',
+      key: 'type',
+      filters: [
+        {
+          text: 'Chưa xong',
+          value: 'ongoing',
+        },
+        {
+          text: 'Hoàn thành',
+          value: 'done',
+        },
+      ],
+      onFilter: (value, record) => record.type === value,
+      render: (state) => (
+        <span>
+          {state === 'in_country'
+            ? 'Trong nước'
+            : state === 'out_country'
+            ? 'Ngoài nước'
+            : state === 'delivery'
+            ? 'Vận chuyển'
+            : state === 'other'
+            ? 'Khác'
+            : ''}
+        </span>
+      ),
     },
     {
       title: 'Trạng thái',

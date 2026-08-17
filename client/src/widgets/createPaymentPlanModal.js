@@ -31,6 +31,7 @@ const PaymentPlanCreateModal = ({
         total,
         state,
         note,
+        type,
       } = form.getFieldsValue()
       if (
         !subject?.trim() ||
@@ -38,7 +39,8 @@ const PaymentPlanCreateModal = ({
         !dueDate ||
         !state?.trim() ||
         !content?.trim() ||
-        !companyId
+        !companyId ||
+        !type?.trim()
       )
         return alert('Vui lòng nhập đầy đủ thông tin')
       setLoading(true)
@@ -56,6 +58,7 @@ const PaymentPlanCreateModal = ({
           total,
           conversedValue,
           note,
+          type,
         })
       } else {
         await app.post('/api/create-payment-plan', {
@@ -71,6 +74,7 @@ const PaymentPlanCreateModal = ({
           total,
           conversedValue,
           note,
+          type,
         })
       }
       await handleFetchPaymentPlans()
@@ -106,10 +110,12 @@ const PaymentPlanCreateModal = ({
       form.setFieldValue('companyId', isModalOpen?.companyId?._id)
       form.setFieldValue('conversedValue', isModalOpen?.conversedValue)
       form.setFieldValue('note', isModalOpen?.note)
+      form.setFieldValue('type', isModalOpen?.type)
     } else {
       form.setFieldValue('state', 'ongoing')
       form.setFieldValue('currency', 'vnd')
       form.setFieldValue('exchangeRate', 1)
+      form.setFieldValue('type', 'in_country')
     }
   }, [])
 
@@ -326,6 +332,26 @@ const PaymentPlanCreateModal = ({
           </Form.Item>
           <Form.Item name="note" label="Ghi chú" style={{ flex: 3 }}>
             <Input className="w-full" placeholder="" />
+          </Form.Item>
+          <Form.Item
+            style={{ flex: 1 }}
+            name="type"
+            label="Loại"
+            rules={[{ required: true, message: 'Hãy chọn loại!' }]}
+          >
+            <Select
+              filterOption={(input, option) =>
+                (option?.label ?? '')
+                  .toLowerCase()
+                  .includes(input.toLowerCase())
+              }
+              options={[
+                { value: 'in_country', label: 'Trong nước' },
+                { value: 'out_country', label: 'Ngoài nước' },
+                { value: 'delivery', label: 'Vận chuyển' },
+                { value: 'other', label: 'Khác' },
+              ]}
+            />
           </Form.Item>
         </Space.Compact>
       </Form>

@@ -251,6 +251,7 @@ const dataCtrl = {
         currency,
         note,
         conversedValue,
+        type,
       } = req.body
       if (
         !subject.trim() ||
@@ -258,7 +259,8 @@ const dataCtrl = {
         !dueDate ||
         !content.trim() ||
         !companyId.trim() ||
-        !currency.trim()
+        !currency.trim() ||
+        !type.trim()
       )
         return res
           .status(400)
@@ -276,6 +278,7 @@ const dataCtrl = {
         total,
         conversedValue,
         note,
+        type,
       })
 
       res.status(200).json({ msg: 'Đã tạo hoàn tất kế hoạch thanh toán' })
