@@ -208,6 +208,10 @@ const BankAccount = () => {
           text: 'CNY',
           value: 'cny',
         },
+        {
+          text: 'THB',
+          value: 'thb',
+        },
       ],
       onFilter: (value, record) => record.currency === value,
       render: (text) => <span>{text.toUpperCase()}</span>,

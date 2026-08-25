@@ -2,19 +2,19 @@ const mongoose = require('mongoose')
 
 const SourceSchema = mongoose.Schema(
   {
-    type: {
-      type: mongoose.Types.ObjectId,
-      ref: 'Company',
-      required: true,
-    },
+    name: String,
+    type: String,
     companyId: {
       type: mongoose.Types.ObjectId,
       ref: 'Company',
       required: true,
     },
-    vnd: Number,
-    usd: Number,
-    thb: Number,
+    bankAccountId: {
+      type: mongoose.Types.ObjectId,
+      ref: 'BankAccount',
+    },
+    value: Number,
+    currency: String,
     updatedBy: {
       type: mongoose.Types.ObjectId,
       ref: 'User',

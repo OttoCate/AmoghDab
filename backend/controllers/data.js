@@ -334,18 +334,26 @@ const dataCtrl = {
 
   createSource: async (req, res) => {
     try {
-      const { companyId, thb, usd, vnd, type } = req.body
-      if ((!type, !companyId))
+      const { companyId, name, type, bankAccountId, value, currency } = req.body
+      if (
+        !type ||
+        !companyId ||
+        !name ||
+        !currency ||
+        (type === 'bank' && !bankAccountId) ||
+        !value
+      )
         return res
           .status(400)
           .json({ msg: 'Vui lòng cung cấp đầy đủ thông tin' })
 
       await Sources.create({
-        type,
-        vnd,
-        usd,
-        thb,
         companyId,
+        name,
+        type,
+        bankAccountId,
+        value,
+        currency,
         updatedBy: req.user._id,
       })
 
@@ -366,7 +374,7 @@ const dataCtrl = {
       })
       const newOne = await Sources.findOneAndUpdate(
         { _id: id, companyId: { $in: req.user.companyIds } },
-        { ...parameters, updatedBy: req.user._id, updatedAt: Date.now() },
+        { ...parameters, updatedBy: req.user._id },
         { new: true }
       )
       if (!newOne)
@@ -394,7 +402,9 @@ const dataCtrl = {
       const list = await Sources.find({
         companyId: { $in: req.user.companyIds },
       })
-        .select('companyId thb usd vnd type updatedAt')
+        .select(
+          'companyId name type bankAccountId value updatedBy currency updatedAt'
+        )
         .populate('companyId updatedBy', 'name')
       res.status(200).json({ data: list })
     } catch (error) {

@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
-import { Table, Button, Space, Tag, Tooltip } from 'antd'
+import { Table, Button, Space, Tag, Tooltip, DatePicker } from 'antd'
 import { useZustand } from '../../zustand'
 import { FiPlus } from 'react-icons/fi'
 import PaymentPlanCreateModal from '../../widgets/createPaymentPlanModal'
-import { Input } from 'antd'
+import { Input, Typography } from 'antd'
 import Highlighter from 'react-highlight-words'
 import { SearchOutlined } from '@ant-design/icons'
 import app from '../../axiosConfig'
@@ -16,6 +16,12 @@ import * as FileSaver from 'file-saver'
 import { FaUpload } from 'react-icons/fa'
 import _ from 'lodash'
 import { FaCheck } from 'react-icons/fa'
+import dayjs from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+import isBetween from 'dayjs/plugin/isBetween'
+const { RangePicker } = DatePicker
+dayjs.extend(customParseFormat)
+dayjs.extend(isBetween)
 
 const PaymentPlan = () => {
   const [paymentPlans, setPaymentPlans] = useState([])
@@ -32,6 +38,10 @@ const PaymentPlan = () => {
   const [loading, setLoading] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
   const fileInputRef = useRef(null)
+  const [filteredData, setFilteredData] = useState([])
+  const [isFilteredDate, setIsFilteredDate] = useState(false)
+
+  const { Text } = Typography
 
   const showModal = (user) => {
     setIsModalOpen(user)
@@ -213,7 +223,6 @@ const PaymentPlan = () => {
           ...i,
           companyId: i.companyId?.name,
         }
-        delete object._id
         delete object.createdAt
         delete object.updatedAt
         delete object.__v
@@ -262,21 +271,22 @@ const PaymentPlan = () => {
       worker.onmessage = async (e) => {
         const { success, data, error } = e.data
         if (success) {
-          const allCompaniesValid = data.every(
+          const allValueValid = data.every(
             (i) =>
               companies.find((item) => item.name === i.companyId) &&
-              ['in_country', 'out_contry', 'delivery', 'other'].find(
+              ['in_country', 'out_country', 'delivery', 'other'].find(
                 (o) => o === i.type
               ) &&
-              ['vnd', 'usd', 'cny', 'thb'].find((e) => e === i.currency)
+              ['vnd', 'usd', 'cny', 'thb'].find((e) => e === i.currency) &&
+              (i._id ? paymentPlans.find((u) => u._id === i._id) : true)
           )
 
-          if (!allCompaniesValid) {
+          if (!allValueValid) {
             fileInputRef.current.value = ''
             setIsProcessing(false)
             worker.terminate()
             return alert(
-              'Có công ty trong file import không có trong hệ thống hoặc không có trong danh sách công ty bạn đảm nhận'
+              'Kiểm tra lại công ty, loại, id và đơn vị tiền tệ xem có tồn tại trong hệ thống không?'
             )
           }
 
@@ -323,7 +333,8 @@ const PaymentPlan = () => {
               worker.terminate()
               return alert('Đảm bảo dữ liệu phải đầy đủ')
             }
-            return app.post('/api/create-payment-plan', {
+
+            const processedData = {
               subject,
               content,
               amount,
@@ -336,7 +347,12 @@ const PaymentPlan = () => {
               conversedValue,
               note,
               type,
-            })
+              state,
+            }
+
+            return i._id
+              ? app.patch(`/api/update-payment-plan/${i._id}`, processedData)
+              : app.post('/api/create-payment-plan', processedData)
           })
 
           await Promise.all(myMapList)
@@ -363,6 +379,26 @@ const PaymentPlan = () => {
       setIsProcessing(false)
     }
   }
+
+  const handleDateFilter = (dates) => {
+    if (!dates || dates.length === 0) {
+      setFilteredData(paymentPlans)
+      setIsFilteredDate(false)
+    } else {
+      const [start, end] = dates
+      const filtered = paymentPlans.filter((item) => {
+        const startDay = dayjs(start, 'DD/MM/YYYY')
+        const endDay = dayjs(end, 'DD/MM/YYYY')
+        const dueDateFormat = dayjs(item.dueDate)
+        return dueDateFormat.isBetween(startDay, endDay, 'day', '[]')
+      })
+      setFilteredData(filtered)
+      setIsFilteredDate(true)
+    }
+  }
+
+  const getFilteredPaymentPlans = () =>
+    isFilteredDate ? filteredData : paymentPlans
 
   const columns = [
     {
@@ -391,16 +427,23 @@ const PaymentPlan = () => {
       title: 'Chứng từ gốc',
       dataIndex: 'document',
       key: 'document',
+      width: 130,
       ...getColumnSearchProps('document'),
     },
     {
-      title: 'Ngày thanh toán',
+      title: 'Ngày',
       dataIndex: 'dueDate',
       key: 'dueDate',
-      width: 150,
       align: 'right',
-      sorter: (a, b) => moment(a.dueDate) - moment(b.dueDate),
-      render: (value) => <span>{moment(value).format('DD/MM/YYYY')}</span>,
+      sorter: (a, b) => {
+        return dayjs(a.dueDate, 'DD/MM/YYYY') - dayjs(b.dueDate, 'DD/MM/YYYY')
+      },
+      filterDropdown: () => (
+        <div style={{ padding: 8 }}>
+          <RangePicker onChange={handleDateFilter} />
+        </div>
+      ),
+      onFilter: () => {},
     },
     {
       title: 'Thành tiền',
@@ -408,7 +451,6 @@ const PaymentPlan = () => {
       key: 'total',
       align: 'right',
       sorter: (a, b) => a.total - b.total,
-      width: 130,
       render: (value) => {
         return <span>{Intl.NumberFormat().format(value)}</span>
       },
@@ -419,7 +461,6 @@ const PaymentPlan = () => {
       key: 'amount',
       align: 'right',
       sorter: (a, b) => a.amount - b.amount,
-      width: 130,
       render: (value) => {
         return <span>{Intl.NumberFormat().format(value)}</span>
       },
@@ -455,18 +496,18 @@ const PaymentPlan = () => {
       title: 'Tỷ giá',
       dataIndex: 'exchangeRate',
       key: 'exchangeRate',
+      align: 'right',
       ...getColumnSearchProps('exchangeRate'),
       render: (value) => {
         return <span>{Intl.NumberFormat().format(value)}</span>
       },
     },
     {
-      title: 'Giá trị quy đổi (VND)',
+      title: 'Giá trị quy đổi',
       dataIndex: 'conversedValue',
       key: 'conversedValue',
       align: 'right',
       sorter: (a, b) => a.conversedValue - b.conversedValue,
-      width: 130,
       render: (value) => {
         return <span>{Intl.NumberFormat().format(value)}</span>
       },
@@ -481,19 +522,38 @@ const PaymentPlan = () => {
       title: 'Loại',
       dataIndex: 'type',
       key: 'type',
+      align: 'center',
       filters: [
         {
-          text: 'Chưa xong',
-          value: 'ongoing',
+          text: 'Trong nước',
+          value: 'in_country',
         },
         {
-          text: 'Hoàn thành',
-          value: 'done',
+          text: 'Ngoài nươc',
+          value: 'out_country',
+        },
+        {
+          text: 'Vận chuyển',
+          value: 'delivery',
+        },
+        {
+          text: 'Khác',
+          value: 'other',
         },
       ],
       onFilter: (value, record) => record.type === value,
       render: (state) => (
-        <span>
+        <Tag
+          color={
+            state === 'in_country'
+              ? 'green'
+              : state === 'out_country'
+              ? 'red'
+              : state === 'delivery'
+              ? 'pink'
+              : ''
+          }
+        >
           {state === 'in_country'
             ? 'Trong nước'
             : state === 'out_country'
@@ -503,7 +563,7 @@ const PaymentPlan = () => {
             : state === 'other'
             ? 'Khác'
             : ''}
-        </span>
+        </Tag>
       ),
     },
     {
@@ -524,6 +584,7 @@ const PaymentPlan = () => {
         },
       ],
       onFilter: (value, record) => record.state === value,
+      defaultFilteredValue: ['ongoing'],
       render: (state) => (
         <Tag color={state === 'done' ? 'green' : ''}>
           {state === 'done' ? 'Hoàn thành' : 'Chưa xong'}
@@ -537,10 +598,10 @@ const PaymentPlan = () => {
       width: 100,
       fixed: 'right',
       render: (_) =>
-        _.state === 'done' && auth.role === sysmtemUserRole.basic ? (
+        auth.role === sysmtemUserRole.basic ? (
           <></>
         ) : (
-          <Space size="middle">
+          <Space size="small">
             <Tooltip title="Chỉnh sửa">
               <Button
                 color="default"
@@ -553,7 +614,7 @@ const PaymentPlan = () => {
             {_.state !== 'done' && (
               <Tooltip title="Đánh dấu hoàn tất">
                 <Button
-                  color="default"
+                  color="green"
                   variant="outlined"
                   size="small"
                   icon={<FaCheck />}
@@ -600,36 +661,44 @@ const PaymentPlan = () => {
         >
           Export
         </Button>
-        <div>
-          <input
-            type="file"
-            ref={fileInputRef}
-            style={{ display: 'none' }}
-            onChange={handleAddFile}
-          />
-          <Button
-            icon={<FaUpload />}
-            color="primary"
-            disabled={isProcessing}
-            onClick={() => {
-              fileInputRef.current.click()
-            }}
-          >
-            Upload
-          </Button>
-        </div>
+        {auth.role === sysmtemUserRole.basic ? (
+          <></>
+        ) : (
+          <div>
+            <input
+              type="file"
+              ref={fileInputRef}
+              style={{ display: 'none' }}
+              onChange={handleAddFile}
+            />
+            <Button
+              icon={<FaUpload />}
+              color="primary"
+              disabled={isProcessing}
+              onClick={() => {
+                fileInputRef.current.click()
+              }}
+            >
+              Upload
+            </Button>
+          </div>
+        )}
       </Space.Compact>
       <Table
         columns={columns}
-        dataSource={paymentPlans.map((i) => {
-          return { ...i, company: i?.companyId?.name }
+        dataSource={getFilteredPaymentPlans().map((i) => {
+          return {
+            ...i,
+            company: i?.companyId?.name,
+            dueDate: moment(i?.dueDate).format('DD/MM/YYYY'),
+          }
         })}
         bordered
         size="small"
         rowKey={(record) => record._id}
         scroll={{ x: 'max-content' }}
         pagination={{
-          pageSize: 40,
+          pageSize: 80,
           simple: true,
           size: 'small',
           position: ['bottomRight'],
@@ -638,6 +707,57 @@ const PaymentPlan = () => {
               {range[0]}-{range[1]} / {total}
             </span>
           ),
+        }}
+        summary={(pageData) => {
+          let totalConversedValue = 0
+          let totalPayable = 0
+          let totalAmount = 0
+
+          pageData.forEach(({ conversedValue, total, amount }) => {
+            totalConversedValue += conversedValue
+            totalPayable += total
+            totalAmount += amount
+          })
+
+          return (
+            <>
+              <Table.Summary.Row style={{ background: '#FAFAFA' }}>
+                <Table.Summary.Cell>
+                  <Text style={{ fontWeight: 600 }}>Tổng cộng</Text>
+                </Table.Summary.Cell>
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <Table.Summary.Cell key={i}></Table.Summary.Cell>
+                ))}
+                <Table.Summary.Cell align="end">
+                  <Text style={{ fontWeight: 600 }}>
+                    {pageData.length > 0 &&
+                    pageData.every((i) => i.currency === pageData[0].currency)
+                      ? Intl.NumberFormat().format(totalPayable)
+                      : ''}
+                  </Text>
+                </Table.Summary.Cell>
+                <Table.Summary.Cell align="end">
+                  <Text style={{ fontWeight: 600 }}>
+                    {pageData.length > 0 &&
+                    pageData.every((i) => i.currency === pageData[0].currency)
+                      ? Intl.NumberFormat().format(totalAmount)
+                      : ''}
+                  </Text>
+                </Table.Summary.Cell>
+                {Array.from({ length: 2 }).map((_, i) => (
+                  <Table.Summary.Cell key={i}></Table.Summary.Cell>
+                ))}
+                <Table.Summary.Cell align="end">
+                  <Text style={{ fontWeight: 600 }}>
+                    {Intl.NumberFormat().format(totalConversedValue)}
+                  </Text>
+                </Table.Summary.Cell>
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <Table.Summary.Cell key={i}></Table.Summary.Cell>
+                ))}
+              </Table.Summary.Row>
+            </>
+          )
         }}
       />
       {isModalOpen && (

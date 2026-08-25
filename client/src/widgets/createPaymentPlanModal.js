@@ -101,7 +101,7 @@ const PaymentPlanCreateModal = ({
       form.setFieldValue('subject', isModalOpen?.subject)
       form.setFieldValue('content', isModalOpen?.content)
       form.setFieldValue('amount', isModalOpen?.amount)
-      form.setFieldValue('dueDate', dayjs(isModalOpen?.dueDate))
+      form.setFieldValue('dueDate', dayjs(isModalOpen?.dueDate, 'DD/MM/YYYY'))
       form.setFieldValue('state', isModalOpen?.state)
       form.setFieldValue('document', isModalOpen?.document)
       form.setFieldValue('exchangeRate', isModalOpen?.exchangeRate)

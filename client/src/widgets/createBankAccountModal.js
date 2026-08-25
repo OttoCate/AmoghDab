@@ -125,6 +125,7 @@ const BankCreateModal = ({
               { value: 'vnd', label: 'VND' },
               { value: 'usd', label: 'USD' },
               { value: 'cny', label: 'CNY' },
+              { value: 'thb', label: 'THB' },
             ]}
           />
         </Form.Item>
@@ -140,7 +141,7 @@ const BankCreateModal = ({
             filterOption={(input, option) =>
               (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
             }
-            options={[companies]
+            options={companies
               .filter((i) => auth.companyIds.includes(i._id))
               .map((i) => {
                 return { value: i._id, label: i.name }
