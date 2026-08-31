@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-let baseURL = 'http://localhost:5000'
-// let baseURL = 'https://sea-acc-service.onrender.com'
+let baseURL = process.env.REACT_APP_API_URL
 const app = axios.create({
   baseURL,
   withCredentials: true,

@@ -1,0 +1,33 @@
+services:
+  web:
+    build:
+      context: ../client
+    env_file:
+      - ../client/.env
+    depends_on:
+      - server
+    # ports:
+    #   - 3000:3000
+
+  server:
+    build:
+      context: ../backend
+    env_file:
+      - ../backend/.env
+    # ports:
+    #   - 5000:5000
+
+  nginx:
+    image: nginx:latest
+    restart: always
+    container_name: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/proxy.conf:/etc/nginx/proxy.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      #- ./nginx/ssl:/etc/ssl
+    depends_on:
+      - web
+      - server
+    ports:
+      - 3030:3030
